@@ -15,7 +15,7 @@ export default {
       <meta name="msapplication-TileColor" content="#ffffff" />
       <meta name="theme-color" content="#ffffff" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <meta httpEquiv="Content-Language" content="en" />
+      <meta httpEquiv="Content-Language" content="en,fr" />
       <meta name="description" content="Nextra: the Next.js site builder" />
       <meta name="og:description" content="Nextra: the Next.js site builder" />
       <meta name="twitter:card" content="summary_large_image" />
