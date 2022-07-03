@@ -61,7 +61,7 @@ export default {
   prevLinks: true,
   nextLinks: true,
   footer: true,
-  footerEditLink: 'Edit this page on GitHub',
+  footerEditLink: 'Contribute to this page',
   footerText: <>Business Hustle {new Date().getFullYear()} © Simple eternity holdings (Pty) Ltd.</>,
   unstable_faviconGlyph: '👋',
 }
