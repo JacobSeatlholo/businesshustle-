@@ -1,6 +1,6 @@
 export default {
-  github: 'https://github.com/shuding/nextra',
-  docsRepositoryBase: 'https://github.com/shuding/nextra/blob/master',
+  github: 'https://github.com/JacobSeatlholo/businesshustle-',
+  docsRepositoryBase: 'https://github.com/JacobSeatlholo/businesshustle-',
   titleSuffix: ' – Business Hustle',
   logo: (
     <>
