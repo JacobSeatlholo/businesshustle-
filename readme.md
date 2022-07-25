@@ -1,6 +1,6 @@
-# [Nextra](https://nextra.vercel.app)
+# [Business Hustle ©](https://businesshustle-af43.vercel.app/)
 
-_Warning: this project is not production ready, API might change without notice._
+We offer brand consulting, outsourcing of technology services and/or web development solutions to organizations, individual brands, startups and SME's
 
 [![](https://vercel.com/button)](https://vercel.com/import/git?s=https%3A%2F%2Fgithub.com%2Fshuding%2Fnextra&c=1)
 
@@ -10,12 +10,8 @@ _Warning: this project is not production ready, API might change without notice.
 
 ## Development
 
-The code of Nextra is under the [`core`](https://github.com/shuding/nextra/tree/core) branch.
+The code of this website is under the [`core`](https://github.com/JacobSeatlholo/businesshustle-) branch.
 
-## Themes
-
-- [nextra-theme-docs](https://github.com/vercel/swr-site) ([demo](https://swr.vercel.app))
-- [nextra-theme-blog](https://github.com/shuding/site) ([demo](https://shud.in))
 
 ---
 
