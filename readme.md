@@ -4,9 +4,9 @@ We offer brand consulting, outsourcing of technology services and/or web develop
 
 [![](https://vercel.com/button)](https://vercel.com/import/git?s=https%3A%2F%2Fgithub.com%2Fshuding%2Fnextra&c=1)
 
-**Nextra** is a [Next.js](https://nextjs.org) and [MDX](https://mdxjs.com) powered, no-code site generator.
+This site is developed with **Nextra**, [Next.js](https://nextjs.org) and is [MDX](https://mdxjs.com) powered.
 
-![](/public/demo.png)
+![](/public/demobhw.png)
 
 ## Development
 
@@ -15,4 +15,4 @@ The code of this website is under the [`core`](https://github.com/JacobSeatlholo
 
 ---
 
-Created by [@shuding](https://github.com/shuding) and [@pacocoursey](https://github.com/pacocoursey) at [Vercel](https://vercel.com). Released under the MIT license.
+Created by [Business Hustle](https://github.com/BusinessHustle) and [@pacocoursey](https://github.com/pacocoursey) at [Vercel](https://vercel.com). Released under the MIT license.
