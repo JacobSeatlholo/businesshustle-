@@ -8,7 +8,7 @@
     "start": "next start",
     "build": "next build"
   },
-  "author": "Simple eternity holdings (PTY) Ltd",
+  "author": "Simple eternity holdings",
   "license": "MIT",
   "dependencies": {
     "next": "^12.1.0",
