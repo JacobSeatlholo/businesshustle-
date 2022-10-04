@@ -1,5 +1,5 @@
 {
-  "name": "Business Hustle",
+  "name": "Nextra",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,7 +8,7 @@
     "start": "next start",
     "build": "next build"
   },
-  "author": "Simple eternity holdings",
+  "author": "Shu Ding",
   "license": "MIT",
   "dependencies": {
     "next": "^12.1.0",
