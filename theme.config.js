@@ -4,7 +4,7 @@ export default {
   titleSuffix: ' – Business Hustle',
   logo: (
     <>
-      <span className="mr-2 font-extrabold hidden md:inline">Nextra</span>
+      <span className="mr-2 font-extrabold hidden md:inline">Nextraa</span>
       <span className="text-gray-600 font-normal hidden md:inline">
         Business Hustle Ltd
       </span>
