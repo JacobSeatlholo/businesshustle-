@@ -4,7 +4,6 @@ export default function Nextra({ Component, pageProps }) {
   return <Component {...pageProps} />
 }
 
-<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-786327701">
 </script>
 <script>
