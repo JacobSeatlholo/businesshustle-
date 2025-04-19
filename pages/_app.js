@@ -1,15 +1,9 @@
-import 'nextra-theme-docs/style.css'
+// pages/_app.js
 
-export default function Nextra({ Component, pageProps }) {
-  return <Component {...pageProps} />
-}
-
-// pages/_app.tsx or _app.js
-
+import 'nextra-theme-docs/style.css';
 import Script from 'next/script';
-import type { AppProps } from 'next/app';
 
-export default function MyApp({ Component, pageProps }: AppProps) {
+export default function MyApp({ Component, pageProps }) {
   return (
     <>
       {/* Google tag (gtag.js) */}
@@ -34,4 +28,3 @@ export default function MyApp({ Component, pageProps }: AppProps) {
     </>
   );
 }
-
