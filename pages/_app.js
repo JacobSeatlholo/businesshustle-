@@ -2,6 +2,7 @@
 
 import 'nextra-theme-docs/style.css';
 import Script from 'next/script';
+import SpeedInsightsWrapper from '@/components/SpeedInsightsWrapper';
 
 export default function MyApp({ Component, pageProps }) {
   return (
@@ -24,6 +25,7 @@ export default function MyApp({ Component, pageProps }) {
         }}
       />
       <Component {...pageProps} />
+      <SpeedInsightsWrapper />
     </>
   );
 }
