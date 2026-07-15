@@ -328,9 +328,11 @@ export default function Home() {
         <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
           {/* Logo */}
           <a href="#" className="flex items-center gap-2.5">
-            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-emerald text-emerald-foreground font-bold text-sm">
-              BH
-            </div>
+            <img
+              src="/logo.svg"
+              alt="Business Hustle"
+              className="h-9 w-9 rounded-lg object-contain"
+            />
             <span className="hidden sm:inline font-semibold text-lg tracking-tight">
               Business Hustle
             </span>
@@ -373,9 +375,11 @@ export default function Home() {
               <SheetContent side="right" className="w-72">
                 <SheetHeader>
                   <SheetTitle className="flex items-center gap-2">
-                    <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald text-emerald-foreground font-bold text-xs">
-                      BH
-                    </div>
+                    <img
+                      src="/logo.svg"
+                      alt="Business Hustle"
+                      className="h-8 w-8 rounded-lg object-contain"
+                    />
                     Business Hustle
                   </SheetTitle>
                 </SheetHeader>
@@ -961,9 +965,11 @@ export default function Home() {
             {/* Brand */}
             <div className="col-span-2 sm:col-span-2 lg:col-span-1">
               <div className="flex items-center gap-2.5 mb-4">
-                <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-emerald text-emerald-foreground font-bold text-sm">
-                  BH
-                </div>
+                <img
+                  src="/logo.svg"
+                  alt="Business Hustle"
+                  className="h-9 w-9 rounded-lg object-contain"
+                />
                 <span className="font-semibold text-lg tracking-tight">
                   Business Hustle
                 </span>

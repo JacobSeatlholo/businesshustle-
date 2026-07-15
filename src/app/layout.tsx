@@ -17,6 +17,11 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Business Hustle | AI Solutions for African Enterprises",
+  icons: {
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+    ],
+  },
   description:
     "Business Hustle transforms African businesses with AI-powered automation, intelligent agents, and data platforms. From your first idea to your first AI-powered revenue — we build the infrastructure that makes AI work.",
   keywords: [
