@@ -105,3 +105,31 @@ Work Log:
 Stage Summary:
 - Site fully verified: renders, scrolls, responsive, no errors
 - All interactive elements functional
+---
+Task ID: 7
+Agent: Main Agent
+Task: Integrate get-started.mdx resources into the site
+
+Work Log:
+- Fetched and parsed the full get-started.mdx from GitHub (888 lines, 200+ tools)
+- Identified 21 resource categories from the MDX content
+- Updated Prisma schema with Resource model (name, url, description, category, isFree, isPaid, order)
+- Created seed script (prisma/seed-resources.ts) with 121 curated resources
+- Seeded SQLite database successfully: 121 resources across 21 categories
+- Created /api/resources API route with search, category filtering, pagination
+- Built ResourcesHub component with:
+  - Search bar with real-time filtering
+  - 21 category filter pills with counts
+  - Scrollable grid (max-h 720px with custom scrollbar)
+  - Loading skeleton state
+  - Empty state with clear filters action
+  - Free/Paid badges on each card
+  - External link indicators
+- Added "Resources" to navigation (desktop + mobile menu)
+- Verified: 121 resources load, search works (tested "kaggle", "figma"), category filter works (Design & UI shows 26), mobile menu shows Resources link
+
+Stage Summary:
+- Full get-started.mdx content integrated as a searchable, filterable Resources Hub
+- Data persisted in SQLite via Prisma, served via API
+- Client-side search and category filtering for instant response
+- All 121 resources verified working in browser

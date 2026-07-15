@@ -20,6 +20,10 @@ import {
   Menu,
   ArrowRight,
   Quote,
+  Search,
+  ExternalLink,
+  BookOpen,
+  Sparkles,
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
@@ -88,6 +92,199 @@ function AnimatedSection({
 }
 
 /* ------------------------------------------------------------------ */
+/*  Resources Hub (from get-started.mdx)                              */
+/* ------------------------------------------------------------------ */
+interface ResourceItem {
+  id: string
+  name: string
+  url: string
+  description: string
+  category: string
+  isFree: boolean
+  isPaid: boolean
+}
+
+function ResourcesHub() {
+  const [resources, setResources] = useState<ResourceItem[]>([])
+  const [categories, setCategories] = useState<string[]>([])
+  const [activeCategory, setActiveCategory] = useState('All')
+  const [search, setSearch] = useState('')
+  const [loading, setLoading] = useState(true)
+  const sectionRef = useRef(null)
+  const isInView = useInView(sectionRef, { once: true, margin: '-100px' })
+
+  useEffect(() => {
+    fetch('/api/resources')
+      .then((r) => r.json())
+      .then((data) => {
+        setResources(data.resources)
+        setCategories(data.categories)
+        setLoading(false)
+      })
+  }, [])
+
+  const filtered = resources.filter((r) => {
+    const matchesCategory = activeCategory === 'All' || r.category === activeCategory
+    const matchesSearch =
+      !search ||
+      r.name.toLowerCase().includes(search.toLowerCase()) ||
+      r.description.toLowerCase().includes(search.toLowerCase()) ||
+      r.category.toLowerCase().includes(search.toLowerCase())
+    return matchesCategory && matchesSearch
+  })
+
+  return (
+    <section id="resources" className="py-20 sm:py-28 bg-muted/30">
+      <div ref={sectionRef} className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-12"
+        >
+          <Badge variant="secondary" className="mb-4 gap-1.5 px-3 py-1 text-xs font-medium">
+            <BookOpen className="size-3" />
+            Curated for Builders
+          </Badge>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-4">
+            Go From Idea to{' '}
+            <span className="gradient-text">Live Product Fast</span>
+          </h2>
+          <p className="text-muted-foreground text-base sm:text-lg max-w-2xl mx-auto">
+            Unlock the tools you need to take your business to the next level
+            — all curated, tested, and free to start. Your hub of 120+
+            resources across 21 categories.
+          </p>
+        </motion.div>
+
+        {/* Search & Filter Bar */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="mb-8 space-y-4"
+        >
+          <div className="relative max-w-md mx-auto">
+            <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 size-4 text-muted-foreground" />
+            <Input
+              type="text"
+              placeholder="Search resources..."
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              className="pl-10 rounded-full h-11 bg-background border-border"
+            />
+          </div>
+          <div className="flex flex-wrap justify-center gap-2">
+            <button
+              onClick={() => setActiveCategory('All')}
+              className={`px-3.5 py-1.5 rounded-full text-xs font-medium transition-all ${
+                activeCategory === 'All'
+                  ? 'bg-emerald text-emerald-foreground shadow-sm'
+                  : 'bg-background border border-border text-muted-foreground hover:text-foreground hover:border-foreground/30'
+              }`}
+            >
+              All ({resources.length})
+            </button>
+            {categories.map((cat) => {
+              const count = resources.filter((r) => r.category === cat).length
+              return (
+                <button
+                  key={cat}
+                  onClick={() => setActiveCategory(cat)}
+                  className={`px-3.5 py-1.5 rounded-full text-xs font-medium transition-all ${
+                    activeCategory === cat
+                      ? 'bg-emerald text-emerald-foreground shadow-sm'
+                      : 'bg-background border border-border text-muted-foreground hover:text-foreground hover:border-foreground/30'
+                  }`}
+                >
+                  {cat} ({count})
+                </button>
+              )
+            })}
+          </div>
+        </motion.div>
+
+        {/* Resource Grid */}
+        {loading ? (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {Array.from({ length: 9 }).map((_, i) => (
+              <div
+                key={i}
+                className="h-32 rounded-xl bg-background animate-pulse"
+              />
+            ))}
+          </div>
+        ) : (
+          <>
+            <p className="text-sm text-muted-foreground mb-4">
+              Showing {filtered.length} of {resources.length} resources
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-h-[720px] overflow-y-auto custom-scrollbar pr-1">
+              {filtered.map((resource) => (
+                <a
+                  key={resource.id}
+                  href={resource.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex flex-col p-4 rounded-xl bg-background border border-border hover:border-emerald/40 hover:shadow-md transition-all"
+                >
+                  <div className="flex items-start justify-between gap-3 mb-2">
+                    <h3 className="font-semibold text-sm leading-tight group-hover:text-emerald transition-colors line-clamp-1">
+                      {resource.name}
+                    </h3>
+                    <ExternalLink className="size-3.5 text-muted-foreground group-hover:text-emerald shrink-0 mt-0.5 transition-colors" />
+                  </div>
+                  <p className="text-xs text-muted-foreground leading-relaxed mb-3 line-clamp-2 flex-1">
+                    {resource.description}
+                  </p>
+                  <div className="flex items-center gap-2">
+                    <Badge
+                      variant="outline"
+                      className="text-[10px] px-2 py-0 font-normal"
+                    >
+                      {resource.category}
+                    </Badge>
+                    <div className="flex gap-1.5 ml-auto">
+                      {resource.isFree && (
+                        <span className="inline-flex items-center rounded-full bg-emerald/10 text-emerald px-2 py-0.5 text-[10px] font-medium">
+                          Free
+                        </span>
+                      )}
+                      {resource.isPaid && (
+                        <span className="inline-flex items-center rounded-full bg-gold/10 text-gold px-2 py-0.5 text-[10px] font-medium">
+                          Paid
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                </a>
+              ))}
+            </div>
+            {filtered.length === 0 && (
+              <div className="text-center py-16">
+                <Sparkles className="size-10 text-muted-foreground/40 mx-auto mb-4" />
+                <p className="text-muted-foreground">
+                  No resources found matching &quot;{search}&quot;
+                </p>
+                <button
+                  onClick={() => {
+                    setSearch('')
+                    setActiveCategory('All')
+                  }}
+                  className="text-emerald text-sm mt-2 hover:underline"
+                >
+                  Clear filters
+                </button>
+              </div>
+            )}
+          </>
+        )}
+      </div>
+    </section>
+  )
+}
+
+/* ------------------------------------------------------------------ */
 /*  Main Page                                                          */
 /* ------------------------------------------------------------------ */
 export default function Home() {
@@ -100,7 +297,7 @@ export default function Home() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  const navLinks = ['Platform', 'Solutions', 'Industries', 'About', 'Contact']
+  const navLinks = ['Platform', 'Solutions', 'Industries', 'Resources', 'About', 'Contact']
 
   const { count: c1, ref: r1 } = useCounter(50)
   const { count: c2, ref: r2 } = useCounter(98)
@@ -709,7 +906,12 @@ export default function Home() {
         </section>
 
         {/* ============================================================ */}
-        {/*  10. NEWSLETTER / CTA                                         */}
+        {/*  10. RESOURCES HUB                                           */}
+        {/* ============================================================ */}
+        <ResourcesHub />
+
+        {/* ============================================================ */}
+        {/*  11. NEWSLETTER / CTA                                         */}
         {/* ============================================================ */}
         <section id="contact" className="py-20 sm:py-28 relative overflow-hidden">
           <div className="absolute inset-0 glow" aria-hidden="true" />
@@ -747,7 +949,7 @@ export default function Home() {
       </main>
 
       {/* ============================================================ */}
-      {/*  11. FOOTER                                                   */}
+      {/*  12. FOOTER                                                   */}
       {/* ============================================================ */}
       <footer className="border-t border-border bg-muted/30 mt-auto">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">

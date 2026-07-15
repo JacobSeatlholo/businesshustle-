@@ -1,0 +1,888 @@
+     1→import Bleed from 'nextra-theme-docs/bleed'
+     2→import Callout from 'nextra-theme-docs/callout'
+     3→
+     4→# Go From Idea to Live Product Fast!
+     5→
+     6→<Bleed>![Nextra Example](../public/demooo.gif)</Bleed>
+     7→
+     8→## What is this? 
+     9→
+    10→<Bleed>
+    11→  <div style={{ border: '1px solid #888', padding: '4rem 2.5rem', textAlign: 'center' }}>
+    12→    **As a business owner, you know that the more online presence you have, the better.**
+    13→
+    14→That's why we've curated a list of the best tools out there so that you can find what you need quickly.
+    15→
+    16→  </div>
+    17→</Bleed>
+    18→ 
+    19→Welcome to Your Hub of Free Resources!
+    20→
+    21→Unlock the tools you need to take your business to the next level—all for free! Here’s what you’ll gain:
+    22→
+    23→**Cost Savings:** Access high-quality software with free tiers, letting you test and grow without financial risk.
+    24→ 
+    25→**Enhanced Efficiency:** Streamline your systems and simplify your workflows to save time and energy.
+    26→
+    27→**Creative Boost:** Find innovative tools to bring your ideas to life and tackle special projects with ease.
+    28→
+    29→**Flexibility:** Experiment with different options to discover the perfect fit for your needs, all at no cost.
+    30→Why wait? Dive in today and start building smarter, faster, and more creatively. Your success story starts here—happy exploring!
+    31→
+    32→Read our terms and conditions ere.](https://businesshustle-af43.vercel.app/Our%20Story/Terms%20and%20Conditions)
+    33→
+    34→<Callout>
+    35→[`Click here`](https://app.businesshustle.co.za/) Boost Your Productivity, One Click at a Time. Try it Now!
+    36→ 
+    37→</Callout> 
+    38→
+    39→## Design & UI
+    40→
+    41→If you're a UI designer or just playing around to see what you can create these links are important to know:
+    42→
+    43→[Canva](https://www.canva.com) - 8,000+ free templates and thousands of free photos. ![Free](https://img.shields.io/badge/-Free-brightgreen)
+    44→
+    45→[Figma](https://www.figma.com) - Generate, edit and publish beautiful websites and landing pages for your startup. The Free tier allow you to have one website, fully customizable and published on the web. ![Free](https://img.shields.io/badge/-Free-brightgreen)![Paid](https://img.shields.io/badge/-Paid-blue)
+    46→
+    47→[Pixels](https://www.pexels.com) - Free stock photos for commercial use. This has a free API that allows you to search photos by keywords. ![Free](https://img.shields.io/badge/-Free-brightgreen)
+    48→
+    49→[Cool Backgrounds](https://coolbackgrounds.io) - Gain access to a collection of tools to create compelling, colorful images for blogs, social media, and websites. ![Free](https://img.shields.io/badge/-Free-brightgreen)
+    50→
+    51→[RemoveBG](https://www.remove.bg/) - Remove image bckgrounds. ![Free](https://img.shields.io/badge/-Free-brightgreen)
+    52→
+    53→[Humaaans](https://www.humaaans.com/) - Library of editable people illustrations. Free for both commercial and personal use. ![Free](https://img.shields.io/badge/-Free-brightgreen)
+    54→
+    55→[Cartoon Pho](https://cartoon.pho.to) - Turn your photos into cartoons for your website or presentations. ![Free](https://img.shields.io/badge/-Free-brightgreen)
+    56→
+    57→[Colorhunt](https://colorhunt.co) - Color Hunt is an open platform for color inspiration with thousands of trendy hand-picked color palettes. ![Free](https://img.shields.io/badge/-Free-brightgreen)
+    58→
+    59→[Palette Ninja](https://palette.ninja) - Design harmonious color schemes in seconds with Palette Ninja. ![Free](https://img.shields.io/badge/-Free-brightgreen)
+    60→
+    61→[Stripes Generator](https://stripesgenerator.com) - Stripes generator for your website. ![Free](https://img.shields.io/badge/-Free-brightgreen)
+    62→
+    63→[Photopea](https://www.photopea.com) - A Free, Advanced online design editor with Adobe Photoshop UI supporting PSD, XCF & Sketch formats (Adobe Photoshop, Gimp and Sketch App). ![Free](https://img.shields.io/badge/-Free-brightgreen)
+    64→
+    65→[Get Waves](https://getwaves.io) - An SVG wave generator to make unique SVG waves for web design. ![Free](https://img.shields.io/badge/-Free-brightgreen)
+    66→
+    67→[IconMonstr](https://iconmonstr.com) - Black and white themed minimal icons with customizeable thickness. ![Free](https://img.shields.io/badge/-Free-brightgreen)
+    68→
+    69→[Undraw](https://undraw.co) - "MIT licensed illustrations for every project you can imagine and create. ![Free](https://img.shields.io/badge/-Free-brightgreen)
+    70→
+    71→[Unscreen](https://www.unscreen.com/) - Remove Video Background 100% Automatically. ![Free](https://img.shields.io/badge/-Free-brightgreen)
+    72→
+    73→[Gratisography](https://www.gratisography.com) - Photographer Ryan McGuire provides this collection of high-resolution pictures for free. You can use them on your personal or commercial project free of copyright restrictions. ![Free](https://img.shields.io/badge/-Free-brightgreen)
+    74→
+    75→[The Noun Project](https://thenounproject.com) - Search for a noun and find an icon as simple as that. ![Free](https://img.shields.io/badge/-Free-brightgreen)
+    76→
+    77→[UI Design Daily](https://uidesigndaily.com/) - Fantastic UI Components of all types.![Free](https://img.shields.io/badge/-Free-brightgreen)
+    78→
+    79→[Paaatterns](https://products.ls.graphics/paaatterns/) - Free collection of gorgeous patterns for all vector formats ![Free](https://img.shields.io/badge/-Free-brightgreen)
+    80→
+    81→[Absurd Design](https://absurd.design/) - Free surrealist illustrations for designers and developers. ![Free](https://img.shields.io/badge/-Free-brightgreen)
+    82→
+    83→[Blush](https://blush.design/) - Free customizable illustrations with Figma Plugin. ![Free](https://img.shields.io/badge/-Free-brightgreen)
+    84→
+    85→[Pixeltrue](hhttps://www.pixeltrue.com/illustrations) - Free animated illustrations. ![Free](https://img.shields.io/badge/-Free-brightgreen)
+    86→
+    87→[Sketch Valley](https://sketchvalley.com) - Download free PNG, SVG or AI file. ![Free](https://img.shields.io/badge/-Free-brightgreen)
+    88→
+    89→[Smart upscaler](https://icons8.com/upscaler) - Upscale images by 2-4x resolution. ![Free](https://img.shields.io/badge/-Free-brightgreen)
+    90→
+    91→[Pattern Monster](https://pattern.monster) - A simple online pattern generator to create repeatable SVG patterns. Speed up your website without compromising on image quality. Perfect for website backgrounds, apparel, branding, packaging design and more. ![Free](https://img.shields.io/badge/-Free-brightgreen)
+    92→
+    93→[Dimensions](https://www.dimensions.com/) - Dimensions.com is an ongoing reference database of dimensioned drawings documenting the standard measurements and sizes of the everyday objects and spaces. ![Free](https://img.shields.io/badge/-Free-brightgreen)
+    94→
+    95→## Web Design Inspirations  
+    96→
+    97→A Curated Collection of Outstanding Website Design Inspirations
+    98→Whether you’re crafting your next website or refining an existing one, these resources will ignite your creativity and provide the inspiration you need:
+    99→
+   100→[Awwwards](https://www.awwwards.com) - Showcasing the pinnacle of design, creativity, and innovation online. Awwwards features and rates the best websites globally, offering endless inspiration for UI/UX enthusiasts.  ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   101→ 
+   102→[SaasLandingPage](https://saaslandingpage.com) - Explore over 600 exceptional landing page examples from leading SaaS companies. A treasure trove of ideas for your next design project. ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   103→
+   104→[Behance](https://www.behance.net/) - A dynamic platform featuring creative design projects from artists worldwide. Browse projects by style, creator, or industry. ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   105→
+   106→[Design Vault](https://designvault.io/) - Dive into a rich library of screenshots and design patterns from real-world digital products, perfect for sparking fresh ideas. ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   107→
+   108→## Email
+   109→
+   110→Top Email Marketing Tools to Boost Your Campaigns
+   111→Streamline your email marketing efforts with these versatile and user-friendly tools:
+   112→
+   113→[buttondown](https://buttondown.email) - A simple yet powerful newsletter service. Perfect for creators and marketers, offering up to 1,000 subscribers completely free. ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   114→
+   115→[forwardemail](https://forwardemail.net/en) - Effortless email forwarding for custom domains. Create and forward unlimited email addresses tied to your domain name at no cost. ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   116→
+   117→[sparkpost](https://www.sparkpost.com) - Get started with robust email delivery features, including the first 500 emails per month free—ideal for small-scale campaigns.![Free](https://img.shields.io/badge/-Free-brightgreen) ![Paid](https://img.shields.io/badge/-Paid-blue)
+   118→
+   119→
+   120→## Website hosting 
+   121→
+   122→Free hosting solutions to kickstart your website with ease:
+   123→
+   124→[netlify](https://www.netlify.com) - A seamless, Git-based serverless platform for modern web development.  ![Free](https://img.shields.io/badge/-Free-brightgreen) ![Paid](https://img.shields.io/badge/-Paid-blue)
+   125→
+   126→[sparkpost](https://www.sparkpost.com) - Free Unlimited Web Hosting Service for PHP, MySQL no ads include. ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   127→
+   128→[000webhost](https://www.000webhost.com) - Cost-free hosting with Apache, PHP, MySQL, and cPanel, though ads are displayed at the bottom of each page. ![Free](https://img.shields.io/badge/-Free-brightgreen) ![Paid](https://img.shields.io/badge/-Paid-blue)
+   129→
+   130→[toolspingdom](https://tools.pingdom.com/#5e931005ed400000) - Performance monitoring and cost analysis tools to optimize your website. ![Free](https://img.shields.io/badge/-Free-brightgreen) ![Paid](https://img.shields.io/badge/-Paid-blue) 
+   131→
+   132→## Downloadable Design Software 
+   133→
+   134→Enhance your creative projects with these free tools for UI design, photo editing, 3D modeling, and more:
+   135→
+   136→[Gimp](https://www.gimp.org/) - A powerful, open-source image editor with features comparable to Photoshop. ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   137→
+   138→[Gravit Designer](https://www.designer.io/en/) - A cross-platform vector graphic design application packed with features. ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   139→
+   140→[Be Funky](https://www.befunky.com/features/graphic-designer/) - An online graphic design platform offering easy-to-use editing tools. ![Free](https://img.shields.io/badge/-Free-brightgreen) ![Paid](https://img.shields.io/badge/-Paid-blue) 
+   141→
+   142→[Krita](https://krita.org/en/download/krita-desktop/) - A robust sketching and painting program designed for digital artists.  ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   143→
+   144→[GUI Prototyping](https://pencil.evolus.vn) - Software for creating interactive GUI prototypes for web and app design. ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   145→
+   146→[Color Picker](https://colorpicker.fr) -Open-source color software for retrieving, manipulating, and organizing colors. ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   147→
+   148→## Search Engine Optimisation 
+   149→
+   150→Boost your website's visibility and rankings with these effective SEO tools:
+   151→
+   152→Effective SEO tools for your business. SEO is an essential factor when it comes to marketing SaaS products, or making the website more visible on web browsers.
+   153→
+   154→[seositecheck](https://seositecheckup.com) - Audit your site for proper tags and errors to enhance SEO. ![Free](https://img.shields.io/badge/-Free-brightgreen) ![Paid](https://img.shields.io/badge/-Paid-blue)
+   155→
+   156→[webpagetest](http://webpagetest.org) - Run comprehensive audits with recommendations for optimizing your site's performance globally.  ![Free](https://img.shields.io/badge/-Free-brightgreen) ![Paid](https://img.shields.io/badge/-Paid-blue)
+   157→
+   158→[Backlinko](https://backlinko.com/) - Access exclusive SEO strategies shared through email tips. ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   159→
+   160→[Search Engine Land](https://searchengineland.com/) - Detailed guides, including tips on setting up Performance Max campaigns effectively.![Free](https://img.shields.io/badge/-Free-brightgreen)
+   161→
+   162→[Moz](https://moz.com/) - Industry-leading SEO software for improving traffic, rankings, and site visibility. ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   163→
+   164→[Search engine watch](https://www.searchenginewatch.com/) - The ultimate SEO newsletter & resources ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   165→
+   166→[Search engine journal](https://www.searchenginejournal.com/) - SGet expert insights and guides on SEO forecasting and strategies. ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   167→
+   168→[SEO Roundtable](https://www.seroundtable.com/) - SEO discussions and topics on different Search engine marketing strategies ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   169→
+   170→[Learning SEO](https://learningseo.io/) - A roadmap filled with free guides, tools, and resources to master SEO. ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   171→
+   172→## Content  creation 
+   173→
+   174→Writing compelling content can unlock incredible earning potential—reaching $1M+/year—no matter where you are in the world. These resources will help you refine your skills and enhance your creative toolkit:
+   175→
+   176→ockuper](https://mockuper.net) - Quickly design professional mockups for your products with this free online generator.![Free](https://img.shields.io/badge/-Free-brightgreen)
+   177→
+   178→[googlefonts](https://fonts.google.com) - Access an extensive library of free, easy-to-implement fonts for your website or projects.  ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   179→
+   180→[videoinu](https://videoinu.com) - An intuitive platform for creating and editing screen recordings or other videos online. ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   181→
+   182→[wireframe](https://wireframe.cc/) - A minimalist tool for sketching layouts and brainstorming design ideas. Ideal for quick prototyping. ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   183→
+   184→## Forms
+   185→
+   186→Forms are vital in creating user-friendly interfaces and gathering actionable feedback from your audience. These tools make form design simple and effective:
+   187→
+   188→[99inbound](https://www.99inbound.com) - Build custom forms and share them online. Receive email or Slack notifications for submissions. The free plan supports 2 forms, 100 entries per month, and basic email/Slack integrations.  ![Free](https://img.shields.io/badge/-Free-brightgreen) ![Paid](https://img.shields.io/badge/-Paid-blue)
+   189→
+   190→[webforms](https://web3forms.com) - Create contact forms for static and JAMstack websites without needing backend code. The free plan includes unlimited forms, domains, and up to 250 submissions per month.  ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   191→
+   192→## Software Development 
+   193→
+   194→Lower software development overheads by making use of the following free/paid tools. You don't need to have a technical background to get started to work with software development
+   195→
+   196→[Developer Roadmaps](https://roadmap.sh/) -  a community effort to create roadmaps, guides and other educational content to help guide the developers in picking up the path and guide their learnings.  ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   197→
+   198→[anvilworks](https://anvil.works) - Full stack web apps with nothing but Python. ![Free](https://img.shields.io/badge/-Free-brightgreen) ![Paid](https://img.shields.io/badge/-Paid-blue)
+   199→
+   200→[encore](https://encore.dev) - Get a smoother backend workflow, from idea to production. Encore uses source code analysis to radically simplify your development experience.  ![Free](https://img.shields.io/badge/-Free-brightgreen) ![Paid](https://img.shields.io/badge/-Paid-blue)
+   201→
+   202→[gearhost](https://www.gearhost.com/pricing) - A Platform for .NET and PHP apps. You will receive 256 MB of RAM for free on a shared server with limited resources.  ![Free](https://img.shields.io/badge/-Free-brightgreen) ![Paid](https://img.shields.io/badge/-Paid-blue)
+   203→
+   204→[appfleet](https://appfleet.com) - appfleet is an edge platform that allows its users to deploy containers globally to multiple regions at the same time. With a simple to use UI while automating all the complexity such as smart routing, clustering, failover, monitoring etc. Appfleet is free for open source projects and all users automatically get $10 to host whatever they want.  ![Free](https://img.shields.io/badge/-Free-brightgreen) ![Paid](https://img.shields.io/badge/-Paid-blue)
+   205→
+   206→[QR Code Generator](https://markodenic.com/tools/qr-code-generator/) - Use this tool to easily create a QR code for your project. ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   207→
+   208→[Shields](https://shields.io/) - Create badges with your own customization. ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   209→
+   210→[Over API](https://overapi.com/) - A collection of all software development cheat codes. ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   211→
+   212→[DevDocs](https://devdocs.io/) - This tool combines multiple API documentations in a fast, organized, and searchable interface. ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   213→
+   214→[Octopus](https://octopus.do/) - Sitemap builder tool. ![Free](https://img.shields.io/badge/-Free-brightgreen) ![Paid](https://img.shields.io/badge/-Paid-blue)
+   215→
+   216→[Clickminded](https://www.clickminded.com/button-generator/) - A call to action button creator. ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   217→
+   218→[HaveIbeenPwned](https://haveibeenpwned.com) - Check to see if your email or phone is in a data breach. ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   219→
+   220→## Education & Training
+   221→
+   222→Choose from a broad selection of online courses to help you and your company grow.
+   223→
+   224→>Download [Hustle Basics](https://gumroad.com/l/opbDH) by  ![Business Hustle](https://img.shields.io/badge/Business-Hustle-blue)  today and find out how to tap into an unlimited amount of internet resources for you and your business
+   225→[edx](https://www.edx.org/) - A series of University-level courses from Harvard, MIT, Wharton, and more. ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   226→
+   227→[learnui](https://learnui.design/index.html) - Learn UI design for free. ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   228→
+   229→[Youtube](https://www.youtube.com/watch?v=IqmrNUoiy7g&feature=youtu.be) - A lesson in Supply chain management by Steve Miles and John Williams, MIT. ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   230→
+   231→[Techstars](https://toolkit.techstars.com/master-your-pitch) - Master your pitch and improve your communication skills. ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   232→
+   233→[Frontend Mentor](https://www.frontendmentor.io/) - Practice your coding skills using real-world UI Challenges using HTML, CSS and Javascript. ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   234→
+   235→## Practice SQL 
+   236→
+   237→Quick and easy to use SQL environment for running and experimenting code.
+   238→
+   239→[SQLZOO](https://sqlzoo.net/wiki/SQL_Tutorial) - Learn & practice SQL in stages ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   240→
+   241→[W3Schools](https://www.w3schools.com/sql/default.asp) - Learn to code for free ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   242→
+   243→[SQLize](https://sqlize.online) - A free online SQL environment for quickly running, experimenting with and sharing code. You can run your SQL code on top of the most popular RDBMS including MySQL, MariaDB, SQLite, PostgreSQL and Microsoft SQL Server 2017. ![Free](https://img.shields.io/badge/-Free-brightgreen)  
+   244→
+   245→[SQLBolt](https://sqlbolt.com) - Welcome to SQLBolt, a series of interactive lessons and exercises designed to help you quickly learn SQL right in your browser. ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   246→
+   247→
+   248→## Payment Integrations 
+   249→
+   250→See challenges in a new light with accurate Project Management. and Custom decision support with our free resources. 
+   251→
+   252→[Fraudlabspro.](https://www.fraudlabspro.com/) - Help merchants to prevent payment fraud and chargebacks. Free Micro Plan available with 500 queries/month. ![Free](https://img.shields.io/badge/-Free-brightgreen) ![Paid](https://img.shields.io/badge/-Paid-blue)
+   253→
+   254→[Revenuecat.](https://www.revenuecat.com/) - Hosted backend for in-app purchases and subscriptions (iOS and Android). Free up to $10k/mo in tracked revenue. ![Free](https://img.shields.io/badge/-Free-brightgreen) ![Paid](https://img.shields.io/badge/-Paid-blue)
+   255→
+   256→[Currencystack.](https://currencystack.io/) - Production-ready real-time exchange rates for 154 currencies. ![Free](https://img.shields.io/badge/-Free-brightgreen) ![Paid](https://img.shields.io/badge/-Paid-blue)
+   257→
+   258→[Exchangerate_api.](https://www.exchangerate-api.com/) - An easy to use currency conversion JSON API. Free tier with no request limit. ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   259→
+   260→[Getbricksapp.](https://free.getbricks.app/) - A note-taking app (PWA) with a powerful built-in multiline calculator. ![Free](https://img.shields.io/badge/-Free-brightgreen) 
+   261→
+   262→## Seminar, research writing, talks, etc
+   263→
+   264→Seminars and lectures focused on teaching you how to build profitable business and various business and execution strategies.
+   265→
+   266→[Advice on Research and Writing](http://www.cs.cmu.edu/~mleone/how-to.html) - A collection of advice about how to do research and how to communicate effectively (primarily for computer scientists).
+   267→
+   268→[PHD MS Articles](http://www.cse.iitd.ac.in/~srsarangi/articles.html) - articles and views
+   269→
+   270→[Seminar and reports](https://www.cse.iitb.ac.in/~ranade/communicationskills.html) - Everyone must read this tiny book before writing the seminar report
+   271→
+   272→[Latex reference](http://latex.knobs-dials.com) - Arbitrary reference
+   273→
+   274→
+   275→## Project Management 
+   276→
+   277→Project management is all about transforming your service delivery in order to drive broad adoption and create sustainable value – Excellence in business is what we at Business Hustle strive for you to achieve.
+   278→
+   279→[Business Hustle Project Management Solution](https://app.businesshustle.co.za/product/ultimate-project-management-solution/) - Streamline the way you manage projects with our Ultimate Project Management Solution Today. ![Paid](https://img.shields.io/badge/-Paid-blue)
+   280→
+   281→[Bitwarden.](https://bitwarden.com/) - Among the easiest and safest way for individuals, teams, and business organizations to store, share, and sync sensitive data. ![Free](https://img.shields.io/badge/-Free-brightgreen) ![Paid](https://img.shields.io/badge/-Paid-blue)
+   282→
+   283→[Cally.com](https://cally.com/) - With cally.com, you can quickly and easily find a suitable date and location for your group event. ![Free](https://img.shields.io/badge/-Free-brightgreen) ![Paid](https://img.shields.io/badge/-Paid-blue)
+   284→
+   285→[Miro](https://miro.com/) - The online collaborative whiteboard platform to bring teams together, anytime, anywhere. ![Free](https://img.shields.io/badge/-Free-brightgreen) ![Paid](https://img.shields.io/badge/-Paid-blue)
+   286→
+   287→[Nuclino](https://www.nuclino.com/) - One central place for all your team's work. ![Free](https://img.shields.io/badge/-Free-brightgreen) ![Paid](https://img.shields.io/badge/-Paid-blue)
+   288→
+   289→[Pendulums](https://pendulums.io/) - Manage and track your time more efficiently using a modern time tracking tool.Pendulums is a free time tracking tool which helps you to manage your time in a better manner with an easy to use interface and useful statistics. ![Free](https://img.shields.io/badge/-Free-brightgreen) ![Paid](https://img.shields.io/badge/-Paid-blue)
+   290→
+   291→[StatusPile](https://www.statuspile.com/) - A status page of status pages. Track the status pages of your upstream providers.![Free](https://img.shields.io/badge/-Free-brightgreen) ![Paid](https://img.shields.io/badge/-Paid-blue)
+   292→
+   293→[Whereby](https://whereby.com) - With no app or installs required, and the same meeting link every time, Whereby gives you the freedom to work and manage your team from anywhere. ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   294→
+   295→[LettersPro](https://www.letterspro.com) - One of the leading providers of sample letters on the Internet. You will have access to thousands of FREE letter samples and memo templates. 100 new letter samples every month. ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   296→
+   297→[Papersizes](https://papersizes.io/) - The best resource for International Paper Sizes, Dimensions & Formats. ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   298→
+   299→[Really Good Emails](https://reallygoodemails.com/) - A site offering users loads of company e-mails from customer service to marketing. ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   300→
+   301→[Visme](https://www.visme.co) - Create presentations, infographics and more. ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   302→
+   303→[Diagrams.net](https://www.diagrams.net) - Diagram software and Flowchart maker. ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   304→
+   305→[Map in Seconds](http://mapinseconds.com/) - Visualize your data easily. ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   306→
+   307→[Whiteboard](https://witeboard.com/) - Online drawing tool. ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   308→
+   309→## Copywriting
+   310→
+   311→Platforms and markets will come and go,but if you learn how to write good copy and position your offer in the marketplace you'll probably always be in business.
+   312→
+   313→[Swiped](https://swiped.co/) - The best copywriting inspiration ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   314→
+   315→[Stripe](https://stripe.com/en-in/atlas/guides/landing-page-copy) - Guide on copywriting for landing pages ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   316→
+   317→## Product Management
+   318→
+   319→Discover ways to become more empathetic and become a better communicator as a product manager. 
+   320→
+   321→[Medium](https://t.co/Es0aylfd22?amp=1) - An easy to follow roadmap and resources to help get started and upskill in product management ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   322→
+   323→## Documentaries
+   324→
+   325→All the below are ![Free](https://img.shields.io/badge/-Free-brightgreen) 
+   326→
+   327→[Breaking the Code](https://ia801908.us.archive.org/27/items/youtube-S23yie-779k/) - Biography of Alan Turing
+   328→
+   329→[Cracking The Code Interview](https://www.youtube.com/watch?v=4NIb9l3imAo) - Cracking the Code Interview
+   330→
+   331→[Cracking the Coding Interview](https://www.youtube.com/watch?v=Eg5-tdAwclo) - Cracking the Coding Interview, Fullstack Speaker Series
+   332→
+   333→[Harvard CS50 - Asymptotic Notation (video)](https://www.youtube.com/watch?v=iOq5kSKqeR4) - Asymptotic Notation explained by Harvard
+   334→
+   335→[Machine Code Instructions (video)](https://www.youtube.com/watch?v=Mv2XQgpbTNE) - Code instructions
+   336→
+   337→Machine that Changed the World - a very good documentary about the history of computers
+   338→  - Part 1 is unavailable for free streaming due to widespread copyright claims.
+   339→  - [Part 2: Inventing the Future](https://www.youtube.com/watch?v=0iPiYxjsYKk)
+   340→  - [Part 3: The Paperback Computer](https://www.youtube.com/watch?v=d7DKVfOXr54)
+   341→  - [Part 4: The Thinking Machine](https://www.youtube.com/watch?v=enWWlx7-t0k)
+   342→  - [Part 5; The World at Your Fingertips](https://www.youtube.com/watch?v=fLLXiP7diEo)
+   343→  
+   344→[Mechanical Computer (All Parts)](https://www.youtube.com/watch?v=s1i-dnAH9Y4) - a very good video from the 1950s explaining how mechanical computers used to work without all the modern-day electronics.
+   345→
+   346→[Teach Yourself Computer Science](https://teachyourselfcs.com) - Teach Yourself Computer Science
+   347→
+   348→[The Code](https://www.youtube.com/watch?v=XMm0HsmOTFI) - Story of Linux documentary
+   349→
+   350→[The Internet's Own Boy](https://www.youtube.com/watch?v=9vz06QO3UkQ) - The Story of Aaron Swartz
+   351→
+   352→## Learn Artificial Intelligence(AI)
+   353→
+   354→Opportunities in AI are endless. Learning how to implement the technology one of the most important concepts to gain understaning of.
+   355→
+   356→[aima](http://aima.cs.berkeley.edu) - The leading textbook in Artificial Intelligence (4th most cited publication of the century). Includes Github repositories and more AI resources! ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   357→
+   358→[fast.ai](http://course.fast.ai) - Free practical *deep learning* course for coders without grad-level maths! ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   359→
+   360→[TypeDB](https://vaticle.com) - A Strongly-typed Database ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   361→
+   362→[What's the difference between AI- DP and ML?](https://blogs.nvidia.com/blog/2016/07/29/whats-difference-artificial-intelligence-machine-learning-deep-learning-ai/) - Difference artificial intelligence, machine-learning, deep-learning-ai ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   363→
+   364→[TensorFlow](https://www.tensorflow.org) - An open-source software library for Machine Intelligence ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   365→
+   366→## Everything in one place
+   367→
+   368→[TinyWow](https://tinywow.com) - Free tools for pretty much anything you need to do online.
+   369→
+   370→[API Documentation](http://devdocs.io) - A one-place well-known API Documentation with a searchable interface ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   371→
+   372→[Baeldung](https://www.baeldung.com) - Step-by-step guides for Spring, rest, Java, security, persistence, Jackson, HTTP client-side and Kotlin ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   373→
+   374→[Up for Grabs](https://up-for-grabs.net/beta/index.html) - A list of open-source projects for contributors.
+   375→
+   376→[cheat.sh](https://github.com/chubin/cheat.sh) - `curl cheat.sh` — the only cheat sheet you need — instant answers on programming questions with `curl` ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   377→
+   378→[Developer Roadmaps](https://roadmap.sh/) - Step by step guides and paths to learn different tools or technologies ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   379→
+   380→[DevURLs](https://devurls.com/) - Developer news aggregator ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   381→
+   382→[Kaggle](https://www.kaggle.com/) - All-in-one Machine Learning and Data Science Community – access free GPUs and a huge repository of community published data & code. ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   383→
+   384→[MDN Web Docs](https://developer.mozilla.org/en-US/) - A place with all the documentation of the web standards ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   385→
+   386→[Rico's cheatsheets](https://devhints.io) - A set of good cheatsheets for developers ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   387→
+   388→[Programming Subreddits](https://www.reddit.com/user/ashish2199/m/cs_student_subs/) - a multisubreddit of all subreddits of topics related to computer science and programming.
+   389→
+   390→[gitignore](https://www.gitignore.io/) - A collection of useful .gitignore templates for your project. Select from 442 Operating System, IDE, and Programming Language ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   391→
+   392→[Hidden Tools](https://hiddentools.dev/) - Discover a wide collection of tools made by the community - for you. ✨ ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   393→
+   394→[Coolors](https://coolors.co/) - Create the perfect palette or get inspired by thousands of beautiful color schemes. ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   395→
+   396→[Tailwind CSS Page Builder](https://devdojo.com/tails/app) -  The perfect Tailwind CSS Page Builder ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   397→
+   398→[LottieFiles](https://lottiefiles.com/) - The world’s largest online platform for the world’s smallest animation format for designers, developers, and more. Access Lottie animation tools and plugins for Android, iOS, and Web. ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   399→
+   400→[UI Design Daily](https://www.uidesigndaily.com/) - Weekly FREE UI resources straight to your inbox ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   401→
+   402→[Iconscout](https://iconscout.com/) - Over 2.2 Million+ Design Assets,  Curated SVGs, Vector Icons, Illustrations, 3D graphics, and Lottie Animations.  Over 3000+ assets added every day. Integrated plugins, tools, editors, and more. ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   403→
+   404→[Json API App](https://www.jsonapi.co/) - Single repository for everything you need to build better products as a developer. API, DB, Queue, Server, Webhooks, Bin, Tools, Podcasts etc. Everything you need to build super apps that our world needs. ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   405→
+   406→[Library or micro code solutions](https://onelinerhub.com/) - Community library of micro code pieces for popular issues. ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   407→
+   408→[EasyExcel](https://www.excel-easy.com) - A free tutorial on how to haw excel
+   409→
+   410→[Super Cool Illustrations](https://undraw.co/illustrations)
+   411→![Free](https://img.shields.io/badge/-Free-brightgreen)
+   412→
+   413→[A coder's guide to APIs](https://www.creativebloq.com/features/a-coders-guide-to-apis)
+   414→![Free](https://img.shields.io/badge/-Free-brightgreen)
+   415→
+   416→[Why Coding Style Matters](https://www.smashingmagazine.com/2012/10/why-coding-style-matters/)
+   417→![Free](https://img.shields.io/badge/-Free-brightgreen)
+   418→
+   419→[Google Styleguide](https://google.github.io/styleguide/htmlcssguide.html)
+   420→![Free](https://img.shields.io/badge/-Free-brightgreen)
+   421→
+   422→[Github Styleguide](https://primer.github.io/)
+   423→![Free](https://img.shields.io/badge/-Free-brightgreen)
+   424→
+   425→[Want To Become A Multi-Millionaire? Do These 15 Things Immediately.](https://journal.thriveglobal.com/want-to-become-a-multi-millionaire-do-these-15-things-immediately-e1e779a6978f?inf_contact_key=9c2f4a1eb788da91821800290cd23e49be1b7aeb634626a9fe8293d8a0fdb204)
+   426→![Free](https://img.shields.io/badge/-Free-brightgreen)
+   427→
+   428→[Interruption is Not Collaboration](https://m.signalvnoise.com/interruption-is-not-collaboration-8dfb20731569)
+   429→![Free](https://img.shields.io/badge/-Free-brightgreen)
+   430→
+   431→[Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet/)
+   432→![Free](https://img.shields.io/badge/-Free-brightgreen)
+   433→
+   434→[FlatUIColor Picker](https://www.flatuicolorpicker.com/)
+   435→![Free](https://img.shields.io/badge/-Free-brightgreen)
+   436→
+   437→[The Stocks](https://thestocks.im/)
+   438→![Free](https://img.shields.io/badge/-Free-brightgreen)
+   439→
+   440→[Array Explorer](https://sdras.github.io/array-explorer/)
+   441→![Free](https://img.shields.io/badge/-Free-brightgreen)
+   442→
+   443→[Object Explorer](https://sdras.github.io/object-explorer/)
+   444→![Free](https://img.shields.io/badge/-Free-brightgreen)
+   445→
+   446→[Create VSCode Theme Extension](https://css-tricks.com/creating-a-vs-code-theme/)
+   447→![Free](https://img.shields.io/badge/-Free-brightgreen)
+   448→
+   449→[30 Seconds of Interviews](https://30secondsofinterviews.org/)
+   450→![Free](https://img.shields.io/badge/-Free-brightgreen)
+   451→
+   452→[Andela Learning Digest](https://learning-digest.andela.com/)
+   453→![Free](https://img.shields.io/badge/-Free-brightgreen)
+   454→
+   455→[DevTube](https://dev.tube/)
+   456→![Free](https://img.shields.io/badge/-Free-brightgreen)
+   457→
+   458→[Make Front-End Shit Again](https://makefrontendshitagain.party/)![Free](https://img.shields.io/badge/-Free-brightgreen)
+   459→
+   460→[Learn algorithms from Tushar Roy for jobs](https://github.com/mission-peace)
+   461→![Free](https://img.shields.io/badge/-Free-brightgreen)
+   462→
+   463→[Refactoring, write awesome code](https://sourcemaking.com/refactoring)
+   464→![Free](https://img.shields.io/badge/-Free-brightgreen)
+   465→
+   466→[Remove Background from Images](https://www.remove.bg/)
+   467→![Free](https://img.shields.io/badge/-Free-brightgreen)
+   468→
+   469→[Creative Coding Experiments Blog](https://tympanus.net/codrops/)
+   470→![Free]![Free](https://img.shields.io/badge/-Free-brightgreen)
+   471→
+   472→[CanIUse](https://caniuse.com/)
+   473→![Free](https://img.shields.io/badge/-Free-brightgreen)
+   474→
+   475→[Clean Code JavaScript](https://github.com/ryanmcdermott/clean-code-javascript)![Free](https://img.shields.io/badge/-Free-brightgreen)
+   476→
+   477→[Cool Tech Confrence Talks](https://www.youtube.com/channel/UCtxCXg-UvSnTKPOzLH4wJaQ)![Free](https://img.shields.io/badge/-Free-brightgreen)
+   478→
+   479→## YouTube Channels
+   480→
+   481→All of the below are ![Free](https://img.shields.io/badge/-Free-brightgreen) 
+   482→
+   483→[C++Now (BoostCon)](https://www.youtube.com/channel/UC5e__RG9K3cHrPotPABnrwg) - C++Now (previously BoostCon) conference
+   484→
+   485→[codedive conference](https://www.youtube.com/channel/UCU0Rt8VHO5-YNQXwIjkf-1g) - codedive conference organized
+   486→
+   487→[Coding Blocks](https://www.youtube.com/user/codingblocks) - Tutorials, how to's, tips and tricks
+   488→
+   489→[Computerphile](https://www.youtube.com/user/Computerphile/videos) - Must watch for every CS student
+   490→
+   491→[ComputerHistory](https://www.youtube.com/user/ComputerHistory/videos) - for those who like to know how we reached where we are.
+   492→
+   493→[CppCon](https://www.youtube.com/user/CppCon/videos?shelf_id=0&view=0&sort=dd) - C++ Conference
+   494→
+   495→[Facebook Developers](https://www.youtube.com/user/FacebookDevelopers/videos)
+   496→
+   497→[Google Developers](https://www.youtube.com/user/GoogleDevelopers/videos)
+   498→
+   499→[GoogleTechTalks](https://www.youtube.com/user/GoogleTechTalks/videos) - Videos on trending topics and cool stuff happening in the tech industry.
+   500→
+   501→[Gynvael Coldwin](https://www.youtube.com/user/GynvaelEN) - Awesome reverse engineering and hacking(CTF) videocasts. Every Wednesday is new live streams.
+   502→
+   503→[HowToBecomeTV](https://www.youtube.com/user/HowToBecomeTV/videos) - contains great interviews of developers and people related to the tech industry.
+   504→
+   505→[Java](https://www.youtube.com/user/java/videos) - talks related to java
+   506→
+   507→[JavaOne](https://www.youtube.com/channel/UCdDhYMT2USoLdh4SZIsu_1g/videos) - Java Conference
+   508→
+   509→[javidx9](https://www.youtube.com/channel/UC-yuWVUplUJZvieEligKBkA/videos) - Game and graphics tutorials
+   510→
+   511→[Meeting C++ YT Kanalseite](https://www.youtube.com/user/MeetingCPP/videos) - Talks on C++
+   512→
+   513→[MIT OpenCourseWare](https://www.youtube.com/user/MIT/) - MIT OpenCourseWare for learning in-depth algorithms, data structures, and computer engineering
+   514→
+   515→[Murtaza's OpenCV Robotics and AI](https://www.youtube.com/c/MurtazasWorkshopRoboticsandAI/)- OpenCV, Self Driving, Robotics and AI tutorials.
+   516→
+   517→[Netflix UI Engineering](https://www.youtube.com/channel/UCGGRRqAjPm6sL3-WGBDnKJA/videos) - great videos to watch for web developers, mobile developers and those interested in some of Netflix's tech stack
+   518→
+   519→[O'Reilly](https://www.youtube.com/user/OreillyMedia/videos) - interviews and talks of the world's best technical writers.
+   520→
+   521→[Placement Grid](https://www.youtube.com/user/PlacementGrid/videos) - Interview and campus placement experience
+   522→
+   523→[Siraj Raval](https://www.youtube.com/channel/UCWN3xxRkmTPmbKwht9FuE5A) - Artificial Intelligence and deep learning tutorials videos
+   524→
+   525→[ThinMatrix](https://www.youtube.com/user/ThinMatrix/videos) - blogs and tutorials developer making a 3d game in Java using OpenGL
+   526→
+   527→[thoughtbot](https://www.youtube.com/user/ThoughtbotVideo/videos) - talks on various topics to inspire you
+   528→
+   529→[Traversy Media](https://www.youtube.com/user/TechGuyWeb/videos) - Web development and programming
+   530→
+   531→[GOTO Conference](https://www.youtube.com/user/GotoConferences) - tech talks from the GOTO Conference by Developers for Developers
+   532→
+   533→[freeCodeCamp](https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ) - freecodecamp youtube channel
+   534→
+   535→[Bo Qian](https://www.youtube.com/channel/UCEOGtxYTB6vo6MQ-WQ9W_nQ) - Learn advanced c++
+   536→
+   537→[Geeksforgeeks](https://www.youtube.com/channel/UC0RhatS1pyxInC00YKjjBqQ/videos) - geeksforgeeks youtube
+   538→
+   539→[Hacker earth](https://www.youtube.com/channel/UCYU6nvKyRYnE5kiG9JXkXpA) - Hacker earth youtube
+   540→
+   541→[Hak5](https://www.youtube.com/user/Hak5Darren) - Put together by a band of IT ninjas, security professionals, and hardcore gamers, Hak5 isn't your typical tech show. We take on hacking in the old-school sense.
+   542→
+   543→[Khan Academy](https://www.youtube.com/channel/UC4a-Gbdw7vOaccHmFo40b9g) - Khan Academy youtube
+   544→
+   545→## Blogs of Developers
+   546→
+   547→[Algo-Geeks](http://algo-geeks.blogspot.com) - Programming Puzzles, Math Tricks, Algorithms, etc ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   548→
+   549→[Amit Merchant](https://www.amitmerchant.com) - Tutorials, tips & tricks, and rants about programming and design. ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   550→
+   551→[Andy Heathershaw](https://www.andyheathershaw.uk) - Personal website and blog of software developer Andy Heathershaw.![Free](https://img.shields.io/badge/-Free-brightgreen)
+   552→
+   553→[Antonio081014's Algorithms Codes](http://code.antonio081014.com) - Coding Algorithms. ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   554→ 
+   555→[Archives — Ask a Manager](http://www.askamanager.org/archives) - HR-related helpful archives. ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   556→
+   557→[Armin Ronacher's Thoughts and Writings](http://lucumr.pocoo.org) - blog on Python and open source. ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   558→
+   559→[blog.might.net](http://matt.might.net/articles/) - the blog of might dot net. ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   560→
+   561→[Brendon Gregg - Linux Kernel Dev](http://www.brendangregg.com) - the blog of Brendon D. Gregg. ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   562→
+   563→[Clean Coder Blog](http://blog.cleancoder.com) - a blog of the author of the book "Clean Code". ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   564→
+   565→[CodeAhoy](https://codeahoy.com) - Blog on software and human factors. 100% Tested on Humans. ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   566→
+   567→[CoderGears Blog Insights from](http://www.codergears.com/Blog/) - the CoderGears Team. ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   568→
+   569→[Coding Geek - A blog about IT, programming and Java](http://coding-geek.com) - A blog about IT, programming and Java. ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   570→
+   571→[Coding Horror](https://blog.codinghorror.com) - Literally one the best coding blogs. ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   572→
+   573→[CSE Blog](http://www.cseblog.com) - quant, math, computer science puzzles. ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   574→
+   575→[CSS Tricks](https://css-tricks.com/) - about building websites and all that entails, mostly from a front-end perspective.![Free](https://img.shields.io/badge/-Free-brightgreen)
+   576→
+   577→[Daedtech.com](https://www.daedtech.com) - Stories about software. ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   578→
+   579→[Dan Dreams of Coding](https://dandreamsofcoding.com). ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   580→
+   581→[Eli Bendersky](http://eli.thegreenplace.net) - Everything from Python to LLVM ![Free](https://img.shields.io/badge/-Free-brightgreen)
+   582→
+   583→
+   584→## GIT and GITHUB
+   585→
+   586→[The official github guides](https://guides.github.com)
+   587→
+   588→[GitHub Learning Lab](https://lab.github.com)
+   589→
+   590→[GitHub Training](https://www.youtube.com/user/GitHubGuides)
+   591→
+   592→[Git and GitHub by freecodecamp.org](https://www.youtube.com/watch?v=vR-y_2zWrIE&list=PLWKjhJtqVAbkFiqHnNaxpOPhh9tSWMXIF)
+   593→
+   594→[Get to know Git by scotch.io (Premium content)](https://scotch.io/courses/get-to-know-git)
+   595→
+   596→[Git and GitHub for beginners (Traversy Media)](https://www.youtube.com/watch?v=SWYqp7iY_Tc)
+   597→
+   598→[Git and GitHub commands (a list)](https://github.com/joshnh/Git-Commands)
+   599→
+   600→[Pro Git](https://git-scm.com/book/en/v2)
+   601→
+   602→[Git In The Trenches](https://cbx33.github.io/gitt/intro.html)
+   603→
+   604→[How to Write a Git Commit Message](https://chris.beams.io/posts/git-commit)
+   605→
+   606→[Git Hooks](https://githooks.com)
+   607→
+   608→## Android
+   609→
+   610→[What is Android](https://www.android.com/what-is-android/)
+   611→
+   612→[Android 10](https://www.android.com/android-10/)
+   613→
+   614→[Android Open Source Project](https://source.android.com/)
+   615→
+   616→[Getting Started and be an Android Developer](https://developer.android.com/guide/slices/getting-started)
+   617→
+   618→[Introduction](https://developer.android.com/guide)
+   619→
+   620→[Build your first app](https://developer.android.com/training/basics/firstapp)
+   621→
+   622→[Whats New? AndroidX](https://developer.android.com/jetpack/androidx)
+   623→
+   624→[Migrate to AndroidX](https://developer.android.com/jetpack/androidx/migrate)
+   625→
+   626→[Learn Android](https://www.tutlane.com/tutorial/android)
+   627→
+   628→## Javascript 
+   629→
+   630→[FreeCodeCamp](https://freecodecamp.com)
+   631→
+   632→[The Odin Project](https://www.theodinproject.com)
+   633→
+   634→[Fun Fun Function](https://www.youtube.com/channel/UCO1cgjhGzsSYb1rsB4bFe4Q)
+   635→
+   636→[The Coding Train](https://www.youtube.com/user/shiffman/videos)
+   637→
+   638→[CodeSchool](https://www.codeschool.com/learn/javascript)
+   639→
+   640→[Egghead](https://egghead.io)
+   641→
+   642→[Ally.io](https://allyjs.io)
+   643→
+   644→[How to code in JavaScript Digital Ocean](https://www.digitalocean.com/community/tutorial_series/how-to-code-in-javascript)
+   645→
+   646→[Codeburst.io](https://codeburst.io)
+   647→
+   648→[Hackernoon](https://hackernoon.com)
+   649→
+   650→[YDKJS](https://github.com/getify/You-Dont-Know-JS)
+   651→
+   652→[JavaScript in 14 minutes](https://jgthms.com/javascript-in-14-minutes)
+   653→
+   654→[Scotch.io](https://scotch.io)
+   655→
+   656→[ES6 Overview in 350 Bullet Points](https://github.com/bevacqua/es6)
+   657→
+   658→[Setup Continuous Integration with Travis CI in Your Nodejs App](https://www.giftegwuenu.com/setup-continuous-integration-with-travis-ci-in-your-nodejs-app)
+   659→
+   660→[Javascript 30 by Wes Bos](https://javascript30.com)
+   661→
+   662→[ES6 for Everyone by Wes Bos](https://es6.io)
+   663→
+   664→[Alligator.io Javascript page](https://alligator.io/js)
+   665→
+   666→[JavaScript.info](https://javascript.info)
+   667→
+   668→[Object Oriented JavaScript](https://www.thenetninja.co.uk/courses/object-oriented-javascript-tutorial)
+   669→
+   670→[Learn X in Y minutes: JavaScript](https://learnxinyminutes.com/docs/javascript)
+   671→
+   672→[CSX Structured JavaScript Learning Journey by Codesmith](https://csx.codesmith.io)
+   673→
+   674→[Dev.to JavaScript](https://dev.to/t/javascript)
+   675→
+   676→[JavaScript Garden](https://bonsaiden.github.io/JavaScript-Garden)
+   677→
+   678→[Codecademy: Introduction to JavaScript](https://www.codecademy.com/learn/introduction-to-javascript)
+   679→
+   680→[Eloquent JavaScript](https://eloquentjavascript.net)
+   681→
+   682→[Mozilla's JavaScript Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide)
+   683→
+   684→[JavaScript for Cats](http://jsforcats.com)
+   685→
+   686→[Beginner JavaScript by Wes Bos](https://beginnerjavascript.com)
+   687→
+   688→[The Modern JavaScript Tutorial](https://javascript.info)
+   689→
+   690→[trekhleb/javascript-algorithms](https://github.com/trekhleb/javascript-algorithms)
+   691→
+   692→[Beginner's Series to JavaScript](https://www.youtube.com/playlist?list=PLlrxD0HtieHhW0NCG7M536uHGOtJ95Ut2)
+   693→
+   694→[learn-js](https://www.learn-js.org)
+   695→
+   696→[JavaScript Online](https://learnjavascript.online)
+   697→
+   698→[DevProjects - Free Real-World JavaScript Projects](https://www.codementor.io/projects/javascript)
+   699→
+   700→[FullStack Open](https://fullstackopen.com/en)
+   701→
+   702→[JavaScript Tutorial](https://www.javascripttutorial.net)
+   703→
+   704→[Scaler Topics - JavaScript Tutorial](https://www.scaler.com/topics/javascript)
+   705→
+   706→## Malware Analysis 
+   707→
+   708→[Malware Analyst's Cookbook and DVD: Tools and Techniques for Fighting Malicious Code](https://www.amazon.com/Malware-Analysts-Cookbook-DVD-Techniques/dp/0470613033)
+   709→
+   710→[Practical Malware Analysis](https://www.amazon.com/Practical-Malware-Analysis-Hands-Dissecting/dp/1593272901/ref=pd_sbs_14_t_0/136-7474712-7650215?_encoding=UTF8&pd_rd_i=1593272901&pd_rd_r=f8f8d7e2-f2b5-4ac7-91ce-e0355affe59a&pd_rd_w=a0873&pd_rd_wg=u2f3a&pf_rd_p=5cfcfe89-300f-47d2-b1ad-a4e27203a02a&pf_rd_r=6Q3PYAT9CC9304D9BFY4&psc=1&refRID=6Q3PYAT9CC9304D9BFY4)
+   711→
+   712→[Exploit writing Tutorial](https://www.corelan.be/index.php/2009/07/19/exploit-writing-tutorial-part-1-stack-based-overflows)
+   713→
+   714→[Shell code database](http://shell-storm.org/shellcode)
+   715→
+   716→## Markdown
+   717→
+   718→[Learn Markdown in Y minutes](https://learnxinyminutes.com/docs/markdown)
+   719→
+   720→[Markdown Tutorial](https://www.markdowntutorial.com)
+   721→
+   722→[Markdown lessons](https://commonmark.org/help/tutorial)
+   723→
+   724→[Mastering Markdown](https://masteringmarkdown.com)
+   725→
+   726→[Markdown Cheat Sheet](https://markdownguide.org/cheat-sheet)
+   727→
+   728→[Make a README](https://www.makeareadme.com)
+   729→
+   730→## Laravel 
+   731→
+   732→[list-of-21-artisan-make-commands-with-parameters](https://quickadminpanel.com/blog/list-of-21-artisan-make-commands-with-parameters)
+   733→
+   734→## PHP 
+   735→
+   736→[7 days challenge](https://www.guru99.com/php-tutorials.html)
+   737→
+   738→[The right way](https://phptherightway.com)
+   739→
+   740→[In site learn](https://www.learn-php.org)
+   741→
+   742→[Complete macos PHP setup](https://getgrav.org/blog/macos-mojave-apache-multiple-php-versions)
+   743→
+   744→[Laravel framework](https://laravel.com)
+   745→
+   746→[Laracasts](https://laracasts.com)
+   747→
+   748→[PHP Tutorial](https://www.tutorialspoint.com/php/index.htm)
+   749→
+   750→[DevProjects - Free Real-World PHP Projects](https://www.codementor.io/projects/php)
+   751→
+   752→## Podcasts
+   753→
+   754→[Behind the Tech](https://behindthetech.libsynpro.com)
+   755→
+   756→[CodeNewbie](https://www.codenewbie.org/podcast)
+   757→
+   758→[Syntax](https://syntax.fm)
+   759→
+   760→[Software Engineering Daily](https://dev.to/sedaily)
+   761→
+   762→[Indie Hackers](https://www.indiehackers.com/podcast)
+   763→
+   764→[Rework](https://rework.fm)
+   765→
+   766→[Darknet Diaries](https://darknetdiaries.com)
+   767→
+   768→[Developer Tea](https://spec.fm/podcasts/developer-tea)
+   769→
+   770→[Soft Skills Engineering](https://softskills.audio)
+   771→
+   772→[Free Code Camp](https://freecodecamp.libsyn.com)
+   773→
+   774→[Full Stack Radio](https://www.fullstackradio.com)
+   775→
+   776→[The Women in Tech Show](https://thewomenintechshow.com)
+   777→
+   778→[Front End Happy Hour](https://frontendhappyhour.com)
+   779→
+   780→[Laravel Podcast](https://www.laravelpodcast.com)
+   781→
+   782→[Laracast Snippet](https://laracasts.com/podcast)
+   783→
+   784→[Battle Tactics for Your Sexist Workplace](https://www.kuow.org/podcasts/battle-tactics)
+   785→
+   786→[Women in Tech](https://podcast.womenintechshow.com/episodes)
+   787→
+   788→[Masters Of Scale](https://mastersofscale.com)
+   789→
+   790→[Shop talk show](https://shoptalkshow.com)
+   791→
+   792→[Hanselminutes](https://www.hanselminutes.com/)
+   793→
+   794→[This Week In Tech](https://twit.tv/shows/this-week-in-tech)
+   795→
+   796→[JS Party](https://changelog.com/jsparty)
+   797→
+   798→[My Life As A Software Engineer](https://anchor.fm/mylifeasasoftwareengineer)
+   799→
+   800→[The Cynical Developer](https://cynicaldeveloper.com/)
+   801→
+   802→## Progressive Web Apps
+   803→
+   804→[The Complete Guide to Progressive Web Apps](https://flaviocopes.com/what-is-a-progressive-web-app)
+   805→
+   806→[A Beginner's Guide to Service Workers](https://medium.com/samsung-internet-dev/a-beginners-guide-to-service-workers-f76abf1960f6)
+   807→
+   808→[Progressive Web Application Codelab](https://codelabs.developers.google.com/codelabs/your-first-pwapp/#0)
+   809→
+   810→[4 important points to know about Progressive Web Apps (PWA)](https://medium.com/@deepusnath/4-points-to-keep-in-mind-before-introducing-progressive-web-apps-pwa-to-your-team-8dc66bcf6011)
+   811→
+   812→[PWA (Progressive Web App) Tutorial](https://www.thenetninja.co.uk/courses/progressive-web-app-tutorial)
+   813→
+   814→## Learning Material 
+   815→
+   816→## Youtube e-Learning links
+   817→
+   818→[Data Structures and Algorithms, How to master DSA for coding interviews?](https://youtube.com/watch?v=vA4QG1PlTRI)
+   819→
+   820→[Data Structures Easy to Advanced Course - Full Tutorial from a Google Engineer](https://youtube.com/watch?v=RBSGKlAvoiM)
+   821→
+   822→[Introduction to Data Structures](https://www.youtube.com/watch?v=xLetJpcjHS0&list=PLBlnK6fEyqRj9lld8sWIUNwlKfdUoPd1Y)
+   823→
+   824→[Data Structures - Full Course Using C and C++](https://youtube.com/watch?v=B31LgI4Y4DQ)
+   825→
+   826→[Data Structures & Algorithms By CS Dojo](https://youtube.com/watch?v=bum_19loj9A&list=PLBZBJbE_rGRV8D7XZ08LK6z-4zPoWzu5H)
+   827→
+   828→## Free online courses 
+   829→
+   830→[Introduction to Algorithms - Udacity](https://www.udacity.com/course/intro-to-algorithms--cs215)
+   831→
+   832→[Data Structures and Algorithms Specialization - UNIVERSITY OF CALIFORNIA SAN DIEGO
+   833→HSE UNIVERSITY](https://www.coursera.org/specializations/data-structures-algorithms) 
+   834→
+   835→[Algorithms, Part II  Princeton University](https://www.edx.org/course/algorithms-2)
+   836→
+   837→# Learning fundementals
+   838→
+   839→Data structures and algorithms are important to understand when dealing with data and are the basics of any programming journey. Weather you are making websites or a complex Machine Learning model, you still need some Data structure knowledge. 
+   840→
+   841→## Array 
+   842→
+   843→An array is a collection of items stored at contiguous memory locations. 
+   844→
+   845→The idea is simply to store multiple items of the same type together. This makes it easier to calculate the position of each element by simply adding an offset to a base value
+   846→
+   847→<Bleed>![Nextra Example](../public/array.png)</Bleed>
+   848→
+   849→## Linked list 
+   850→
+   851→A linked list is a linear data structure, in which the elements are not stored at contiguous memory locations, but rather continous links 
+   852→
+   853→<Bleed>![Nextra Example](../public/ll.png)</Bleed>
+   854→
+   855→## Stack 
+   856→
+   857→A Stack is a linear data structure that follows a particular order in which the operations are performed. 
+   858→
+   859→This is a Last In First Out(LIFO) data structure. It has the following operations :
+   860→
+   861→push: push an element into the stack
+   862→pop: remove the last element added
+   863→top: returns the element at top of stack
+   864→
+   865→<Bleed>![Nextra Example](../public/stack.png)</Bleed>
+   866→
+   867→## Queue 
+   868→
+   869→ A Queue is a linear structure that follows a particular order in which the operations are performed. 
+   870→
+   871→The order is First In First Out (FIFO).
+   872→
+   873→
+   874→## Tree
+   875→
+   876→ A tree is a hierarchical data structure also defined as a collection of nodes. Nodes represent value and nodes are connected by edges. 
+   877→
+   878→The tree has one node called root. The tree originates from this, and hence it does not have any parent.
+   879→
+   880→<Bleed>![Nextra Example](../public/tree.png)</Bleed>
+   881→ 
+   882→ ## Heap 
+   883→ 
+   884→ A heap is a special Tree-based data structure in which the tree is a complete binary tree. 
+   885→
+   886→Quite often Heaps can be of two types, Max-Heap and Min-Heap
+   887→
+   888→<Bleed>![Nextra Example](../public/heap.png)</Bleed>
