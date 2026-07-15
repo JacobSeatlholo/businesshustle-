@@ -141,6 +141,7 @@ export const translations: Translations = {
     'services.strategy.cta': 'Explore Solutions',
     'services.clients.title': 'Trusted by Founders Across Sectors',
     'services.clients.subtitle': 'From wellness and technology to creative industries — delivering results where it matters.',
+    'services.clients.collab': 'In collaboration with Afrocentric Solutions',
 
     // About
     'about.quote':
@@ -155,6 +156,15 @@ export const translations: Translations = {
 
     // Testimonials
     'testimonials.title': 'What Our Partners Say',
+    'testimonials.quote1': "Business Hustle's AI solutions gave Ubuntu the digital backbone we needed. Our workflow is faster, smarter, and completely transformed.",
+    'testimonials.author1': 'Ubuntu',
+    'testimonials.role1': 'Wellness & Lifestyle',
+    'testimonials.quote2': "From day one they understood our vision. Gabonewe now runs on intelligent systems that save us hours every week.",
+    'testimonials.author2': 'Gabonewe',
+    'testimonials.role2': 'Projects & Development',
+    'testimonials.quote3': "Their AI platform streamlined our patient booking and communications. Dr Wendy Dicks' practice has never been more efficient.",
+    'testimonials.author3': 'Dr Wendy Dicks',
+    'testimonials.role3': 'Healthcare Practitioner',
 
     // Resources
     'resources.badge': 'Curated for Builders',
@@ -312,6 +322,7 @@ export const translations: Translations = {
     'services.strategy.cta': 'Verken Oplossings',
     'services.clients.title': 'Vertrou deur Stigters Oor Sektore',
     'services.clients.subtitle': 'Van welstand en tegnologie tot kreatiewe bedrywe — lewer resultate waar dit saakmaak.',
+    'services.clients.collab': 'In samewerking met Afrocentric Solutions',
 
     // About
     'about.quote':
@@ -326,6 +337,15 @@ export const translations: Translations = {
 
     // Testimonials
     'testimonials.title': 'Wat Onse Vennote Sê',
+    'testimonials.quote1': "Business Hustle se KI-oplossings het Ubuntu die digitale ruggraat gegee wat ons nodig gehad het. Ons werkvloei is vinniger, slimmer, en heeltemal getransformeer.",
+    'testimonials.author1': 'Ubuntu',
+    'testimonials.role1': 'Welstand & Lewenstyl',
+    'testimonials.quote2': "Vanaf dag een het hulle ons visie verstaan. Gabonewe loop nou op intelligente stelsels wat ons ure per week bespaar.",
+    'testimonials.author2': 'Gabonewe',
+    'testimonials.role2': 'Projekte & Ontwikkeling',
+    'testimonials.quote3': "Hulle KI-platform het ons pasiëntboekings en kommunikasie gestroomlyn. Dr Wendy Dicks se praktyk was nog nooit so doeltreffend nie.",
+    'testimonials.author3': 'Dr Wendy Dicks',
+    'testimonials.role3': 'Gesondheidspraktisyn',
 
     // Resources
     'resources.badge': 'Gekureer vir Bouers',
@@ -483,6 +503,7 @@ export const translations: Translations = {
     'services.strategy.cta': 'Sihlola Izinkombiso',
     'services.clients.title': 'Abathembekile Abasungulwe Abasebenza Ezimbalwa',
     'services.clients.subtitle': 'Kusuka ku-wellness kuya kwi-technology — silulela amaphetho lapho kudingeka khona.',
+    'services.clients.collab': 'Ngokubambisana ne-Afrocentric Solutions',
 
     // About
     'about.quote':
@@ -497,6 +518,15 @@ export const translations: Translations = {
 
     // Testimonials
     'testimonials.title': 'Abahlanganyeli Bathi Ngoni',
+    'testimonials.quote1': "Amasistimu okubhekana namakhompiyutha e-Business Hustle anikeze Ubuntu isisekelo esingakanani. Umsebenzi wethu usheshile, ongakhombisi futhi ushintshiwe ngokuphelele.",
+    'testimonials.author1': 'Ubuntu',
+    'testimonials.role1': 'Impilo & Isiphilo',
+    'testimonials.quote2': "Kusukela ngosuku lokuqala baqonde isibonelo sethu. Gabonewe manje isebenzisa izinhlelo ezinamandla eziyigcina amahora ngosuku.",
+    'testimonials.author2': 'Gabonewe',
+    'testimonials.role2': 'Amaphrojekthi & Ukwakhiwa',
+    'testimonials.quote3': "Umkhondo wabo wokusebenzisa i-AI uhlule isikhathi sokubooka abaguli nokuxhumana. Umkhandlu ka-Dr Wendy Dicks awuzange ube mnandi kangaka.",
+    'testimonials.author3': 'Dr Wendy Dicks',
+    'testimonials.role3': 'Umtholampilo',
 
     // Resources
     'resources.badge': 'Okulungisiwe Abakhi',
@@ -654,6 +684,7 @@ export const translations: Translations = {
     'services.strategy.cta': 'Explorer les solutions',
     'services.clients.title': 'La Confiance des Fondateurs de Tous les Secteurs',
     'services.clients.subtitle': 'Du bien-être à la technologie en passant par les industries créatives — des résultats concrets.',
+    'services.clients.collab': 'En collaboration avec Afrocentric Solutions',
 
     // About
     'about.quote':
@@ -668,6 +699,15 @@ export const translations: Translations = {
 
     // Testimonials
     'testimonials.title': 'Ce que disent nos partenaires',
+    'testimonials.quote1': "Les solutions IA de Business Hustle ont donné à Ubuntu l'infrastructure numérique dont nous avions besoin. Notre flux de travail est plus rapide, plus intelligent et entièrement transformé.",
+    'testimonials.author1': 'Ubuntu',
+    'testimonials.role1': 'Bien-être & Style de vie',
+    'testimonials.quote2': "Dès le premier jour, ils ont compris notre vision. Gabonewe fonctionne désormais sur des systèmes intelligents qui nous font gagner des heures chaque semaine.",
+    'testimonials.author2': 'Gabonewe',
+    'testimonials.role2': 'Projets & Développement',
+    'testimonials.quote3': "Leur plateforme IA a rationalisé nos réservations de patients et nos communications. Le cabinet du Dr Wendy Dicks n'a jamais été aussi efficace.",
+    'testimonials.author3': 'Dr Wendy Dicks',
+    'testimonials.role3': 'Praticien de santé',
 
     // Resources
     'resources.badge': 'Sélectionné pour les constructeurs',
@@ -825,6 +865,7 @@ export const translations: Translations = {
     'services.strategy.cta': 'Explorar soluções',
     'services.clients.title': 'Confiado por Fundadores de Diversos Setores',
     'services.clients.subtitle': 'De bem-estar a tecnologia — entregando resultados onde importa.',
+    'services.clients.collab': 'Em colaboração com Afrocentric Solutions',
 
     // About
     'about.quote':
@@ -839,6 +880,15 @@ export const translations: Translations = {
 
     // Testimonials
     'testimonials.title': 'O Que Nossos Parceiros Dizem',
+    'testimonials.quote1': "As soluções de IA do Business Hustle deram ao Ubuntu a base digital que precisávamos. Nosso fluxo de trabalho é mais rápido, inteligente e completamente transformado.",
+    'testimonials.author1': 'Ubuntu',
+    'testimonials.role1': 'Bem-estar & Estilo de vida',
+    'testimonials.quote2': "Desde o primeiro dia eles entenderam nossa visão. A Gabonewe agora opera com sistemas inteligentes que nos economizam horas toda semana.",
+    'testimonials.author2': 'Gabonewe',
+    'testimonials.role2': 'Projetos & Desenvolvimento',
+    'testimonials.quote3': "A plataforma de IA deles otimizou nossos agendamentos de pacientes e comunicações. O consultório da Drª Wendy Dicks nunca foi tão eficiente.",
+    'testimonials.author3': 'Dr Wendy Dicks',
+    'testimonials.role3': 'Profissional de saúde',
 
     // Resources
     'resources.badge': 'Curado para Construtores',
@@ -996,6 +1046,7 @@ export const translations: Translations = {
     'services.strategy.cta': 'Tafuta suluhisho',
     'services.clients.title': 'Waaminika na Waanzilishi wa Sekta Zote',
     'services.clients.subtitle': 'Kutoka afya hadi teknolojia — tunatoa matokeo yanayohesabika.',
+    'services.clients.collab': 'Kwa ushirikiano na Afrocentric Solutions',
 
     // About
     'about.quote':
@@ -1010,6 +1061,15 @@ export const translations: Translations = {
 
     // Testimonials
     'testimonials.title': 'Washirika Wetu Wanasema Nini',
+    'testimonials.quote1': "Mfumo wa AI wa Business Hustle ulimpatia Ubuntu msingi wa kidijitali tuliomhitaji. Kazi yetu sasa ni haraka, na ufanisi wake umebadilika kabisa.",
+    'testimonials.author1': 'Ubuntu',
+    'testimonials.role1': 'Afya & Maisha',
+    'testimonials.quote2': "Toka siku ya kwanza walielewa dira yetu. Gabonewe sasa inatumia mifumo endelevu inayotupunguza masaa kila wiki.",
+    'testimonials.author2': 'Gabonewe',
+    'testimonials.role2': 'Miradi & Maendeleo',
+    'testimonials.quote3': "Jukwaa lao la AI lilisafisha mapango ya wagonjwa na mawasiliano. Zoezi la Dkt. Wendy Dicks halijawahi kuwa na ufanisi kama huu.",
+    'testimonials.author3': 'Dr Wendy Dicks',
+    'testimonials.role3': 'Mtaalamu wa afya',
 
     // Resources
     'resources.badge': 'Ilivyochaguliwa kwa Wajenzi',
@@ -1167,6 +1227,7 @@ export const translations: Translations = {
     'services.strategy.cta': 'استكشف الحلول',
     'services.clients.title': 'موثوق من قبل مؤسسي القطاعات المختلفة',
     'services.clients.subtitle': 'من الصحة والتكنولوجيا إلى الصناعات الإبداعية — نحقق نتائج حيث يهم.',
+    'services.clients.collab': 'بالتعاون مع Afrocentric Solutions',
 
     // About
     'about.quote':
@@ -1181,6 +1242,15 @@ export const translations: Translations = {
 
     // Testimonials
     'testimonials.title': 'ماذا يقول شركاؤنا',
+    'testimonials.quote1': "منحت حلول الذكاء الاصطناعي من Business Hustle شركة Ubuntu البنية الرقمية التي كنا نحتاجها. سير العمل لدينا أصبح أسرع وأذكى ومتحولًا بالكامل.",
+    'testimonials.author1': 'Ubuntu',
+    'testimonials.role1': 'العافية ونمط الحياة',
+    'testimonials.quote2': "من اليوم الأول فهموا رؤيتنا. تعمل Gabonewe الآن بأنظمة ذكية توفر علينا ساعات كل أسبوع.",
+    'testimonials.author2': 'Gabonewe',
+    'testimonials.role2': 'المشاريع والتطوير',
+    'testimonials.quote3': "بسّطت منصتهم حجوزات المرضى واتصالاتنا. لم يكن عيادة د. ويندی ديكز أكثر كفاءة من أي وقت مضى.",
+    'testimonials.author3': 'Dr Wendy Dicks',
+    'testimonials.role3': 'أخصائية رعاية صحية',
 
     // Resources
     'resources.badge': 'منتقاة للبنائين',

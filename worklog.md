@@ -189,3 +189,24 @@ Stage Summary:
 - Bridges the original Business Hustle practical offerings with the AI-focused pivot
 - All content translated across 7 languages
 - llms.txt updated with services and client information
+---
+Task ID: 10
+Agent: Main Agent
+Task: Revise clients list and testimonials with real client names + Afrocentric Solutions collaboration
+
+Work Log:
+- Read page.tsx and translations.ts to understand existing client bar and testimonials structure
+- Updated client bar in page.tsx (line ~894): replaced 4 old clients with 11 real clients: Ubuntu, Gabonewe, Institute of Kemetic & Marcus Garvey Studies, body vision.online, sunshinefoods.co.za, Smoothie On The Go, On-Safari, Postnet Gardens, Just Hearing, Dr Wendy Dicks, Honest Travel Experience
+- Added Handshake icon import from lucide-react
+- Added Afrocentric Solutions collaboration line with Handshake icon below the client bar
+- Replaced 3 hardcoded testimonial quotes with translation-keyed testimonials referencing real clients (Ubuntu, Gabonewe, Dr Wendy Dicks)
+- Updated translations.ts for all 7 languages (en, af, zu, fr, pt, sw, ar): added services.clients.collab key + 9 testimonial keys (quote1/author1/role1, quote2/author2/role2, quote3/author3/role3)
+- Verified via Agent Browser: all 11 client names visible, Afrocentric Solutions collaboration text present, all 3 testimonials render correctly, Afrikaans translations confirmed working
+
+Stage Summary:
+- Client bar now shows 11 real business clients
+- Afrocentric Solutions collaboration mentioned with Handshake icon
+- 3 testimonials feature real clients: Ubuntu (wellness), Gabonewe (projects), Dr Wendy Dicks (healthcare)
+- All 7 languages have properly translated testimonials and collaboration text
+- Dev server compiles cleanly with no errors
+

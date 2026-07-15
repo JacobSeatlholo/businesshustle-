@@ -1,0 +1,1221 @@
+     1→export type Locale = 'en' | 'af' | 'zu' | 'fr' | 'pt' | 'sw' | 'ar'
+     2→
+     3→export interface LocaleInfo {
+     4→  code: Locale
+     5→  name: string
+     6→  nativeName: string
+     7→  flag: string
+     8→  dir: 'ltr' | 'rtl'
+     9→}
+    10→
+    11→export const locales: LocaleInfo[] = [
+    12→  { code: 'en', name: 'English', nativeName: 'English', flag: '🇿🇦', dir: 'ltr' },
+    13→  { code: 'af', name: 'Afrikaans', nativeName: 'Afrikaans', flag: '🇿🇦', dir: 'ltr' },
+    14→  { code: 'zu', name: 'isiZulu', nativeName: 'isiZulu', flag: '🇿🇦', dir: 'ltr' },
+    15→  { code: 'fr', name: 'French', nativeName: 'Français', flag: '🇫🇷', dir: 'ltr' },
+    16→  { code: 'pt', name: 'Portuguese', nativeName: 'Português', flag: '🇵🇹', dir: 'ltr' },
+    17→  { code: 'sw', name: 'Swahili', nativeName: 'Kiswahili', flag: '🇰🇪', dir: 'ltr' },
+    18→  { code: 'ar', name: 'Arabic', nativeName: 'العربية', flag: '🇸🇦', dir: 'rtl' },
+    19→]
+    20→
+    21→type TranslationMap = Record<string, string>
+    22→type Translations = Record<Locale, TranslationMap>
+    23→
+    24→export const translations: Translations = {
+    25→  en: {
+    26→    // Nav
+    27→    'nav.platform': 'Platform',
+    28→    'nav.solutions': 'Solutions',
+    29→    'nav.industries': 'Industries',
+    30→    'nav.resources': 'Resources',
+    31→    'nav.about': 'About',
+    32→    'nav.contact': 'Contact',
+    33→    'nav.bookDemo': 'Book a Demo',
+    34→    'nav.openMenu': 'Open menu',
+    35→
+    36→    // Hero
+    37→    'hero.badge': 'Explore. Adapt. Evolve.',
+    38→    'hero.title1': 'AI Infrastructure',
+    39→    'hero.title2': 'for African Business',
+    40→    'hero.subtitle':
+    41→      'From your first idea to AI-powered revenue — we build the systems that transform data and manual processes into intelligent, agent-ready workflows.',
+    42→    'hero.cta1': 'Book a Demo',
+    43→    'hero.cta2': 'Explore Platform',
+    44→    'hero.stat1': 'Businesses Transformed',
+    45→    'hero.stat2': 'Client Retention',
+    46→    'hero.stat3': 'AI Operations',
+    47→
+    48→    // Trusted by
+    49→    'trusted.text': 'Trusted by leading organisations across Southern Africa',
+    50→
+    51→    // Platform
+    52→    'platform.title': 'Building Blocks, Not Black Boxes',
+    53→    'platform.subtitle':
+    54→      'Deploy on your existing stack, configure for your operations, train on your data. Infrastructure that evolves with AI.',
+    55→    'platform.vortex.tag': 'Data Platform',
+    56→    'platform.vortex.desc':
+    57→      'Get your messy, multi-source data machine-ready. Pulls scattered data into one governed, AI-ready platform.',
+    58→    'platform.flux.tag': 'Process Builder',
+    59→    'platform.flux.desc':
+    60→      'Document manual workflows for automation. Visual map of how work gets done, running every step automatically.',
+    61→    'platform.nexus.tag': 'Expert Network',
+    62→    'platform.nexus.desc':
+    63→      'A curated network of vetted AI specialists and domain experts deployed on demand for your projects.',
+    64→    'platform.pulse.tag': 'Evaluations',
+    65→    'platform.pulse.desc':
+    66→      'Run rigorous evaluation for quality, safety, and accuracy. Measure AI performance against your actual use cases.',
+    67→    'platform.axon.tag': 'AI Agents',
+    68→    'platform.axon.desc':
+    69→      'Build governed AI agents that mirror your workflows. Deploy agents that hand off finished results to your systems.',
+    70→    'platform.learnMore': 'Learn more',
+    71→
+    72→    // How it works
+    73→    'how.title': 'Weeks to Working AI, Not Months of Planning',
+    74→    'how.step1.title': 'Discover',
+    75→    'how.step1.desc':
+    76→      'We audit your data, workflows, and operations to identify where AI creates the most impact.',
+    77→    'how.step2.title': 'Build',
+    78→    'how.step2.desc':
+    79→      'Our team designs, trains, and deploys custom AI solutions integrated with your existing systems.',
+    80→    'how.step3.title': 'Scale',
+    81→    'how.step3.desc':
+    82→      'Monitor, evaluate, and continuously improve. Your AI infrastructure grows as your business evolves.',
+    83→
+    84→    // Industries
+    85→    'industries.title': 'Any Sector, Any Stack',
+    86→    'industries.subtitle': 'Built for the industries driving Africa\'s growth.',
+    87→    'industries.finance': 'Financial Services',
+    88→    'industries.finance.desc': 'Compliance, risk, and customer insight — AI that meets regulatory demands.',
+    89→    'industries.health': 'Healthcare',
+    90→    'industries.health.desc': 'Custom AI for healthcare operations, diagnostics support, and patient flow.',
+    91→    'industries.mining': 'Mining & Energy',
+    92→    'industries.mining.desc': 'Catch hazards, cut losses, prevent downtime with predictive intelligence.',
+    93→    'industries.agri': 'Agriculture',
+    94→    'industries.agri.desc': 'Forecast yields, optimise supply chains, and monitor crops with computer vision.',
+    95→    'industries.retail': 'Retail & E-commerce',
+    96→    'industries.retail.desc': 'Forecast demand, automate inventory, and personalise customer experiences.',
+    97→    'industries.logistics': 'Logistics',
+    98→    'industries.logistics.desc': 'Route optimisation, fleet management, and real-time supply chain visibility.',
+    99→    'industries.public': 'Public Sector',
+   100→    'industries.public.desc': 'Cut red tape, connect systems, and serve citizens better with AI.',
+   101→    'industries.edu': 'Education',
+   102→    'industries.edu.desc': 'Personalised learning paths, automated assessment, and institutional analytics.',
+   103→
+   104→    // Solutions
+   105→    'solutions.title': 'Featured Solutions',
+   106→    'solutions.training.title': 'AI Training & Data',
+   107→    'solutions.training.desc':
+   108→      'Research-grade annotation, training, and evaluation for machine learning models.',
+   109→    'solutions.training.stat': '100+ Models Trained',
+   110→    'solutions.automation.title': 'Back-Office Automation',
+   111→    'solutions.automation.desc':
+   112→      'Automate complex or tedious work that buries your team. Handle messy data with precision.',
+   113→    'solutions.automation.stat': '70% Time Reduction',
+   114→    'solutions.contact.title': 'Intelligent Contact Centre',
+   115→    'solutions.contact.desc':
+   116→      'Unified data, automated QA, sentiment analysis, and AI voice agents.',
+   117→    'solutions.contact.stat': '3x Efficiency Gains',
+   118→
+   119→    // Services (from Solutions page)
+   120→    'services.title': 'Real Projects. Real Work. Real Outcomes.',
+   121→    'services.subtitle': 'From strategy and business structuring to digital platforms and AI — we deliver what your business actually needs.',
+   122→    'services.hustleBasics.name': 'Hustle Basics',
+   123→    'services.hustleBasics.tag': 'Book & Guide',
+   124→    'services.hustleBasics.desc': 'The essential entry-level toolkit for entrepreneurs, freelancers, and small business owners. Turn overwhelm into clarity, ideas into action.',
+   125→    'services.hustleBasics.cta': 'Learn More',
+   126→    'services.pm.name': 'Project Manager',
+   127→    'services.pm.tag': 'Business Execution',
+   128→    'services.pm.desc': 'Our project management and execution platform — structure your business initiatives, track progress, and move from planning to execution consistently.',
+   129→    'services.pm.cta': 'Access Platform',
+   130→    'services.portal.name': 'HustlePortal™',
+   131→    'services.portal.tag': 'Digital Launch',
+   132→    'services.portal.desc': 'A professionally designed, SEO-ready landing page for your business. Credible online presence for only R1,850/year.',
+   133→    'services.portal.cta': 'Launch Online',
+   134→    'services.local.name': 'BH LOCAL',
+   135→    'services.local.tag': 'Neighbourhood Empowerment',
+   136→    'services.local.desc': 'Championing and digitally empowering neighbourhoods, streets, and business districts across South Africa.',
+   137→    'services.local.cta': 'Explore BH LOCAL',
+   138→    'services.strategy.name': 'Strategy & Structuring',
+   139→    'services.strategy.tag': 'Consulting',
+   140→    'services.strategy.desc': 'Move from ideas and vision to clear business models, strategies, and operational structure that attract funding and enable growth.',
+   141→    'services.strategy.cta': 'Explore Solutions',
+   142→    'services.clients.title': 'Trusted by Founders Across Sectors',
+   143→    'services.clients.subtitle': 'From wellness and technology to creative industries — delivering results where it matters.',
+   144→
+   145→    // About
+   146→    'about.quote':
+   147→      'Think of technology as a verb, not a noun. It provides the tools, creative people provide the imagination.',
+   148→    'about.quoteAuthor': '— Red Burns',
+   149→    'about.description':
+   150→      'Business Hustle is a complete AI solutions and digital transformation provider for African enterprises. From specialised AI agent development to data platform architecture, we handle it all — so you can focus on what matters most: your work.',
+   151→    'about.founded': 'Founded in South Africa, serving the continent.',
+   152→    'about.learnStory': 'Learn About Our Story',
+   153→    'about.builtIn': 'Built in',
+   154→    'about.forAfrica': 'for Africa',
+   155→
+   156→    // Testimonials
+   157→    'testimonials.title': 'What Our Partners Say',
+   158→
+   159→    // Resources
+   160→    'resources.badge': 'Curated for Builders',
+   161→    'resources.title1': 'Go From Idea to',
+   162→    'resources.title2': 'Live Product Fast',
+   163→    'resources.subtitle':
+   164→      'Unlock the tools you need to take your business to the next level — all curated, tested, and free to start. Your hub of 120+ resources across 21 categories.',
+   165→    'resources.searchPlaceholder': 'Search resources...',
+   166→    'resources.noResults': 'No resources found matching',
+   167→    'resources.clearFilters': 'Clear filters',
+   168→
+   169→    // Newsletter / Contact
+   170→    'contact.title1': 'Ready to Make AI Real',
+   171→    'contact.title2': 'for Your Business?',
+   172→    'contact.subtitle':
+   173→      'Join 5,000+ African business leaders receiving insights at the bleeding edge of enterprise AI.',
+   174→    'contact.placeholder': 'Enter your email',
+   175→    'contact.subscribe': 'Subscribe',
+   176→    'contact.noSpam': 'No spam. Unsubscribe anytime.',
+   177→
+   178→    // Footer
+   179→    'footer.brandDesc':
+   180→      'AI infrastructure and automation solutions built for African enterprises. Part of Simple Eternity Holdings (Pty) Ltd.',
+   181→    'footer.platform': 'Platform',
+   182→    'footer.company': 'Company',
+   183→    'footer.legal': 'Legal',
+   184→    'footer.about': 'About',
+   185→    'footer.careers': 'Careers',
+   186→    'footer.partnerships': 'Partnerships',
+   187→    'footer.blog': 'Blog',
+   188→    'footer.contactLink': 'Contact',
+   189→    'footer.privacy': 'Privacy Policy',
+   190→    'footer.terms': 'Terms of Service',
+   191→    'footer.cookies': 'Cookie Policy',
+   192→    'footer.copyright':
+   193→      '© 2025 Business Hustle Ltd. All rights reserved. Part of Simple Eternity Holdings (Pty) Ltd.',
+   194→  },
+   195→
+   196→  af: {
+   197→    // Nav
+   198→    'nav.platform': 'Platvorm',
+   199→    'nav.solutions': 'Oplossings',
+   200→    'nav.industries': 'Bedrywe',
+   201→    'nav.resources': 'Hulpbronne',
+   202→    'nav.about': 'Oor Ons',
+   203→    'nav.contact': 'Kontak',
+   204→    'nav.bookDemo': 'Boek \'n Demo',
+   205→    'nav.openMenu': 'Open kieslys',
+   206→
+   207→    // Hero
+   208→    'hero.badge': 'Verken. Pas aan. Evolueer.',
+   209→    'hero.title1': 'KI-infrastruktuur',
+   210→    'hero.title2': 'vir Afrikaanse Besighede',
+   211→    'hero.subtitle':
+   212→      'Van u eerste idee tot KI-aangedrewe inkomste — ons bou die stelsels wat data en handmatige prosesse in intelligente, agent-gereede werkvloei omskep.',
+   213→    'hero.cta1': 'Boek \'n Demo',
+   214→    'hero.cta2': 'Verken Platvorm',
+   215→    'hero.stat1': 'Besighede Getransformeer',
+   216→    'hero.stat2': 'Kliëntbehoud',
+   217→    'hero.stat3': 'KI-bedrywighede',
+   218→
+   219→    // Trusted by
+   220→    'trusted.text': 'Vertrou deur voorste organisasies dwarsdeur Suider-Afrika',
+   221→
+   222→    // Platform
+   223→    'platform.title': 'Boublokke, Geen Swartkassies Nie',
+   224→    'platform.subtitle':
+   225→      'Ontplooi op u bestaande stapel, konfigureer vir u bedrywighede, oplei op u data. Infrastruktuur wat met KI evolueer.',
+   226→    'platform.vortex.tag': 'Dataplatform',
+   227→    'platform.vortex.desc':
+   228→      'Kry u gemorsige, multi-bron data masjien-gereed. Trek verstrooide data in een beheerde, KI-gereede platform.',
+   229→    'platform.flux.tag': 'Prosesbouer',
+   230→    'platform.flux.desc':
+   231→      'Dokumenteer handmatige werkvloei vir outomatisering. Visuele kaart van hoe werk gedoen word, elke stap outomaties.',
+   232→    'platform.nexus.tag': 'Kundigenetwerk',
+   233→    'platform.nexus.desc':
+   234→      '\'N behoefde netwerk van goedgekeurde KI-spesialiste en domeinkundiges wat op aanvraag vir u projekte ontplooi word.',
+   235→    'platform.pulse.tag': 'Evaluasies',
+   236→    'platform.pulse.desc':
+   237→      'Voer streng evaluasie uit vir gehalte, veiligheid en akkuraatheid. Meet KI-prestasie teen u werklike gebruiksgewalle.',
+   238→    'platform.axon.tag': 'KI-agente',
+   239→    'platform.axon.desc':
+   240→      'Bou beheerde KI-agente wat u werkvloei weerspieël. Ontplooi agente wat voltooide resultate aan u stelsels oorhandig.',
+   241→    'platform.learnMore': 'Leer meer',
+   242→
+   243→    // How it works
+   244→    'how.title': 'Wekke na Werkende KI, Nie Maande van Beplanning Nie',
+   245→    'how.step1.title': 'Ontdek',
+   246→    'how.step1.desc':
+   247→      'Ons ouditeer u data, werkvloei en bedrywighede om te identifiseer waar KI die meeste impak skep.',
+   248→    'how.step2.title': 'Bou',
+   249→    'how.step2.desc':
+   250→      'Onspan ontwerp, oplei en ontplooi pasgemaakte KI-oplossings geïntegreer met u bestaande stelsels.',
+   251→    'how.step3.title': 'Skaal',
+   252→    'how.step3.desc':
+   253→      'Monitor, evalueer en verbeter voortdurend. U KI-infrastruktuur groei soos u besigheid evolueer.',
+   254→
+   255→    // Industries
+   256→    'industries.title': 'Enige Sektor, Enige Stapel',
+   257→    'industries.subtitle': 'Gebou vir die bedrywe wat Afrika se groei dryf.',
+   258→    'industries.finance': 'Finansiële Dienste',
+   259→    'industries.finance.desc': 'Nalewing, risiko en kliëntinsig — KI wat aan regulatoriese vereistes voldoen.',
+   260→    'industries.health': 'Gesondheidsorg',
+   261→    'industries.health.desc': 'Pasgemaakte KI vir gesondheidsorgbedrywighede, diagnostiekondersteuning en pasiëntvloei.',
+   262→    'industries.mining': 'Mynbou & Energie',
+   263→    'industries.mining.desc': 'Vang gevare, verminder verliese, voorkom stilstand met voorspellende intelligensie.',
+   264→    'industries.agri': 'Landbou',
+   265→    'industries.agri.desc': 'Voorspel oesopbrengste, optimaliseer toeleveringskettings en monitor gewasse met rekenaarvisie.',
+   266→    'industries.retail': 'Kleinhandel & E-handel',
+   267→    'industries.retail.desc': 'Voorspel vraag, outomatiseer voorraad en personaliseer kliëntervarings.',
+   268→    'industries.logistics': 'Logistiek',
+   269→    'industries.logistics.desc': 'Roete-optimalisering, vlootbestuur en intydse toeleveringsketting-sigbaarheid.',
+   270→    'industries.public': 'Openbare Sektor',
+   271→    'industries.public.desc': 'Sny rooi lint, verbind stelsels en bedien burgers beter met KI.',
+   272→    'industries.edu': 'Onderwys',
+   273→    'industries.edu.desc': 'Gepersonaliseerde leerbane, outomatiseerde assessering en institusionele analities.',
+   274→
+   275→    // Solutions
+   276→    'solutions.title': 'Uitgestaalde Oplossings',
+   277→    'solutions.training.title': 'KI-opleiding & Data',
+   278→    'solutions.training.desc':
+   279→      'Navorsingsgraad-annotasie, opleiding en evaluasie vir masjienleermodelle.',
+   280→    'solutions.training.stat': '100+ Modelle Oplei',
+   281→    'solutions.automation.title': 'Kantoor-outomatisering',
+   282→    'solutions.automation.desc':
+   283→      'Outomatiseer komplekse of lastige werk wat u span begrawe. Hanteer gemorsige data met presisie.',
+   284→    'solutions.automation.stat': '70% Tydvermindering',
+   285→    'solutions.contact.title': 'Intelligente KontakSentrum',
+   286→    'solutions.contact.desc':
+   287→      'Verenigde data, outomatiseerde gehalteversekering, sentimentanalise en KI-stemagente.',
+   288→    'solutions.contact.stat': '3x Doeltreffendheid',
+   289→
+   290→    // Services (from Solutions page)
+   291→    'services.title': 'Regte Projekte. Regte Werk. Regte Uitslae.',
+   292→    'services.subtitle': 'Van strategie en besigheidstrukturering tot digitale platforme en KI — ons lewer wat u besigheid werklik benodig.',
+   293→    'services.hustleBasics.name': 'Hustle Basics',
+   294→    'services.hustleBasics.tag': 'Boek & Gids',
+   295→    'services.hustleBasics.desc': 'Die noodsaaklike intree-vlak gereedskap vir entrepreneurs, vryskutters en kleinbesigheid eienaars. Beheer verwarring na helderheid.',
+   296→    'services.hustleBasics.cta': 'Leer Meer',
+   297→    'services.pm.name': 'Projekbestuurder',
+   298→    'services.pm.tag': 'Besigheidsuitvoering',
+   299→    'services.pm.desc': 'Ons projekbestuur- en uitvoeringsplatform — struktureer u besigheidsinisiatiewe, volg vordering, en beweeg van beplanning na uitvoering.',
+   300→    'services.pm.cta': 'Toegang tot Platvorm',
+   301→    'services.portal.name': 'HustlePortal™',
+   302→    'services.portal.tag': 'Digitale Lanseering',
+   303→    'services.portal.desc': '\'n Professioneel ontwerpte, SEO-gereed landingsblad vir u besigheid. Geloofwaardige aanlyn teenwoordigheid vir slegs R1,850/jaar.',
+   304→    'services.portal.cta': 'Lanseer Aanlyn',
+   305→    'services.local.name': 'BH LOCAL',
+   306→    'services.local.tag': 'Buurt bemagtiging',
+   307→    'services.local.desc': 'Voorstander en digitaal bemagtig buurte, strate en besigheidsdistrikte dwarsdeur Suid-Afrika.',
+   308→    'services.local.cta': 'Verken BH LOCAL',
+   309→    'services.strategy.name': 'Strategie & Strukturering',
+   310→    'services.strategy.tag': 'Konsultasie',
+   311→    'services.strategy.desc': 'Beweeg van idees na duidelike besigheidsmodelle, strategieë en operasionele struktuur wat groei moontlik maak.',
+   312→    'services.strategy.cta': 'Verken Oplossings',
+   313→    'services.clients.title': 'Vertrou deur Stigters Oor Sektore',
+   314→    'services.clients.subtitle': 'Van welstand en tegnologie tot kreatiewe bedrywe — lewer resultate waar dit saakmaak.',
+   315→
+   316→    // About
+   317→    'about.quote':
+   318→      'Dink aan tegnologie as \'n werkwoord, nie \'n selfstandige naamwoord nie. Dit verskaf die gereedskap, kreatiewe mense verskaf die verbeelding.',
+   319→    'about.quoteAuthor': '— Red Burns',
+   320→    'about.description':
+   321→      'Business Hustle is \'n volledige KI-oplossings en digitale transformasie-verskaffer vir Afrikaanse ondernemings. Van gespesialiseerde KI-agentontwikkeling tot dataplatform-argitektuur, ons hanteer dit almal — sodat u kan fokus op wat die meeste saakmaak: u werk.',
+   322→    'about.founded': 'Gestig in Suid-Afrika, dien die vasteland.',
+   323→    'about.learnStory': 'Leer Oor Ons Storie',
+   324→    'about.builtIn': 'Gebou in',
+   325→    'about.forAfrica': 'vir Afrika',
+   326→
+   327→    // Testimonials
+   328→    'testimonials.title': 'Wat Onse Vennote Sê',
+   329→
+   330→    // Resources
+   331→    'resources.badge': 'Gekureer vir Bouers',
+   332→    'resources.title1': 'Gaan Van Idee na',
+   333→    'resources.title2': 'Lewende Produk Vinnig',
+   334→    'resources.subtitle':
+   335→      'Ontsluit die gereedskap wat u nodig het om u besigheid na die volgende vlak te neem — almal gekureer, getoets en gratis om te begin. U middel van 120+ hulpbronne oor 21 kategorieë.',
+   336→    'resources.searchPlaceholder': 'Soek hulpbronne...',
+   337→    'resources.noResults': 'Geen hulpbronne gevind wat ooreenstem nie',
+   338→    'resources.clearFilters': 'Verwyder filters',
+   339→
+   340→    // Newsletter / Contact
+   341→    'contact.title1': 'Gereed om KI Werklik te Maak',
+   342→    'contact.title2': 'vir U Besigheid?',
+   343→    'contact.subtitle':
+   344→      'Sluit by 5,000+ Afrikaanse besigheidsleiers aan wat insigte ontvang aan die voorpunt van ondernemings-KI.',
+   345→    'contact.placeholder': 'Voer u e-pos in',
+   346→    'contact.subscribe': 'Teken In',
+   347→    'contact.noSpam': 'Geen gemors. Ontteken enige tyd.',
+   348→
+   349→    // Footer
+   350→    'footer.brandDesc':
+   351→      'KI-infrastruktuur en outomatiseringsoplossings gebou vir Afrikaanse ondernemings. Deel van Simple Eternity Holdings (Pty) Ltd.',
+   352→    'footer.platform': 'Platvorm',
+   353→    'footer.company': 'Maatskappy',
+   354→    'footer.legal': 'Wettig',
+   355→    'footer.about': 'Oor Ons',
+   356→    'footer.careers': 'Loopbane',
+   357→    'footer.partnerships': 'Vennootskappe',
+   358→    'footer.blog': 'Blog',
+   359→    'footer.contactLink': 'Kontak',
+   360→    'footer.privacy': 'Privaatheidsbeleid',
+   361→    'footer.terms': 'Diensvoorwaardes',
+   362→    'footer.cookies': 'Koekiebeleid',
+   363→    'footer.copyright':
+   364→      '© 2025 Business Hustle Ltd. Alle regte voorbehou. Deel van Simple Eternity Holdings (Pty) Ltd.',
+   365→  },
+   366→
+   367→  zu: {
+   368→    // Nav
+   369→    'nav.platform': 'Iplatifomu',
+   370→    'nav.solutions': 'Izinkombiso',
+   371→    'nav.industries': 'Amasayini',
+   372→    'nav.resources': 'Izinsiza',
+   373→    'nav.about': 'Ngathi',
+   374→    'nav.contact': 'Ukuxhumana',
+   375→    'nav.bookDemo': 'Bhukha iDemo',
+   376→    'nav.openMenu': 'Vula imenyu',
+   377→
+   378→    // Hero
+   379→    'hero.badge': 'Sihlola. Sifaka isimo. Sikhula.',
+   380→    'hero.title1': 'Insiza Ye-AI',
+   381→    'hero.title2': 'Kwamabhizinisi Afrika',
+   382→    'hero.subtitle':
+   383→      'Kusukela kwencwadi yakho yokuqala ukuya ekukhiqizeni okunamandla oku-AI — sibakha amasistimu abaguqula idatha namasu ahlala ngemva abe ngamasevisi anokuzenzakalela.',
+   384→    'hero.cta1': 'Bhukha iDemo',
+   385→    'hero.cta2': 'Sihlola Iplatifomu',
+   386→    'hero.stat1': 'Amabhizinisi Aqhubekile',
+   387→    'hero.stat2': 'Ukugcinwa Kwamakhasimende',
+   388→    'hero.stat3': 'Amasevisi E-AI',
+   389→
+   390→    // Trusted by
+   391→    'trusted.text': 'Abathembekile abahlanganyeli abakhulu kunzansi ye-Afrika',
+   392→
+   393→    // Platform
+   394→    'platform.title': 'Izakhiwo, HHayi Amabhokisi Amnyama',
+   395→    'platform.subtitle':
+   396→      'Qamba kusistimu yakho, lungisa ngamasevisi akho, funda ngamadatha akho. Insiza ekhula nge-AI.',
+   397→    'platform.vortex.tag': 'Iplatifomu Yedatha',
+   398→    'platform.vortex.desc':
+   399→      'Thola idatha yakho edidaywa ibe ngento evumelekile ku-AI. Hlanganisa idatha edayelayo kube nguwo wonke.',
+   400→    'platform.flux.tag': 'Umbanji Wamasu',
+   401→    'platform.flux.desc':
+   402→      'Bhala amasu akho okwenza ngemva ukuthi zibe ngamasevisi okuzenzakalela.',
+   403→    'platform.nexus.tag': 'Uxhumano Lwabakhulu',
+   404→    'platform.nexus.desc':
+   405→      'Inethiwekhi yabacwaningi be-AI nabantu abaqondise abahamba ngezibopho.',
+   406→    'platform.pulse.tag': 'Ukuhlola',
+   407→    'platform.pulse.desc':
+   408→      'Qamba ukuhlola okuqinile ngo-quality, ukuphepha, nokunembile. Velela inzuzo ye-AI.',
+   409→    'platform.axon.tag': 'Amagenti E-AI',
+   410→    'platform.axon.desc':
+   411→      'Yakha amagenti e-AI alawula amasu akho. Qamba amagenti adlulela iziphumo ku-systems yakho.',
+   412→    'platform.learnMore': 'Funda kabanzi',
+   413→
+   414→    // How it works
+   415→    'how.title': 'Amasonto ku-AI Osebenzayo, HHayi Izinyanga Zokuhlela',
+   416→    'how.step1.title': 'Thola',
+   417→    'how.step1.desc':
+   418→      'Sihlola idatha, amasu, namasevisi akho ukuthola lapho i-AI inenzuzo kakhulu.',
+   419→    'how.step2.title': 'Yakha',
+   420→    'how.step2.desc':
+   421→      'Iqembu lethu ldizayina, ifunde, futhi iqambe izinkombiso ze-AI ezihlanganisiwe ne-systems yakho.',
+   422→    'how.step3.title': 'Ngcenisa',
+   423→    'how.step3.desc':
+   424→      'Buka, hlola, futhiThuthukisa ngokuhamba kwesikhathi. Insiza ye-AI yakho ikhula njengoba ibhizinisi lakho lithuthuka.',
+   425→
+   426→    // Industries
+   427→    'industries.title': 'Noma Iyiphi Indawo, Noma Iyiphi Isethi',
+   428→    'industries.subtitle': 'Yakhiwe ngamasevisi aqhutsha ukukhula kwe-Afrika.',
+   429→    'industries.finance': 'Amasevisi Ezezimali',
+   430→    'industries.finance.desc': 'Ukuzonda umthetho, isibopho, nokubona abakhasimende — i-AI ezimisele ukulandela imithetho.',
+   431→    'industries.health': 'Amasevisi Ezempilo',
+   432→    'industries.health.desc': 'I-AI eqondile kwezempilo, usizo lokuhlola, nokuhamba kwabagula.',
+   433→    'industries.mining': 'Ukutshungula Amandla',
+   434→    'industries.mining.desc': 'Thola ingozi, nciphisa ukulahleka, geda ukumisa ngesizathu sobuhlobo.',
+   435→    'industries.agri': 'Ukulima',
+   436→    'industries.agri.desc': 'Ibala okuzuzwa, lungisa ukuhamba kwezinto, futhi buka imifino ngekhompyutha.',
+   437→    'industries.retail': 'Ukuthengisa & Othongi',
+   438→    'industries.retail.desc': 'Bala isidingo, zenzise ukugcinwa kwamagodi, futhienze amakhasimende.',
+   439→    'industries.logistics': 'Ukuthutha',
+   440→    'industries.logistics.desc': 'Ukulinganisa indlela, ukuphatha amamoto, nokubona okungokoqobo.',
+   441→    'industries.public': 'Amasevisi Aphakeme',
+   442→    'industries.public.desc': 'Sika umkhawulo, hlanganisa amasistimu, futhi sisebenzise abantu nge-AI.',
+   443→    'industries.edu': 'Imfundo',
+   444→    'industries.edu.desc': 'Indlela zokufunda ezilungele umuntu, ukuhlola okuzenzakalelayo, namakhasi.',
+   445→
+   446→    // Solutions
+   447→    'solutions.title': 'Izinkombiso Ezikhombisiwe',
+   448→    'solutions.training.title': 'Ukufunda I-AI & Idatha',
+   449→    'solutions.training.desc':
+   450→      'Ukuhlela okuyisisekelo, ukufunda, nokuhlola amamodeli okufunda ngamashini.',
+   451→    'solutions.training.stat': '100+ Amamodeli Afundiswe',
+   452→    'solutions.automation.title': 'Ukuzenzakalela KwaseOfisini',
+   453→    'solutions.automation.desc':
+   454→      'Zenzise umsebenzi onzima noma omdala owabeka iqembu lakho. Phatha idatha edayelayo nokuqondene.',
+   455→    'solutions.automation.stat': '70% Ukunciphisa Isikhathi',
+   456→    'solutions.contact.title': 'I-Centre Lokuxhumana Eliphephile',
+   457→    'solutions.contact.desc':
+   458→      'Idatha ehlanganisiwe, ukuzenzakalela kwe-QA, ukuhlola isimo, namagumbi e-AI.',
+   459→    'solutions.contact.stat': '3x Ukuzenzakalela Okuphezulu',
+   460→
+   461→    // Services (from Solutions page)
+   462→    'services.title': 'Izinhlelo Ezinqamuleli. Umsebenzi Omuhle. Amaphetho Azinzile.',
+   463→    'services.subtitle': 'Kusuka ku-strategy namakhowudi abhizinisi ukuya kuma-platform ayakhonjiwo nge-AI — sithulela okudinga ibhizinisi lakho.',
+   464→    'services.hustleBasics.name': 'Hustle Basics',
+   465→    'services.hustleBasics.tag': 'Incwadi & Umbhalo',
+   466→    'services.hustleBasics.desc': 'Amathuluzi awoqala abalulekile kubabhijini, abasebenzi bakhulu nabakhosibili. Shintsha ukungazazi ukubona okucacile.',
+   467→    'services.hustleBasics.cta': 'Funda Kabanzi',
+   468→    'services.pm.name': 'Umphathi Wezinhlelo',
+   469→    'services.pm.tag': 'Ukusebenza Kwabhizinisi',
+   470→    'services.pm.desc': 'I-platform yethu yokuphatha izinhlelo nokuzenzakalela — yakha izinhlelo zakho zokubhizinisa, ulandele inqubo, uze uhambise ukuphlanza ukuya ekusebenzeni.',
+   471→    'services.pm.cta': 'Fika Ku-Platform',
+   472→    'services.portal.name': 'HustlePortal™',
+   473→    'services.portal.tag': 'Ukuqalisa Ku-inthanethi',
+   474→    'services.portal.desc': 'Ikhasi eliqondiwe elilungiselelwe, elisebenzayo nge-SEO elithola abakuthengi. R1,850 ngonyaka.',
+   475→    'services.portal.cta': 'Qala Ku-inthanethi',
+   476→    'services.local.name': 'BH LOCAL',
+   477→    'services.local.tag': 'Ukukhulisa Izindawo',
+   478→    'services.local.desc': 'Ukuxhasa nokunika amandla amadolobha, izitshalonzalo namadolobha abhizinisi eNingizimu Afrika ngokwamakhompiutha.',
+   479→    'services.local.cta': 'Sihlola BH LOCAL',
+   480→    'services.strategy.name': 'I-Strategy & Ukumisa',
+   481→    'services.strategy.tag': 'Ingxoxo',
+   482→    'services.strategy.desc': 'Sukuma kumiklamo nohlangothi ukuya kumamodeli abhizinisi aqinisekile, amasu nokumisa okusebenza akhulisa ukukhula.',
+   483→    'services.strategy.cta': 'Sihlola Izinkombiso',
+   484→    'services.clients.title': 'Abathembekile Abasungulwe Abasebenza Ezimbalwa',
+   485→    'services.clients.subtitle': 'Kusuka ku-wellness kuya kwi-technology — silulela amaphetho lapho kudingeka khona.',
+   486→
+   487→    // About
+   488→    'about.quote':
+   489→      'Cabanga nge-technology njengesenzo, hhayi isabizwana. Iya ngezinsiza, abantu abaqondise baya ngesibonelo.',
+   490→    'about.quoteAuthor': '— Red Burns',
+   491→    'about.description':
+   492→      'I-Business Hustle yinkampani ephelele ye-AI nokushintshela kwedijithali kwamabhizinisi ase-Afrika. Kusukela kumagumbi e-AI aqondile ukuya kwakhiwo kwedatha, siphatha konke — bakwazi ukuzabalaza ngokuthi kunconywa kakhulu: umsebenzi wakho.',
+   493→    'about.founded': 'Yasungulwa eNingizimu Afrika, isebenza kuwo wonke amazwe.',
+   494→    'about.learnStory': 'Funda Ngangesiko Lethu',
+   495→    'about.builtIn': 'Yakhiwe e-',
+   496→    'about.forAfrica': 'kanye ne- Afrika',
+   497→
+   498→    // Testimonials
+   499→    'testimonials.title': 'Abahlanganyeli Bathi Ngoni',
+   500→
+   501→    // Resources
+   502→    'resources.badge': 'Okulungisiwe Abakhi',
+   503→    'resources.title1': 'Yiya Kuqala Ukusuka',
+   504→    'resources.title2': 'Kumkhiqizo Ohamba Vuli',
+   505→    'resources.subtitle':
+   506→      'Vula izinsiza ozidingayo ukuthi ukhulise ibhizinisi lakho — konke kulungisiwe, kuhlolwe, futhi mahhala ukuqala. Indawo yakho yesinsiza 120+ kumakhasi 21.',
+   507→    'resources.searchPlaceholder': 'Sesha izinsiza...',
+   508→    'resources.noResults': 'Akukho zinsiza ezitholiwe ezifana',
+   509→    'resources.clearFilters': 'Sula amafayela',
+   510→
+   511→    // Newsletter / Contact
+   512→    'contact.title1': 'Ulungele Ukwenza I-AI Iyiqiniso',
+   513→    'contact.title2': 'Kwabhizinisi Lakho?',
+   514→    'contact.subtitle':
+   515→      'Joinal abaholi abangu-5,000+ ababhizimini base-Afrika abathola izinsizo ezintsha ngomumo we-AI.',
+   516→    'contact.placeholder': 'Faka i-imeyli yakho',
+   517→    'contact.subscribe': 'Bhalisa',
+   518→    'contact.noSpam': 'Akukho dili. Uyakwazi ukuyekela noma yini.',
+   519→
+   520→    // Footer
+   521→    'footer.brandDesc':
+   522→      'Insiza ye-AI namasolutions okuzenzakalela akhiwe ngamabhizinisi ase-Afrika. Ingxenye ye-Simple Eternity Holdings (Pty) Ltd.',
+   523→    'footer.platform': 'Iplatifomu',
+   524→    'footer.company': 'Inkampani',
+   525→    'footer.legal': 'Amalungelo',
+   526→    'footer.about': 'Ngathi',
+   527→    'footer.careers': 'Amacareer',
+   528→    'footer.partnerships': 'Ubudlelwano',
+   529→    'footer.blog': 'Ibhlogi',
+   530→    'footer.contactLink': 'Ukuxhumana',
+   531→    'footer.privacy': 'Inkathi Yokuziba',
+   532→    'footer.terms': 'Imigomo Yomsebenzi',
+   533→    'footer.cookies': 'Inkathi Ye-Cookie',
+   534→    'footer.copyright':
+   535→      '© 2025 Business Hustle Ltd. Wonke amalungelo agodliwe. Ingxenye ye-Simple Eternity Holdings (Pty) Ltd.',
+   536→  },
+   537→
+   538→  fr: {
+   539→    // Nav
+   540→    'nav.platform': 'Plateforme',
+   541→    'nav.solutions': 'Solutions',
+   542→    'nav.industries': 'Industries',
+   543→    'nav.resources': 'Ressources',
+   544→    'nav.about': 'À propos',
+   545→    'nav.contact': 'Contact',
+   546→    'nav.bookDemo': 'Réserver une démo',
+   547→    'nav.openMenu': 'Ouvrir le menu',
+   548→
+   549→    // Hero
+   550→    'hero.badge': 'Explorer. S\'adapter. Évoluer.',
+   551→    'hero.title1': 'Infrastructure IA',
+   552→    'hero.title2': 'pour les Entreprises Africaines',
+   553→    'hero.subtitle':
+   554→      'De votre première idée aux revenus propulsés par l\'IA — nous construisons les systèmes qui transforment les données et les processus manuels en flux de travail intelligents et prêts pour les agents.',
+   555→    'hero.cta1': 'Réserver une démo',
+   556→    'hero.cta2': 'Explorer la plateforme',
+   557→    'hero.stat1': 'Entreprises transformées',
+   558→    'hero.stat2': 'Rétention client',
+   559→    'hero.stat3': 'Opérations IA',
+   560→
+   561→    // Trusted by
+   562→    'trusted.text': 'La confiance des organisations leaders en Afrique australe',
+   563→
+   564→    // Platform
+   565→    'platform.title': 'Blocs de construction, pas des boîtes noires',
+   566→    'platform.subtitle':
+   567→      'Déployez sur votre stack existante, configurez pour vos opérations, entraînez sur vos données. Une infrastructure qui évolue avec l\'IA.',
+   568→    'platform.vortex.tag': 'Plateforme de données',
+   569→    'platform.vortex.desc':
+   570→      'Rendez vos données multi-sources prêtes pour le machine learning. Centralisez vos données éparpillées en une plateforme gouvernée et prête pour l\'IA.',
+   571→    'platform.flux.tag': 'Constructeur de processus',
+   572→    'platform.flux.desc':
+   573→      'Documentez les processus manuels pour l\'automatisation. Cartographie visuelle du travail, chaque étape exécutée automatiquement.',
+   574→    'platform.nexus.tag': 'Réseau d\'experts',
+   575→    'platform.nexus.desc':
+   576→      'Un réseau de spécialistes IA et d\'experts métier vérifiés, déployés à la demande pour vos projets.',
+   577→    'platform.pulse.tag': 'Évaluations',
+   578→    'platform.pulse.desc':
+   579→      'Menez des évaluations rigoureuses pour la qualité, la sécurité et la précision. Mesurez les performances de l\'IA.',
+   580→    'platform.axon.tag': 'Agents IA',
+   581→    'platform.axon.desc':
+   582→      'Construisez des agents IA gouvernés qui reflètent vos workflows. Déployez des agents qui livrent les résultats finis.',
+   583→    'platform.learnMore': 'En savoir plus',
+   584→
+   585→    // How it works
+   586→    'how.title': 'Des semaines vers une IA fonctionnelle, pas des mois de planification',
+   587→    'how.step1.title': 'Découvrir',
+   588→    'how.step1.desc':
+   589→      'Nous auditons vos données, workflows et opérations pour identifier où l\'IA a le plus d\'impact.',
+   590→    'how.step2.title': 'Construire',
+   591→    'how.step2.desc':
+   592→      'Notre équipe conçoit, entraîne et déploie des solutions IA personnalisées intégrées à vos systèmes.',
+   593→    'how.step3.title': 'Évoluer',
+   594→    'how.step3.desc':
+   595→      'Surveillez, évaluez et améliorez en continu. Votre infrastructure IA grandit avec votre entreprise.',
+   596→
+   597→    // Industries
+   598→    'industries.title': 'Tous les secteurs, toutes les stacks',
+   599→    'industries.subtitle': 'Conçu pour les industries qui propulsent la croissance de l\'Afrique.',
+   600→    'industries.finance': 'Services financiers',
+   601→    'industries.finance.desc': 'Conformité, risque et analyse client — une IA qui répond aux exigences réglementaires.',
+   602→    'industries.health': 'Santé',
+   603→    'industries.health.desc': 'IA personnalisée pour les opérations de santé, aide au diagnostic et flux des patients.',
+   604→    'industries.mining': 'Mines & Énergie',
+   605→    'industries.mining.desc': 'Détectez les dangers, réduisez les pertes, évitez les arrêts avec l\'intelligence prédictive.',
+   606→    'industries.agri': 'Agriculture',
+   607→    'industries.agri.desc': 'Prévoyez les rendements, optimisez les chaînes d\'approvisionnement et surveillez les cultures.',
+   608→    'industries.retail': 'Commerce & E-commerce',
+   609→    'industries.retail.desc': 'Prévoyez la demande, automatisez les stocks et personnalisez l\'expérience client.',
+   610→    'industries.logistics': 'Logistique',
+   611→    'industries.logistics.desc': 'Optimisation des itinéraires, gestion de flotte et visibilité en temps réel.',
+   612→    'industries.public': 'Secteur public',
+   613→    'industries.public.desc': 'Réduisez la bureaucratie, connectez les systèmes et servez mieux les citoyens avec l\'IA.',
+   614→    'industries.edu': 'Éducation',
+   615→    'industries.edu.desc': 'Parcours d\'apprentissage personnalisés, évaluation automatique et analytique institutionnelle.',
+   616→
+   617→    // Solutions
+   618→    'solutions.title': 'Solutions en vedette',
+   619→    'solutions.training.title': 'Formation IA & Données',
+   620→    'solutions.training.desc':
+   621→      'Annotation, formation et évaluation de niveau recherche pour les modèles d\'apprentissage automatique.',
+   622→    'solutions.training.stat': '100+ Modèles formés',
+   623→    'solutions.automation.title': 'Automatisation du back-office',
+   624→    'solutions.automation.desc':
+   625→      'Automatisez le travail complexe ou fastidieux. Traitez les données complexes avec précision.',
+   626→    'solutions.automation.stat': '70% de réduction du temps',
+   627→    'solutions.contact.title': 'Centre de contact intelligent',
+   628→    'solutions.contact.desc':
+   629→      'Données unifiées, QA automatique, analyse de sentiment et agents vocaux IA.',
+   630→    'solutions.contact.stat': '3x Gains d\'efficacité',
+   631→
+   632→    // Services (from Solutions page)
+   633→    'services.title': 'De Vrais Projets. Du Vrai Travail. De Vrais Résultats.',
+   634→    'services.subtitle': 'De la stratégie et de la structuration d\'entreprise aux plateformes numériques et à l\'IA — nous livrons ce dont votre entreprise a vraiment besoin.',
+   635→    'services.hustleBasics.name': 'Hustle Basics',
+   636→    'services.hustleBasics.tag': 'Livre & Guide',
+   637→    'services.hustleBasics.desc': 'La boîte à outils essentielle pour les entrepreneurs, freelances et petites entreprises. Transformez la confusion en clarté et les idées en action.',
+   638→    'services.hustleBasics.cta': 'En savoir plus',
+   639→    'services.pm.name': 'Gestionnaire de Projets',
+   640→    'services.pm.tag': 'Exécution',
+   641→    'services.pm.desc': 'Notre plateforme de gestion et d\'exution — structurez vos initiatives, suivez les progrès et passez de la planification à l\'action.',
+   642→    'services.pm.cta': 'Accéder à la plateforme',
+   643→    'services.portal.name': 'HustlePortal™',
+   644→    'services.portal.tag': 'Lancement Digital',
+   645→    'services.portal.desc': 'Une page d\'atterrissage professionnelle et optimisée SEO pour votre entreprise. Présence en ligne crédible pour seulement 1 850 R/an.',
+   646→    'services.portal.cta': 'Lancer en ligne',
+   647→    'services.local.name': 'BH LOCAL',
+   648→    'services.local.tag': 'Quartiers Empowered',
+   649→    'services.local.desc': 'Championner et autonomiser numériquement les quartiers, rues et districts commerciaux à travers l\'Afrique du Sud.',
+   650→    'services.local.cta': 'Explorer BH LOCAL',
+   651→    'services.strategy.name': 'Stratégie & Structuration',
+   652→    'services.strategy.tag': 'Conseil',
+   653→    'services.strategy.desc': 'Passez des idées à des modèles commerciaux clairs, des stratégies et une structure opérationnelle qui attirent le financement.',
+   654→    'services.strategy.cta': 'Explorer les solutions',
+   655→    'services.clients.title': 'La Confiance des Fondateurs de Tous les Secteurs',
+   656→    'services.clients.subtitle': 'Du bien-être à la technologie en passant par les industries créatives — des résultats concrets.',
+   657→
+   658→    // About
+   659→    'about.quote':
+   660→      'Pensez à la technologie comme un verbe, pas un nom. Elle fournit les outils, les gens créatifs fournissent l\'imagination.',
+   661→    'about.quoteAuthor': '— Red Burns',
+   662→    'about.description':
+   663→      'Business Hustle est un fournisseur complet de solutions IA et de transformation numérique pour les entreprises africaines. Du développement d\'agents IA spécialisés à l\'architecture de plateformes de données, nous gérons tout.',
+   664→    'about.founded': 'Fondé en Afrique du Sud, au service du continent.',
+   665→    'about.learnStory': 'Découvrir notre histoire',
+   666→    'about.builtIn': 'Construit en',
+   667→    'about.forAfrica': 'pour l\'Afrique',
+   668→
+   669→    // Testimonials
+   670→    'testimonials.title': 'Ce que disent nos partenaires',
+   671→
+   672→    // Resources
+   673→    'resources.badge': 'Sélectionné pour les constructeurs',
+   674→    'resources.title1': 'De l\'idée au',
+   675→    'resources.title2': 'produit en un rien de temps',
+   676→    'resources.subtitle':
+   677→      'Débloquez les outils dont vous avez besoin pour passer au niveau supérieur — tout est sélectionné, testé et gratuit pour commencer. Votre hub de 120+ ressources dans 21 catégories.',
+   678→    'resources.searchPlaceholder': 'Rechercher des ressources...',
+   679→    'resources.noResults': 'Aucune ressource trouvée correspondant à',
+   680→    'resources.clearFilters': 'Effacer les filtres',
+   681→
+   682→    // Newsletter / Contact
+   683→    'contact.title1': 'Prêt à rendre l\'IA réelle',
+   684→    'contact.title2': 'pour votre entreprise ?',
+   685→    'contact.subtitle':
+   686→      'Rejoignez 5 000+ dirigeants d\'entreprise africains recevant des analyses à la pointe de l\'IA.',
+   687→    'contact.placeholder': 'Entrez votre email',
+   688→    'contact.subscribe': 'S\'abonner',
+   689→    'contact.noSpam': 'Pas de spam. Désabonnez-vous à tout moment.',
+   690→
+   691→    // Footer
+   692→    'footer.brandDesc':
+   693→      'Infrastructure IA et solutions d\'automatisation conçues pour les entreprises africaines. Partie de Simple Eternity Holdings (Pty) Ltd.',
+   694→    'footer.platform': 'Plateforme',
+   695→    'footer.company': 'Entreprise',
+   696→    'footer.legal': 'Juridique',
+   697→    'footer.about': 'À propos',
+   698→    'footer.careers': 'Carrières',
+   699→    'footer.partnerships': 'Partenariats',
+   700→    'footer.blog': 'Blog',
+   701→    'footer.contactLink': 'Contact',
+   702→    'footer.privacy': 'Politique de confidentialité',
+   703→    'footer.terms': 'Conditions d\'utilisation',
+   704→    'footer.cookies': 'Politique de cookies',
+   705→    'footer.copyright':
+   706→      '© 2025 Business Hustle Ltd. Tous droits réservés. Partie de Simple Eternity Holdings (Pty) Ltd.',
+   707→  },
+   708→
+   709→  pt: {
+   710→    // Nav
+   711→    'nav.platform': 'Plataforma',
+   712→    'nav.solutions': 'Soluções',
+   713→    'nav.industries': 'Indústrias',
+   714→    'nav.resources': 'Recursos',
+   715→    'nav.about': 'Sobre',
+   716→    'nav.contact': 'Contato',
+   717→    'nav.bookDemo': 'Agendar Demo',
+   718→    'nav.openMenu': 'Abrir menu',
+   719→
+   720→    // Hero
+   721→    'hero.badge': 'Explorar. Adaptar. Evoluir.',
+   722→    'hero.title1': 'Infraestrutura de IA',
+   723→    'hero.title2': 'para Empresas Africanas',
+   724→    'hero.subtitle':
+   725→      'Da sua primeira ideia a receitas impulsionadas por IA — construímos os sistemas que transformam dados e processos manuais em fluxos de trabalho inteligentes e prontos para agentes.',
+   726→    'hero.cta1': 'Agendar Demo',
+   727→    'hero.cta2': 'Explorar Plataforma',
+   728→    'hero.stat1': 'Empresas Transformadas',
+   729→    'hero.stat2': 'Retenção de Clientes',
+   730→    'hero.stat3': 'Operações de IA',
+   731→
+   732→    // Trusted by
+   733→    'trusted.text': 'Confiado por organizações líderes na África Austral',
+   734→
+   735→    // Platform
+   736→    'platform.title': 'Blocos de Construção, Não Caixas Pretas',
+   737→    'platform.subtitle':
+   738→      'Implante na sua stack existente, configure para suas operações, treine com seus dados. Infraestrutura que evolui com a IA.',
+   739→    'platform.vortex.tag': 'Plataforma de Dados',
+   740→    'platform.vortex.desc':
+   741→      'Prepare seus dados multi-fonte para uso. Centralize dados dispersos em uma plataforma governada e pronta para IA.',
+   742→    'platform.flux.tag': 'Construtor de Processos',
+   743→    'platform.flux.desc':
+   744→      'Documente processos manuais para automação. Mapa visual de como o trabalho é feito, cada passo executado automaticamente.',
+   745→    'platform.nexus.tag': 'Rede de Especialistas',
+   746→    'platform.nexus.desc':
+   747→      'Uma rede curada de especialistas em IA e especialistas de domínio implantados sob demanda para seus projetos.',
+   748→    'platform.pulse.tag': 'Avaliações',
+   749→    'platform.pulse.desc':
+   750→      'Execute avaliações rigorosas de qualidade, segurança e precisão. Meça o desempenho da IA nos seus casos reais.',
+   751→    'platform.axon.tag': 'Agentes de IA',
+   752→    'platform.axon.desc':
+   753→      'Construa agentes de IA governados que espelham seus workflows. Implante agentes que entregam resultados ao seus sistemas.',
+   754→    'platform.learnMore': 'Saiba mais',
+   755→
+   756→    // How it works
+   757→    'how.title': 'Semanas para IA Funcional, Não Meses de Planejamento',
+   758→    'how.step1.title': 'Descobrir',
+   759→    'how.step1.desc':
+   760→      'Auditamos seus dados, workflows e operações para identificar onde a IA cria mais impacto.',
+   761→    'how.step2.title': 'Construir',
+   762→    'how.step2.desc':
+   763→      'Nossa equipe projeta, treina e implanta soluções de IA personalizadas integradas aos seus sistemas.',
+   764→    'how.step3.title': 'Escalar',
+   765→    'how.step3.desc':
+   766→      'Monitore, avalie e melhore continuamente. Sua infraestrutura de IA cresce conforme seu negócio evolui.',
+   767→
+   768→    // Industries
+   769→    'industries.title': 'Qualquer Setor, Qualquer Stack',
+   770→    'industries.subtitle': 'Construído para as indústrias que impulsionam o crescimento da África.',
+   771→    'industries.finance': 'Serviços Financeiros',
+   772→    'industries.finance.desc': 'Conformidade, risco e análise de clientes — IA que atende demandas regulatórias.',
+   773→    'industries.health': 'Saúde',
+   774→    'industries.health.desc': 'IA personalizada para operações de saúde, suporte diagnóstico e fluxo de pacientes.',
+   775→    'industries.mining': 'Mineração & Energia',
+   776→    'industries.mining.desc': 'Detecte perigos, reduza perdas, evite paradas com inteligência preditiva.',
+   777→    'industries.agri': 'Agricultura',
+   778→    'industries.agri.desc': 'Preveja safras, otimize cadeias de suprimentos e monitore lavouras com visão computacional.',
+   779→    'industries.retail': 'Varejo & E-commerce',
+   780→    'industries.retail.desc': 'Preveja demanda, automatize estoque e personalize experiências do cliente.',
+   781→    'industries.logistics': 'Logística',
+   782→    'industries.logistics.desc': 'Otimização de rotas, gestão de frotas e visibilidade em tempo real da cadeia de suprimentos.',
+   783→    'industries.public': 'Setor Público',
+   784→    'industries.public.desc': 'Corte burocracia, conecte sistemas e sirva melhor os cidadãos com IA.',
+   785→    'industries.edu': 'Educação',
+   786→    'industries.edu.desc': 'Trilhas de aprendizagem personalizadas, avaliação automatizada e análise institucional.',
+   787→
+   788→    // Solutions
+   789→    'solutions.title': 'Soluções em Destaque',
+   790→    'solutions.training.title': 'Treinamento de IA & Dados',
+   791→    'solutions.training.desc':
+   792→      'Anotação de nível de pesquisa, treinamento e avaliação para modelos de aprendizado de máquina.',
+   793→    'solutions.training.stat': '100+ Modelos Treinados',
+   794→    'solutions.automation.title': 'Automação de Back-office',
+   795→    'solutions.automation.desc':
+   796→      'Automatize trabalho complexo ou tedioso. Trate dados confusos com precisão.',
+   797→    'solutions.automation.stat': '70% de Redução de Tempo',
+   798→    'solutions.contact.title': 'Central de Contato Inteligente',
+   799→    'solutions.contact.desc':
+   800→      'Dados unificados, QA automatizado, análise de sentimento e agentes de voz com IA.',
+   801→    'solutions.contact.stat': '3x Ganhos de Eficiência',
+   802→
+   803→    // Services (from Solutions page)
+   804→    'services.title': 'Projetos Reais. Trabalho Real. Resultados Reais.',
+   805→    'services.subtitle': 'Da estratégia e estruturação empresarial a plataformas digitais e IA — entregamos o que seu negócio realmente precisa.',
+   806→    'services.hustleBasics.name': 'Hustle Basics',
+   807→    'services.hustleBasics.tag': 'Livro & Guia',
+   808→    'services.hustleBasics.desc': 'O kit de ferramentas essencial para empreendedores, freelancers e pequenas empresas. Transforme confusão em clareza e ideias em ação.',
+   809→    'services.hustleBasics.cta': 'Saiba mais',
+   810→    'services.pm.name': 'Gerenciador de Projetos',
+   811→    'services.pm.tag': 'Execução de Negócios',
+   812→    'services.pm.desc': 'Nossa plataforma de gestão e execução — estruture suas iniciativas, acompanhe o progresso e passe do planejamento à execução.',
+   813→    'services.pm.cta': 'Acessar plataforma',
+   814→    'services.portal.name': 'HustlePortal™',
+   815→    'services.portal.tag': 'Lançamento Digital',
+   816→    'services.portal.desc': 'Uma landing page profissional e otimizada para SEO. Presença online credível por apenas R1,850/ano.',
+   817→    'services.portal.cta': 'Lançar online',
+   818→    'services.local.name': 'BH LOCAL',
+   819→    'services.local.tag': 'Empoderamento de Vizinhanças',
+   820→    'services.local.desc': 'Promover e capacitar digitalmente bairros, ruas e distritos comerciais pela África do Sul.',
+   821→    'services.local.cta': 'Explorar BH LOCAL',
+   822→    'services.strategy.name': 'Estratégia & Estruturação',
+   823→    'services.strategy.tag': 'Consultoria',
+   824→    'services.strategy.desc': 'Mova de ideias para modelos de negócios claros, estratégias e estrutura operacional que atrai financiamento.',
+   825→    'services.strategy.cta': 'Explorar soluções',
+   826→    'services.clients.title': 'Confiado por Fundadores de Diversos Setores',
+   827→    'services.clients.subtitle': 'De bem-estar a tecnologia — entregando resultados onde importa.',
+   828→
+   829→    // About
+   830→    'about.quote':
+   831→      'Pense na tecnologia como um verbo, não um substantivo. Ela fornece as ferramentas, pessoas criativas fornecem a imaginação.',
+   832→    'about.quoteAuthor': '— Red Burns',
+   833→    'about.description':
+   834→      'A Business Hustle é um provedor completo de soluções de IA e transformação digital para empresas africanas. Do desenvolvimento de agentes de IA especializados à arquitetura de plataformas de dados, cuidamos de tudo.',
+   835→    'about.founded': 'Fundada na África do Sul, servindo o continente.',
+   836→    'about.learnStory': 'Conheça Nossa História',
+   837→    'about.builtIn': 'Construído na',
+   838→    'about.forAfrica': 'para a África',
+   839→
+   840→    // Testimonials
+   841→    'testimonials.title': 'O Que Nossos Parceiros Dizem',
+   842→
+   843→    // Resources
+   844→    'resources.badge': 'Curado para Construtores',
+   845→    'resources.title1': 'Da Ideia ao',
+   846→    'resources.title2': 'Produto Rápido',
+   847→    'resources.subtitle':
+   848→      'Desbloqueie as ferramentas que você precisa para levar seu negócio ao próximo nível — tudo curado, testado e gratuito para começar. Seu hub com 120+ recursos em 21 categorias.',
+   849→    'resources.searchPlaceholder': 'Pesquisar recursos...',
+   850→    'resources.noResults': 'Nenhum recurso encontrado correspondente a',
+   851→    'resources.clearFilters': 'Limpar filtros',
+   852→
+   853→    // Newsletter / Contact
+   854→    'contact.title1': 'Pronto Para Tornar a IA Realidade',
+   855→    'contact.title2': 'Para Seu Negócio?',
+   856→    'contact.subtitle':
+   857→      'Junte-se a 5.000+ líderes empresariais africanos recebendo insights na vanguarda da IA empresarial.',
+   858→    'contact.placeholder': 'Digite seu email',
+   859→    'contact.subscribe': 'Inscrever-se',
+   860→    'contact.noSpam': 'Sem spam. Cancele a qualquer momento.',
+   861→
+   862→    // Footer
+   863→    'footer.brandDesc':
+   864→      'Infraestrutura de IA e soluções de automação construídas para empresas africanas. Parte da Simple Eternity Holdings (Pty) Ltd.',
+   865→    'footer.platform': 'Plataforma',
+   866→    'footer.company': 'Empresa',
+   867→    'footer.legal': 'Legal',
+   868→    'footer.about': 'Sobre',
+   869→    'footer.careers': 'Carreiras',
+   870→    'footer.partnerships': 'Parcerias',
+   871→    'footer.blog': 'Blog',
+   872→    'footer.contactLink': 'Contato',
+   873→    'footer.privacy': 'Política de Privacidade',
+   874→    'footer.terms': 'Termos de Serviço',
+   875→    'footer.cookies': 'Política de Cookies',
+   876→    'footer.copyright':
+   877→      '© 2025 Business Hustle Ltd. Todos os direitos reservados. Parte da Simple Eternity Holdings (Pty) Ltd.',
+   878→  },
+   879→
+   880→  sw: {
+   881→    // Nav
+   882→    'nav.platform': 'Jukwaa',
+   883→    'nav.solutions': 'Suluhisho',
+   884→    'nav.industries': 'Viwanda',
+   885→    'nav.resources': 'Rasilimali',
+   886→    'nav.about': 'Kuhusu',
+   887→    'nav.contact': 'Mawasiliano',
+   888→    'nav.bookDemo': 'Panga Demo',
+   889→    'nav.openMenu': 'Fungua menyu',
+   890→
+   891→    // Hero
+   892→    'hero.badge': 'Chunguza. Kubali. Endelea.',
+   893→    'hero.title1': 'Miundombinu ya AI',
+   894→    'hero.title2': 'kwa Biashara za Afrika',
+   895→    'hero.subtitle':
+   896→      'Kutoka wazo lako la kwanza hadi mapato yanayotokana na AI — tunajenga mifumo inayobadilisha data na mchakato wa kibinadamu kuwa mtiririko wa kazi wenye akili.',
+   897→    'hero.cta1': 'Panga Demo',
+   898→    'hero.cta2': 'Chunguza Jukwaa',
+   899→    'hero.stat1': 'Biashara Zilizobadilishwa',
+   900→    'hero.stat2': 'Ushikamaji wa Wateja',
+   901→    'hero.stat3': 'Uendeshaji wa AI',
+   902→
+   903→    // Trusted by
+   904→    'trusted.text': 'Wanaotegemewa na mashirika yanayoongoza kusini mwa Afrika',
+   905→
+   906→    // Platform
+   907→    'platform.title': 'Vifungo vya Ujenzi, Si Sanduku Nyeusi',
+   908→    'platform.subtitle':
+   909→      'Sanikisha kwenye mfumo wako, sanifisha kwa shughuli zako, funza kwa data yako. Miundombinu inayoendelea na AI.',
+   910→    'platform.vortex.tag': 'Jukwaa la Data',
+   911→    'platform.vortex.desc':
+   912→      'Pata data yako iliyochanganyika iwe tayari kwa mashine. Kusanya data iliyosambazwa kwenye jukwaa moja.',
+   913→    'platform.flux.tag': 'Muundaji wa Mchakato',
+   914→    'platform.flux.desc':
+   915→      'Andika mchakato wa kibinadamu kwa otomatiki. Ramani ya kuona jinsi kazi inavyofanywa, kila hatua ikitembea peke yake.',
+   916→    'platform.nexus.tag': 'Mtandao wa Wataalam',
+   917→    'platform.nexus.desc':
+   918→      'Mtandao uliochaguliwa wa wataalamu wa AI na wataalam wa uwanja wanaotumwa kwa ombi kwa miradi yako.',
+   919→    'platform.pulse.tag': 'Tathmini',
+   920→    'platform.pulse.desc':
+   921→      'Fanya tathmini kali ya ubora, usalama, na usahihi. Pima utendaji wa AI dhidi ya matumizi yako halisi.',
+   922→    'platform.axon.tag': 'Wakala wa AI',
+   923→    'platform.axon.desc':
+   924→      'Jenga wakala wa AI wenye utawala wanaoakisi mchakato wako. Sanikisha wakala wanaohandisha matokeo kwa mifumo yako.',
+   925→    'platform.learnMore': 'Soma zaidi',
+   926→
+   927→    // How it works
+   928→    'how.title': 'Wiki za AI Inayofanya Kazi, Si Miezi ya Mpango',
+   929→    'how.step1.title': 'Gundua',
+   930→    'how.step1.desc':
+   931→      'Tunakagua data yako, mchakato wako, na shughuli zako kutambua mahali AI ina athari kubwa zaidi.',
+   932→    'how.step2.title': 'Jenga',
+   933→    'how.step2.desc':
+   934→      'Timu yetu inabuni, inafunza, na kusanikisha suluhisho za AI zilizobinafsishwa zilizounganishwa na mifumo yako.',
+   935→    'how.step3.title': 'Panua',
+   936→    'how.step3.desc':
+   937→      'Fuatilia, tathmini, na boresha endelea. Miundombinu yako ya AI inakua kadiri biashara yako inavyobadilika.',
+   938→
+   939→    // Industries
+   940→    'industries.title': 'Sekta Yoyote, Mfumo Wowote',
+   941→    'industries.subtitle': 'Iliyoundwa kwa viwanda vinavyoendesha ukuaji wa Afrika.',
+   942→    'industries.finance': 'Huduma za Kifedha',
+   943→    'industries.finance.desc': 'Uzingatiaji, hatari, na uchambuzi wa wateja — AI inayotimiza mahitaji ya kanuni.',
+   944→    'industries.health': 'Afya',
+   945→    'industries.health.desc': 'AI ya kibinafsi kwa shughuli za afya, msaada wa uchambuzi, na mtiririko wa wagonjwa.',
+   946→    'industries.mining': 'Uchimbaji Madini & Nishati',
+   947→    'industries.mining.desc': 'Gundua hatari, punguza hasara,uzuia kusimamishwa kwa akili ya kutabiri.',
+   948→    'industries.agri': 'Kilimo',
+   949→    'industries.agri.desc': 'Tabiri mavuno, boresha mnyororo wa usambazaji, na uchunguze mazao kwa kompyuta.',
+   950→    'industries.retail': 'Biashara ya Mauzo',
+   951→    'industries.retail.desc': 'Tabiri mahitaji, otomatisha akiba, na binafsisha uzoefu wa wateja.',
+   952→    'industries.logistics': 'Uchukuzi',
+   953→    'industries.logistics.desc': 'Uboreshaji wa njia, usimamizi wa gari, na mwonekano wa wakati halisi.',
+   954→    'industries.public': 'Sekta ya Umma',
+   955→    'industries.public.desc': 'Kata ulegevu, unganisha mifumo, na tumikie raia vyema kwa AI.',
+   956→    'industries.edu': 'Elimu',
+   957→    'industries.edu.desc': 'Njia za kujifunza za kibinafsi, tathmini ya moja kwa moja, na uchambuzi wa taasisi.',
+   958→
+   959→    // Solutions
+   960→    'solutions.title': 'Suluhisho Zinazoangaziwa',
+   961→    'solutions.training.title': 'Mafunzo ya AI & Data',
+   962→    'solutions.training.desc':
+   963→      'Uandishi wa kiwango cha utafiti, mafunzo, na tathmini kwa mifumo ya kujifunza mashine.',
+   964→    'solutions.training.stat': '100+ Mifumo Iliyofunzwa',
+   965→    'solutions.automation.title': 'Otomatiki ya Ofisi',
+   966→    'solutions.automation.desc':
+   967→      'Otomatisa kazi ngumu au ya kuchosha. Tatua data iliyochanganyika kwa usahihi.',
+   968→    'solutions.automation.stat': '70% Upungufu wa Wakati',
+   969→    'solutions.contact.title': 'Kituo cha Mawasiliano',
+   970→    'solutions.contact.desc':
+   971→      'Data iliyounganishwa, QA ya moja kwa moja, uchambuzi hisia, na wakala wa sauti wa AI.',
+   972→    'solutions.contact.stat': '3x Maendeleo ya Ufanisi',
+   973→
+   974→    // Services (from Solutions page)
+   975→    'services.title': 'Miradi Halisi. Kazi Halisi. Matokeo Halisi.',
+   976→    'services.subtitle': 'Kutoka kwenye mkakati na muundo wa biashara hadi kwenye mitandao ya kidijitali na AI — tunawaletea biashara yako inayohitajika.',
+   977→    'services.hustleBasics.name': 'Hustle Basics',
+   978→    'services.hustleBasics.tag': 'Kitabu & Mwongozo',
+   979→    'services.hustleBasics.desc': 'Zana muhimu kwa wajasiriamali, wafanyakazi huria na wamiliki wa biashara ndogo. Badilisha mkanganyiko kuwa uwazi.',
+   980→    'services.hustleBasics.cta': 'Soma zaidi',
+   981→    'services.pm.name': 'Meneja wa Miradi',
+   982→    'services.pm.tag': 'Utekelezi wa Biashara',
+   983→    'services.pm.desc': 'Jukwaa letu la usimamizi wa miradi — panga miradi yako, fuatilia maendeleo na songa kutoka mpanga kwaka utekelezo.',
+   984→    'services.pm.cta': 'Fikia jukwaa',
+   985→    'services.portal.name': 'HustlePortal™',
+   986→    'services.portal.tag': 'Uzinduzi wa Kidijitali',
+   987→    'services.portal.desc': 'Ukurasa wa kuangukia wenye ubunifu na unaofaa SEO. Uwepo wa mtandaoni kwa R1,850 kwa mwaka.',
+   988→    'services.portal.cta': 'Uzinduzi mtandaoni',
+   989→    'services.local.name': 'BH LOCAL',
+   990→    'services.local.tag': 'Uwezeshaji wa Mitaa',
+   991→    'services.local.desc': 'Kukuza na kuwezesha mitaa, mitaa ya biashara kote Afrika Kusini kwa teknolojia.',
+   992→    'services.local.cta': 'Tafuta BH LOCAL',
+   993→    'services.strategy.name': 'Mkakati & Muundo',
+   994→    'services.strategy.tag': 'Ushauri',
+   995→    'services.strategy.desc': 'Hamisha kutoka mawazo kwenda mifumo ya biashara wazi, mikakati na muundo wa uendeshaji unaovuta ufadhili.',
+   996→    'services.strategy.cta': 'Tafuta suluhisho',
+   997→    'services.clients.title': 'Waaminika na Waanzilishi wa Sekta Zote',
+   998→    'services.clients.subtitle': 'Kutoka afya hadi teknolojia — tunatoa matokeo yanayohesabika.',
+   999→
+  1000→    // About
+  1001→    'about.quote':
+  1002→      'Fikiria teknolojia kama kitenzi, si kiumbe. Inatoa zana, watu wenye ubunifu wanaleta taswira.',
+  1003→    'about.quoteAuthor': '— Red Burns',
+  1004→    'about.description':
+  1005→      'Business Hustle ni mtayarishaji kamili wa suluhisho za AI na mabadiliko ya kidijitali kwa biashara za Afrika. Kutoka kwa uendelezaji wa wakala maalum wa AI hadi usanifu wa jukwaa la data, tunashughulikia yote.',
+  1006→    'about.founded': 'Ilianzishwa Afrika Kusini, ikihudumia bara.',
+  1007→    'about.learnStory': 'Jifunze Kuhusu Hadithi Yetu',
+  1008→    'about.builtIn': 'Iliyojengwa',
+  1009→    'about.forAfrica': 'kwa Afrika',
+  1010→
+  1011→    // Testimonials
+  1012→    'testimonials.title': 'Washirika Wetu Wanasema Nini',
+  1013→
+  1014→    // Resources
+  1015→    'resources.badge': 'Ilivyochaguliwa kwa Wajenzi',
+  1016→    'resources.title1': 'Kutoka Wazo',
+  1017→    'resources.title2': 'Kwa Bidhaa Haraka',
+  1018→    'resources.subtitle':
+  1019→      'Fungua zana unazohitaji kupeleka biashara yako kiwango cha juu — zote zimechaguliwa, zimejaribiwa, na bure kuanza. Kituo chako cha rasilimali 120+ katika vikundi 21.',
+  1020→    'resources.searchPlaceholder': 'Tafuta rasilimali...',
+  1021→    'resources.noResults': 'Hakuna rasilimali zilizopatikana zinazolingana na',
+  1022→    'resources.clearFilters': 'Futa vichujio',
+  1023→
+  1024→    // Newsletter / Contact
+  1025→    'contact.title1': 'Umeandaliwa Kufanya AI iwe',
+  1026→    'contact.title2': 'Kwa Biashara Yako?',
+  1027→    'contact.subtitle':
+  1028→      'Jiunge na viongozi 5,000+ wa biashara za Afrika wanaopata maarifa ya kisasa zaidi ya AI.',
+  1029→    'contact.placeholder': 'Ingiza barua pepe yako',
+  1030→    'contact.subscribe': 'Jisajili',
+  1031→    'contact.noSpam': 'Hakuna barua taka. Jiondoe wakati wowote.',
+  1032→
+  1033→    // Footer
+  1034→    'footer.brandDesc':
+  1035→      'Miundombinu ya AI na suluhisho za otomatiki zilizojengwa kwa biashara za Afrika. Sehemu ya Simple Eternity Holdings (Pty) Ltd.',
+  1036→    'footer.platform': 'Jukwaa',
+  1037→    'footer.company': 'Kampuni',
+  1038→    'footer.legal': 'Kisheria',
+  1039→    'footer.about': 'Kuhusu',
+  1040→    'footer.careers': 'Kazi',
+  1041→    'footer.partnerships': 'Ushirikiano',
+  1042→    'footer.blog': 'Blogu',
+  1043→    'footer.contactLink': 'Mawasiliano',
+  1044→    'footer.privacy': 'Sera ya Faragha',
+  1045→    'footer.terms': 'Masharti ya Huduma',
+  1046→    'footer.cookies': 'Sera ya Kuki',
+  1047→    'footer.copyright':
+  1048→      '© 2025 Business Hustle Ltd. Haki zote zimehifadhiwa. Sehemu ya Simple Eternity Holdings (Pty) Ltd.',
+  1049→  },
+  1050→
+  1051→  ar: {
+  1052→    // Nav
+  1053→    'nav.platform': 'المنصة',
+  1054→    'nav.solutions': 'الحلول',
+  1055→    'nav.industries': 'الصناعات',
+  1056→    'nav.resources': 'الموارد',
+  1057→    'nav.about': 'حول',
+  1058→    'nav.contact': 'اتصل',
+  1059→    'nav.bookDemo': 'احجز عرضاً',
+  1060→    'nav.openMenu': 'فتح القائمة',
+  1061→
+  1062→    // Hero
+  1063→    'hero.badge': 'استكشف. تكيّف. تطوّر.',
+  1064→    'hero.title1': 'بنية تحتية للذكاء الاصطناعي',
+  1065→    'hero.title2': 'للأعمال التجارية الأفريقية',
+  1066→    'hero.subtitle':
+  1067→      'من فكرتك الأولى إلى إيرادات مدعومة بالذكاء الاصطناعي — نبني الأنظمة التي تحول البيانات والعمليات اليدوية إلى سير عمل ذكي.',
+  1068→    'hero.cta1': 'احجز عرضاً',
+  1069→    'hero.cta2': 'استكشف المنصة',
+  1070→    'hero.stat1': 'شركات محوّلة',
+  1071→    'hero.stat2': 'الاحتفاظ بالعملاء',
+  1072→    'hero.stat3': 'عمليات الذكاء الاصطناعي',
+  1073→
+  1074→    // Trusted by
+  1075→    'trusted.text': 'موثوق من قبل المنظمات الرائدة في جنوب أفريقيا',
+  1076→
+  1077→    // Platform
+  1078→    'platform.title': 'لبنات بناء، وليس صناديق سوداء',
+  1079→    'platform.subtitle':
+  1080→      'انشر على بنيتك الحالية، وقم بالتكوين لعملياتك، وتدرب على بياناتك. بنية تحتية تتطور مع الذكاء الاصطناعي.',
+  1081→    'platform.vortex.tag': 'منصة بيانات',
+  1082→    'platform.vortex.desc':
+  1083→      'اجعل بياناتك المتعددة المصادر جاهزة للآلة. اجمع البيانات المبعثرة في منصة واحدة منظمة.',
+  1084→    'platform.flux.tag': 'منشئ العمليات',
+  1085→    'platform.flux.desc':
+  1086→      'وثّق العمليات اليدوية للأتمتة. خريطة بصرية لكيفية إنجاز العمل، كل خطوة تعمل تلقائياً.',
+  1087→    'platform.nexus.tag': 'شبكة الخبراء',
+  1088→    'platform.nexus.desc':
+  1089→      'شبكة منتقاة من متخصصي الذكاء الاصطناعي وخبراء المجال يتم نشرهم عند الطلب لمشاريعك.',
+  1090→    'platform.pulse.tag': 'التقييمات',
+  1091→    'platform.pulse.desc':
+  1092→      'أجرِ تقييمات صارمة للجودة والسلامة والدقة. قيس أداء الذكاء الاصطناعي مقابل حالات الاستخدام الفعلية.',
+  1093→    'platform.axon.tag': 'وكلاء ذكاء اصطناعي',
+  1094→    'platform.axon.desc':
+  1095→      'ابنِ وكلاء ذكاء اصطناعي منظمين يعكسون سير عملك. انشر وكلاء يسلمون النتائج النهائية لأنظمتك.',
+  1096→    'platform.learnMore': 'اعرف المزيد',
+  1097→
+  1098→    // How it works
+  1099→    'how.title': 'أسابيع لذكاء اصطناعي عامل، وليس أشهر من التخطيط',
+  1100→    'how.step1.title': 'اكتشف',
+  1101→    'how.step1.desc':
+  1102→      'نراجع بياناتك وسير عملك وعملياتك لتحديد المكان الذي يخلق فيه الذكاء الاصطناعي أكبر تأثير.',
+  1103→    'how.step2.title': 'ابنِ',
+  1104→    'how.step2.desc':
+  1105→      'يصمم فريقنا ويدرب وينشر حلول ذكاء اصطناعي مخصصة مدمجة مع أنظمتك الحالية.',
+  1106→    'how.step3.title': 'وسّع',
+  1107→    'how.step3.desc':
+  1108→      'راقب وقيم وحسّن باستمرار. بنيتك التحتية للذكاء الاصطناعي تنمو مع تطور أعمالك.',
+  1109→
+  1110→    // Industries
+  1111→    'industries.title': 'أي قطاع، أي بنية',
+  1112→    'industries.subtitle': 'مُصمم للصناعات التي تقود نمو أفريقيا.',
+  1113→    'industries.finance': 'الخدمات المالية',
+  1114→    'industries.finance.desc': 'الامتثال والمخاطر ورؤى العملاء — ذكاء اصطناعي يلبي المتطلبات التنظيمية.',
+  1115→    'industries.health': 'الرعاية الصحية',
+  1116→    'industries.health.desc': 'ذكاء اصطناعي مخصص لعمليات الرعاية الصحية ودعم التشخيص وتدفق المرضى.',
+  1117→    'industries.mining': 'التعدين والطاقة',
+  1118→    'industries.mining.desc': 'اكتشف المخاطر وقلل الخسائر ومنع التوقف مع الذكاء التنبؤي.',
+  1119→    'industries.agri': 'الزراعة',
+  1120→    'industries.agri.desc': 'توقع المحاصيل وحسّن سلاسل التوريد وراقب المحاصيل بالرؤية الحاسوبية.',
+  1121→    'industries.retail': 'التجزئة والتجارة الإلكترونية',
+  1122→    'industries.retail.desc': 'توقع الطلب وأتمت المخزون وشخصّن تجارب العملاء.',
+  1123→    'industries.logistics': 'اللوجستيات',
+  1124→    'industries.logistics.desc': 'تحسين المسارات وإدارة الأسطول ورؤية سلسلة التوريد في الوقت الفعلي.',
+  1125→    'industries.public': 'القطاع العام',
+  1126→    'industries.public.desc': 'اقطع البيروقراطية واربط الأنظمة وخدم المواطنين بشكل أفضل بالذكاء الاصطناعي.',
+  1127→    'industries.edu': 'التعليم',
+  1128→    'industries.edu.desc': 'مسارات تعلم مخصصة وتقييم آلي وتحليلات مؤسسية.',
+  1129→
+  1130→    // Solutions
+  1131→    'solutions.title': 'حلول مميزة',
+  1132→    'solutions.training.title': 'تدريب الذكاء الاصطناعي والبيانات',
+  1133→    'solutions.training.desc':
+  1134→      'تعليق وتدريب وتقييم بمستوى البحث لنماذج التعلم الآلي.',
+  1135→    'solutions.training.stat': '+100 نموذج مدرب',
+  1136→    'solutions.automation.title': 'أتمتة المكتب الخلفي',
+  1137→    'solutions.automation.desc':
+  1138→      'أتمت العمل المعقد أو الممل. تعامل مع البيانات الفوضوية بدقة.',
+  1139→    'solutions.automation.stat': '70% تقليل في الوقت',
+  1140→    'solutions.contact.title': 'مركز اتصال ذكي',
+  1141→    'solutions.contact.desc':
+  1142→      'بيانات موحدة وضمان جودة آلي وتحليل المشاعر ووكلاء صوت بالذكاء الاصطناعي.',
+  1143→    'solutions.contact.stat': '3x مكاسب في الكفاءة',
+  1144→
+  1145→    // Services (from Solutions page)
+  1146→    'services.title': 'مشاريع حقيقية. عمل حقيقي. نتائج حقيقية.',
+  1147→    'services.subtitle': 'من الاستراتيجية وهيكلة الأعمال إلى المنصات الرقمية والذكاء الاصطناعي — نقدم ما تحتاجه أعمالك فعلاً.',
+  1148→    'services.hustleBasics.name': 'Hustle Basics',
+  1149→    'services.hustleBasics.tag': 'كتاب ودليل',
+  1150→    'services.hustleBasics.desc': 'مجموعة الأدوات الأساسية لرواد الأعمال والمستقلين وأصحاب الأعمال الصغيرة. حوّل الفوضى إلى وضوح والأفكار إلى عمل.',
+  1151→    'services.hustleBasics.cta': 'اعرف المزيد',
+  1152→    'services.pm.name': 'مدير المشاريع',
+  1153→    'services.pm.tag': 'تنفيذ الأعمال',
+  1154→    'services.pm.desc': 'منصتنا لإدارة المشاريع والتنفيذ — هيكل مبادراتك وتتبع التقدم وانتقل من التخطيط إلى التنفيذ.',
+  1155→    'services.pm.cta': 'الوصول إلى المنصة',
+  1156→    'services.portal.name': 'HustlePortal™',
+  1157→    'services.portal.tag': 'إطلاق رقمي',
+  1158→    'services.portal.desc': 'صفحة هبوط احترافية ومحسّنة لمحركات البحث لعملك. تواجد رقمي موثوق مقابل 1,850 راند فقط سنوياً.',
+  1159→    'services.portal.cta': 'أطلق على الإنترنت',
+  1160→    'services.local.name': 'BH LOCAL',
+  1161→    'services.local.tag': 'تمكين الأحياء',
+  1162→    'services.local.desc': 'دعم وتمكين الأحياء والشوارع والمناطق التجارية رقمياً في جميع أنحاء جنوب أفريقيا.',
+  1163→    'services.local.cta': 'استكشف BH LOCAL',
+  1164→    'services.strategy.name': 'الاستراتيجية والهيكلة',
+  1165→    'services.strategy.tag': 'استشارات',
+  1166→    'services.strategy.desc': 'انتقل من الأفكار إلى نماذج أعمال واضحة واستراتيجيات وهيكل تشغيلي يجذب التمويل ويمكّن النمو.',
+  1167→    'services.strategy.cta': 'استكشف الحلول',
+  1168→    'services.clients.title': 'موثوق من قبل مؤسسي القطاعات المختلفة',
+  1169→    'services.clients.subtitle': 'من الصحة والتكنولوجيا إلى الصناعات الإبداعية — نحقق نتائج حيث يهم.',
+  1170→
+  1171→    // About
+  1172→    'about.quote':
+  1173→      'فكر في التكنولوجيا كفعل، لا كاسم. هي توفر الأدوات، والأشخاص المبدعون يوفرون الخيال.',
+  1174→    'about.quoteAuthor': '— ريد بيرنز',
+  1175→    'about.description':
+  1176→      'بيزنس هاسل هي مزود كامل لحلول الذكاء الاصطناعي والتحول الرقمي للشركات الأفريقية. من تطوير وكلاء الذكاء الاصطناعي المتخصصين إلى هندسة منصات البيانات، نتولى كل شيء.',
+  1177→    'about.founded': 'تأسست في جنوب أفريقيا، تخدم القارة.',
+  1178→    'about.learnStory': 'تعرف على قصتنا',
+  1179→    'about.builtIn': 'بُنيت في',
+  1180→    'about.forAfrica': 'لأفريقيا',
+  1181→
+  1182→    // Testimonials
+  1183→    'testimonials.title': 'ماذا يقول شركاؤنا',
+  1184→
+  1185→    // Resources
+  1186→    'resources.badge': 'منتقاة للبنائين',
+  1187→    'resources.title1': 'من الفكرة إلى',
+  1188→    'resources.title2': 'المنتج بسرعة',
+  1189→    'resources.subtitle':
+  1190→      'افتح الأدوات التي تحتاجها لترقية عملك — جميعها منتقاة ومختبرة ومجانية للبدء. مركزك لأكثر من 120 مصدراً في 21 فئة.',
+  1191→    'resources.searchPlaceholder': 'البحث عن موارد...',
+  1192→    'resources.noResults': 'لم يتم العثور على موارد تطابق',
+  1193→    'resources.clearFilters': 'مسح الفلاتر',
+  1194→
+  1195→    // Newsletter / Contact
+  1196→    'contact.title1': 'مستعد لجعل الذكاء الاصطناعي حقيقة',
+  1197→    'contact.title2': 'لعملك؟',
+  1198→    'contact.subtitle':
+  1199→      'انضم إلى أكثر من 5,000 قائد أعمال أفريقي يتلقون رؤى في طليعة الذكاء الاصطناعي المؤسسي.',
+  1200→    'contact.placeholder': 'أدخل بريدك الإلكتروني',
+  1201→    'contact.subscribe': 'اشترك',
+  1202→    'contact.noSpam': 'لا رسائل مزعجة. إلغاء الاشتراك في أي وقت.',
+  1203→
+  1204→    // Footer
+  1205→    'footer.brandDesc':
+  1206→      'بنية تحتية للذكاء الاصطناعي وحلول أتمتة مبنية للشركات الأفريقية. جزء من Simple Eternity Holdings (Pty) Ltd.',
+  1207→    'footer.platform': 'المنصة',
+  1208→    'footer.company': 'الشركة',
+  1209→    'footer.legal': 'قانوني',
+  1210→    'footer.about': 'حول',
+  1211→    'footer.careers': 'وظائف',
+  1212→    'footer.partnerships': 'شراكات',
+  1213→    'footer.blog': 'المدونة',
+  1214→    'footer.contactLink': 'اتصل',
+  1215→    'footer.privacy': 'سياسة الخصوصية',
+  1216→    'footer.terms': 'شروط الخدمة',
+  1217→    'footer.cookies': 'سياسة ملفات تعريف الارتباط',
+  1218→    'footer.copyright':
+  1219→      '© 2025 Business Hustle Ltd. جميع الحقوق محفوظة. جزء من Simple Eternity Holdings (Pty) Ltd.',
+  1220→  },
+  1221→}

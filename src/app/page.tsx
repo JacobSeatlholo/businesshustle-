@@ -28,6 +28,7 @@ import {
   Globe,
   MapPin,
   Target,
+  Handshake,
 } from 'lucide-react'
 import { useI18n } from '@/lib/i18n'
 import { ThemeToggle } from '@/components/theme-toggle'
@@ -890,8 +891,8 @@ export default function Home() {
                   {t('services.clients.subtitle')}
                 </p>
               </div>
-              <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
-                {['Ubuntu Wellness', 'Dr Koketso Rakhudu', 'Gabonewe Projects', 'Institute of Kemetic & Marcus Garvey Studies'].map((client) => (
+              <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
+                {['Ubuntu', 'Gabonewe', 'Institute of Kemetic & Marcus Garvey Studies', 'body vision.online', 'sunshinefoods.co.za', 'Smoothie On The Go', 'On-Safari', 'Postnet Gardens', 'Just Hearing', 'Dr Wendy Dicks', 'Honest Travel Experience'].map((client) => (
                   <span
                     key={client}
                     className="text-sm text-muted-foreground/70 font-medium"
@@ -899,6 +900,14 @@ export default function Home() {
                     {client}
                   </span>
                 ))}
+              </div>
+              <div className="mt-6 text-center">
+                <p className="text-xs text-muted-foreground/60">
+                  <span className="inline-flex items-center gap-1.5">
+                    <Handshake className="size-3.5" />
+                    {t('services.clients.collab')}
+                  </span>
+                </p>
               </div>
             </AnimatedSection>
           </div>
@@ -980,22 +989,19 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
               {[
                 {
-                  quote:
-                    "Business Hustle's AI automation reduced our invoice processing time by 80%. Their team understood our unique challenges and delivered a solution that actually works.",
-                  author: 'Thabo M.',
-                  role: 'CFO, TechLogistics SA',
+                  quote: t('testimonials.quote1'),
+                  author: t('testimonials.author1'),
+                  role: t('testimonials.role1'),
                 },
                 {
-                  quote:
-                    'The data platform they built gave us visibility we never had before. We can now make decisions in hours, not weeks.',
-                  author: 'Lindiwe K.',
-                  role: 'Head of Operations, AgriGrow',
+                  quote: t('testimonials.quote2'),
+                  author: t('testimonials.author2'),
+                  role: t('testimonials.role2'),
                 },
                 {
-                  quote:
-                    'Their approach to AI agents transformed our customer service. Response times dropped 60% while satisfaction scores hit all-time highs.',
-                  author: 'Michael D.',
-                  role: 'CEO, FinServe Africa',
+                  quote: t('testimonials.quote3'),
+                  author: t('testimonials.author3'),
+                  role: t('testimonials.role3'),
                 },
               ].map((t) => (
                 <AnimatedSection key={t.author}>
