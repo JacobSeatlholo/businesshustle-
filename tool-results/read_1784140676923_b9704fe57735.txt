@@ -1,0 +1,1070 @@
+     1→     1→'use client'
+     2→     2→
+     3→     3→import { useState, useEffect, useRef, type FormEvent } from 'react'
+     4→     4→import { motion, useInView } from 'framer-motion'
+     5→     5→import {
+     6→     6→  Database,
+     7→     7→  Workflow,
+     8→     8→  Users,
+     9→     9→  Activity,
+    10→    10→  Bot,
+    11→    11→  Landmark,
+    12→    12→  Heart,
+    13→    13→  Zap,
+    14→    14→  Sprout,
+    15→    15→  ShoppingBag,
+    16→    16→  Truck,
+    17→    17→  Building2,
+    18→    18→  GraduationCap,
+    19→    19→  Star,
+    20→    20→  Menu,
+    21→    21→  ArrowRight,
+    22→    22→  Quote,
+    23→    23→  Search,
+    24→    24→  ExternalLink,
+    25→    25→  BookOpen,
+    26→    26→  Sparkles,
+    27→    27→} from 'lucide-react'
+    28→    28→import { Button } from '@/components/ui/button'
+    29→    29→import { Card, CardContent } from '@/components/ui/card'
+    30→    30→import { Badge } from '@/components/ui/badge'
+    31→    31→import { Input } from '@/components/ui/input'
+    32→    32→import { Separator } from '@/components/ui/separator'
+    33→    33→import {
+    34→    34→  Sheet,
+    35→    35→  SheetTrigger,
+    36→    36→  SheetContent,
+    37→    37→  SheetHeader,
+    38→    38→  SheetTitle,
+    39→    39→} from '@/components/ui/sheet'
+    40→    40→
+    41→    41→/* ------------------------------------------------------------------ */
+    42→    42→/*  Animated counter hook                                              */
+    43→    43→/* ------------------------------------------------------------------ */
+    44→    44→function useCounter(end: number, duration = 2000, startOnView = true) {
+    45→    45→  const [count, setCount] = useState(0)
+    46→    46→  const ref = useRef<HTMLSpanElement>(null)
+    47→    47→  const inView = useInView(ref, { once: true, margin: '-50px' })
+    48→    48→
+    49→    49→  useEffect(() => {
+    50→    50→    if (!inView && startOnView) return
+    51→    51→    let start = 0
+    52→    52→    const step = Math.ceil(end / (duration / 16))
+    53→    53→    const timer = setInterval(() => {
+    54→    54→      start += step
+    55→    55→      if (start >= end) {
+    56→    56→        setCount(end)
+    57→    57→        clearInterval(timer)
+    58→    58→      } else {
+    59→    59→        setCount(start)
+    60→    60→      }
+    61→    61→    }, 16)
+    62→    62→    return () => clearInterval(timer)
+    63→    63→  }, [inView, end, duration, startOnView])
+    64→    64→
+    65→    65→  return { count, ref }
+    66→    66→}
+    67→    67→
+    68→    68→/* ------------------------------------------------------------------ */
+    69→    69→/*  Section wrapper with scroll animation                               */
+    70→    70→/* ------------------------------------------------------------------ */
+    71→    71→function AnimatedSection({
+    72→    72→  children,
+    73→    73→  className = '',
+    74→    74→}: {
+    75→    75→  children: React.ReactNode
+    76→    76→  className?: string
+    77→    77→}) {
+    78→    78→  const ref = useRef(null)
+    79→    79→  const isInView = useInView(ref, { once: true, margin: '-100px' })
+    80→    80→
+    81→    81→  return (
+    82→    82→    <motion.div
+    83→    83→      ref={ref}
+    84→    84→      initial={{ opacity: 0, y: 30 }}
+    85→    85→      animate={isInView ? { opacity: 1, y: 0 } : {}}
+    86→    86→      transition={{ duration: 0.6 }}
+    87→    87→      className={className}
+    88→    88→    >
+    89→    89→      {children}
+    90→    90→    </motion.div>
+    91→    91→  )
+    92→    92→}
+    93→    93→
+    94→    94→/* ------------------------------------------------------------------ */
+    95→    95→/*  Resources Hub (from get-started.mdx)                              */
+    96→    96→/* ------------------------------------------------------------------ */
+    97→    97→interface ResourceItem {
+    98→    98→  id: string
+    99→    99→  name: string
+   100→   100→  url: string
+   101→   101→  description: string
+   102→   102→  category: string
+   103→   103→  isFree: boolean
+   104→   104→  isPaid: boolean
+   105→   105→}
+   106→   106→
+   107→   107→function ResourcesHub() {
+   108→   108→  const [resources, setResources] = useState<ResourceItem[]>([])
+   109→   109→  const [categories, setCategories] = useState<string[]>([])
+   110→   110→  const [activeCategory, setActiveCategory] = useState('All')
+   111→   111→  const [search, setSearch] = useState('')
+   112→   112→  const [loading, setLoading] = useState(true)
+   113→   113→  const sectionRef = useRef(null)
+   114→   114→  const isInView = useInView(sectionRef, { once: true, margin: '-100px' })
+   115→   115→
+   116→   116→  useEffect(() => {
+   117→   117→    fetch('/api/resources')
+   118→   118→      .then((r) => r.json())
+   119→   119→      .then((data) => {
+   120→   120→        setResources(data.resources)
+   121→   121→        setCategories(data.categories)
+   122→   122→        setLoading(false)
+   123→   123→      })
+   124→   124→  }, [])
+   125→   125→
+   126→   126→  const filtered = resources.filter((r) => {
+   127→   127→    const matchesCategory = activeCategory === 'All' || r.category === activeCategory
+   128→   128→    const matchesSearch =
+   129→   129→      !search ||
+   130→   130→      r.name.toLowerCase().includes(search.toLowerCase()) ||
+   131→   131→      r.description.toLowerCase().includes(search.toLowerCase()) ||
+   132→   132→      r.category.toLowerCase().includes(search.toLowerCase())
+   133→   133→    return matchesCategory && matchesSearch
+   134→   134→  })
+   135→   135→
+   136→   136→  return (
+   137→   137→    <section id="resources" className="py-20 sm:py-28 bg-muted/30">
+   138→   138→      <div ref={sectionRef} className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+   139→   139→        <motion.div
+   140→   140→          initial={{ opacity: 0, y: 30 }}
+   141→   141→          animate={isInView ? { opacity: 1, y: 0 } : {}}
+   142→   142→          transition={{ duration: 0.6 }}
+   143→   143→          className="text-center mb-12"
+   144→   144→        >
+   145→   145→          <Badge variant="secondary" className="mb-4 gap-1.5 px-3 py-1 text-xs font-medium">
+   146→   146→            <BookOpen className="size-3" />
+   147→   147→            Curated for Builders
+   148→   148→          </Badge>
+   149→   149→          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-4">
+   150→   150→            Go From Idea to{' '}
+   151→   151→            <span className="gradient-text">Live Product Fast</span>
+   152→   152→          </h2>
+   153→   153→          <p className="text-muted-foreground text-base sm:text-lg max-w-2xl mx-auto">
+   154→   154→            Unlock the tools you need to take your business to the next level
+   155→   155→            — all curated, tested, and free to start. Your hub of 120+
+   156→   156→            resources across 21 categories.
+   157→   157→          </p>
+   158→   158→        </motion.div>
+   159→   159→
+   160→   160→        {/* Search & Filter Bar */}
+   161→   161→        <motion.div
+   162→   162→          initial={{ opacity: 0, y: 20 }}
+   163→   163→          animate={isInView ? { opacity: 1, y: 0 } : {}}
+   164→   164→          transition={{ duration: 0.6, delay: 0.2 }}
+   165→   165→          className="mb-8 space-y-4"
+   166→   166→        >
+   167→   167→          <div className="relative max-w-md mx-auto">
+   168→   168→            <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 size-4 text-muted-foreground" />
+   169→   169→            <Input
+   170→   170→              type="text"
+   171→   171→              placeholder="Search resources..."
+   172→   172→              value={search}
+   173→   173→              onChange={(e) => setSearch(e.target.value)}
+   174→   174→              className="pl-10 rounded-full h-11 bg-background border-border"
+   175→   175→            />
+   176→   176→          </div>
+   177→   177→          <div className="flex flex-wrap justify-center gap-2">
+   178→   178→            <button
+   179→   179→              onClick={() => setActiveCategory('All')}
+   180→   180→              className={`px-3.5 py-1.5 rounded-full text-xs font-medium transition-all ${
+   181→   181→                activeCategory === 'All'
+   182→   182→                  ? 'bg-emerald text-emerald-foreground shadow-sm'
+   183→   183→                  : 'bg-background border border-border text-muted-foreground hover:text-foreground hover:border-foreground/30'
+   184→   184→              }`}
+   185→   185→            >
+   186→   186→              All ({resources.length})
+   187→   187→            </button>
+   188→   188→            {categories.map((cat) => {
+   189→   189→              const count = resources.filter((r) => r.category === cat).length
+   190→   190→              return (
+   191→   191→                <button
+   192→   192→                  key={cat}
+   193→   193→                  onClick={() => setActiveCategory(cat)}
+   194→   194→                  className={`px-3.5 py-1.5 rounded-full text-xs font-medium transition-all ${
+   195→   195→                    activeCategory === cat
+   196→   196→                      ? 'bg-emerald text-emerald-foreground shadow-sm'
+   197→   197→                      : 'bg-background border border-border text-muted-foreground hover:text-foreground hover:border-foreground/30'
+   198→   198→                  }`}
+   199→   199→                >
+   200→   200→                  {cat} ({count})
+   201→   201→                </button>
+   202→   202→              )
+   203→   203→            })}
+   204→   204→          </div>
+   205→   205→        </motion.div>
+   206→   206→
+   207→   207→        {/* Resource Grid */}
+   208→   208→        {loading ? (
+   209→   209→          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+   210→   210→            {Array.from({ length: 9 }).map((_, i) => (
+   211→   211→              <div
+   212→   212→                key={i}
+   213→   213→                className="h-32 rounded-xl bg-background animate-pulse"
+   214→   214→              />
+   215→   215→            ))}
+   216→   216→          </div>
+   217→   217→        ) : (
+   218→   218→          <>
+   219→   219→            <p className="text-sm text-muted-foreground mb-4">
+   220→   220→              Showing {filtered.length} of {resources.length} resources
+   221→   221→            </p>
+   222→   222→            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-h-[720px] overflow-y-auto custom-scrollbar pr-1">
+   223→   223→              {filtered.map((resource) => (
+   224→   224→                <a
+   225→   225→                  key={resource.id}
+   226→   226→                  href={resource.url}
+   227→   227→                  target="_blank"
+   228→   228→                  rel="noopener noreferrer"
+   229→   229→                  className="group flex flex-col p-4 rounded-xl bg-background border border-border hover:border-emerald/40 hover:shadow-md transition-all"
+   230→   230→                >
+   231→   231→                  <div className="flex items-start justify-between gap-3 mb-2">
+   232→   232→                    <h3 className="font-semibold text-sm leading-tight group-hover:text-emerald transition-colors line-clamp-1">
+   233→   233→                      {resource.name}
+   234→   234→                    </h3>
+   235→   235→                    <ExternalLink className="size-3.5 text-muted-foreground group-hover:text-emerald shrink-0 mt-0.5 transition-colors" />
+   236→   236→                  </div>
+   237→   237→                  <p className="text-xs text-muted-foreground leading-relaxed mb-3 line-clamp-2 flex-1">
+   238→   238→                    {resource.description}
+   239→   239→                  </p>
+   240→   240→                  <div className="flex items-center gap-2">
+   241→   241→                    <Badge
+   242→   242→                      variant="outline"
+   243→   243→                      className="text-[10px] px-2 py-0 font-normal"
+   244→   244→                    >
+   245→   245→                      {resource.category}
+   246→   246→                    </Badge>
+   247→   247→                    <div className="flex gap-1.5 ml-auto">
+   248→   248→                      {resource.isFree && (
+   249→   249→                        <span className="inline-flex items-center rounded-full bg-emerald/10 text-emerald px-2 py-0.5 text-[10px] font-medium">
+   250→   250→                          Free
+   251→   251→                        </span>
+   252→   252→                      )}
+   253→   253→                      {resource.isPaid && (
+   254→   254→                        <span className="inline-flex items-center rounded-full bg-gold/10 text-gold px-2 py-0.5 text-[10px] font-medium">
+   255→   255→                          Paid
+   256→   256→                        </span>
+   257→   257→                      )}
+   258→   258→                    </div>
+   259→   259→                  </div>
+   260→   260→                </a>
+   261→   261→              ))}
+   262→   262→            </div>
+   263→   263→            {filtered.length === 0 && (
+   264→   264→              <div className="text-center py-16">
+   265→   265→                <Sparkles className="size-10 text-muted-foreground/40 mx-auto mb-4" />
+   266→   266→                <p className="text-muted-foreground">
+   267→   267→                  No resources found matching &quot;{search}&quot;
+   268→   268→                </p>
+   269→   269→                <button
+   270→   270→                  onClick={() => {
+   271→   271→                    setSearch('')
+   272→   272→                    setActiveCategory('All')
+   273→   273→                  }}
+   274→   274→                  className="text-emerald text-sm mt-2 hover:underline"
+   275→   275→                >
+   276→   276→                  Clear filters
+   277→   277→                </button>
+   278→   278→              </div>
+   279→   279→            )}
+   280→   280→          </>
+   281→   281→        )}
+   282→   282→      </div>
+   283→   283→    </section>
+   284→   284→  )
+   285→   285→}
+   286→   286→
+   287→   287→/* ------------------------------------------------------------------ */
+   288→   288→/*  Main Page                                                          */
+   289→   289→/* ------------------------------------------------------------------ */
+   290→   290→export default function Home() {
+   291→   291→  const [scrolled, setScrolled] = useState(false)
+   292→   292→  const [mobileOpen, setMobileOpen] = useState(false)
+   293→   293→
+   294→   294→  useEffect(() => {
+   295→   295→    const onScroll = () => setScrolled(window.scrollY > 40)
+   296→   296→    window.addEventListener('scroll', onScroll, { passive: true })
+   297→   297→    return () => window.removeEventListener('scroll', onScroll)
+   298→   298→  }, [])
+   299→   299→
+   300→   300→  const navLinks = ['Platform', 'Solutions', 'Industries', 'Resources', 'About', 'Contact']
+   301→   301→
+   302→   302→  const { count: c1, ref: r1 } = useCounter(50)
+   303→   303→  const { count: c2, ref: r2 } = useCounter(98)
+   304→   304→  const { count: c3, ref: r3 } = useCounter(24)
+   305→   305→
+   306→   306→  return (
+   307→   307→    <div className="min-h-screen flex flex-col">
+   308→   308→      {/* ============================================================ */}
+   309→   309→      {/*  1. NAVIGATION                                                */}
+   310→   310→      {/* ============================================================ */}
+   311→   311→      <header
+   312→   312→        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+   313→   313→          scrolled
+   314→   314→            ? 'bg-background/90 backdrop-blur-xl border-b border-border shadow-sm'
+   315→   315→            : 'bg-transparent'
+   316→   316→        }`}
+   317→   317→      >
+   318→   318→        <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+   319→   319→          {/* Logo */}
+   320→   320→          <a href="#" className="flex items-center gap-2.5">
+   321→   321→            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-emerald text-emerald-foreground font-bold text-sm">
+   322→   322→              BH
+   323→   323→            </div>
+   324→   324→            <span className="hidden sm:inline font-semibold text-lg tracking-tight">
+   325→   325→              Business Hustle
+   326→   326→            </span>
+   327→   327→          </a>
+   328→   328→
+   329→   329→          {/* Desktop links */}
+   330→   330→          <ul className="hidden md:flex items-center gap-1">
+   331→   331→            {navLinks.map((link) => (
+   332→   332→              <li key={link}>
+   333→   333→                <a
+   334→   334→                  href={`#${link.toLowerCase()}`}
+   335→   335→                  className="px-3 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors rounded-md hover:bg-accent"
+   336→   336→                >
+   337→   337→                  {link}
+   338→   338→                </a>
+   339→   339→              </li>
+   340→   340→            ))}
+   341→   341→          </ul>
+   342→   342→
+   343→   343→          {/* Desktop CTA */}
+   344→   344→          <div className="hidden md:flex items-center gap-3">
+   345→   345→            <Button size="sm" className="rounded-full px-5">
+   346→   346→              Book a Demo
+   347→   347→            </Button>
+   348→   348→          </div>
+   349→   349→
+   350→   350→          {/* Mobile hamburger */}
+   351→   351→          <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
+   352→   352→            <SheetTrigger asChild>
+   353→   353→              <Button variant="ghost" size="icon" className="md:hidden">
+   354→   354→                <Menu className="size-5" />
+   355→   355→                <span className="sr-only">Open menu</span>
+   356→   356→              </Button>
+   357→   357→            </SheetTrigger>
+   358→   358→            <SheetContent side="right" className="w-72">
+   359→   359→              <SheetHeader>
+   360→   360→                <SheetTitle className="flex items-center gap-2">
+   361→   361→                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald text-emerald-foreground font-bold text-xs">
+   362→   362→                    BH
+   363→   363→                  </div>
+   364→   364→                  Business Hustle
+   365→   365→                </SheetTitle>
+   366→   366→              </SheetHeader>
+   367→   367→              <div className="flex flex-col gap-1 px-4 pt-4">
+   368→   368→                {navLinks.map((link) => (
+   369→   369→                  <a
+   370→   370→                    key={link}
+   371→   371→                    href={`#${link.toLowerCase()}`}
+   372→   372→                    onClick={() => setMobileOpen(false)}
+   373→   373→                    className="rounded-md px-3 py-2.5 text-sm text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
+   374→   374→                  >
+   375→   375→                    {link}
+   376→   376→                  </a>
+   377→   377→                ))}
+   378→   378→                <Separator className="my-3" />
+   379→   379→                <Button className="rounded-full w-full">Book a Demo</Button>
+   380→   380→              </div>
+   381→   381→            </SheetContent>
+   382→   382→          </Sheet>
+   383→   383→        </nav>
+   384→   384→      </header>
+   385→   385→
+   386→   386→      <main className="flex-1">
+   387→   387→        {/* ============================================================ */}
+   388→   388→        {/*  2. HERO SECTION                                              */}
+   389→   389→        {/* ============================================================ */}
+   390→   390→        <section
+   391→   391→          id="hero"
+   392→   392→          className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-4 sm:px-6 lg:px-8 pt-16"
+   393→   393→        >
+   394→   394→          {/* Background image */}
+   395→   395→          <div
+   396→   396→            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+   397→   397→            style={{ backgroundImage: 'url(/hero-bg.png)', opacity: 0.3 }}
+   398→   398→            aria-hidden="true"
+   399→   399→          />
+   400→   400→          {/* Grid overlay */}
+   401→   401→          <div className="absolute inset-0 grid-pattern" aria-hidden="true" />
+   402→   402→
+   403→   403→          {/* Content */}
+   404→   404→          <div className="relative z-10 mx-auto max-w-4xl text-center">
+   405→   405→            <motion.div
+   406→   406→              initial={{ opacity: 0, y: 20 }}
+   407→   407→              animate={{ opacity: 1, y: 0 }}
+   408→   408→              transition={{ duration: 0.5, delay: 0.1 }}
+   409→   409→            >
+   410→   410→              <Badge
+   411→   411→                variant="outline"
+   412→   412→                className="mb-6 border-emerald/40 text-emerald px-4 py-1.5 text-sm"
+   413→   413→              >
+   414→   414→                Explore. Adapt. Evolve.
+   415→   415→              </Badge>
+   416→   416→            </motion.div>
+   417→   417→
+   418→   418→            <motion.h1
+   419→   419→              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1]"
+   420→   420→              initial={{ opacity: 0, y: 20 }}
+   421→   421→              animate={{ opacity: 1, y: 0 }}
+   422→   422→              transition={{ duration: 0.5, delay: 0.2 }}
+   423→   423→            >
+   424→   424→              AI Infrastructure
+   425→   425→              <br />
+   426→   426→              <span className="gradient-text">for African Business</span>
+   427→   427→            </motion.h1>
+   428→   428→
+   429→   429→            <motion.p
+   430→   430→              className="mx-auto mt-6 max-w-2xl text-base sm:text-lg text-muted-foreground leading-relaxed"
+   431→   431→              initial={{ opacity: 0, y: 20 }}
+   432→   432→              animate={{ opacity: 1, y: 0 }}
+   433→   433→              transition={{ duration: 0.5, delay: 0.35 }}
+   434→   434→            >
+   435→   435→              From your first idea to AI-powered revenue — we build the systems
+   436→   436→              that transform data and manual processes into intelligent,
+   437→   437→              agent-ready workflows.
+   438→   438→            </motion.p>
+   439→   439→
+   440→   440→            <motion.div
+   441→   441→              className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3"
+   442→   442→              initial={{ opacity: 0, y: 20 }}
+   443→   443→              animate={{ opacity: 1, y: 0 }}
+   444→   444→              transition={{ duration: 0.5, delay: 0.5 }}
+   445→   445→            >
+   446→   446→              <Button size="lg" className="rounded-full px-7 text-sm">
+   447→   447→                Book a Demo
+   448→   448→                <ArrowRight className="size-4" />
+   449→   449→              </Button>
+   450→   450→              <Button
+   451→   451→                variant="outline"
+   452→   452→                size="lg"
+   453→   453→                className="rounded-full px-7 text-sm"
+   454→   454→              >
+   455→   455→                Explore Platform
+   456→   456→              </Button>
+   457→   457→            </motion.div>
+   458→   458→          </div>
+   459→   459→
+   460→   460→          {/* Stat counters */}
+   461→   461→          <motion.div
+   462→   462→            className="relative z-10 mt-16 sm:mt-20 grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-10 max-w-3xl mx-auto"
+   463→   463→            initial={{ opacity: 0, y: 30 }}
+   464→   464→            animate={{ opacity: 1, y: 0 }}
+   465→   465→            transition={{ duration: 0.6, delay: 0.65 }}
+   466→   466→          >
+   467→   467→            {[
+   468→   468→              { value: c1, suffix: '+', ref: r1, label: 'Businesses Transformed' },
+   469→   469→              { value: c2, suffix: '%', ref: r2, label: 'Client Retention' },
+   470→   470→              { value: c3, suffix: '/7', ref: r3, label: 'AI Operations' },
+   471→   471→            ].map((stat) => (
+   472→   472→              <div key={stat.label} className="text-center">
+   473→   473→                <div className="text-2xl sm:text-3xl font-bold text-foreground">
+   474→   474→                  <span ref={stat.ref}>
+   475→   475→                    {stat.value}
+   476→   476→                    {stat.suffix}
+   477→   477→                  </span>
+   478→   478→                </div>
+   479→   479→                <p className="mt-1 text-xs sm:text-sm text-muted-foreground">
+   480→   480→                  {stat.label}
+   481→   481→                </p>
+   482→   482→              </div>
+   483→   483→            ))}
+   484→   484→          </motion.div>
+   485→   485→        </section>
+   486→   486→
+   487→   487→        {/* ============================================================ */}
+   488→   488→        {/*  3. TRUSTED BY BAR                                            */}
+   489→   489→        {/* ============================================================ */}
+   490→   490→        <section className="border-y border-border bg-muted/30 py-6 sm:py-8">
+   491→   491→          <AnimatedSection className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+   492→   492→            <p className="text-center text-sm sm:text-base text-muted-foreground font-medium">
+   493→   493→              Trusted by leading organisations across Southern Africa
+   494→   494→            </p>
+   495→   495→          </AnimatedSection>
+   496→   496→        </section>
+   497→   497→
+   498→   498→        {/* ============================================================ */}
+   499→   499→        {/*  4. PLATFORM SECTION                                          */}
+   500→   500→        {/* ============================================================ */}
+   501→   501→        <section id="platform" className="relative py-20 sm:py-28 overflow-hidden">
+   502→   502→          <div className="absolute inset-0 dot-pattern opacity-40" aria-hidden="true" />
+   503→   503→
+   504→   504→          <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+   505→   505→            <AnimatedSection className="text-center mb-14 sm:mb-16">
+   506→   506→              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
+   507→   507→                Building Blocks, Not Black Boxes
+   508→   508→              </h2>
+   509→   509→              <p className="mx-auto mt-4 max-w-2xl text-muted-foreground text-base sm:text-lg leading-relaxed">
+   510→   510→                Deploy on your existing stack, configure for your operations,
+   511→   511→                train on your data. Infrastructure that evolves with AI.
+   512→   512→              </p>
+   513→   513→            </AnimatedSection>
+   514→   514→
+   515→   515→            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+   516→   516→              {[
+   517→   517→                {
+   518→   518→                  icon: Database,
+   519→   519→                  name: 'Vortex',
+   520→   520→                  tag: 'Data Platform',
+   521→   521→                  description:
+   522→   522→                    'Get your messy, multi-source data machine-ready. Pulls scattered data into one governed, AI-ready platform.',
+   523→   523→                },
+   524→   524→                {
+   525→   525→                  icon: Workflow,
+   526→   526→                  name: 'Flux',
+   527→   527→                  tag: 'Process Builder',
+   528→   528→                  description:
+   529→   529→                    'Document manual workflows for automation. Visual map of how work gets done, running every step automatically.',
+   530→   530→                },
+   531→   531→                {
+   532→   532→                  icon: Users,
+   533→   533→                  name: 'Nexus',
+   534→   534→                  tag: 'Expert Network',
+   535→   535→                  description:
+   536→   536→                    'A curated network of vetted AI specialists and domain experts deployed on demand for your projects.',
+   537→   537→                },
+   538→   538→                {
+   539→   539→                  icon: Activity,
+   540→   540→                  name: 'Pulse',
+   541→   541→                  tag: 'Evaluations',
+   542→   542→                  description:
+   543→   543→                    'Run rigorous evaluation for quality, safety, and accuracy. Measure AI performance against your actual use cases.',
+   544→   544→                },
+   545→   545→                {
+   546→   546→                  icon: Bot,
+   547→   547→                  name: 'Axon',
+   548→   548→                  tag: 'AI Agents',
+   549→   549→                  description:
+   550→   550→                    'Build governed AI agents that mirror your workflows. Deploy agents that hand off finished results to your systems.',
+   551→   551→                },
+   552→   552→              ].map((item, i) => (
+   553→   553→                <AnimatedSection key={item.name}>
+   554→   554→                  <motion.div
+   555→   555→                    whileHover={{ y: -4 }}
+   556→   556→                    transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+   557→   557→                  >
+   558→   558→                    <Card className="group h-full border-border/60 bg-card/80 backdrop-blur-sm hover:border-emerald/40 transition-colors duration-300 py-0 gap-0">
+   559→   559→                      <CardContent className="p-6 flex flex-col gap-4 h-full">
+   560→   560→                        <div className="flex items-center justify-between">
+   561→   561→                          <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-emerald/10 text-emerald">
+   562→   562→                            <item.icon className="size-5" />
+   563→   563→                          </div>
+   564→   564→                          <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
+   565→   565→                            {item.tag}
+   566→   566→                          </span>
+   567→   567→                        </div>
+   568→   568→                        <h3 className="text-lg font-semibold">{item.name}</h3>
+   569→   569→                        <p className="text-sm text-muted-foreground leading-relaxed flex-1">
+   570→   570→                          {item.description}
+   571→   571→                        </p>
+   572→   572→                        <a
+   573→   573→                          href="#"
+   574→   574→                          className="inline-flex items-center gap-1 text-sm font-medium text-emerald hover:gap-2 transition-all"
+   575→   575→                        >
+   576→   576→                          Learn more
+   577→   577→                          <ArrowRight className="size-3.5" />
+   578→   578→                        </a>
+   579→   579→                      </CardContent>
+   580→   580→                    </Card>
+   581→   581→                  </motion.div>
+   582→   582→                </AnimatedSection>
+   583→   583→              ))}
+   584→   584→            </div>
+   585→   585→          </div>
+   586→   586→        </section>
+   587→   587→
+   588→   588→        {/* ============================================================ */}
+   589→   589→        {/*  5. HOW IT WORKS                                              */}
+   590→   590→        {/* ============================================================ */}
+   591→   591→        <section className="py-20 sm:py-28 bg-muted/20">
+   592→   592→          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+   593→   593→            <AnimatedSection className="text-center mb-14 sm:mb-16">
+   594→   594→              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
+   595→   595→                Weeks to Working AI, Not Months of Planning
+   596→   596→              </h2>
+   597→   597→            </AnimatedSection>
+   598→   598→
+   599→   599→            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4 relative">
+   600→   600→              {/* Connecting line (desktop only) */}
+   601→   601→              <div
+   602→   602→                className="hidden md:block absolute top-16 left-[20%] right-[20%] h-px bg-gradient-to-r from-transparent via-border to-transparent"
+   603→   603→                aria-hidden="true"
+   604→   604→              />
+   605→   605→
+   606→   606→              {[
+   607→   607→                {
+   608→   608→                  num: '01',
+   609→   609→                  title: 'Discover',
+   610→   610→                  description:
+   611→   611→                    'We audit your data, workflows, and operations to identify where AI creates the most impact.',
+   612→   612→                },
+   613→   613→                {
+   614→   614→                  num: '02',
+   615→   615→                  title: 'Build',
+   616→   616→                  description:
+   617→   617→                    'Our team designs, trains, and deploys custom AI solutions integrated with your existing systems.',
+   618→   618→                },
+   619→   619→                {
+   620→   620→                  num: '03',
+   621→   621→                  title: 'Scale',
+   622→   622→                  description:
+   623→   623→                    'Monitor, evaluate, and continuously improve. Your AI infrastructure grows as your business evolves.',
+   624→   624→                },
+   625→   625→              ].map((step, i) => (
+   626→   626→                <AnimatedSection key={step.title}>
+   627→   627→                  <div className="relative text-center md:text-left">
+   628→   628→                    <div className="inline-flex items-center justify-center h-12 w-12 rounded-full border-2 border-emerald/50 bg-background text-emerald font-bold text-lg mb-5 relative z-10">
+   629→   629→                      {step.num}
+   630→   630→                    </div>
+   631→   631→                    <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
+   632→   632→                    <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+   633→   633→                      {step.description}
+   634→   634→                    </p>
+   635→   635→                  </div>
+   636→   636→                </AnimatedSection>
+   637→   637→              ))}
+   638→   638→            </div>
+   639→   639→          </div>
+   640→   640→        </section>
+   641→   641→
+   642→   642→        {/* ============================================================ */}
+   643→   643→        {/*  6. INDUSTRIES SECTION                                        */}
+   644→   644→        {/* ============================================================ */}
+   645→   645→        <section id="industries" className="py-20 sm:py-28">
+   646→   646→          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+   647→   647→            <AnimatedSection className="text-center mb-14 sm:mb-16">
+   648→   648→              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
+   649→   649→                Any Sector, Any Stack
+   650→   650→              </h2>
+   651→   651→              <p className="mx-auto mt-4 max-w-xl text-muted-foreground text-base sm:text-lg">
+   652→   652→                Built for the industries driving Africa&apos;s growth.
+   653→   653→              </p>
+   654→   654→            </AnimatedSection>
+   655→   655→
+   656→   656→            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+   657→   657→              {[
+   658→   658→                {
+   659→   659→                  icon: Landmark,
+   660→   660→                  name: 'Financial Services',
+   661→   661→                  desc: 'Compliance, risk, and customer insight — AI that meets regulatory demands.',
+   662→   662→                },
+   663→   663→                {
+   664→   664→                  icon: Heart,
+   665→   665→                  name: 'Healthcare',
+   666→   666→                  desc: 'Custom AI for healthcare operations, diagnostics support, and patient flow.',
+   667→   667→                },
+   668→   668→                {
+   669→   669→                  icon: Zap,
+   670→   670→                  name: 'Mining & Energy',
+   671→   671→                  desc: 'Catch hazards, cut losses, prevent downtime with predictive intelligence.',
+   672→   672→                },
+   673→   673→                {
+   674→   674→                  icon: Sprout,
+   675→   675→                  name: 'Agriculture',
+   676→   676→                  desc: 'Forecast yields, optimise supply chains, and monitor crops with computer vision.',
+   677→   677→                },
+   678→   678→                {
+   679→   679→                  icon: ShoppingBag,
+   680→   680→                  name: 'Retail & E-commerce',
+   681→   681→                  desc: 'Forecast demand, automate inventory, and personalise customer experiences.',
+   682→   682→                },
+   683→   683→                {
+   684→   684→                  icon: Truck,
+   685→   685→                  name: 'Logistics',
+   686→   686→                  desc: 'Route optimisation, fleet management, and real-time supply chain visibility.',
+   687→   687→                },
+   688→   688→                {
+   689→   689→                  icon: Building2,
+   690→   690→                  name: 'Public Sector',
+   691→   691→                  desc: 'Cut red tape, connect systems, and serve citizens better with AI.',
+   692→   692→                },
+   693→   693→                {
+   694→   694→                  icon: GraduationCap,
+   695→   695→                  name: 'Education',
+   696→   696→                  desc: 'Personalised learning paths, automated assessment, and institutional analytics.',
+   697→   697→                },
+   698→   698→              ].map((ind) => (
+   699→   699→                <AnimatedSection key={ind.name}>
+   700→   700→                  <motion.div whileHover={{ y: -3 }} transition={{ type: 'spring', stiffness: 300, damping: 20 }}>
+   701→   701→                    <Card className="group h-full border-border/50 bg-card/60 hover:border-emerald/30 transition-colors duration-300 py-0 gap-0 cursor-default">
+   702→   702→                      <CardContent className="p-5 flex flex-col gap-3 h-full">
+   703→   703→                        <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-emerald/10 text-emerald shrink-0">
+   704→   704→                          <ind.icon className="size-5" />
+   705→   705→                        </div>
+   706→   706→                        <h3 className="text-sm font-semibold leading-tight">
+   707→   707→                          {ind.name}
+   708→   708→                        </h3>
+   709→   709→                        <p className="text-xs text-muted-foreground leading-relaxed">
+   710→   710→                          {ind.desc}
+   711→   711→                        </p>
+   712→   712→                      </CardContent>
+   713→   713→                    </Card>
+   714→   714→                  </motion.div>
+   715→   715→                </AnimatedSection>
+   716→   716→              ))}
+   717→   717→            </div>
+   718→   718→          </div>
+   719→   719→        </section>
+   720→   720→
+   721→   721→        {/* ============================================================ */}
+   722→   722→        {/*  7. SOLUTIONS SHOWCASE                                         */}
+   723→   723→        {/* ============================================================ */}
+   724→   724→        <section id="solutions" className="py-20 sm:py-28 bg-muted/20">
+   725→   725→          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+   726→   726→            <AnimatedSection className="text-center mb-14 sm:mb-16">
+   727→   727→              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
+   728→   728→                Featured Solutions
+   729→   729→              </h2>
+   730→   730→            </AnimatedSection>
+   731→   731→
+   732→   732→            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+   733→   733→              {[
+   734→   734→                {
+   735→   735→                  title: 'AI Training & Data',
+   736→   736→                  desc: 'Research-grade annotation, training, and evaluation for machine learning models.',
+   737→   737→                  stat: '100+ Models Trained',
+   738→   738→                  icon: Database,
+   739→   739→                },
+   740→   740→                {
+   741→   741→                  title: 'Back-Office Automation',
+   742→   742→                  desc: 'Automate complex or tedious work that buries your team. Handle messy data with precision.',
+   743→   743→                  stat: '70% Time Reduction',
+   744→   744→                  icon: Workflow,
+   745→   745→                },
+   746→   746→                {
+   747→   747→                  title: 'Intelligent Contact Centre',
+   748→   748→                  desc: 'Unified data, automated QA, sentiment analysis, and AI voice agents.',
+   749→   749→                  stat: '3x Efficiency Gains',
+   750→   750→                  icon: Bot,
+   751→   751→                },
+   752→   752→              ].map((sol) => (
+   753→   753→                <AnimatedSection key={sol.title}>
+   754→   754→                  <Card className="group h-full border border-emerald/20 bg-card hover:border-emerald/50 transition-colors duration-300 py-0 gap-0">
+   755→   755→                    <CardContent className="p-6 sm:p-8 flex flex-col gap-5 h-full">
+   756→   756→                      <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-emerald/10 text-emerald">
+   757→   757→                        <sol.icon className="size-6" />
+   758→   758→                      </div>
+   759→   759→                      <div>
+   760→   760→                        <h3 className="text-xl font-semibold mb-2">
+   761→   761→                          {sol.title}
+   762→   762→                        </h3>
+   763→   763→                        <p className="text-sm text-muted-foreground leading-relaxed">
+   764→   764→                          {sol.desc}
+   765→   765→                        </p>
+   766→   766→                      </div>
+   767→   767→                      <div className="mt-auto pt-4 border-t border-border">
+   768→   768→                        <span className="text-lg font-bold gradient-text">
+   769→   769→                          {sol.stat}
+   770→   770→                        </span>
+   771→   771→                      </div>
+   772→   772→                    </CardContent>
+   773→   773→                  </Card>
+   774→   774→                </AnimatedSection>
+   775→   775→              ))}
+   776→   776→            </div>
+   777→   777→          </div>
+   778→   778→        </section>
+   779→   779→
+   780→   780→        {/* ============================================================ */}
+   781→   781→        {/*  8. ABOUT SECTION                                             */}
+   782→   782→        {/* ============================================================ */}
+   783→   783→        <section id="about" className="py-20 sm:py-28">
+   784→   784→          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+   785→   785→            <AnimatedSection>
+   786→   786→              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+   787→   787→                {/* Text */}
+   788→   788→                <div>
+   789→   789→                  <Quote className="size-8 text-emerald/60 mb-4" />
+   790→   790→                  <blockquote className="text-lg sm:text-xl font-medium leading-relaxed italic text-foreground/90 mb-6">
+   791→   791→                    &ldquo;Think of technology as a verb, not a noun. It provides
+   792→   792→                    the tools, creative people provide the imagination.&rdquo;
+   793→   793→                  </blockquote>
+   794→   794→                  <p className="text-sm text-muted-foreground mb-8">
+   795→   795→                    — Red Burns
+   796→   796→                  </p>
+   797→   797→                  <p className="text-muted-foreground leading-relaxed mb-4">
+   798→   798→                    Business Hustle is a complete AI solutions and digital
+   799→   799→                    transformation provider for African enterprises. From
+   800→   800→                    specialised AI agent development to data platform
+   801→   801→                    architecture, we handle it all — so you can focus on what
+   802→   802→                    matters most: your work.
+   803→   803→                  </p>
+   804→   804→                  <p className="text-muted-foreground leading-relaxed mb-8">
+   805→   805→                    Founded in South Africa, serving the continent.
+   806→   806→                  </p>
+   807→   807→                  <a
+   808→   808→                    href="#"
+   809→   809→                    className="inline-flex items-center gap-1.5 text-sm font-medium text-emerald hover:gap-2.5 transition-all"
+   810→   810→                  >
+   811→   811→                    Learn About Our Story
+   812→   812→                    <ArrowRight className="size-4" />
+   813→   813→                  </a>
+   814→   814→                </div>
+   815→   815→
+   816→   816→                {/* Visual */}
+   817→   817→                <div className="relative">
+   818→   818→                  <div className="aspect-square rounded-2xl overflow-hidden border border-border/60">
+   819→   819→                    <div
+   820→   820→                      className="absolute inset-0 bg-cover bg-center"
+   821→   821→                      style={{
+   822→   822→                        backgroundImage: 'url(/platform-bg.png)',
+   823→   823→                        opacity: 0.5,
+   824→   824→                      }}
+   825→   825→                    />
+   826→   826→                    <div className="absolute inset-0 dot-pattern" />
+   827→   827→                    <div className="relative z-10 h-full flex items-center justify-center">
+   828→   828→                      <div className="text-center p-8">
+   829→   829→                        <div className="inline-flex h-20 w-20 items-center justify-center rounded-2xl bg-emerald/10 text-emerald mb-6 animate-float">
+   830→   830→                          <Bot className="size-10" />
+   831→   831→                        </div>
+   832→   832→                        <p className="text-2xl sm:text-3xl font-bold tracking-tight">
+   833→   833→                          Built in{' '}
+   834→   834→                          <span className="gradient-text">Africa</span>,
+   835→   835→                          <br />
+   836→   836→                          for Africa
+   837→   837→                        </p>
+   838→   838→                      </div>
+   839→   839→                    </div>
+   840→   840→                  </div>
+   841→   841→                </div>
+   842→   842→              </div>
+   843→   843→            </AnimatedSection>
+   844→   844→          </div>
+   845→   845→        </section>
+   846→   846→
+   847→   847→        {/* ============================================================ */}
+   848→   848→        {/*  9. TESTIMONIALS                                              */}
+   849→   849→        {/* ============================================================ */}
+   850→   850→        <section className="py-20 sm:py-28 bg-muted/20">
+   851→   851→          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+   852→   852→            <AnimatedSection className="text-center mb-14 sm:mb-16">
+   853→   853→              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
+   854→   854→                What Our Partners Say
+   855→   855→              </h2>
+   856→   856→            </AnimatedSection>
+   857→   857→
+   858→   858→            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+   859→   859→              {[
+   860→   860→                {
+   861→   861→                  quote:
+   862→   862→                    "Business Hustle's AI automation reduced our invoice processing time by 80%. Their team understood our unique challenges and delivered a solution that actually works.",
+   863→   863→                  author: 'Thabo M.',
+   864→   864→                  role: 'CFO, TechLogistics SA',
+   865→   865→                },
+   866→   866→                {
+   867→   867→                  quote:
+   868→   868→                    'The data platform they built gave us visibility we never had before. We can now make decisions in hours, not weeks.',
+   869→   869→                  author: 'Lindiwe K.',
+   870→   870→                  role: 'Head of Operations, AgriGrow',
+   871→   871→                },
+   872→   872→                {
+   873→   873→                  quote:
+   874→   874→                    'Their approach to AI agents transformed our customer service. Response times dropped 60% while satisfaction scores hit all-time highs.',
+   875→   875→                  author: 'Michael D.',
+   876→   876→                  role: 'CEO, FinServe Africa',
+   877→   877→                },
+   878→   878→              ].map((t) => (
+   879→   879→                <AnimatedSection key={t.author}>
+   880→   880→                  <Card className="group h-full border-border/60 hover:border-emerald/30 transition-colors duration-300 py-0 gap-0">
+   881→   881→                    <CardContent className="p-6 flex flex-col gap-4 h-full">
+   882→   882→                      {/* Stars */}
+   883→   883→                      <div className="flex gap-0.5 text-gold">
+   884→   884→                        {Array.from({ length: 5 }).map((_, i) => (
+   885→   885→                          <Star
+   886→   886→                            key={i}
+   887→   887→                            className="size-4 fill-current"
+   888→   888→                          />
+   889→   889→                        ))}
+   890→   890→                      </div>
+   891→   891→                      <p className="text-sm text-muted-foreground leading-relaxed flex-1">
+   892→   892→                        &ldquo;{t.quote}&rdquo;
+   893→   893→                      </p>
+   894→   894→                      <div className="pt-3 border-t border-border">
+   895→   895→                        <p className="text-sm font-semibold">{t.author}</p>
+   896→   896→                        <p className="text-xs text-muted-foreground">
+   897→   897→                          {t.role}
+   898→   898→                        </p>
+   899→   899→                      </div>
+   900→   900→                    </CardContent>
+   901→   901→                  </Card>
+   902→   902→                </AnimatedSection>
+   903→   903→              ))}
+   904→   904→            </div>
+   905→   905→          </div>
+   906→   906→        </section>
+   907→   907→
+   908→   908→        {/* ============================================================ */}
+   909→   909→        {/*  10. RESOURCES HUB                                           */}
+   910→   910→        {/* ============================================================ */}
+   911→   911→        <ResourcesHub />
+   912→   912→
+   913→   913→        {/* ============================================================ */}
+   914→   914→        {/*  11. NEWSLETTER / CTA                                         */}
+   915→   915→        {/* ============================================================ */}
+   916→   916→        <section id="contact" className="py-20 sm:py-28 relative overflow-hidden">
+   917→   917→          <div className="absolute inset-0 glow" aria-hidden="true" />
+   918→   918→          <div className="relative z-10 mx-auto max-w-2xl px-4 sm:px-6 lg:px-8 text-center">
+   919→   919→            <AnimatedSection>
+   920→   920→              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-4">
+   921→   921→                Ready to Make AI Real
+   922→   922→                <br />
+   923→   923→                <span className="gradient-text">for Your Business?</span>
+   924→   924→              </h2>
+   925→   925→              <p className="text-muted-foreground text-base sm:text-lg mb-8 max-w-lg mx-auto">
+   926→   926→                Join 5,000+ African business leaders receiving insights at the
+   927→   927→                bleeding edge of enterprise AI.
+   928→   928→              </p>
+   929→   929→              <form
+   930→   930→                onSubmit={(e: FormEvent) => e.preventDefault()}
+   931→   931→                className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
+   932→   932→              >
+   933→   933→                <Input
+   934→   934→                  type="email"
+   935→   935→                  placeholder="Enter your email"
+   936→   936→                  required
+   937→   937→                  className="rounded-full h-11 px-5 bg-card border-border"
+   938→   938→                />
+   939→   939→                <Button type="submit" className="rounded-full h-11 px-7 whitespace-nowrap">
+   940→   940→                  Subscribe
+   941→   941→                </Button>
+   942→   942→              </form>
+   943→   943→              <p className="mt-4 text-xs text-muted-foreground">
+   944→   944→                No spam. Unsubscribe anytime.
+   945→   945→              </p>
+   946→   946→            </AnimatedSection>
+   947→   947→          </div>
+   948→   948→        </section>
+   949→   949→      </main>
+   950→   950→
+   951→   951→      {/* ============================================================ */}
+   952→   952→      {/*  12. FOOTER                                                   */}
+   953→   953→      {/* ============================================================ */}
+   954→   954→      <footer className="border-t border-border bg-muted/30 mt-auto">
+   955→   955→        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+   956→   956→          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+   957→   957→            {/* Brand */}
+   958→   958→            <div className="col-span-2 sm:col-span-2 lg:col-span-1">
+   959→   959→              <div className="flex items-center gap-2.5 mb-4">
+   960→   960→                <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-emerald text-emerald-foreground font-bold text-sm">
+   961→   961→                  BH
+   962→   962→                </div>
+   963→   963→                <span className="font-semibold text-lg tracking-tight">
+   964→   964→                  Business Hustle
+   965→   965→                </span>
+   966→   966→              </div>
+   967→   967→              <p className="text-sm text-muted-foreground leading-relaxed mb-5 max-w-xs">
+   968→   968→                AI infrastructure and automation solutions built for African
+   969→   969→                enterprises. Part of Simple Eternity Holdings (Pty) Ltd.
+   970→   970→              </p>
+   971→   971→              <div className="flex gap-3">
+   972→   972→                {['twitter', 'linkedin', 'github'].map((social) => (
+   973→   973→                  <a
+   974→   974→                    key={social}
+   975→   975→                    href="#"
+   976→   976→                    aria-label={social}
+   977→   977→                    className="flex h-9 w-9 items-center justify-center rounded-lg border border-border text-muted-foreground hover:text-foreground hover:border-foreground/30 transition-colors"
+   978→   978→                  >
+   979→   979→                    {social === 'twitter' && (
+   980→   980→                      <svg className="size-4" fill="currentColor" viewBox="0 0 24 24">
+   981→   981→                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+   982→   982→                      </svg>
+   983→   983→                    )}
+   984→   984→                    {social === 'linkedin' && (
+   985→   985→                      <svg className="size-4" fill="currentColor" viewBox="0 0 24 24">
+   986→   986→                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+   987→   987→                      </svg>
+   988→   988→                    )}
+   989→   989→                    {social === 'github' && (
+   990→   990→                      <svg className="size-4" fill="currentColor" viewBox="0 0 24 24">
+   991→   991→                        <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+   992→   992→                      </svg>
+   993→   993→                    )}
+   994→   994→                  </a>
+   995→   995→                ))}
+   996→   996→              </div>
+   997→   997→            </div>
+   998→   998→
+   999→   999→            {/* Platform */}
+  1000→  1000→            <div>
+  1001→  1001→              <h4 className="text-sm font-semibold mb-4">Platform</h4>
+  1002→  1002→              <ul className="space-y-2.5">
+  1003→  1003→                {['Vortex', 'Flux', 'Nexus', 'Pulse', 'Axon'].map((link) => (
+  1004→  1004→                  <li key={link}>
+  1005→  1005→                    <a
+  1006→  1006→                      href="#"
+  1007→  1007→                      className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+  1008→  1008→                    >
+  1009→  1009→                      {link}
+  1010→  1010→                    </a>
+  1011→  1011→                  </li>
+  1012→  1012→                ))}
+  1013→  1013→              </ul>
+  1014→  1014→            </div>
+  1015→  1015→
+  1016→  1016→            {/* Company */}
+  1017→  1017→            <div>
+  1018→  1018→              <h4 className="text-sm font-semibold mb-4">Company</h4>
+  1019→  1019→              <ul className="space-y-2.5">
+  1020→  1020→                {['About', 'Careers', 'Partnerships', 'Blog', 'Contact'].map(
+  1021→  1021→                  (link) => (
+  1022→  1022→                    <li key={link}>
+  1023→  1023→                      <a
+  1024→  1024→                        href="#"
+  1025→  1025→                        className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+  1026→  1026→                      >
+  1027→  1027→                        {link}
+  1028→  1028→                      </a>
+  1029→  1029→                    </li>
+  1030→  1030→                  )
+  1031→  1031→                )}
+  1032→  1032→              </ul>
+  1033→  1033→            </div>
+  1034→  1034→
+  1035→  1035→            {/* Legal */}
+  1036→  1036→            <div>
+  1037→  1037→              <h4 className="text-sm font-semibold mb-4">Legal</h4>
+  1038→  1038→              <ul className="space-y-2.5">
+  1039→  1039→                {[
+  1040→  1040→                  'Privacy Policy',
+  1041→  1041→                  'Terms of Service',
+  1042→  1042→                  'Cookie Policy',
+  1043→  1043→                ].map((link) => (
+  1044→  1044→                  <li key={link}>
+  1045→  1045→                    <a
+  1046→  1046→                      href="#"
+  1047→  1047→                      className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+  1048→  1048→                    >
+  1049→  1049→                      {link}
+  1050→  1050→                    </a>
+  1051→  1051→                  </li>
+  1052→  1052→                ))}
+  1053→  1053→              </ul>
+  1054→  1054→            </div>
+  1055→  1055→          </div>
+  1056→  1056→        </div>
+  1057→  1057→
+  1058→  1058→        {/* Bottom bar */}
+  1059→  1059→        <div className="border-t border-border">
+  1060→  1060→          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-5">
+  1061→  1061→            <p className="text-xs text-muted-foreground text-center sm:text-left">
+  1062→  1062→              © 2025 Business Hustle Ltd. All rights reserved. Part of Simple
+  1063→  1063→              Eternity Holdings (Pty) Ltd.
+  1064→  1064→            </p>
+  1065→  1065→          </div>
+  1066→  1066→        </div>
+  1067→  1067→      </footer>
+  1068→  1068→    </div>
+  1069→  1069→  )
+  1070→  1070→}

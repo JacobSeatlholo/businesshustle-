@@ -1,0 +1,92 @@
+# Business Hustle - AI Solutions for African Enterprises
+# https://businesshustle.co.za
+# Last updated: 2025
+
+> Business Hustle transforms African businesses with AI-powered automation, intelligent agents, and enterprise-grade data platforms. Founded in South Africa, serving the continent. Part of Simple Eternity Holdings (Pty) Ltd.
+
+## About
+
+Business Hustle is a complete AI solutions and digital transformation provider for African enterprises. From specialised AI agent development to data platform architecture, the company builds the infrastructure that makes AI work for businesses across the continent.
+
+The company provides AI infrastructure for African businesses — building systems that transform data and manual processes into intelligent, agent-ready workflows. Their approach is: "Building Blocks, Not Black Boxes." Deploy on your existing stack, configure for your operations, train on your data.
+
+## Platform Products
+
+### Vortex — Data Platform
+Get your messy, multi-source data machine-ready. Pulls scattered data into one governed, AI-ready platform.
+
+### Flux — Process Builder
+Document manual workflows for automation. Visual map of how work gets done, running every step automatically.
+
+### Nexus — Expert Network
+A curated network of vetted AI specialists and domain experts deployed on demand for your projects.
+
+### Pulse — Evaluations
+Run rigorous evaluation for quality, safety, and accuracy. Measure AI performance against your actual use cases.
+
+### Axon — AI Agents
+Build governed AI agents that mirror your workflows. Deploy agents that hand off finished results to your systems.
+
+## How It Works
+
+1. **Discover** — Audit data, workflows, and operations to identify where AI creates the most impact.
+2. **Build** — Design, train, and deploy custom AI solutions integrated with existing systems.
+3. **Scale** — Monitor, evaluate, and continuously improve. AI infrastructure grows as the business evolves.
+
+## Industries Served
+
+- **Financial Services** — Compliance, risk, and customer insight — AI that meets regulatory demands.
+- **Healthcare** — Custom AI for healthcare operations, diagnostics support, and patient flow.
+- **Mining & Energy** — Catch hazards, cut losses, prevent downtime with predictive intelligence.
+- **Agriculture** — Forecast yields, optimise supply chains, and monitor crops with computer vision.
+- **Retail & E-commerce** — Forecast demand, automate inventory, and personalise customer experiences.
+- **Logistics** — Route optimisation, fleet management, and real-time supply chain visibility.
+- **Public Sector** — Cut red tape, connect systems, and serve citizens better with AI.
+- **Education** — Personalised learning paths, automated assessment, and institutional analytics.
+
+## Featured Solutions
+
+### AI Training & Data
+Research-grade annotation, training, and evaluation for machine learning models. 100+ Models Trained.
+
+### Back-Office Automation
+Automate complex or tedious work that buries your team. Handle messy data with precision. 70% Time Reduction.
+
+### Intelligent Contact Centre
+Unified data, automated QA, sentiment analysis, and AI voice agents. 3x Efficiency Gains.
+
+## Key Metrics
+
+- 50+ Businesses Transformed
+- 98% Client Retention
+- 24/7 AI Operations
+
+## Resources Hub
+
+Business Hustle provides a curated hub of 120+ tools and resources across 21 categories for builders and entrepreneurs, covering:
+
+- Design & UI tools
+- AI & Machine Learning platforms
+- No-code & Low-code builders
+- Analytics & Data tools
+- DevOps & Infrastructure
+- Productivity & Collaboration
+- Marketing & Growth
+- Cloud & Hosting
+- And 13 more categories
+
+## Contact
+
+- Website: https://businesshustle.co.za
+- Company: Business Hustle Ltd (Part of Simple Eternity Holdings (Pty) Ltd)
+- Location: South Africa, serving the African continent
+- Available languages: English, Afrikaans, isiZulu, French, Portuguese, Swahili, Arabic
+
+## Navigation
+
+- [Platform](#platform) — AI infrastructure products
+- [Solutions](#solutions) — Featured enterprise solutions
+- [Industries](#industries) — Sectors served across Africa
+- [Resources](#resources) — 120+ curated tools for builders
+- [About](#about) — Company story and mission
+- [Contact](#contact) — Get in touch and book a demo

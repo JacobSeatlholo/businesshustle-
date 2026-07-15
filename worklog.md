@@ -133,3 +133,35 @@ Stage Summary:
 - Data persisted in SQLite via Prisma, served via API
 - Client-side search and category filtering for instant response
 - All 121 resources verified working in browser
+---
+Task ID: 8
+Agent: Main Agent
+Task: Add light/dark mode toggle, multi-language support (i18n), and llms.txt
+
+Work Log:
+- Created i18n translation system at /src/lib/i18n/ with:
+  - translations.ts: 700+ translation keys across 7 languages (English, Afrikaans, isiZulu, French, Portuguese, Swahili, Arabic)
+  - context.tsx: React context provider using useSyncExternalStore for locale management (avoids setState-in-effect lint errors)
+  - index.ts: barrel export
+- Created ThemeToggle component at /src/components/theme-toggle.tsx using next-themes useTheme hook with useSyncExternalStore for hydration-safe mounting
+- Created LanguageSwitcher component at /src/components/language-switcher.tsx using DropdownMenu with flag emojis and native language names
+- Updated layout.tsx to wrap app with I18nProvider
+- Updated page.tsx (1080 lines) to:
+  - Import and use useI18n hook with t() function for all text content
+  - Replace 80+ hardcoded English strings with translation keys
+  - Add ThemeToggle + LanguageSwitcher to both desktop and mobile navigation
+  - Properly handle RTL direction for Arabic (document.dir = 'rtl')
+  - Language preference persisted in localStorage
+- Created /public/llms.txt with structured markdown following llms.txt spec:
+  - Company description, platform products, how it works, industries, solutions, metrics, resources hub, contact info
+  - Navigation links with anchors
+  - Available languages listed
+- Fixed lint errors by using useSyncExternalStore instead of useState+useEffect for hydration patterns
+
+Stage Summary:
+- Light/dark mode toggle working on desktop and mobile nav
+- 7 languages supported: English, Afrikaans, isiZulu, French, Portuguese, Swahili, Arabic
+- Arabic RTL support with automatic document.dir switching
+- Language preference persisted across sessions via localStorage
+- llms.txt accessible at /llms.txt for LLM/SEO exposure
+- All verified with Agent Browser: theme toggle, language switching, mobile layout, no console errors

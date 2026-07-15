@@ -1,0 +1,1070 @@
+     1→'use client'
+     2→
+     3→import { useState, useEffect, useRef, type FormEvent } from 'react'
+     4→import { motion, useInView } from 'framer-motion'
+     5→import {
+     6→  Database,
+     7→  Workflow,
+     8→  Users,
+     9→  Activity,
+    10→  Bot,
+    11→  Landmark,
+    12→  Heart,
+    13→  Zap,
+    14→  Sprout,
+    15→  ShoppingBag,
+    16→  Truck,
+    17→  Building2,
+    18→  GraduationCap,
+    19→  Star,
+    20→  Menu,
+    21→  ArrowRight,
+    22→  Quote,
+    23→  Search,
+    24→  ExternalLink,
+    25→  BookOpen,
+    26→  Sparkles,
+    27→} from 'lucide-react'
+    28→import { Button } from '@/components/ui/button'
+    29→import { Card, CardContent } from '@/components/ui/card'
+    30→import { Badge } from '@/components/ui/badge'
+    31→import { Input } from '@/components/ui/input'
+    32→import { Separator } from '@/components/ui/separator'
+    33→import {
+    34→  Sheet,
+    35→  SheetTrigger,
+    36→  SheetContent,
+    37→  SheetHeader,
+    38→  SheetTitle,
+    39→} from '@/components/ui/sheet'
+    40→
+    41→/* ------------------------------------------------------------------ */
+    42→/*  Animated counter hook                                              */
+    43→/* ------------------------------------------------------------------ */
+    44→function useCounter(end: number, duration = 2000, startOnView = true) {
+    45→  const [count, setCount] = useState(0)
+    46→  const ref = useRef<HTMLSpanElement>(null)
+    47→  const inView = useInView(ref, { once: true, margin: '-50px' })
+    48→
+    49→  useEffect(() => {
+    50→    if (!inView && startOnView) return
+    51→    let start = 0
+    52→    const step = Math.ceil(end / (duration / 16))
+    53→    const timer = setInterval(() => {
+    54→      start += step
+    55→      if (start >= end) {
+    56→        setCount(end)
+    57→        clearInterval(timer)
+    58→      } else {
+    59→        setCount(start)
+    60→      }
+    61→    }, 16)
+    62→    return () => clearInterval(timer)
+    63→  }, [inView, end, duration, startOnView])
+    64→
+    65→  return { count, ref }
+    66→}
+    67→
+    68→/* ------------------------------------------------------------------ */
+    69→/*  Section wrapper with scroll animation                               */
+    70→/* ------------------------------------------------------------------ */
+    71→function AnimatedSection({
+    72→  children,
+    73→  className = '',
+    74→}: {
+    75→  children: React.ReactNode
+    76→  className?: string
+    77→}) {
+    78→  const ref = useRef(null)
+    79→  const isInView = useInView(ref, { once: true, margin: '-100px' })
+    80→
+    81→  return (
+    82→    <motion.div
+    83→      ref={ref}
+    84→      initial={{ opacity: 0, y: 30 }}
+    85→      animate={isInView ? { opacity: 1, y: 0 } : {}}
+    86→      transition={{ duration: 0.6 }}
+    87→      className={className}
+    88→    >
+    89→      {children}
+    90→    </motion.div>
+    91→  )
+    92→}
+    93→
+    94→/* ------------------------------------------------------------------ */
+    95→/*  Resources Hub (from get-started.mdx)                              */
+    96→/* ------------------------------------------------------------------ */
+    97→interface ResourceItem {
+    98→  id: string
+    99→  name: string
+   100→  url: string
+   101→  description: string
+   102→  category: string
+   103→  isFree: boolean
+   104→  isPaid: boolean
+   105→}
+   106→
+   107→function ResourcesHub() {
+   108→  const [resources, setResources] = useState<ResourceItem[]>([])
+   109→  const [categories, setCategories] = useState<string[]>([])
+   110→  const [activeCategory, setActiveCategory] = useState('All')
+   111→  const [search, setSearch] = useState('')
+   112→  const [loading, setLoading] = useState(true)
+   113→  const sectionRef = useRef(null)
+   114→  const isInView = useInView(sectionRef, { once: true, margin: '-100px' })
+   115→
+   116→  useEffect(() => {
+   117→    fetch('/api/resources')
+   118→      .then((r) => r.json())
+   119→      .then((data) => {
+   120→        setResources(data.resources)
+   121→        setCategories(data.categories)
+   122→        setLoading(false)
+   123→      })
+   124→  }, [])
+   125→
+   126→  const filtered = resources.filter((r) => {
+   127→    const matchesCategory = activeCategory === 'All' || r.category === activeCategory
+   128→    const matchesSearch =
+   129→      !search ||
+   130→      r.name.toLowerCase().includes(search.toLowerCase()) ||
+   131→      r.description.toLowerCase().includes(search.toLowerCase()) ||
+   132→      r.category.toLowerCase().includes(search.toLowerCase())
+   133→    return matchesCategory && matchesSearch
+   134→  })
+   135→
+   136→  return (
+   137→    <section id="resources" className="py-20 sm:py-28 bg-muted/30">
+   138→      <div ref={sectionRef} className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+   139→        <motion.div
+   140→          initial={{ opacity: 0, y: 30 }}
+   141→          animate={isInView ? { opacity: 1, y: 0 } : {}}
+   142→          transition={{ duration: 0.6 }}
+   143→          className="text-center mb-12"
+   144→        >
+   145→          <Badge variant="secondary" className="mb-4 gap-1.5 px-3 py-1 text-xs font-medium">
+   146→            <BookOpen className="size-3" />
+   147→            Curated for Builders
+   148→          </Badge>
+   149→          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-4">
+   150→            Go From Idea to{' '}
+   151→            <span className="gradient-text">Live Product Fast</span>
+   152→          </h2>
+   153→          <p className="text-muted-foreground text-base sm:text-lg max-w-2xl mx-auto">
+   154→            Unlock the tools you need to take your business to the next level
+   155→            — all curated, tested, and free to start. Your hub of 120+
+   156→            resources across 21 categories.
+   157→          </p>
+   158→        </motion.div>
+   159→
+   160→        {/* Search & Filter Bar */}
+   161→        <motion.div
+   162→          initial={{ opacity: 0, y: 20 }}
+   163→          animate={isInView ? { opacity: 1, y: 0 } : {}}
+   164→          transition={{ duration: 0.6, delay: 0.2 }}
+   165→          className="mb-8 space-y-4"
+   166→        >
+   167→          <div className="relative max-w-md mx-auto">
+   168→            <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 size-4 text-muted-foreground" />
+   169→            <Input
+   170→              type="text"
+   171→              placeholder="Search resources..."
+   172→              value={search}
+   173→              onChange={(e) => setSearch(e.target.value)}
+   174→              className="pl-10 rounded-full h-11 bg-background border-border"
+   175→            />
+   176→          </div>
+   177→          <div className="flex flex-wrap justify-center gap-2">
+   178→            <button
+   179→              onClick={() => setActiveCategory('All')}
+   180→              className={`px-3.5 py-1.5 rounded-full text-xs font-medium transition-all ${
+   181→                activeCategory === 'All'
+   182→                  ? 'bg-emerald text-emerald-foreground shadow-sm'
+   183→                  : 'bg-background border border-border text-muted-foreground hover:text-foreground hover:border-foreground/30'
+   184→              }`}
+   185→            >
+   186→              All ({resources.length})
+   187→            </button>
+   188→            {categories.map((cat) => {
+   189→              const count = resources.filter((r) => r.category === cat).length
+   190→              return (
+   191→                <button
+   192→                  key={cat}
+   193→                  onClick={() => setActiveCategory(cat)}
+   194→                  className={`px-3.5 py-1.5 rounded-full text-xs font-medium transition-all ${
+   195→                    activeCategory === cat
+   196→                      ? 'bg-emerald text-emerald-foreground shadow-sm'
+   197→                      : 'bg-background border border-border text-muted-foreground hover:text-foreground hover:border-foreground/30'
+   198→                  }`}
+   199→                >
+   200→                  {cat} ({count})
+   201→                </button>
+   202→              )
+   203→            })}
+   204→          </div>
+   205→        </motion.div>
+   206→
+   207→        {/* Resource Grid */}
+   208→        {loading ? (
+   209→          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+   210→            {Array.from({ length: 9 }).map((_, i) => (
+   211→              <div
+   212→                key={i}
+   213→                className="h-32 rounded-xl bg-background animate-pulse"
+   214→              />
+   215→            ))}
+   216→          </div>
+   217→        ) : (
+   218→          <>
+   219→            <p className="text-sm text-muted-foreground mb-4">
+   220→              Showing {filtered.length} of {resources.length} resources
+   221→            </p>
+   222→            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-h-[720px] overflow-y-auto custom-scrollbar pr-1">
+   223→              {filtered.map((resource) => (
+   224→                <a
+   225→                  key={resource.id}
+   226→                  href={resource.url}
+   227→                  target="_blank"
+   228→                  rel="noopener noreferrer"
+   229→                  className="group flex flex-col p-4 rounded-xl bg-background border border-border hover:border-emerald/40 hover:shadow-md transition-all"
+   230→                >
+   231→                  <div className="flex items-start justify-between gap-3 mb-2">
+   232→                    <h3 className="font-semibold text-sm leading-tight group-hover:text-emerald transition-colors line-clamp-1">
+   233→                      {resource.name}
+   234→                    </h3>
+   235→                    <ExternalLink className="size-3.5 text-muted-foreground group-hover:text-emerald shrink-0 mt-0.5 transition-colors" />
+   236→                  </div>
+   237→                  <p className="text-xs text-muted-foreground leading-relaxed mb-3 line-clamp-2 flex-1">
+   238→                    {resource.description}
+   239→                  </p>
+   240→                  <div className="flex items-center gap-2">
+   241→                    <Badge
+   242→                      variant="outline"
+   243→                      className="text-[10px] px-2 py-0 font-normal"
+   244→                    >
+   245→                      {resource.category}
+   246→                    </Badge>
+   247→                    <div className="flex gap-1.5 ml-auto">
+   248→                      {resource.isFree && (
+   249→                        <span className="inline-flex items-center rounded-full bg-emerald/10 text-emerald px-2 py-0.5 text-[10px] font-medium">
+   250→                          Free
+   251→                        </span>
+   252→                      )}
+   253→                      {resource.isPaid && (
+   254→                        <span className="inline-flex items-center rounded-full bg-gold/10 text-gold px-2 py-0.5 text-[10px] font-medium">
+   255→                          Paid
+   256→                        </span>
+   257→                      )}
+   258→                    </div>
+   259→                  </div>
+   260→                </a>
+   261→              ))}
+   262→            </div>
+   263→            {filtered.length === 0 && (
+   264→              <div className="text-center py-16">
+   265→                <Sparkles className="size-10 text-muted-foreground/40 mx-auto mb-4" />
+   266→                <p className="text-muted-foreground">
+   267→                  No resources found matching &quot;{search}&quot;
+   268→                </p>
+   269→                <button
+   270→                  onClick={() => {
+   271→                    setSearch('')
+   272→                    setActiveCategory('All')
+   273→                  }}
+   274→                  className="text-emerald text-sm mt-2 hover:underline"
+   275→                >
+   276→                  Clear filters
+   277→                </button>
+   278→              </div>
+   279→            )}
+   280→          </>
+   281→        )}
+   282→      </div>
+   283→    </section>
+   284→  )
+   285→}
+   286→
+   287→/* ------------------------------------------------------------------ */
+   288→/*  Main Page                                                          */
+   289→/* ------------------------------------------------------------------ */
+   290→export default function Home() {
+   291→  const [scrolled, setScrolled] = useState(false)
+   292→  const [mobileOpen, setMobileOpen] = useState(false)
+   293→
+   294→  useEffect(() => {
+   295→    const onScroll = () => setScrolled(window.scrollY > 40)
+   296→    window.addEventListener('scroll', onScroll, { passive: true })
+   297→    return () => window.removeEventListener('scroll', onScroll)
+   298→  }, [])
+   299→
+   300→  const navLinks = ['Platform', 'Solutions', 'Industries', 'Resources', 'About', 'Contact']
+   301→
+   302→  const { count: c1, ref: r1 } = useCounter(50)
+   303→  const { count: c2, ref: r2 } = useCounter(98)
+   304→  const { count: c3, ref: r3 } = useCounter(24)
+   305→
+   306→  return (
+   307→    <div className="min-h-screen flex flex-col">
+   308→      {/* ============================================================ */}
+   309→      {/*  1. NAVIGATION                                                */}
+   310→      {/* ============================================================ */}
+   311→      <header
+   312→        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+   313→          scrolled
+   314→            ? 'bg-background/90 backdrop-blur-xl border-b border-border shadow-sm'
+   315→            : 'bg-transparent'
+   316→        }`}
+   317→      >
+   318→        <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+   319→          {/* Logo */}
+   320→          <a href="#" className="flex items-center gap-2.5">
+   321→            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-emerald text-emerald-foreground font-bold text-sm">
+   322→              BH
+   323→            </div>
+   324→            <span className="hidden sm:inline font-semibold text-lg tracking-tight">
+   325→              Business Hustle
+   326→            </span>
+   327→          </a>
+   328→
+   329→          {/* Desktop links */}
+   330→          <ul className="hidden md:flex items-center gap-1">
+   331→            {navLinks.map((link) => (
+   332→              <li key={link}>
+   333→                <a
+   334→                  href={`#${link.toLowerCase()}`}
+   335→                  className="px-3 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors rounded-md hover:bg-accent"
+   336→                >
+   337→                  {link}
+   338→                </a>
+   339→              </li>
+   340→            ))}
+   341→          </ul>
+   342→
+   343→          {/* Desktop CTA */}
+   344→          <div className="hidden md:flex items-center gap-3">
+   345→            <Button size="sm" className="rounded-full px-5">
+   346→              Book a Demo
+   347→            </Button>
+   348→          </div>
+   349→
+   350→          {/* Mobile hamburger */}
+   351→          <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
+   352→            <SheetTrigger asChild>
+   353→              <Button variant="ghost" size="icon" className="md:hidden">
+   354→                <Menu className="size-5" />
+   355→                <span className="sr-only">Open menu</span>
+   356→              </Button>
+   357→            </SheetTrigger>
+   358→            <SheetContent side="right" className="w-72">
+   359→              <SheetHeader>
+   360→                <SheetTitle className="flex items-center gap-2">
+   361→                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald text-emerald-foreground font-bold text-xs">
+   362→                    BH
+   363→                  </div>
+   364→                  Business Hustle
+   365→                </SheetTitle>
+   366→              </SheetHeader>
+   367→              <div className="flex flex-col gap-1 px-4 pt-4">
+   368→                {navLinks.map((link) => (
+   369→                  <a
+   370→                    key={link}
+   371→                    href={`#${link.toLowerCase()}`}
+   372→                    onClick={() => setMobileOpen(false)}
+   373→                    className="rounded-md px-3 py-2.5 text-sm text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
+   374→                  >
+   375→                    {link}
+   376→                  </a>
+   377→                ))}
+   378→                <Separator className="my-3" />
+   379→                <Button className="rounded-full w-full">Book a Demo</Button>
+   380→              </div>
+   381→            </SheetContent>
+   382→          </Sheet>
+   383→        </nav>
+   384→      </header>
+   385→
+   386→      <main className="flex-1">
+   387→        {/* ============================================================ */}
+   388→        {/*  2. HERO SECTION                                              */}
+   389→        {/* ============================================================ */}
+   390→        <section
+   391→          id="hero"
+   392→          className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-4 sm:px-6 lg:px-8 pt-16"
+   393→        >
+   394→          {/* Background image */}
+   395→          <div
+   396→            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+   397→            style={{ backgroundImage: 'url(/hero-bg.png)', opacity: 0.3 }}
+   398→            aria-hidden="true"
+   399→          />
+   400→          {/* Grid overlay */}
+   401→          <div className="absolute inset-0 grid-pattern" aria-hidden="true" />
+   402→
+   403→          {/* Content */}
+   404→          <div className="relative z-10 mx-auto max-w-4xl text-center">
+   405→            <motion.div
+   406→              initial={{ opacity: 0, y: 20 }}
+   407→              animate={{ opacity: 1, y: 0 }}
+   408→              transition={{ duration: 0.5, delay: 0.1 }}
+   409→            >
+   410→              <Badge
+   411→                variant="outline"
+   412→                className="mb-6 border-emerald/40 text-emerald px-4 py-1.5 text-sm"
+   413→              >
+   414→                Explore. Adapt. Evolve.
+   415→              </Badge>
+   416→            </motion.div>
+   417→
+   418→            <motion.h1
+   419→              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1]"
+   420→              initial={{ opacity: 0, y: 20 }}
+   421→              animate={{ opacity: 1, y: 0 }}
+   422→              transition={{ duration: 0.5, delay: 0.2 }}
+   423→            >
+   424→              AI Infrastructure
+   425→              <br />
+   426→              <span className="gradient-text">for African Business</span>
+   427→            </motion.h1>
+   428→
+   429→            <motion.p
+   430→              className="mx-auto mt-6 max-w-2xl text-base sm:text-lg text-muted-foreground leading-relaxed"
+   431→              initial={{ opacity: 0, y: 20 }}
+   432→              animate={{ opacity: 1, y: 0 }}
+   433→              transition={{ duration: 0.5, delay: 0.35 }}
+   434→            >
+   435→              From your first idea to AI-powered revenue — we build the systems
+   436→              that transform data and manual processes into intelligent,
+   437→              agent-ready workflows.
+   438→            </motion.p>
+   439→
+   440→            <motion.div
+   441→              className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3"
+   442→              initial={{ opacity: 0, y: 20 }}
+   443→              animate={{ opacity: 1, y: 0 }}
+   444→              transition={{ duration: 0.5, delay: 0.5 }}
+   445→            >
+   446→              <Button size="lg" className="rounded-full px-7 text-sm">
+   447→                Book a Demo
+   448→                <ArrowRight className="size-4" />
+   449→              </Button>
+   450→              <Button
+   451→                variant="outline"
+   452→                size="lg"
+   453→                className="rounded-full px-7 text-sm"
+   454→              >
+   455→                Explore Platform
+   456→              </Button>
+   457→            </motion.div>
+   458→          </div>
+   459→
+   460→          {/* Stat counters */}
+   461→          <motion.div
+   462→            className="relative z-10 mt-16 sm:mt-20 grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-10 max-w-3xl mx-auto"
+   463→            initial={{ opacity: 0, y: 30 }}
+   464→            animate={{ opacity: 1, y: 0 }}
+   465→            transition={{ duration: 0.6, delay: 0.65 }}
+   466→          >
+   467→            {[
+   468→              { value: c1, suffix: '+', ref: r1, label: 'Businesses Transformed' },
+   469→              { value: c2, suffix: '%', ref: r2, label: 'Client Retention' },
+   470→              { value: c3, suffix: '/7', ref: r3, label: 'AI Operations' },
+   471→            ].map((stat) => (
+   472→              <div key={stat.label} className="text-center">
+   473→                <div className="text-2xl sm:text-3xl font-bold text-foreground">
+   474→                  <span ref={stat.ref}>
+   475→                    {stat.value}
+   476→                    {stat.suffix}
+   477→                  </span>
+   478→                </div>
+   479→                <p className="mt-1 text-xs sm:text-sm text-muted-foreground">
+   480→                  {stat.label}
+   481→                </p>
+   482→              </div>
+   483→            ))}
+   484→          </motion.div>
+   485→        </section>
+   486→
+   487→        {/* ============================================================ */}
+   488→        {/*  3. TRUSTED BY BAR                                            */}
+   489→        {/* ============================================================ */}
+   490→        <section className="border-y border-border bg-muted/30 py-6 sm:py-8">
+   491→          <AnimatedSection className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+   492→            <p className="text-center text-sm sm:text-base text-muted-foreground font-medium">
+   493→              Trusted by leading organisations across Southern Africa
+   494→            </p>
+   495→          </AnimatedSection>
+   496→        </section>
+   497→
+   498→        {/* ============================================================ */}
+   499→        {/*  4. PLATFORM SECTION                                          */}
+   500→        {/* ============================================================ */}
+   501→        <section id="platform" className="relative py-20 sm:py-28 overflow-hidden">
+   502→          <div className="absolute inset-0 dot-pattern opacity-40" aria-hidden="true" />
+   503→
+   504→          <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+   505→            <AnimatedSection className="text-center mb-14 sm:mb-16">
+   506→              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
+   507→                Building Blocks, Not Black Boxes
+   508→              </h2>
+   509→              <p className="mx-auto mt-4 max-w-2xl text-muted-foreground text-base sm:text-lg leading-relaxed">
+   510→                Deploy on your existing stack, configure for your operations,
+   511→                train on your data. Infrastructure that evolves with AI.
+   512→              </p>
+   513→            </AnimatedSection>
+   514→
+   515→            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+   516→              {[
+   517→                {
+   518→                  icon: Database,
+   519→                  name: 'Vortex',
+   520→                  tag: 'Data Platform',
+   521→                  description:
+   522→                    'Get your messy, multi-source data machine-ready. Pulls scattered data into one governed, AI-ready platform.',
+   523→                },
+   524→                {
+   525→                  icon: Workflow,
+   526→                  name: 'Flux',
+   527→                  tag: 'Process Builder',
+   528→                  description:
+   529→                    'Document manual workflows for automation. Visual map of how work gets done, running every step automatically.',
+   530→                },
+   531→                {
+   532→                  icon: Users,
+   533→                  name: 'Nexus',
+   534→                  tag: 'Expert Network',
+   535→                  description:
+   536→                    'A curated network of vetted AI specialists and domain experts deployed on demand for your projects.',
+   537→                },
+   538→                {
+   539→                  icon: Activity,
+   540→                  name: 'Pulse',
+   541→                  tag: 'Evaluations',
+   542→                  description:
+   543→                    'Run rigorous evaluation for quality, safety, and accuracy. Measure AI performance against your actual use cases.',
+   544→                },
+   545→                {
+   546→                  icon: Bot,
+   547→                  name: 'Axon',
+   548→                  tag: 'AI Agents',
+   549→                  description:
+   550→                    'Build governed AI agents that mirror your workflows. Deploy agents that hand off finished results to your systems.',
+   551→                },
+   552→              ].map((item, i) => (
+   553→                <AnimatedSection key={item.name}>
+   554→                  <motion.div
+   555→                    whileHover={{ y: -4 }}
+   556→                    transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+   557→                  >
+   558→                    <Card className="group h-full border-border/60 bg-card/80 backdrop-blur-sm hover:border-emerald/40 transition-colors duration-300 py-0 gap-0">
+   559→                      <CardContent className="p-6 flex flex-col gap-4 h-full">
+   560→                        <div className="flex items-center justify-between">
+   561→                          <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-emerald/10 text-emerald">
+   562→                            <item.icon className="size-5" />
+   563→                          </div>
+   564→                          <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
+   565→                            {item.tag}
+   566→                          </span>
+   567→                        </div>
+   568→                        <h3 className="text-lg font-semibold">{item.name}</h3>
+   569→                        <p className="text-sm text-muted-foreground leading-relaxed flex-1">
+   570→                          {item.description}
+   571→                        </p>
+   572→                        <a
+   573→                          href="#"
+   574→                          className="inline-flex items-center gap-1 text-sm font-medium text-emerald hover:gap-2 transition-all"
+   575→                        >
+   576→                          Learn more
+   577→                          <ArrowRight className="size-3.5" />
+   578→                        </a>
+   579→                      </CardContent>
+   580→                    </Card>
+   581→                  </motion.div>
+   582→                </AnimatedSection>
+   583→              ))}
+   584→            </div>
+   585→          </div>
+   586→        </section>
+   587→
+   588→        {/* ============================================================ */}
+   589→        {/*  5. HOW IT WORKS                                              */}
+   590→        {/* ============================================================ */}
+   591→        <section className="py-20 sm:py-28 bg-muted/20">
+   592→          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+   593→            <AnimatedSection className="text-center mb-14 sm:mb-16">
+   594→              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
+   595→                Weeks to Working AI, Not Months of Planning
+   596→              </h2>
+   597→            </AnimatedSection>
+   598→
+   599→            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4 relative">
+   600→              {/* Connecting line (desktop only) */}
+   601→              <div
+   602→                className="hidden md:block absolute top-16 left-[20%] right-[20%] h-px bg-gradient-to-r from-transparent via-border to-transparent"
+   603→                aria-hidden="true"
+   604→              />
+   605→
+   606→              {[
+   607→                {
+   608→                  num: '01',
+   609→                  title: 'Discover',
+   610→                  description:
+   611→                    'We audit your data, workflows, and operations to identify where AI creates the most impact.',
+   612→                },
+   613→                {
+   614→                  num: '02',
+   615→                  title: 'Build',
+   616→                  description:
+   617→                    'Our team designs, trains, and deploys custom AI solutions integrated with your existing systems.',
+   618→                },
+   619→                {
+   620→                  num: '03',
+   621→                  title: 'Scale',
+   622→                  description:
+   623→                    'Monitor, evaluate, and continuously improve. Your AI infrastructure grows as your business evolves.',
+   624→                },
+   625→              ].map((step, i) => (
+   626→                <AnimatedSection key={step.title}>
+   627→                  <div className="relative text-center md:text-left">
+   628→                    <div className="inline-flex items-center justify-center h-12 w-12 rounded-full border-2 border-emerald/50 bg-background text-emerald font-bold text-lg mb-5 relative z-10">
+   629→                      {step.num}
+   630→                    </div>
+   631→                    <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
+   632→                    <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+   633→                      {step.description}
+   634→                    </p>
+   635→                  </div>
+   636→                </AnimatedSection>
+   637→              ))}
+   638→            </div>
+   639→          </div>
+   640→        </section>
+   641→
+   642→        {/* ============================================================ */}
+   643→        {/*  6. INDUSTRIES SECTION                                        */}
+   644→        {/* ============================================================ */}
+   645→        <section id="industries" className="py-20 sm:py-28">
+   646→          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+   647→            <AnimatedSection className="text-center mb-14 sm:mb-16">
+   648→              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
+   649→                Any Sector, Any Stack
+   650→              </h2>
+   651→              <p className="mx-auto mt-4 max-w-xl text-muted-foreground text-base sm:text-lg">
+   652→                Built for the industries driving Africa&apos;s growth.
+   653→              </p>
+   654→            </AnimatedSection>
+   655→
+   656→            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+   657→              {[
+   658→                {
+   659→                  icon: Landmark,
+   660→                  name: 'Financial Services',
+   661→                  desc: 'Compliance, risk, and customer insight — AI that meets regulatory demands.',
+   662→                },
+   663→                {
+   664→                  icon: Heart,
+   665→                  name: 'Healthcare',
+   666→                  desc: 'Custom AI for healthcare operations, diagnostics support, and patient flow.',
+   667→                },
+   668→                {
+   669→                  icon: Zap,
+   670→                  name: 'Mining & Energy',
+   671→                  desc: 'Catch hazards, cut losses, prevent downtime with predictive intelligence.',
+   672→                },
+   673→                {
+   674→                  icon: Sprout,
+   675→                  name: 'Agriculture',
+   676→                  desc: 'Forecast yields, optimise supply chains, and monitor crops with computer vision.',
+   677→                },
+   678→                {
+   679→                  icon: ShoppingBag,
+   680→                  name: 'Retail & E-commerce',
+   681→                  desc: 'Forecast demand, automate inventory, and personalise customer experiences.',
+   682→                },
+   683→                {
+   684→                  icon: Truck,
+   685→                  name: 'Logistics',
+   686→                  desc: 'Route optimisation, fleet management, and real-time supply chain visibility.',
+   687→                },
+   688→                {
+   689→                  icon: Building2,
+   690→                  name: 'Public Sector',
+   691→                  desc: 'Cut red tape, connect systems, and serve citizens better with AI.',
+   692→                },
+   693→                {
+   694→                  icon: GraduationCap,
+   695→                  name: 'Education',
+   696→                  desc: 'Personalised learning paths, automated assessment, and institutional analytics.',
+   697→                },
+   698→              ].map((ind) => (
+   699→                <AnimatedSection key={ind.name}>
+   700→                  <motion.div whileHover={{ y: -3 }} transition={{ type: 'spring', stiffness: 300, damping: 20 }}>
+   701→                    <Card className="group h-full border-border/50 bg-card/60 hover:border-emerald/30 transition-colors duration-300 py-0 gap-0 cursor-default">
+   702→                      <CardContent className="p-5 flex flex-col gap-3 h-full">
+   703→                        <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-emerald/10 text-emerald shrink-0">
+   704→                          <ind.icon className="size-5" />
+   705→                        </div>
+   706→                        <h3 className="text-sm font-semibold leading-tight">
+   707→                          {ind.name}
+   708→                        </h3>
+   709→                        <p className="text-xs text-muted-foreground leading-relaxed">
+   710→                          {ind.desc}
+   711→                        </p>
+   712→                      </CardContent>
+   713→                    </Card>
+   714→                  </motion.div>
+   715→                </AnimatedSection>
+   716→              ))}
+   717→            </div>
+   718→          </div>
+   719→        </section>
+   720→
+   721→        {/* ============================================================ */}
+   722→        {/*  7. SOLUTIONS SHOWCASE                                         */}
+   723→        {/* ============================================================ */}
+   724→        <section id="solutions" className="py-20 sm:py-28 bg-muted/20">
+   725→          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+   726→            <AnimatedSection className="text-center mb-14 sm:mb-16">
+   727→              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
+   728→                Featured Solutions
+   729→              </h2>
+   730→            </AnimatedSection>
+   731→
+   732→            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+   733→              {[
+   734→                {
+   735→                  title: 'AI Training & Data',
+   736→                  desc: 'Research-grade annotation, training, and evaluation for machine learning models.',
+   737→                  stat: '100+ Models Trained',
+   738→                  icon: Database,
+   739→                },
+   740→                {
+   741→                  title: 'Back-Office Automation',
+   742→                  desc: 'Automate complex or tedious work that buries your team. Handle messy data with precision.',
+   743→                  stat: '70% Time Reduction',
+   744→                  icon: Workflow,
+   745→                },
+   746→                {
+   747→                  title: 'Intelligent Contact Centre',
+   748→                  desc: 'Unified data, automated QA, sentiment analysis, and AI voice agents.',
+   749→                  stat: '3x Efficiency Gains',
+   750→                  icon: Bot,
+   751→                },
+   752→              ].map((sol) => (
+   753→                <AnimatedSection key={sol.title}>
+   754→                  <Card className="group h-full border border-emerald/20 bg-card hover:border-emerald/50 transition-colors duration-300 py-0 gap-0">
+   755→                    <CardContent className="p-6 sm:p-8 flex flex-col gap-5 h-full">
+   756→                      <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-emerald/10 text-emerald">
+   757→                        <sol.icon className="size-6" />
+   758→                      </div>
+   759→                      <div>
+   760→                        <h3 className="text-xl font-semibold mb-2">
+   761→                          {sol.title}
+   762→                        </h3>
+   763→                        <p className="text-sm text-muted-foreground leading-relaxed">
+   764→                          {sol.desc}
+   765→                        </p>
+   766→                      </div>
+   767→                      <div className="mt-auto pt-4 border-t border-border">
+   768→                        <span className="text-lg font-bold gradient-text">
+   769→                          {sol.stat}
+   770→                        </span>
+   771→                      </div>
+   772→                    </CardContent>
+   773→                  </Card>
+   774→                </AnimatedSection>
+   775→              ))}
+   776→            </div>
+   777→          </div>
+   778→        </section>
+   779→
+   780→        {/* ============================================================ */}
+   781→        {/*  8. ABOUT SECTION                                             */}
+   782→        {/* ============================================================ */}
+   783→        <section id="about" className="py-20 sm:py-28">
+   784→          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+   785→            <AnimatedSection>
+   786→              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+   787→                {/* Text */}
+   788→                <div>
+   789→                  <Quote className="size-8 text-emerald/60 mb-4" />
+   790→                  <blockquote className="text-lg sm:text-xl font-medium leading-relaxed italic text-foreground/90 mb-6">
+   791→                    &ldquo;Think of technology as a verb, not a noun. It provides
+   792→                    the tools, creative people provide the imagination.&rdquo;
+   793→                  </blockquote>
+   794→                  <p className="text-sm text-muted-foreground mb-8">
+   795→                    — Red Burns
+   796→                  </p>
+   797→                  <p className="text-muted-foreground leading-relaxed mb-4">
+   798→                    Business Hustle is a complete AI solutions and digital
+   799→                    transformation provider for African enterprises. From
+   800→                    specialised AI agent development to data platform
+   801→                    architecture, we handle it all — so you can focus on what
+   802→                    matters most: your work.
+   803→                  </p>
+   804→                  <p className="text-muted-foreground leading-relaxed mb-8">
+   805→                    Founded in South Africa, serving the continent.
+   806→                  </p>
+   807→                  <a
+   808→                    href="#"
+   809→                    className="inline-flex items-center gap-1.5 text-sm font-medium text-emerald hover:gap-2.5 transition-all"
+   810→                  >
+   811→                    Learn About Our Story
+   812→                    <ArrowRight className="size-4" />
+   813→                  </a>
+   814→                </div>
+   815→
+   816→                {/* Visual */}
+   817→                <div className="relative">
+   818→                  <div className="aspect-square rounded-2xl overflow-hidden border border-border/60">
+   819→                    <div
+   820→                      className="absolute inset-0 bg-cover bg-center"
+   821→                      style={{
+   822→                        backgroundImage: 'url(/platform-bg.png)',
+   823→                        opacity: 0.5,
+   824→                      }}
+   825→                    />
+   826→                    <div className="absolute inset-0 dot-pattern" />
+   827→                    <div className="relative z-10 h-full flex items-center justify-center">
+   828→                      <div className="text-center p-8">
+   829→                        <div className="inline-flex h-20 w-20 items-center justify-center rounded-2xl bg-emerald/10 text-emerald mb-6 animate-float">
+   830→                          <Bot className="size-10" />
+   831→                        </div>
+   832→                        <p className="text-2xl sm:text-3xl font-bold tracking-tight">
+   833→                          Built in{' '}
+   834→                          <span className="gradient-text">Africa</span>,
+   835→                          <br />
+   836→                          for Africa
+   837→                        </p>
+   838→                      </div>
+   839→                    </div>
+   840→                  </div>
+   841→                </div>
+   842→              </div>
+   843→            </AnimatedSection>
+   844→          </div>
+   845→        </section>
+   846→
+   847→        {/* ============================================================ */}
+   848→        {/*  9. TESTIMONIALS                                              */}
+   849→        {/* ============================================================ */}
+   850→        <section className="py-20 sm:py-28 bg-muted/20">
+   851→          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+   852→            <AnimatedSection className="text-center mb-14 sm:mb-16">
+   853→              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
+   854→                What Our Partners Say
+   855→              </h2>
+   856→            </AnimatedSection>
+   857→
+   858→            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+   859→              {[
+   860→                {
+   861→                  quote:
+   862→                    "Business Hustle's AI automation reduced our invoice processing time by 80%. Their team understood our unique challenges and delivered a solution that actually works.",
+   863→                  author: 'Thabo M.',
+   864→                  role: 'CFO, TechLogistics SA',
+   865→                },
+   866→                {
+   867→                  quote:
+   868→                    'The data platform they built gave us visibility we never had before. We can now make decisions in hours, not weeks.',
+   869→                  author: 'Lindiwe K.',
+   870→                  role: 'Head of Operations, AgriGrow',
+   871→                },
+   872→                {
+   873→                  quote:
+   874→                    'Their approach to AI agents transformed our customer service. Response times dropped 60% while satisfaction scores hit all-time highs.',
+   875→                  author: 'Michael D.',
+   876→                  role: 'CEO, FinServe Africa',
+   877→                },
+   878→              ].map((t) => (
+   879→                <AnimatedSection key={t.author}>
+   880→                  <Card className="group h-full border-border/60 hover:border-emerald/30 transition-colors duration-300 py-0 gap-0">
+   881→                    <CardContent className="p-6 flex flex-col gap-4 h-full">
+   882→                      {/* Stars */}
+   883→                      <div className="flex gap-0.5 text-gold">
+   884→                        {Array.from({ length: 5 }).map((_, i) => (
+   885→                          <Star
+   886→                            key={i}
+   887→                            className="size-4 fill-current"
+   888→                          />
+   889→                        ))}
+   890→                      </div>
+   891→                      <p className="text-sm text-muted-foreground leading-relaxed flex-1">
+   892→                        &ldquo;{t.quote}&rdquo;
+   893→                      </p>
+   894→                      <div className="pt-3 border-t border-border">
+   895→                        <p className="text-sm font-semibold">{t.author}</p>
+   896→                        <p className="text-xs text-muted-foreground">
+   897→                          {t.role}
+   898→                        </p>
+   899→                      </div>
+   900→                    </CardContent>
+   901→                  </Card>
+   902→                </AnimatedSection>
+   903→              ))}
+   904→            </div>
+   905→          </div>
+   906→        </section>
+   907→
+   908→        {/* ============================================================ */}
+   909→        {/*  10. RESOURCES HUB                                           */}
+   910→        {/* ============================================================ */}
+   911→        <ResourcesHub />
+   912→
+   913→        {/* ============================================================ */}
+   914→        {/*  11. NEWSLETTER / CTA                                         */}
+   915→        {/* ============================================================ */}
+   916→        <section id="contact" className="py-20 sm:py-28 relative overflow-hidden">
+   917→          <div className="absolute inset-0 glow" aria-hidden="true" />
+   918→          <div className="relative z-10 mx-auto max-w-2xl px-4 sm:px-6 lg:px-8 text-center">
+   919→            <AnimatedSection>
+   920→              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-4">
+   921→                Ready to Make AI Real
+   922→                <br />
+   923→                <span className="gradient-text">for Your Business?</span>
+   924→              </h2>
+   925→              <p className="text-muted-foreground text-base sm:text-lg mb-8 max-w-lg mx-auto">
+   926→                Join 5,000+ African business leaders receiving insights at the
+   927→                bleeding edge of enterprise AI.
+   928→              </p>
+   929→              <form
+   930→                onSubmit={(e: FormEvent) => e.preventDefault()}
+   931→                className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
+   932→              >
+   933→                <Input
+   934→                  type="email"
+   935→                  placeholder="Enter your email"
+   936→                  required
+   937→                  className="rounded-full h-11 px-5 bg-card border-border"
+   938→                />
+   939→                <Button type="submit" className="rounded-full h-11 px-7 whitespace-nowrap">
+   940→                  Subscribe
+   941→                </Button>
+   942→              </form>
+   943→              <p className="mt-4 text-xs text-muted-foreground">
+   944→                No spam. Unsubscribe anytime.
+   945→              </p>
+   946→            </AnimatedSection>
+   947→          </div>
+   948→        </section>
+   949→      </main>
+   950→
+   951→      {/* ============================================================ */}
+   952→      {/*  12. FOOTER                                                   */}
+   953→      {/* ============================================================ */}
+   954→      <footer className="border-t border-border bg-muted/30 mt-auto">
+   955→        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+   956→          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+   957→            {/* Brand */}
+   958→            <div className="col-span-2 sm:col-span-2 lg:col-span-1">
+   959→              <div className="flex items-center gap-2.5 mb-4">
+   960→                <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-emerald text-emerald-foreground font-bold text-sm">
+   961→                  BH
+   962→                </div>
+   963→                <span className="font-semibold text-lg tracking-tight">
+   964→                  Business Hustle
+   965→                </span>
+   966→              </div>
+   967→              <p className="text-sm text-muted-foreground leading-relaxed mb-5 max-w-xs">
+   968→                AI infrastructure and automation solutions built for African
+   969→                enterprises. Part of Simple Eternity Holdings (Pty) Ltd.
+   970→              </p>
+   971→              <div className="flex gap-3">
+   972→                {['twitter', 'linkedin', 'github'].map((social) => (
+   973→                  <a
+   974→                    key={social}
+   975→                    href="#"
+   976→                    aria-label={social}
+   977→                    className="flex h-9 w-9 items-center justify-center rounded-lg border border-border text-muted-foreground hover:text-foreground hover:border-foreground/30 transition-colors"
+   978→                  >
+   979→                    {social === 'twitter' && (
+   980→                      <svg className="size-4" fill="currentColor" viewBox="0 0 24 24">
+   981→                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+   982→                      </svg>
+   983→                    )}
+   984→                    {social === 'linkedin' && (
+   985→                      <svg className="size-4" fill="currentColor" viewBox="0 0 24 24">
+   986→                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+   987→                      </svg>
+   988→                    )}
+   989→                    {social === 'github' && (
+   990→                      <svg className="size-4" fill="currentColor" viewBox="0 0 24 24">
+   991→                        <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+   992→                      </svg>
+   993→                    )}
+   994→                  </a>
+   995→                ))}
+   996→              </div>
+   997→            </div>
+   998→
+   999→            {/* Platform */}
+  1000→            <div>
+  1001→              <h4 className="text-sm font-semibold mb-4">Platform</h4>
+  1002→              <ul className="space-y-2.5">
+  1003→                {['Vortex', 'Flux', 'Nexus', 'Pulse', 'Axon'].map((link) => (
+  1004→                  <li key={link}>
+  1005→                    <a
+  1006→                      href="#"
+  1007→                      className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+  1008→                    >
+  1009→                      {link}
+  1010→                    </a>
+  1011→                  </li>
+  1012→                ))}
+  1013→              </ul>
+  1014→            </div>
+  1015→
+  1016→            {/* Company */}
+  1017→            <div>
+  1018→              <h4 className="text-sm font-semibold mb-4">Company</h4>
+  1019→              <ul className="space-y-2.5">
+  1020→                {['About', 'Careers', 'Partnerships', 'Blog', 'Contact'].map(
+  1021→                  (link) => (
+  1022→                    <li key={link}>
+  1023→                      <a
+  1024→                        href="#"
+  1025→                        className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+  1026→                      >
+  1027→                        {link}
+  1028→                      </a>
+  1029→                    </li>
+  1030→                  )
+  1031→                )}
+  1032→              </ul>
+  1033→            </div>
+  1034→
+  1035→            {/* Legal */}
+  1036→            <div>
+  1037→              <h4 className="text-sm font-semibold mb-4">Legal</h4>
+  1038→              <ul className="space-y-2.5">
+  1039→                {[
+  1040→                  'Privacy Policy',
+  1041→                  'Terms of Service',
+  1042→                  'Cookie Policy',
+  1043→                ].map((link) => (
+  1044→                  <li key={link}>
+  1045→                    <a
+  1046→                      href="#"
+  1047→                      className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+  1048→                    >
+  1049→                      {link}
+  1050→                    </a>
+  1051→                  </li>
+  1052→                ))}
+  1053→              </ul>
+  1054→            </div>
+  1055→          </div>
+  1056→        </div>
+  1057→
+  1058→        {/* Bottom bar */}
+  1059→        <div className="border-t border-border">
+  1060→          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-5">
+  1061→            <p className="text-xs text-muted-foreground text-center sm:text-left">
+  1062→              © 2025 Business Hustle Ltd. All rights reserved. Part of Simple
+  1063→              Eternity Holdings (Pty) Ltd.
+  1064→            </p>
+  1065→          </div>
+  1066→        </div>
+  1067→      </footer>
+  1068→    </div>
+  1069→  )
+  1070→}
