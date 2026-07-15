@@ -24,6 +24,10 @@ import {
   ExternalLink,
   BookOpen,
   Sparkles,
+  LayoutDashboard,
+  Globe,
+  MapPin,
+  Target,
 } from 'lucide-react'
 import { useI18n } from '@/lib/i18n'
 import { ThemeToggle } from '@/components/theme-toggle'
@@ -788,6 +792,115 @@ export default function Home() {
                 </AnimatedSection>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* ============================================================ */}
+        {/*  7.5 OUR SERVICES (from Solutions page)                      */}
+        {/* ============================================================ */}
+        <section className="py-20 sm:py-28">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <AnimatedSection className="text-center mb-14 sm:mb-16">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
+                {t('services.title')}
+              </h2>
+              <p className="mx-auto mt-4 max-w-2xl text-muted-foreground text-base sm:text-lg leading-relaxed">
+                {t('services.subtitle')}
+              </p>
+            </AnimatedSection>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+              {[
+                {
+                  icon: BookOpen,
+                  name: t('services.hustleBasics.name'),
+                  tag: t('services.hustleBasics.tag'),
+                  desc: t('services.hustleBasics.desc'),
+                  cta: t('services.hustleBasics.cta'),
+                },
+                {
+                  icon: LayoutDashboard,
+                  name: t('services.pm.name'),
+                  tag: t('services.pm.tag'),
+                  desc: t('services.pm.desc'),
+                  cta: t('services.pm.cta'),
+                },
+                {
+                  icon: Globe,
+                  name: t('services.portal.name'),
+                  tag: t('services.portal.tag'),
+                  desc: t('services.portal.desc'),
+                  cta: t('services.portal.cta'),
+                },
+                {
+                  icon: MapPin,
+                  name: t('services.local.name'),
+                  tag: t('services.local.tag'),
+                  desc: t('services.local.desc'),
+                  cta: t('services.local.cta'),
+                },
+                {
+                  icon: Target,
+                  name: t('services.strategy.name'),
+                  tag: t('services.strategy.tag'),
+                  desc: t('services.strategy.desc'),
+                  cta: t('services.strategy.cta'),
+                },
+              ].map((svc) => (
+                <AnimatedSection key={svc.name}>
+                  <motion.div
+                    whileHover={{ y: -4 }}
+                    transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+                  >
+                    <Card className="group h-full border-border/60 bg-card/80 backdrop-blur-sm hover:border-emerald/40 transition-colors duration-300 py-0 gap-0">
+                      <CardContent className="p-6 flex flex-col gap-4 h-full">
+                        <div className="flex items-center justify-between">
+                          <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-gold/10 text-gold">
+                            <svc.icon className="size-5" />
+                          </div>
+                          <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
+                            {svc.tag}
+                          </span>
+                        </div>
+                        <h3 className="text-lg font-semibold">{svc.name}</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed flex-1">
+                          {svc.desc}
+                        </p>
+                        <a
+                          href="#"
+                          className="inline-flex items-center gap-1 text-sm font-medium text-gold hover:gap-2 transition-all"
+                        >
+                          {svc.cta}
+                          <ArrowRight className="size-3.5" />
+                        </a>
+                      </CardContent>
+                    </Card>
+                  </motion.div>
+                </AnimatedSection>
+              ))}
+            </div>
+
+            {/* Trusted by clients bar */}
+            <AnimatedSection className="mt-16 pt-12 border-t border-border">
+              <div className="text-center mb-8">
+                <h3 className="text-lg sm:text-xl font-semibold">
+                  {t('services.clients.title')}
+                </h3>
+                <p className="text-sm text-muted-foreground mt-1">
+                  {t('services.clients.subtitle')}
+                </p>
+              </div>
+              <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
+                {['Ubuntu Wellness', 'Dr Koketso Rakhudu', 'Gabonewe Projects', 'Institute of Kemetic & Marcus Garvey Studies'].map((client) => (
+                  <span
+                    key={client}
+                    className="text-sm text-muted-foreground/70 font-medium"
+                  >
+                    {client}
+                  </span>
+                ))}
+              </div>
+            </AnimatedSection>
           </div>
         </section>
 
