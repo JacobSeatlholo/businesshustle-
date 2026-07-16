@@ -28,6 +28,8 @@ import {
   MapPin,
   Target,
   Handshake,
+  Lightbulb,
+  Loader2,
 } from 'lucide-react'
 import { useI18n } from '@/lib/i18n'
 import { ThemeToggle } from '@/components/theme-toggle'
@@ -44,6 +46,125 @@ import {
   SheetHeader,
   SheetTitle,
 } from '@/components/ui/sheet'
+
+/* ------------------------------------------------------------------ */
+/*  AI Opportunity Finder                                              */
+/* ------------------------------------------------------------------ */
+type Idea = { title: string; description: string; impact: string }
+
+function IdeaGenerator() {
+  const [business, setBusiness] = useState('')
+  const [ideas, setIdeas] = useState<Idea[]>([])
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
+
+  const generate = async () => {
+    if (business.trim().length < 3 || loading) return
+    setLoading(true)
+    setError('')
+    setIdeas([])
+    try {
+      const res = await fetch('/api/ideas', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ business: business.trim() }),
+      })
+      const data = await res.json()
+      if (!res.ok) throw new Error(data.error || 'Something went wrong')
+      setIdeas(data.ideas)
+    } catch (e) {
+      setError(e instanceof Error ? e.message : 'Something went wrong. Please try again.')
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  return (
+    <section id="idea-generator" className="py-20 sm:py-28">
+      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+        <AnimatedSection className="text-center mb-10">
+          <Badge variant="outline" className="mb-4 border-gold/40 text-gold">
+            <Lightbulb className="size-3.5 mr-1.5" />
+            Free AI Tool
+          </Badge>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
+            AI Opportunity <span className="gradient-text">Finder</span>
+          </h2>
+          <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
+            Describe your business in one sentence. Our AI finds three practical
+            automation opportunities you could deploy this quarter.
+          </p>
+        </AnimatedSection>
+
+        <AnimatedSection>
+          <div className="flex flex-col sm:flex-row gap-3 max-w-2xl mx-auto">
+            <Input
+              value={business}
+              onChange={(e) => setBusiness(e.target.value)}
+              onKeyDown={(e) => e.key === 'Enter' && generate()}
+              placeholder="e.g. I run a physiotherapy practice in Gardens, Cape Town"
+              maxLength={300}
+              className="h-12"
+            />
+            <Button
+              onClick={generate}
+              disabled={loading || business.trim().length < 3}
+              className="h-12 px-6 bg-gold text-background hover:bg-gold/90 font-semibold"
+            >
+              {loading ? (
+                <>
+                  <Loader2 className="size-4 mr-2 animate-spin" />
+                  Thinking…
+                </>
+              ) : (
+                <>
+                  <Sparkles className="size-4 mr-2" />
+                  Find Opportunities
+                </>
+              )}
+            </Button>
+          </div>
+          {error && (
+            <p className="text-sm text-destructive text-center mt-4">{error}</p>
+          )}
+        </AnimatedSection>
+
+        {ideas.length > 0 && (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-10">
+            {ideas.map((idea, i) => (
+              <Card
+                key={i}
+                className="border-border/60 bg-card/80 backdrop-blur-sm hover:border-gold/40 transition-colors py-0 gap-0"
+              >
+                <CardContent className="p-6 flex flex-col gap-3 h-full">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gold/10 text-gold">
+                    <Lightbulb className="size-5" />
+                  </div>
+                  <h3 className="font-semibold leading-snug">{idea.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed flex-1">
+                    {idea.description}
+                  </p>
+                  <Badge variant="outline" className="w-fit border-emerald/40 text-emerald text-xs">
+                    {idea.impact}
+                  </Badge>
+                </CardContent>
+              </Card>
+            ))}
+            <div className="md:col-span-3 text-center mt-2">
+              <a
+                href="#contact"
+                className="inline-flex items-center gap-1.5 text-sm font-medium text-gold hover:gap-2.5 transition-all"
+              >
+                Want us to build one of these? Book a free consult
+                <ArrowRight className="size-4" />
+              </a>
+            </div>
+          </div>
+        )}
+      </div>
+    </section>
+  )
+}
 
 /* ------------------------------------------------------------------ */
 /*  Animated counter hook                                              */
@@ -1004,6 +1125,8 @@ export default function Home() {
             </AnimatedSection>
           </div>
         </section>
+
+        <IdeaGenerator />
 
         {/* ============================================================ */}
         {/*  9. TESTIMONIALS                                              */}
