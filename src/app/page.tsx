@@ -886,20 +886,56 @@ export default function Home() {
                 </p>
               </div>
               <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
-                {['Ubuntu', 'Gabonewe', 'Institute of Kemetic & Marcus Garvey Studies', 'body vision.online', 'sunshinefoods.co.za', 'Smoothie On The Go', 'On-Safari', 'Postnet Gardens', 'Just Hearing', 'Dr Wendy Dicks', 'Honest Travel Experience'].map((client) => (
-                  <span
-                    key={client}
-                    className="text-sm text-muted-foreground/70 font-medium"
-                  >
-                    {client}
-                  </span>
-                ))}
+                {([
+                  { name: 'Ubuntu Wellness', url: 'http://ubuntuwellness.com/' },
+                  { name: 'Gabonewe', url: 'https://gabonewe.co.za/consult' },
+                  { name: 'Institute of Kemetic & Marcus Garvey Studies', url: 'https://ikmgs.co.za/' },
+                  { name: 'Khotso Seatlholo Institute', url: 'https://www.khotsoseatlholo.institute/' },
+                  { name: 'BodyVision.online', url: 'https://www.bodyvision.online/' },
+                  { name: 'Sunshine Foods', url: 'https://www.sunshinefoods.co.za/' },
+                  { name: 'Smoothie On The Go', url: 'https://smoothieonthego.co.za/' },
+                  { name: 'On-Safari Photography', url: 'https://www.on-safari.co.za/' },
+                  { name: 'Cape Town MediSpa', url: '' },
+                  { name: 'Trudy Christians', url: 'https://www.kloofstreet.online/trudy-christians' },
+                  { name: 'Revive Studio', url: 'https://www.kloofstreet.online/revive-studio' },
+                  { name: 'PostNet Gardens', url: 'https://www.kloofstreet.online/postnet-gardens' },
+                  { name: 'Dr Dale Geoffreys', url: 'https://www.kloofstreet.online/dr-dale-geoffreys' },
+                  { name: 'HS Physio', url: 'https://www.kloofstreet.online/hayley-schuter-physio' },
+                  { name: 'Dr Wendy Dicks', url: 'https://www.kloofstreet.online/dr-wendy-dicks' },
+                  { name: 'Honest Travel Experience', url: 'https://www.honesttravelexperience.com/' },
+                ] as { name: string; url: string }[]).map((client) =>
+                  client.url ? (
+                    <a
+                      key={client.name}
+                      href={client.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-muted-foreground/70 font-medium hover:text-gold transition-colors"
+                    >
+                      {client.name}
+                    </a>
+                  ) : (
+                    <span
+                      key={client.name}
+                      className="text-sm text-muted-foreground/70 font-medium"
+                    >
+                      {client.name}
+                    </span>
+                  )
+                )}
               </div>
               <div className="mt-6 text-center">
                 <p className="text-xs text-muted-foreground/60">
                   <span className="inline-flex items-center gap-1.5">
                     <Handshake className="size-3.5" />
-                    {t('services.clients.collab')}
+                    <a
+                      href="https://www.afrocentricsolutions.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-gold transition-colors"
+                    >
+                      {t('services.clients.collab')}
+                    </a>
                   </span>
                 </p>
               </div>
