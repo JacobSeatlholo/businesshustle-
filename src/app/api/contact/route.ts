@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from "next/server";
-import { db } from "@/lib/db";
 import { z } from "zod";
 
 const contactSchema = z.object({
@@ -21,24 +20,31 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const { email, name, type, message } = result.data;
-
-    // Check if email already exists for this type
-    const existing = await db.contactSubmission.findFirst({
-      where: { email, type },
-    });
-
-    if (existing) {
+    const scriptUrl = process.env.APPS_SCRIPT_URL;
+    if (!scriptUrl) {
+      console.error("APPS_SCRIPT_URL not configured");
       return NextResponse.json(
-        { message: "You're already subscribed!", alreadyExists: true },
-        { status: 200 }
+        { error: "Something went wrong. Please try again." },
+        { status: 500 }
       );
     }
 
-    // Create new submission
-    const submission = await db.contactSubmission.create({
-      data: { email, name, type, message },
+    const { email, name, type, message } = result.data;
+
+    const res = await fetch(scriptUrl, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        email,
+        name: name || "",
+        type,
+        message: message || "",
+        timestamp: new Date().toISOString(),
+      }),
+      redirect: "follow",
     });
+
+    if (!res.ok) throw new Error(`Apps Script responded ${res.status}`);
 
     return NextResponse.json(
       {
@@ -46,7 +52,6 @@ export async function POST(request: NextRequest) {
           type === "newsletter"
             ? "Welcome aboard! Check your inbox for confirmation."
             : "Thank you! We'll be in touch within 24 hours.",
-        id: submission.id,
       },
       { status: 201 }
     );

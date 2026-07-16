@@ -1,0 +1,1212 @@
+[
+{
+"id": "cmrlxh80u001fsukh1nn040k2",
+"name": "Mockuper",
+"url": "https://mockuper.net",
+"description": "Quickly design professional mockups for your products.",
+"category": "Content Creation",
+"isFree": true,
+"isPaid": false,
+"order": 1
+},
+{
+"id": "cmrlxh80u001gsukhwafbvjpo",
+"name": "Google Fonts",
+"url": "https://fonts.google.com",
+"description": "Extensive library of free, easy-to-implement fonts.",
+"category": "Content Creation",
+"isFree": true,
+"isPaid": false,
+"order": 2
+},
+{
+"id": "cmrlxh80u001hsukh6m6xuub0",
+"name": "VideoInu",
+"url": "https://videoinu.com",
+"description": "Intuitive platform for creating and editing screen recordings or other videos online.",
+"category": "Content Creation",
+"isFree": true,
+"isPaid": false,
+"order": 3
+},
+{
+"id": "cmrlxh80u001isukhq3vf3otk",
+"name": "Wireframe",
+"url": "https://wireframe.cc/",
+"description": "Minimalist tool for sketching layouts and brainstorming design ideas.",
+"category": "Content Creation",
+"isFree": true,
+"isPaid": false,
+"order": 4
+},
+{
+"id": "cmrlxh80u002csukhf5ot7q8r",
+"name": "Swiped",
+"url": "https://swiped.co/",
+"description": "The best copywriting inspiration.",
+"category": "Copywriting",
+"isFree": true,
+"isPaid": false,
+"order": 1
+},
+{
+"id": "cmrlxh80u002dsukhl59hkv8g",
+"name": "Stripe Atlas Guide",
+"url": "https://stripe.com/en-in/atlas/guides/landing-page-copy",
+"description": "Guide on copywriting for landing pages.",
+"category": "Copywriting",
+"isFree": true,
+"isPaid": false,
+"order": 2
+},
+{
+"id": "cmrlxh80t0000sukhyituaj4b",
+"name": "Canva",
+"url": "https://www.canva.com",
+"description": "8,000+ free templates and thousands of free photos.",
+"category": "Design & UI",
+"isFree": true,
+"isPaid": false,
+"order": 1
+},
+{
+"id": "cmrlxh80t0001sukhxkmg4ckc",
+"name": "Figma",
+"url": "https://www.figma.com",
+"description": "Generate, edit and publish beautiful websites and landing pages for your startup.",
+"category": "Design & UI",
+"isFree": true,
+"isPaid": true,
+"order": 2
+},
+{
+"id": "cmrlxh80t0002sukhipyproij",
+"name": "Pexels",
+"url": "https://www.pexels.com",
+"description": "Free stock photos for commercial use. Free API for searching photos by keywords.",
+"category": "Design & UI",
+"isFree": true,
+"isPaid": false,
+"order": 3
+},
+{
+"id": "cmrlxh80t0003sukhxcyp1ltt",
+"name": "Cool Backgrounds",
+"url": "https://coolbackgrounds.io",
+"description": "Collection of tools to create compelling, colorful images for blogs, social media, and websites.",
+"category": "Design & UI",
+"isFree": true,
+"isPaid": false,
+"order": 4
+},
+{
+"id": "cmrlxh80t0004sukheug2xdhb",
+"name": "RemoveBG",
+"url": "https://www.remove.bg/",
+"description": "Remove image backgrounds automatically.",
+"category": "Design & UI",
+"isFree": true,
+"isPaid": false,
+"order": 5
+},
+{
+"id": "cmrlxh80t0005sukhwjfs4onr",
+"name": "Humaaans",
+"url": "https://www.humaaans.com/",
+"description": "Library of editable people illustrations. Free for commercial and personal use.",
+"category": "Design & UI",
+"isFree": true,
+"isPaid": false,
+"order": 6
+},
+{
+"id": "cmrlxh80t0006sukhv61a7oku",
+"name": "Cartoon Pho",
+"url": "https://cartoon.pho.to",
+"description": "Turn your photos into cartoons for your website or presentations.",
+"category": "Design & UI",
+"isFree": true,
+"isPaid": false,
+"order": 7
+},
+{
+"id": "cmrlxh80t0007sukhh2jxt739",
+"name": "Color Hunt",
+"url": "https://colorhunt.co",
+"description": "Open platform for color inspiration with thousands of trendy hand-picked color palettes.",
+"category": "Design & UI",
+"isFree": true,
+"isPaid": false,
+"order": 8
+},
+{
+"id": "cmrlxh80t0008sukh8h4r6sjy",
+"name": "Palette Ninja",
+"url": "https://palette.ninja",
+"description": "Design harmonious color schemes in seconds.",
+"category": "Design & UI",
+"isFree": true,
+"isPaid": false,
+"order": 9
+},
+{
+"id": "cmrlxh80t0009sukhnkur9gzh",
+"name": "Stripes Generator",
+"url": "https://stripesgenerator.com",
+"description": "Stripes generator for your website backgrounds.",
+"category": "Design & UI",
+"isFree": true,
+"isPaid": false,
+"order": 10
+},
+{
+"id": "cmrlxh80t000asukhjsp1w0im",
+"name": "Photopea",
+"url": "https://www.photopea.com",
+"description": "Free, advanced online design editor with Adobe Photoshop UI supporting PSD, XCF & Sketch.",
+"category": "Design & UI",
+"isFree": true,
+"isPaid": false,
+"order": 11
+},
+{
+"id": "cmrlxh80t000bsukhlmej5pfk",
+"name": "Get Waves",
+"url": "https://getwaves.io",
+"description": "SVG wave generator to make unique SVG waves for web design.",
+"category": "Design & UI",
+"isFree": true,
+"isPaid": false,
+"order": 12
+},
+{
+"id": "cmrlxh80t000csukhtghtwyvc",
+"name": "IconMonstr",
+"url": "https://iconmonstr.com",
+"description": "Black and white themed minimal icons with customizable thickness.",
+"category": "Design & UI",
+"isFree": true,
+"isPaid": false,
+"order": 13
+},
+{
+"id": "cmrlxh80t000dsukhejxnk1tp",
+"name": "Undraw",
+"url": "https://undraw.co",
+"description": "MIT licensed illustrations for every project you can imagine.",
+"category": "Design & UI",
+"isFree": true,
+"isPaid": false,
+"order": 14
+},
+{
+"id": "cmrlxh80u000esukh1ds8139e",
+"name": "Unscreen",
+"url": "https://www.unscreen.com/",
+"description": "Remove video backgrounds 100% automatically.",
+"category": "Design & UI",
+"isFree": true,
+"isPaid": false,
+"order": 15
+},
+{
+"id": "cmrlxh80u000fsukhd72f80uq",
+"name": "Gratisography",
+"url": "https://www.gratisography.com",
+"description": "High-resolution pictures free of copyright restrictions for personal or commercial use.",
+"category": "Design & UI",
+"isFree": true,
+"isPaid": false,
+"order": 16
+},
+{
+"id": "cmrlxh80u000gsukhkul8oj5k",
+"name": "The Noun Project",
+"url": "https://thenounproject.com",
+"description": "Search for a noun and find an icon as simple as that.",
+"category": "Design & UI",
+"isFree": true,
+"isPaid": false,
+"order": 17
+},
+{
+"id": "cmrlxh80u000hsukh91ay6qcr",
+"name": "UI Design Daily",
+"url": "https://uidesigndaily.com/",
+"description": "Fantastic UI components of all types.",
+"category": "Design & UI",
+"isFree": true,
+"isPaid": false,
+"order": 18
+},
+{
+"id": "cmrlxh80u000isukhjxz1ajqs",
+"name": "Paaatterns",
+"url": "https://products.ls.graphics/paaatterns/",
+"description": "Free collection of gorgeous patterns for all vector formats.",
+"category": "Design & UI",
+"isFree": true,
+"isPaid": false,
+"order": 19
+},
+{
+"id": "cmrlxh80u000jsukh6nwl3o5k",
+"name": "Absurd Design",
+"url": "https://absurd.design/",
+"description": "Free surrealist illustrations for designers and developers.",
+"category": "Design & UI",
+"isFree": true,
+"isPaid": false,
+"order": 20
+},
+{
+"id": "cmrlxh80u000ksukhzomdb3fh",
+"name": "Blush",
+"url": "https://blush.design/",
+"description": "Free customizable illustrations with Figma plugin.",
+"category": "Design & UI",
+"isFree": true,
+"isPaid": false,
+"order": 21
+},
+{
+"id": "cmrlxh80u000lsukhbagzm1gb",
+"name": "Pixeltrue",
+"url": "https://www.pixeltrue.com/illustrations",
+"description": "Free animated illustrations.",
+"category": "Design & UI",
+"isFree": true,
+"isPaid": false,
+"order": 22
+},
+{
+"id": "cmrlxh80u000msukhqi668rvj",
+"name": "Sketch Valley",
+"url": "https://sketchvalley.com",
+"description": "Download free PNG, SVG or AI files.",
+"category": "Design & UI",
+"isFree": true,
+"isPaid": false,
+"order": 23
+},
+{
+"id": "cmrlxh80u000nsukhyig64d3l",
+"name": "Smart Upscaler",
+"url": "https://icons8.com/upscaler",
+"description": "Upscale images by 2-4x resolution.",
+"category": "Design & UI",
+"isFree": true,
+"isPaid": false,
+"order": 24
+},
+{
+"id": "cmrlxh80u000osukhdfa9k5uy",
+"name": "Pattern Monster",
+"url": "https://pattern.monster",
+"description": "Simple online pattern generator to create repeatable SVG patterns.",
+"category": "Design & UI",
+"isFree": true,
+"isPaid": false,
+"order": 25
+},
+{
+"id": "cmrlxh80u000psukh8lr9fjgt",
+"name": "Dimensions",
+"url": "https://www.dimensions.com/",
+"description": "Ongoing reference database of dimensioned drawings documenting standard measurements.",
+"category": "Design & UI",
+"isFree": true,
+"isPaid": false,
+"order": 26
+},
+{
+"id": "cmrlxh80u0010sukhor625q7p",
+"name": "GIMP",
+"url": "https://www.gimp.org/",
+"description": "Powerful, open-source image editor with features comparable to Photoshop.",
+"category": "Design Software",
+"isFree": true,
+"isPaid": false,
+"order": 1
+},
+{
+"id": "cmrlxh80u0011sukhqxt6yllx",
+"name": "Gravit Designer",
+"url": "https://www.designer.io/en/",
+"description": "Cross-platform vector graphic design application packed with features.",
+"category": "Design Software",
+"isFree": true,
+"isPaid": false,
+"order": 2
+},
+{
+"id": "cmrlxh80u0012sukhqm1f5e42",
+"name": "Be Funky",
+"url": "https://www.befunky.com/features/graphic-designer/",
+"description": "Online graphic design platform offering easy-to-use editing tools.",
+"category": "Design Software",
+"isFree": true,
+"isPaid": true,
+"order": 3
+},
+{
+"id": "cmrlxh80u0013sukhrozvl5q2",
+"name": "Krita",
+"url": "https://krita.org/en/download/krita-desktop/",
+"description": "Robust sketching and painting program designed for digital artists.",
+"category": "Design Software",
+"isFree": true,
+"isPaid": false,
+"order": 4
+},
+{
+"id": "cmrlxh80u0014sukh9dn2eog5",
+"name": "GUI Prototyping",
+"url": "https://pencil.evolus.vn",
+"description": "Software for creating interactive GUI prototypes for web and app design.",
+"category": "Design Software",
+"isFree": true,
+"isPaid": false,
+"order": 5
+},
+{
+"id": "cmrlxh80u0015sukh1y44b2fa",
+"name": "Color Picker",
+"url": "https://colorpicker.fr",
+"description": "Open-source color software for retrieving, manipulating, and organizing colors.",
+"category": "Design Software",
+"isFree": true,
+"isPaid": false,
+"order": 6
+},
+{
+"id": "cmrlxh80u002isukh0iohi3gl",
+"name": "TinyWow",
+"url": "https://tinywow.com",
+"description": "Free tools for pretty much anything you need to do online.",
+"category": "Developer Tools",
+"isFree": true,
+"isPaid": false,
+"order": 1
+},
+{
+"id": "cmrlxh80u002jsukhhr99yggl",
+"name": "MDN Web Docs",
+"url": "https://developer.mozilla.org/en-US/",
+"description": "Documentation of all the web standards.",
+"category": "Developer Tools",
+"isFree": true,
+"isPaid": false,
+"order": 2
+},
+{
+"id": "cmrlxh80u002ksukhzduxghth",
+"name": "Coolors",
+"url": "https://coolors.co/",
+"description": "Create the perfect palette or get inspired by beautiful color schemes.",
+"category": "Developer Tools",
+"isFree": true,
+"isPaid": false,
+"order": 3
+},
+{
+"id": "cmrlxh80u002lsukhn3yq5kiw",
+"name": "LottieFiles",
+"url": "https://lottiefiles.com/",
+"description": "World's largest online platform for Lottie animations.",
+"category": "Developer Tools",
+"isFree": true,
+"isPaid": false,
+"order": 4
+},
+{
+"id": "cmrlxh80u002msukh4hfh56tr",
+"name": "Iconscout",
+"url": "https://iconscout.com/",
+"description": "Over 2.2M+ design assets \u2014 SVGs, vector icons, illustrations, 3D graphics.",
+"category": "Developer Tools",
+"isFree": true,
+"isPaid": false,
+"order": 5
+},
+{
+"id": "cmrlxh80u002nsukhylnyklzc",
+"name": "Can I Use",
+"url": "https://caniuse.com/",
+"description": "Browser compatibility tables for modern web technologies.",
+"category": "Developer Tools",
+"isFree": true,
+"isPaid": false,
+"order": 6
+},
+{
+"id": "cmrlxh80u002osukh8pp69500",
+"name": "Clean Code JavaScript",
+"url": "https://github.com/ryanmcdermott/clean-code-javascript",
+"description": "Clean code concepts adapted for JavaScript.",
+"category": "Developer Tools",
+"isFree": true,
+"isPaid": false,
+"order": 7
+},
+{
+"id": "cmrlxh80u002psukhxr5go0v3",
+"name": "CSS Tricks",
+"url": "https://css-tricks.com/",
+"description": "About building websites from a front-end perspective.",
+"category": "Developer Tools",
+"isFree": true,
+"isPaid": false,
+"order": 8
+},
+{
+"id": "cmrlxh80u001tsukhfenzohfe",
+"name": "edX",
+"url": "https://www.edx.org/",
+"description": "University-level courses from Harvard, MIT, Wharton, and more.",
+"category": "Education & Training",
+"isFree": true,
+"isPaid": false,
+"order": 1
+},
+{
+"id": "cmrlxh80u001usukhl3947x3n",
+"name": "Learn UI",
+"url": "https://learnui.design/index.html",
+"description": "Learn UI design for free.",
+"category": "Education & Training",
+"isFree": true,
+"isPaid": false,
+"order": 2
+},
+{
+"id": "cmrlxh80u001vsukhcc6rfda9",
+"name": "Techstars",
+"url": "https://toolkit.techstars.com/master-your-pitch",
+"description": "Master your pitch and improve your communication skills.",
+"category": "Education & Training",
+"isFree": true,
+"isPaid": false,
+"order": 3
+},
+{
+"id": "cmrlxh80u001wsukhe7s6hkz9",
+"name": "Frontend Mentor",
+"url": "https://www.frontendmentor.io/",
+"description": "Practice coding skills using real-world UI challenges with HTML, CSS and JS.",
+"category": "Education & Training",
+"isFree": true,
+"isPaid": false,
+"order": 4
+},
+{
+"id": "cmrlxh80u000usukhyfi7lrkq",
+"name": "Buttondown",
+"url": "https://buttondown.email",
+"description": "Simple yet powerful newsletter service. Up to 1,000 subscribers completely free.",
+"category": "Email",
+"isFree": true,
+"isPaid": false,
+"order": 1
+},
+{
+"id": "cmrlxh80u000vsukhznu6k5ma",
+"name": "Forward Email",
+"url": "https://forwardemail.net/en",
+"description": "Effortless email forwarding for custom domains. Unlimited email addresses at no cost.",
+"category": "Email",
+"isFree": true,
+"isPaid": false,
+"order": 2
+},
+{
+"id": "cmrlxh80u000wsukhlgjguibq",
+"name": "SparkPost",
+"url": "https://www.sparkpost.com",
+"description": "Robust email delivery features, including the first 500 emails per month free.",
+"category": "Email",
+"isFree": true,
+"isPaid": true,
+"order": 3
+},
+{
+"id": "cmrlxh80u001jsukhe5t05gjm",
+"name": "99 Inbound",
+"url": "https://www.99inbound.com",
+"description": "Build custom forms and share them online. 2 forms, 100 entries/month free.",
+"category": "Forms",
+"isFree": true,
+"isPaid": true,
+"order": 1
+},
+{
+"id": "cmrlxh80u001ksukhul0q267e",
+"name": "Web3Forms",
+"url": "https://web3forms.com",
+"description": "Contact forms for static and JAMstack websites without backend code.",
+"category": "Forms",
+"isFree": true,
+"isPaid": false,
+"order": 2
+},
+{
+"id": "cmrlxh80u002qsukhqhjq78zw",
+"name": "GitHub Guides",
+"url": "https://guides.github.com",
+"description": "The official GitHub guides.",
+"category": "Git & GitHub",
+"isFree": true,
+"isPaid": false,
+"order": 1
+},
+{
+"id": "cmrlxh80v002rsukhmitk6jkk",
+"name": "GitHub Learning Lab",
+"url": "https://lab.github.com",
+"description": "Interactive GitHub learning courses.",
+"category": "Git & GitHub",
+"isFree": true,
+"isPaid": false,
+"order": 2
+},
+{
+"id": "cmrlxh80v002ssukh9sw2lhn6",
+"name": "Pro Git Book",
+"url": "https://git-scm.com/book/en/v2",
+"description": "The official Pro Git book, free online.",
+"category": "Git & GitHub",
+"isFree": true,
+"isPaid": false,
+"order": 3
+},
+{
+"id": "cmrlxh80v002tsukhpanegtyv",
+"name": "Git Commands",
+"url": "https://github.com/joshnh/Git-Commands",
+"description": "A list of commonly used Git commands.",
+"category": "Git & GitHub",
+"isFree": true,
+"isPaid": false,
+"order": 4
+},
+{
+"id": "cmrlxh80v002usukhgnnznohg",
+"name": "FreeCodeCamp",
+"url": "https://freecodecamp.com",
+"description": "Free coding curriculum with certifications.",
+"category": "JavaScript",
+"isFree": true,
+"isPaid": false,
+"order": 1
+},
+{
+"id": "cmrlxh80v002vsukhq80nudw4",
+"name": "The Odin Project",
+"url": "https://www.theodinproject.com",
+"description": "Full-stack web development curriculum.",
+"category": "JavaScript",
+"isFree": true,
+"isPaid": false,
+"order": 2
+},
+{
+"id": "cmrlxh80v002wsukh9jpjn1ry",
+"name": "JavaScript.info",
+"url": "https://javascript.info",
+"description": "The Modern JavaScript Tutorial.",
+"category": "JavaScript",
+"isFree": true,
+"isPaid": false,
+"order": 3
+},
+{
+"id": "cmrlxh80v002xsukhdy4h7usw",
+"name": "Eloquent JavaScript",
+"url": "https://eloquentjavascript.net",
+"description": "A modern introduction to programming.",
+"category": "JavaScript",
+"isFree": true,
+"isPaid": false,
+"order": 4
+},
+{
+"id": "cmrlxh80v002ysukhtgcxpdww",
+"name": "You Don't Know JS",
+"url": "https://github.com/getify/You-Dont-Know-JS",
+"description": "Deep dive into JavaScript mechanics.",
+"category": "JavaScript",
+"isFree": true,
+"isPaid": false,
+"order": 5
+},
+{
+"id": "cmrlxh80v002zsukhnzipifob",
+"name": "FullStack Open",
+"url": "https://fullstackopen.com/en",
+"description": "Full stack open course by University of Helsinki.",
+"category": "JavaScript",
+"isFree": true,
+"isPaid": false,
+"order": 6
+},
+{
+"id": "cmrlxh80u002esukhww6staa2",
+"name": "AIMA",
+"url": "http://aima.cs.berkeley.edu",
+"description": "The leading textbook in AI (4th most cited publication of the century).",
+"category": "Learn AI",
+"isFree": true,
+"isPaid": false,
+"order": 1
+},
+{
+"id": "cmrlxh80u002fsukhm2orxbvi",
+"name": "Fast.ai",
+"url": "http://course.fast.ai",
+"description": "Free practical deep learning course for coders without grad-level maths.",
+"category": "Learn AI",
+"isFree": true,
+"isPaid": false,
+"order": 2
+},
+{
+"id": "cmrlxh80u002gsukhhknq0trj",
+"name": "TensorFlow",
+"url": "https://www.tensorflow.org",
+"description": "Open-source software library for Machine Intelligence.",
+"category": "Learn AI",
+"isFree": true,
+"isPaid": false,
+"order": 3
+},
+{
+"id": "cmrlxh80u002hsukhlaueew7l",
+"name": "Kaggle",
+"url": "https://www.kaggle.com/",
+"description": "All-in-one ML and Data Science community with free GPUs and datasets.",
+"category": "Learn AI",
+"isFree": true,
+"isPaid": false,
+"order": 4
+},
+{
+"id": "cmrlxh80v0039sukhchlscfma",
+"name": "Learn Markdown",
+"url": "https://learnxinyminutes.com/docs/markdown",
+"description": "Learn Markdown in Y minutes.",
+"category": "Markdown",
+"isFree": true,
+"isPaid": false,
+"order": 1
+},
+{
+"id": "cmrlxh80v003asukhingiz67g",
+"name": "Markdown Tutorial",
+"url": "https://www.markdowntutorial.com",
+"description": "Interactive Markdown tutorial.",
+"category": "Markdown",
+"isFree": true,
+"isPaid": false,
+"order": 2
+},
+{
+"id": "cmrlxh80v003bsukh63nkpqc9",
+"name": "Markdown Cheat Sheet",
+"url": "https://markdownguide.org/cheat-sheet",
+"description": "Quick reference Markdown cheat sheet.",
+"category": "Markdown",
+"isFree": true,
+"isPaid": false,
+"order": 3
+},
+{
+"id": "cmrlxh80v003csukhdrkn82jw",
+"name": "Make a README",
+"url": "https://www.makeareadme.com",
+"description": "Guide to writing great README files.",
+"category": "Markdown",
+"isFree": true,
+"isPaid": false,
+"order": 4
+},
+{
+"id": "cmrlxh80u0021sukhhjihzynw",
+"name": "FraudLabs Pro",
+"url": "https://www.fraudlabspro.com/",
+"description": "Help merchants prevent payment fraud and chargebacks. 500 queries/month free.",
+"category": "Payment Integrations",
+"isFree": true,
+"isPaid": true,
+"order": 1
+},
+{
+"id": "cmrlxh80u0022sukhsg35sdpb",
+"name": "RevenueCat",
+"url": "https://www.revenuecat.com/",
+"description": "Hosted backend for in-app purchases and subscriptions. Free up to $10k/mo.",
+"category": "Payment Integrations",
+"isFree": true,
+"isPaid": true,
+"order": 2
+},
+{
+"id": "cmrlxh80u0023sukhjmgoxuun",
+"name": "CurrencyStack",
+"url": "https://currencystack.io/",
+"description": "Production-ready real-time exchange rates for 154 currencies.",
+"category": "Payment Integrations",
+"isFree": true,
+"isPaid": true,
+"order": 3
+},
+{
+"id": "cmrlxh80u0024sukh5smpi03z",
+"name": "ExchangeRate API",
+"url": "https://www.exchangerate-api.com/",
+"description": "Easy to use currency conversion JSON API. Free tier with no request limit.",
+"category": "Payment Integrations",
+"isFree": true,
+"isPaid": false,
+"order": 4
+},
+{
+"id": "cmrlxh80v0030sukhxu50crbr",
+"name": "Syntax",
+"url": "https://syntax.fm",
+"description": "A podcast about web development, CSS, JavaScript, and more.",
+"category": "Podcasts",
+"isFree": true,
+"isPaid": false,
+"order": 1
+},
+{
+"id": "cmrlxh80v0031sukhkozu1prv",
+"name": "Indie Hackers",
+"url": "https://www.indiehackers.com/podcast",
+"description": "Stories from founders building profitable online businesses.",
+"category": "Podcasts",
+"isFree": true,
+"isPaid": false,
+"order": 2
+},
+{
+"id": "cmrlxh80v0032sukhq9t1ym59",
+"name": "Masters of Scale",
+"url": "https://mastersofscale.com",
+"description": "How companies go from zero to a gazillion.",
+"category": "Podcasts",
+"isFree": true,
+"isPaid": false,
+"order": 3
+},
+{
+"id": "cmrlxh80v0033sukhe5rkeios",
+"name": "Darknet Diaries",
+"url": "https://darknetdiaries.com",
+"description": "True stories from the dark side of the internet.",
+"category": "Podcasts",
+"isFree": true,
+"isPaid": false,
+"order": 4
+},
+{
+"id": "cmrlxh80v0034sukhvs5dm7ok",
+"name": "Software Engineering Daily",
+"url": "https://dev.to/sedaily",
+"description": "Daily podcast about software engineering topics.",
+"category": "Podcasts",
+"isFree": true,
+"isPaid": false,
+"order": 5
+},
+{
+"id": "cmrlxh80v0035sukh8nb2gpbv",
+"name": "JS Party",
+"url": "https://changelog.com/jsparty",
+"description": "A celebration of JavaScript and the web.",
+"category": "Podcasts",
+"isFree": true,
+"isPaid": false,
+"order": 6
+},
+{
+"id": "cmrlxh80v0036sukhp8v9l6xz",
+"name": "PWA Codelab",
+"url": "https://codelabs.developers.google.com/codelabs/your-first-pwapp/#0",
+"description": "Progressive Web Application hands-on codelab by Google.",
+"category": "Progressive Web Apps",
+"isFree": true,
+"isPaid": false,
+"order": 1
+},
+{
+"id": "cmrlxh80v0037sukh9mtrxa8i",
+"name": "PWA Guide",
+"url": "https://flaviocopes.com/what-is-a-progressive-web-app",
+"description": "The complete guide to Progressive Web Apps.",
+"category": "Progressive Web Apps",
+"isFree": true,
+"isPaid": false,
+"order": 2
+},
+{
+"id": "cmrlxh80v0038sukh2v4v3ayq",
+"name": "Service Workers Guide",
+"url": "https://medium.com/samsung-internet-dev/a-beginners-guide-to-service-workers-f76abf1960f6",
+"description": "A beginner's guide to service workers.",
+"category": "Progressive Web Apps",
+"isFree": true,
+"isPaid": false,
+"order": 3
+},
+{
+"id": "cmrlxh80u0025sukhe90xxbqi",
+"name": "Miro",
+"url": "https://miro.com/",
+"description": "Online collaborative whiteboard platform to bring teams together.",
+"category": "Project Management",
+"isFree": true,
+"isPaid": true,
+"order": 1
+},
+{
+"id": "cmrlxh80u0026sukhgm8mnlu8",
+"name": "Nuclino",
+"url": "https://www.nuclino.com/",
+"description": "One central place for all your team's work.",
+"category": "Project Management",
+"isFree": true,
+"isPaid": true,
+"order": 2
+},
+{
+"id": "cmrlxh80u0027sukhn3ytw552",
+"name": "Pendulums",
+"url": "https://pendulums.io/",
+"description": "Free time tracking tool with easy-to-use interface and useful statistics.",
+"category": "Project Management",
+"isFree": true,
+"isPaid": true,
+"order": 3
+},
+{
+"id": "cmrlxh80u0028sukh0xblnvel",
+"name": "Whereby",
+"url": "https://whereby.com",
+"description": "No app or installs required. Same meeting link every time.",
+"category": "Project Management",
+"isFree": true,
+"isPaid": true,
+"order": 4
+},
+{
+"id": "cmrlxh80u0029sukhv8h62wto",
+"name": "Visme",
+"url": "https://www.visme.co",
+"description": "Create presentations, infographics and more.",
+"category": "Project Management",
+"isFree": true,
+"isPaid": false,
+"order": 5
+},
+{
+"id": "cmrlxh80u002asukhszsa9oli",
+"name": "Diagrams.net",
+"url": "https://www.diagrams.net",
+"description": "Diagram software and flowchart maker.",
+"category": "Project Management",
+"isFree": true,
+"isPaid": false,
+"order": 6
+},
+{
+"id": "cmrlxh80u002bsukhyf1kx2e3",
+"name": "Bitwarden",
+"url": "https://bitwarden.com/",
+"description": "Easiest and safest way to store, share, and sync sensitive data.",
+"category": "Project Management",
+"isFree": true,
+"isPaid": true,
+"order": 7
+},
+{
+"id": "cmrlxh80u0016sukhmovubo5o",
+"name": "SEO Site Checkup",
+"url": "https://seositecheckup.com",
+"description": "Audit your site for proper tags and errors to enhance SEO.",
+"category": "SEO",
+"isFree": true,
+"isPaid": true,
+"order": 1
+},
+{
+"id": "cmrlxh80u0017sukh4a1xw8x5",
+"name": "WebPageTest",
+"url": "http://webpagetest.org",
+"description": "Comprehensive audits with recommendations for optimizing site performance globally.",
+"category": "SEO",
+"isFree": true,
+"isPaid": true,
+"order": 2
+},
+{
+"id": "cmrlxh80u0018sukh81664422",
+"name": "Backlinko",
+"url": "https://backlinko.com/",
+"description": "Exclusive SEO strategies shared through email tips.",
+"category": "SEO",
+"isFree": true,
+"isPaid": false,
+"order": 3
+},
+{
+"id": "cmrlxh80u0019sukh6gxiegwu",
+"name": "Search Engine Land",
+"url": "https://searchengineland.com/",
+"description": "Detailed guides, including tips on setting up campaigns effectively.",
+"category": "SEO",
+"isFree": true,
+"isPaid": false,
+"order": 4
+},
+{
+"id": "cmrlxh80u001asukhas8n3q74",
+"name": "Moz",
+"url": "https://moz.com/",
+"description": "Industry-leading SEO software for improving traffic, rankings, and site visibility.",
+"category": "SEO",
+"isFree": true,
+"isPaid": false,
+"order": 5
+},
+{
+"id": "cmrlxh80u001bsukh8rhlvo8y",
+"name": "Search Engine Watch",
+"url": "https://www.searchenginewatch.com/",
+"description": "The ultimate SEO newsletter & resources.",
+"category": "SEO",
+"isFree": true,
+"isPaid": false,
+"order": 6
+},
+{
+"id": "cmrlxh80u001csukhm8byfhgk",
+"name": "Search Engine Journal",
+"url": "https://www.searchenginejournal.com/",
+"description": "Expert insights and guides on SEO forecasting and strategies.",
+"category": "SEO",
+"isFree": true,
+"isPaid": false,
+"order": 7
+},
+{
+"id": "cmrlxh80u001dsukh596xm7gb",
+"name": "SEO Roundtable",
+"url": "https://www.seroundtable.com/",
+"description": "SEO discussions and topics on different search engine marketing strategies.",
+"category": "SEO",
+"isFree": true,
+"isPaid": false,
+"order": 8
+},
+{
+"id": "cmrlxh80u001esukh1z929k53",
+"name": "Learning SEO",
+"url": "https://learningseo.io/",
+"description": "Roadmap filled with free guides, tools, and resources to master SEO.",
+"category": "SEO",
+"isFree": true,
+"isPaid": false,
+"order": 9
+},
+{
+"id": "cmrlxh80u001xsukhs39rf4vy",
+"name": "SQLZOO",
+"url": "https://sqlzoo.net/wiki/SQL_Tutorial",
+"description": "Learn & practice SQL in stages.",
+"category": "SQL Practice",
+"isFree": true,
+"isPaid": false,
+"order": 1
+},
+{
+"id": "cmrlxh80u001ysukh4qyjbvf4",
+"name": "W3Schools SQL",
+"url": "https://www.w3schools.com/sql/default.asp",
+"description": "Learn SQL for free.",
+"category": "SQL Practice",
+"isFree": true,
+"isPaid": false,
+"order": 2
+},
+{
+"id": "cmrlxh80u001zsukhjovrypvm",
+"name": "SQLize",
+"url": "https://sqlize.online",
+"description": "Free online SQL environment for running and experimenting with code.",
+"category": "SQL Practice",
+"isFree": true,
+"isPaid": false,
+"order": 3
+},
+{
+"id": "cmrlxh80u0020sukhefov9sts",
+"name": "SQLBolt",
+"url": "https://sqlbolt.com",
+"description": "Series of interactive lessons and exercises to learn SQL right in your browser.",
+"category": "SQL Practice",
+"isFree": true,
+"isPaid": false,
+"order": 4
+},
+{
+"id": "cmrlxh80u001lsukhibzlrmek",
+"name": "Developer Roadmaps",
+"url": "https://roadmap.sh/",
+"description": "Community effort to create roadmaps and educational content to guide developers.",
+"category": "Software Development",
+"isFree": true,
+"isPaid": false,
+"order": 1
+},
+{
+"id": "cmrlxh80u001msukh84zcbxv5",
+"name": "Anvil",
+"url": "https://anvil.works",
+"description": "Full stack web apps with nothing but Python.",
+"category": "Software Development",
+"isFree": true,
+"isPaid": true,
+"order": 2
+},
+{
+"id": "cmrlxh80u001nsukh58ls1u9u",
+"name": "Encore",
+"url": "https://encore.dev",
+"description": "Smoother backend workflow from idea to production using source code analysis.",
+"category": "Software Development",
+"isFree": true,
+"isPaid": true,
+"order": 3
+},
+{
+"id": "cmrlxh80u001osukhcbblojbl",
+"name": "QR Code Generator",
+"url": "https://markodenic.com/tools/qr-code-generator/",
+"description": "Easily create a QR code for your project.",
+"category": "Software Development",
+"isFree": true,
+"isPaid": false,
+"order": 4
+},
+{
+"id": "cmrlxh80u001psukh7ud4p87y",
+"name": "Shields.io",
+"url": "https://shields.io/",
+"description": "Create badges with your own customization.",
+"category": "Software Development",
+"isFree": true,
+"isPaid": false,
+"order": 5
+},
+{
+"id": "cmrlxh80u001qsukh7cuh6o9r",
+"name": "OverAPI",
+"url": "https://overapi.com/",
+"description": "Collection of all software development cheat sheets.",
+"category": "Software Development",
+"isFree": true,
+"isPaid": false,
+"order": 6
+},
+{
+"id": "cmrlxh80u001rsukhqktsn67e",
+"name": "DevDocs",
+"url": "https://devdocs.io/",
+"description": "Combines multiple API documentations in a fast, organized, searchable interface.",
+"category": "Software Development",
+"isFree": true,
+"isPaid": false,
+"order": 7
+},
+{
+"id": "cmrlxh80u001ssukh2trd2wew",
+"name": "Have I Been Pwned",
+"url": "https://haveibeenpwned.com",
+"description": "Check to see if your email or phone is in a data breach.",
+"category": "Software Development",
+"isFree": true,
+"isPaid": false,
+"order": 8
+},
+{
+"id": "cmrlxh80u000qsukhy835wqdv",
+"name": "Awwwards",
+"url": "https://www.awwwards.com",
+"description": "Showcasing the pinnacle of design, creativity, and innovation online.",
+"category": "Web Design Inspiration",
+"isFree": true,
+"isPaid": false,
+"order": 1
+},
+{
+"id": "cmrlxh80u000rsukh03tnolf1",
+"name": "SaaS Landing Page",
+"url": "https://saaslandingpage.com",
+"description": "Over 600 exceptional landing page examples from leading SaaS companies.",
+"category": "Web Design Inspiration",
+"isFree": true,
+"isPaid": false,
+"order": 2
+},
+{
+"id": "cmrlxh80u000ssukhme22vksr",
+"name": "Behance",
+"url": "https://www.behance.net/",
+"description": "Creative design projects from artists worldwide, browsable by style, creator, or industry.",
+"category": "Web Design Inspiration",
+"isFree": true,
+"isPaid": false,
+"order": 3
+},
+{
+"id": "cmrlxh80u000tsukhv1j83yrn",
+"name": "Design Vault",
+"url": "https://designvault.io/",
+"description": "Rich library of screenshots and design patterns from real-world digital products.",
+"category": "Web Design Inspiration",
+"isFree": true,
+"isPaid": false,
+"order": 4
+},
+{
+"id": "cmrlxh80u000xsukh4tnywnf0",
+"name": "Netlify",
+"url": "https://www.netlify.com",
+"description": "Seamless, Git-based serverless platform for modern web development.",
+"category": "Website Hosting",
+"isFree": true,
+"isPaid": true,
+"order": 1
+},
+{
+"id": "cmrlxh80u000ysukhv9rqn2wq",
+"name": "000webhost",
+"url": "https://www.000webhost.com",
+"description": "Cost-free hosting with Apache, PHP, MySQL, and cPanel.",
+"category": "Website Hosting",
+"isFree": true,
+"isPaid": true,
+"order": 2
+},
+{
+"id": "cmrlxh80u000zsukh89f26x9g",
+"name": "Pingdom Tools",
+"url": "https://tools.pingdom.com",
+"description": "Performance monitoring and cost analysis tools to optimize your website.",
+"category": "Website Hosting",
+"isFree": true,
+"isPaid": true,
+"order": 3
+}
+]
