@@ -1,0 +1,1193 @@
+     1→'use client'
+     2→
+     3→import { useState, useEffect, useRef, type FormEvent } from 'react'
+     4→import { motion, useInView } from 'framer-motion'
+     5→import {
+     6→  Database,
+     7→  Workflow,
+     8→  Users,
+     9→  Activity,
+    10→  Bot,
+    11→  Landmark,
+    12→  Heart,
+    13→  Zap,
+    14→  Sprout,
+    15→  ShoppingBag,
+    16→  Truck,
+    17→  Building2,
+    18→  GraduationCap,
+    19→  Star,
+    20→  Menu,
+    21→  ArrowRight,
+    22→  Quote,
+    23→  Search,
+    24→  ExternalLink,
+    25→  BookOpen,
+    26→  Sparkles,
+    27→  LayoutDashboard,
+    28→  Globe,
+    29→  MapPin,
+    30→  Target,
+    31→  Handshake,
+    32→} from 'lucide-react'
+    33→import { useI18n } from '@/lib/i18n'
+    34→import { ThemeToggle } from '@/components/theme-toggle'
+    35→import { LanguageSwitcher } from '@/components/language-switcher'
+    36→import { Button } from '@/components/ui/button'
+    37→import { Card, CardContent } from '@/components/ui/card'
+    38→import { Badge } from '@/components/ui/badge'
+    39→import { Input } from '@/components/ui/input'
+    40→import { Separator } from '@/components/ui/separator'
+    41→import {
+    42→  Sheet,
+    43→  SheetTrigger,
+    44→  SheetContent,
+    45→  SheetHeader,
+    46→  SheetTitle,
+    47→} from '@/components/ui/sheet'
+    48→
+    49→/* ------------------------------------------------------------------ */
+    50→/*  Animated counter hook                                              */
+    51→/* ------------------------------------------------------------------ */
+    52→function useCounter(end: number, duration = 2000, startOnView = true) {
+    53→  const [count, setCount] = useState(0)
+    54→  const ref = useRef<HTMLSpanElement>(null)
+    55→  const inView = useInView(ref, { once: true, margin: '-50px' })
+    56→
+    57→  useEffect(() => {
+    58→    if (!inView && startOnView) return
+    59→    let start = 0
+    60→    const step = Math.ceil(end / (duration / 16))
+    61→    const timer = setInterval(() => {
+    62→      start += step
+    63→      if (start >= end) {
+    64→        setCount(end)
+    65→        clearInterval(timer)
+    66→      } else {
+    67→        setCount(start)
+    68→      }
+    69→    }, 16)
+    70→    return () => clearInterval(timer)
+    71→  }, [inView, end, duration, startOnView])
+    72→
+    73→  return { count, ref }
+    74→}
+    75→
+    76→/* ------------------------------------------------------------------ */
+    77→/*  Section wrapper with scroll animation                               */
+    78→/* ------------------------------------------------------------------ */
+    79→function AnimatedSection({
+    80→  children,
+    81→  className = '',
+    82→}: {
+    83→  children: React.ReactNode
+    84→  className?: string
+    85→}) {
+    86→  const ref = useRef(null)
+    87→  const isInView = useInView(ref, { once: true, margin: '-100px' })
+    88→
+    89→  return (
+    90→    <motion.div
+    91→      ref={ref}
+    92→      initial={{ opacity: 0, y: 30 }}
+    93→      animate={isInView ? { opacity: 1, y: 0 } : {}}
+    94→      transition={{ duration: 0.6 }}
+    95→      className={className}
+    96→    >
+    97→      {children}
+    98→    </motion.div>
+    99→  )
+   100→}
+   101→
+   102→/* ------------------------------------------------------------------ */
+   103→/*  Resources Hub (from get-started.mdx)                              */
+   104→/* ------------------------------------------------------------------ */
+   105→interface ResourceItem {
+   106→  id: string
+   107→  name: string
+   108→  url: string
+   109→  description: string
+   110→  category: string
+   111→  isFree: boolean
+   112→  isPaid: boolean
+   113→}
+   114→
+   115→function ResourcesHub() {
+   116→  const { t } = useI18n()
+   117→  const [resources, setResources] = useState<ResourceItem[]>([])
+   118→  const [categories, setCategories] = useState<string[]>([])
+   119→  const [activeCategory, setActiveCategory] = useState('All')
+   120→  const [search, setSearch] = useState('')
+   121→  const [loading, setLoading] = useState(true)
+   122→  const sectionRef = useRef(null)
+   123→  const isInView = useInView(sectionRef, { once: true, margin: '-100px' })
+   124→
+   125→  useEffect(() => {
+   126→    fetch('/api/resources')
+   127→      .then((r) => r.json())
+   128→      .then((data) => {
+   129→        setResources(data.resources)
+   130→        setCategories(data.categories)
+   131→        setLoading(false)
+   132→      })
+   133→  }, [])
+   134→
+   135→  const filtered = resources.filter((r) => {
+   136→    const matchesCategory = activeCategory === 'All' || r.category === activeCategory
+   137→    const matchesSearch =
+   138→      !search ||
+   139→      r.name.toLowerCase().includes(search.toLowerCase()) ||
+   140→      r.description.toLowerCase().includes(search.toLowerCase()) ||
+   141→      r.category.toLowerCase().includes(search.toLowerCase())
+   142→    return matchesCategory && matchesSearch
+   143→  })
+   144→
+   145→  return (
+   146→    <section id="resources" className="py-20 sm:py-28 bg-muted/30">
+   147→      <div ref={sectionRef} className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+   148→        <motion.div
+   149→          initial={{ opacity: 0, y: 30 }}
+   150→          animate={isInView ? { opacity: 1, y: 0 } : {}}
+   151→          transition={{ duration: 0.6 }}
+   152→          className="text-center mb-12"
+   153→        >
+   154→          <Badge variant="secondary" className="mb-4 gap-1.5 px-3 py-1 text-xs font-medium">
+   155→            <BookOpen className="size-3" />
+   156→            {t('resources.badge')}
+   157→          </Badge>
+   158→          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-4">
+   159→            {t('resources.title1')}{' '}
+   160→            <span className="gradient-text">{t('resources.title2')}</span>
+   161→          </h2>
+   162→          <p className="text-muted-foreground text-base sm:text-lg max-w-2xl mx-auto">
+   163→            {t('resources.subtitle')}
+   164→          </p>
+   165→        </motion.div>
+   166→
+   167→        {/* Search & Filter Bar */}
+   168→        <motion.div
+   169→          initial={{ opacity: 0, y: 20 }}
+   170→          animate={isInView ? { opacity: 1, y: 0 } : {}}
+   171→          transition={{ duration: 0.6, delay: 0.2 }}
+   172→          className="mb-8 space-y-4"
+   173→        >
+   174→          <div className="relative max-w-md mx-auto">
+   175→            <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 size-4 text-muted-foreground" />
+   176→            <Input
+   177→              type="text"
+   178→              placeholder={t('resources.searchPlaceholder')}
+   179→              value={search}
+   180→              onChange={(e) => setSearch(e.target.value)}
+   181→              className="pl-10 rounded-full h-11 bg-background border-border"
+   182→            />
+   183→          </div>
+   184→          <div className="flex flex-wrap justify-center gap-2">
+   185→            <button
+   186→              onClick={() => setActiveCategory('All')}
+   187→              className={`px-3.5 py-1.5 rounded-full text-xs font-medium transition-all ${
+   188→                activeCategory === 'All'
+   189→                  ? 'bg-emerald text-emerald-foreground shadow-sm'
+   190→                  : 'bg-background border border-border text-muted-foreground hover:text-foreground hover:border-foreground/30'
+   191→              }`}
+   192→            >
+   193→              All ({resources.length})
+   194→            </button>
+   195→            {categories.map((cat) => {
+   196→              const count = resources.filter((r) => r.category === cat).length
+   197→              return (
+   198→                <button
+   199→                  key={cat}
+   200→                  onClick={() => setActiveCategory(cat)}
+   201→                  className={`px-3.5 py-1.5 rounded-full text-xs font-medium transition-all ${
+   202→                    activeCategory === cat
+   203→                      ? 'bg-emerald text-emerald-foreground shadow-sm'
+   204→                      : 'bg-background border border-border text-muted-foreground hover:text-foreground hover:border-foreground/30'
+   205→                  }`}
+   206→                >
+   207→                  {cat} ({count})
+   208→                </button>
+   209→              )
+   210→            })}
+   211→          </div>
+   212→        </motion.div>
+   213→
+   214→        {/* Resource Grid */}
+   215→        {loading ? (
+   216→          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+   217→            {Array.from({ length: 9 }).map((_, i) => (
+   218→              <div
+   219→                key={i}
+   220→                className="h-32 rounded-xl bg-background animate-pulse"
+   221→              />
+   222→            ))}
+   223→          </div>
+   224→        ) : (
+   225→          <>
+   226→            <p className="text-sm text-muted-foreground mb-4">
+   227→              Showing {filtered.length} of {resources.length} resources
+   228→            </p>
+   229→            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-h-[720px] overflow-y-auto custom-scrollbar pr-1">
+   230→              {filtered.map((resource) => (
+   231→                <a
+   232→                  key={resource.id}
+   233→                  href={resource.url}
+   234→                  target="_blank"
+   235→                  rel="noopener noreferrer"
+   236→                  className="group flex flex-col p-4 rounded-xl bg-background border border-border hover:border-emerald/40 hover:shadow-md transition-all"
+   237→                >
+   238→                  <div className="flex items-start justify-between gap-3 mb-2">
+   239→                    <h3 className="font-semibold text-sm leading-tight group-hover:text-emerald transition-colors line-clamp-1">
+   240→                      {resource.name}
+   241→                    </h3>
+   242→                    <ExternalLink className="size-3.5 text-muted-foreground group-hover:text-emerald shrink-0 mt-0.5 transition-colors" />
+   243→                  </div>
+   244→                  <p className="text-xs text-muted-foreground leading-relaxed mb-3 line-clamp-2 flex-1">
+   245→                    {resource.description}
+   246→                  </p>
+   247→                  <div className="flex items-center gap-2">
+   248→                    <Badge
+   249→                      variant="outline"
+   250→                      className="text-[10px] px-2 py-0 font-normal"
+   251→                    >
+   252→                      {resource.category}
+   253→                    </Badge>
+   254→                    <div className="flex gap-1.5 ml-auto">
+   255→                      {resource.isFree && (
+   256→                        <span className="inline-flex items-center rounded-full bg-emerald/10 text-emerald px-2 py-0.5 text-[10px] font-medium">
+   257→                          Free
+   258→                        </span>
+   259→                      )}
+   260→                      {resource.isPaid && (
+   261→                        <span className="inline-flex items-center rounded-full bg-gold/10 text-gold px-2 py-0.5 text-[10px] font-medium">
+   262→                          Paid
+   263→                        </span>
+   264→                      )}
+   265→                    </div>
+   266→                  </div>
+   267→                </a>
+   268→              ))}
+   269→            </div>
+   270→            {filtered.length === 0 && (
+   271→              <div className="text-center py-16">
+   272→                <Sparkles className="size-10 text-muted-foreground/40 mx-auto mb-4" />
+   273→                <p className="text-muted-foreground">
+   274→                  {t('resources.noResults')} &quot;{search}&quot;
+   275→                </p>
+   276→                <button
+   277→                  onClick={() => {
+   278→                    setSearch('')
+   279→                    setActiveCategory('All')
+   280→                  }}
+   281→                  className="text-emerald text-sm mt-2 hover:underline"
+   282→                >
+   283→                  {t('resources.clearFilters')}
+   284→                </button>
+   285→              </div>
+   286→            )}
+   287→          </>
+   288→        )}
+   289→      </div>
+   290→    </section>
+   291→  )
+   292→}
+   293→
+   294→/* ------------------------------------------------------------------ */
+   295→/*  Main Page                                                          */
+   296→/* ------------------------------------------------------------------ */
+   297→export default function Home() {
+   298→  const { t, localeInfo } = useI18n()
+   299→  const [scrolled, setScrolled] = useState(false)
+   300→  const [mobileOpen, setMobileOpen] = useState(false)
+   301→
+   302→  useEffect(() => {
+   303→    const onScroll = () => setScrolled(window.scrollY > 40)
+   304→    window.addEventListener('scroll', onScroll, { passive: true })
+   305→    return () => window.removeEventListener('scroll', onScroll)
+   306→  }, [])
+   307→
+   308→  const navLinks = [
+   309→    { key: 'platform', label: t('nav.platform') },
+   310→    { key: 'solutions', label: t('nav.solutions') },
+   311→    { key: 'industries', label: t('nav.industries') },
+   312→    { key: 'resources', label: t('nav.resources') },
+   313→    { key: 'about', label: t('nav.about') },
+   314→    { key: 'contact', label: t('nav.contact') },
+   315→  ]
+   316→
+   317→  const { count: c1, ref: r1 } = useCounter(50)
+   318→  const { count: c2, ref: r2 } = useCounter(98)
+   319→  const { count: c3, ref: r3 } = useCounter(24)
+   320→
+   321→  return (
+   322→    <div className="min-h-screen flex flex-col">
+   323→      {/* ============================================================ */}
+   324→      {/*  1. NAVIGATION                                                */}
+   325→      {/* ============================================================ */}
+   326→      <header
+   327→        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+   328→          scrolled
+   329→            ? 'bg-background/90 backdrop-blur-xl border-b border-border shadow-sm'
+   330→            : 'bg-transparent'
+   331→        }`}
+   332→      >
+   333→        <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+   334→          {/* Logo */}
+   335→          <a href="#" className="flex items-center gap-2.5">
+   336→            <img
+   337→              src="/logo.svg"
+   338→              alt="Business Hustle"
+   339→              className="h-9 w-9 rounded-lg object-contain"
+   340→            />
+   341→            <span className="hidden sm:inline font-semibold text-lg tracking-tight">
+   342→              Business Hustle
+   343→            </span>
+   344→          </a>
+   345→
+   346→          {/* Desktop links */}
+   347→          <ul className="hidden md:flex items-center gap-1">
+   348→            {navLinks.map((link) => (
+   349→              <li key={link.key}>
+   350→                <a
+   351→                  href={`#${link.key}`}
+   352→                  className="px-3 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors rounded-md hover:bg-accent"
+   353→                >
+   354→                  {link.label}
+   355→                </a>
+   356→              </li>
+   357→            ))}
+   358→          </ul>
+   359→
+   360→          {/* Desktop CTA + Controls */}
+   361→          <div className="hidden md:flex items-center gap-2">
+   362→            <ThemeToggle />
+   363→            <LanguageSwitcher />
+   364→            <Button size="sm" className="rounded-full px-5">
+   365→              {t('nav.bookDemo')}
+   366→            </Button>
+   367→          </div>
+   368→
+   369→          {/* Mobile controls */}
+   370→          <div className="flex items-center gap-1 md:hidden">
+   371→            <ThemeToggle />
+   372→            <LanguageSwitcher />
+   373→            <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
+   374→              <SheetTrigger asChild>
+   375→                <Button variant="ghost" size="icon">
+   376→                  <Menu className="size-5" />
+   377→                  <span className="sr-only">{t('nav.openMenu')}</span>
+   378→                </Button>
+   379→              </SheetTrigger>
+   380→              <SheetContent side="right" className="w-72">
+   381→                <SheetHeader>
+   382→                  <SheetTitle className="flex items-center gap-2">
+   383→                    <img
+   384→                      src="/logo.svg"
+   385→                      alt="Business Hustle"
+   386→                      className="h-8 w-8 rounded-lg object-contain"
+   387→                    />
+   388→                    Business Hustle
+   389→                  </SheetTitle>
+   390→                </SheetHeader>
+   391→                <div className="flex flex-col gap-1 px-4 pt-4">
+   392→                  {navLinks.map((link) => (
+   393→                    <a
+   394→                      key={link.key}
+   395→                      href={`#${link.key}`}
+   396→                      onClick={() => setMobileOpen(false)}
+   397→                      className="rounded-md px-3 py-2.5 text-sm text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
+   398→                    >
+   399→                      {link.label}
+   400→                    </a>
+   401→                  ))}
+   402→                  <Separator className="my-3" />
+   403→                  <Button className="rounded-full w-full">{t('nav.bookDemo')}</Button>
+   404→                </div>
+   405→              </SheetContent>
+   406→            </Sheet>
+   407→          </div>
+   408→        </nav>
+   409→      </header>
+   410→
+   411→      <main className="flex-1">
+   412→        {/* ============================================================ */}
+   413→        {/*  2. HERO SECTION                                              */}
+   414→        {/* ============================================================ */}
+   415→        <section
+   416→          id="hero"
+   417→          className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-4 sm:px-6 lg:px-8 pt-16"
+   418→        >
+   419→          {/* Background image */}
+   420→          <div
+   421→            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+   422→            style={{ backgroundImage: 'url(/hero-bg.png)', opacity: 0.3 }}
+   423→            aria-hidden="true"
+   424→          />
+   425→          {/* Grid overlay */}
+   426→          <div className="absolute inset-0 grid-pattern" aria-hidden="true" />
+   427→
+   428→          {/* Content */}
+   429→          <div className="relative z-10 mx-auto max-w-4xl text-center">
+   430→            <motion.div
+   431→              initial={{ opacity: 0, y: 20 }}
+   432→              animate={{ opacity: 1, y: 0 }}
+   433→              transition={{ duration: 0.5, delay: 0.1 }}
+   434→            >
+   435→              <Badge
+   436→                variant="outline"
+   437→                className="mb-6 border-emerald/40 text-emerald px-4 py-1.5 text-sm"
+   438→              >
+   439→                {t('hero.badge')}
+   440→              </Badge>
+   441→            </motion.div>
+   442→
+   443→            <motion.h1
+   444→              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1]"
+   445→              initial={{ opacity: 0, y: 20 }}
+   446→              animate={{ opacity: 1, y: 0 }}
+   447→              transition={{ duration: 0.5, delay: 0.2 }}
+   448→            >
+   449→              {t('hero.title1')}
+   450→              <br />
+   451→              <span className="gradient-text">{t('hero.title2')}</span>
+   452→            </motion.h1>
+   453→
+   454→            <motion.p
+   455→              className="mx-auto mt-6 max-w-2xl text-base sm:text-lg text-muted-foreground leading-relaxed"
+   456→              initial={{ opacity: 0, y: 20 }}
+   457→              animate={{ opacity: 1, y: 0 }}
+   458→              transition={{ duration: 0.5, delay: 0.35 }}
+   459→            >
+   460→              {t('hero.subtitle')}
+   461→            </motion.p>
+   462→
+   463→            <motion.div
+   464→              className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3"
+   465→              initial={{ opacity: 0, y: 20 }}
+   466→              animate={{ opacity: 1, y: 0 }}
+   467→              transition={{ duration: 0.5, delay: 0.5 }}
+   468→            >
+   469→              <Button size="lg" className="rounded-full px-7 text-sm">
+   470→                {t('hero.cta1')}
+   471→                <ArrowRight className="size-4" />
+   472→              </Button>
+   473→              <Button
+   474→                variant="outline"
+   475→                size="lg"
+   476→                className="rounded-full px-7 text-sm"
+   477→              >
+   478→                {t('hero.cta2')}
+   479→              </Button>
+   480→            </motion.div>
+   481→          </div>
+   482→
+   483→          {/* Stat counters */}
+   484→          <motion.div
+   485→            className="relative z-10 mt-16 sm:mt-20 grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-10 max-w-3xl mx-auto"
+   486→            initial={{ opacity: 0, y: 30 }}
+   487→            animate={{ opacity: 1, y: 0 }}
+   488→            transition={{ duration: 0.6, delay: 0.65 }}
+   489→          >
+   490→            {[
+   491→              { value: c1, suffix: '+', ref: r1, label: t('hero.stat1') },
+   492→              { value: c2, suffix: '%', ref: r2, label: t('hero.stat2') },
+   493→              { value: c3, suffix: '/7', ref: r3, label: t('hero.stat3') },
+   494→            ].map((stat) => (
+   495→              <div key={stat.label} className="text-center">
+   496→                <div className="text-2xl sm:text-3xl font-bold text-foreground">
+   497→                  <span ref={stat.ref}>
+   498→                    {stat.value}
+   499→                    {stat.suffix}
+   500→                  </span>
+   501→                </div>
+   502→                <p className="mt-1 text-xs sm:text-sm text-muted-foreground">
+   503→                  {stat.label}
+   504→                </p>
+   505→              </div>
+   506→            ))}
+   507→          </motion.div>
+   508→        </section>
+   509→
+   510→        {/* ============================================================ */}
+   511→        {/*  3. TRUSTED BY BAR                                            */}
+   512→        {/* ============================================================ */}
+   513→        <section className="border-y border-border bg-muted/30 py-6 sm:py-8">
+   514→          <AnimatedSection className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+   515→            <p className="text-center text-sm sm:text-base text-muted-foreground font-medium">
+   516→              {t('trusted.text')}
+   517→            </p>
+   518→          </AnimatedSection>
+   519→        </section>
+   520→
+   521→        {/* ============================================================ */}
+   522→        {/*  4. PLATFORM SECTION                                          */}
+   523→        {/* ============================================================ */}
+   524→        <section id="platform" className="relative py-20 sm:py-28 overflow-hidden">
+   525→          <div className="absolute inset-0 dot-pattern opacity-40" aria-hidden="true" />
+   526→
+   527→          <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+   528→            <AnimatedSection className="text-center mb-14 sm:mb-16">
+   529→              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
+   530→                {t('platform.title')}
+   531→              </h2>
+   532→              <p className="mx-auto mt-4 max-w-2xl text-muted-foreground text-base sm:text-lg leading-relaxed">
+   533→                {t('platform.subtitle')}
+   534→              </p>
+   535→            </AnimatedSection>
+   536→
+   537→            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+   538→              {[
+   539→                {
+   540→                  icon: Database,
+   541→                  name: 'Vortex',
+   542→                  tag: t('platform.vortex.tag'),
+   543→                  description:
+   544→                    t('platform.vortex.desc'),
+   545→                },
+   546→                {
+   547→                  icon: Workflow,
+   548→                  name: 'Flux',
+   549→                  tag: t('platform.flux.tag'),
+   550→                  description:
+   551→                    t('platform.flux.desc'),
+   552→                },
+   553→                {
+   554→                  icon: Users,
+   555→                  name: 'Nexus',
+   556→                  tag: t('platform.nexus.tag'),
+   557→                  description:
+   558→                    t('platform.nexus.desc'),
+   559→                },
+   560→                {
+   561→                  icon: Activity,
+   562→                  name: 'Pulse',
+   563→                  tag: t('platform.pulse.tag'),
+   564→                  description:
+   565→                    t('platform.pulse.desc'),
+   566→                },
+   567→                {
+   568→                  icon: Bot,
+   569→                  name: 'Axon',
+   570→                  tag: t('platform.axon.tag'),
+   571→                  description:
+   572→                    t('platform.axon.desc'),
+   573→                },
+   574→              ].map((item, i) => (
+   575→                <AnimatedSection key={item.name}>
+   576→                  <motion.div
+   577→                    whileHover={{ y: -4 }}
+   578→                    transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+   579→                  >
+   580→                    <Card className="group h-full border-border/60 bg-card/80 backdrop-blur-sm hover:border-emerald/40 transition-colors duration-300 py-0 gap-0">
+   581→                      <CardContent className="p-6 flex flex-col gap-4 h-full">
+   582→                        <div className="flex items-center justify-between">
+   583→                          <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-emerald/10 text-emerald">
+   584→                            <item.icon className="size-5" />
+   585→                          </div>
+   586→                          <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
+   587→                            {item.tag}
+   588→                          </span>
+   589→                        </div>
+   590→                        <h3 className="text-lg font-semibold">{item.name}</h3>
+   591→                        <p className="text-sm text-muted-foreground leading-relaxed flex-1">
+   592→                          {item.description}
+   593→                        </p>
+   594→                        <a
+   595→                          href="#"
+   596→                          className="inline-flex items-center gap-1 text-sm font-medium text-emerald hover:gap-2 transition-all"
+   597→                        >
+   598→                          {t('platform.learnMore')}
+   599→                          <ArrowRight className="size-3.5" />
+   600→                        </a>
+   601→                      </CardContent>
+   602→                    </Card>
+   603→                  </motion.div>
+   604→                </AnimatedSection>
+   605→              ))}
+   606→            </div>
+   607→          </div>
+   608→        </section>
+   609→
+   610→        {/* ============================================================ */}
+   611→        {/*  5. HOW IT WORKS                                              */}
+   612→        {/* ============================================================ */}
+   613→        <section className="py-20 sm:py-28 bg-muted/20">
+   614→          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+   615→            <AnimatedSection className="text-center mb-14 sm:mb-16">
+   616→              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
+   617→                {t('how.title')}
+   618→              </h2>
+   619→            </AnimatedSection>
+   620→
+   621→            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4 relative">
+   622→              {/* Connecting line (desktop only) */}
+   623→              <div
+   624→                className="hidden md:block absolute top-16 left-[20%] right-[20%] h-px bg-gradient-to-r from-transparent via-border to-transparent"
+   625→                aria-hidden="true"
+   626→              />
+   627→
+   628→              {[
+   629→                {
+   630→                  num: '01',
+   631→                  title: t('how.step1.title'),
+   632→                  description: t('how.step1.desc'),
+   633→                },
+   634→                {
+   635→                  num: '02',
+   636→                  title: t('how.step2.title'),
+   637→                  description: t('how.step2.desc'),
+   638→                },
+   639→                {
+   640→                  num: '03',
+   641→                  title: t('how.step3.title'),
+   642→                  description: t('how.step3.desc'),
+   643→                },
+   644→              ].map((step, i) => (
+   645→                <AnimatedSection key={step.title}>
+   646→                  <div className="relative text-center md:text-left">
+   647→                    <div className="inline-flex items-center justify-center h-12 w-12 rounded-full border-2 border-emerald/50 bg-background text-emerald font-bold text-lg mb-5 relative z-10">
+   648→                      {step.num}
+   649→                    </div>
+   650→                    <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
+   651→                    <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+   652→                      {step.description}
+   653→                    </p>
+   654→                  </div>
+   655→                </AnimatedSection>
+   656→              ))}
+   657→            </div>
+   658→          </div>
+   659→        </section>
+   660→
+   661→        {/* ============================================================ */}
+   662→        {/*  6. INDUSTRIES SECTION                                        */}
+   663→        {/* ============================================================ */}
+   664→        <section id="industries" className="py-20 sm:py-28">
+   665→          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+   666→            <AnimatedSection className="text-center mb-14 sm:mb-16">
+   667→              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
+   668→                {t('industries.title')}
+   669→              </h2>
+   670→              <p className="mx-auto mt-4 max-w-xl text-muted-foreground text-base sm:text-lg">
+   671→                {t('industries.subtitle')}
+   672→              </p>
+   673→            </AnimatedSection>
+   674→
+   675→            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+   676→              {[
+   677→                {
+   678→                  icon: Landmark,
+   679→                  name: t('industries.finance'),
+   680→                  desc: t('industries.finance.desc'),
+   681→                },
+   682→                {
+   683→                  icon: Heart,
+   684→                  name: t('industries.health'),
+   685→                  desc: t('industries.health.desc'),
+   686→                },
+   687→                {
+   688→                  icon: Zap,
+   689→                  name: t('industries.mining'),
+   690→                  desc: t('industries.mining.desc'),
+   691→                },
+   692→                {
+   693→                  icon: Sprout,
+   694→                  name: t('industries.agri'),
+   695→                  desc: t('industries.agri.desc'),
+   696→                },
+   697→                {
+   698→                  icon: ShoppingBag,
+   699→                  name: t('industries.retail'),
+   700→                  desc: t('industries.retail.desc'),
+   701→                },
+   702→                {
+   703→                  icon: Truck,
+   704→                  name: t('industries.logistics'),
+   705→                  desc: t('industries.logistics.desc'),
+   706→                },
+   707→                {
+   708→                  icon: Building2,
+   709→                  name: t('industries.public'),
+   710→                  desc: t('industries.public.desc'),
+   711→                },
+   712→                {
+   713→                  icon: GraduationCap,
+   714→                  name: t('industries.edu'),
+   715→                  desc: t('industries.edu.desc'),
+   716→                },
+   717→              ].map((ind) => (
+   718→                <AnimatedSection key={ind.name}>
+   719→                  <motion.div whileHover={{ y: -3 }} transition={{ type: 'spring', stiffness: 300, damping: 20 }}>
+   720→                    <Card className="group h-full border-border/50 bg-card/60 hover:border-emerald/30 transition-colors duration-300 py-0 gap-0 cursor-default">
+   721→                      <CardContent className="p-5 flex flex-col gap-3 h-full">
+   722→                        <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-emerald/10 text-emerald shrink-0">
+   723→                          <ind.icon className="size-5" />
+   724→                        </div>
+   725→                        <h3 className="text-sm font-semibold leading-tight">
+   726→                          {ind.name}
+   727→                        </h3>
+   728→                        <p className="text-xs text-muted-foreground leading-relaxed">
+   729→                          {ind.desc}
+   730→                        </p>
+   731→                      </CardContent>
+   732→                    </Card>
+   733→                  </motion.div>
+   734→                </AnimatedSection>
+   735→              ))}
+   736→            </div>
+   737→          </div>
+   738→        </section>
+   739→
+   740→        {/* ============================================================ */}
+   741→        {/*  7. SOLUTIONS SHOWCASE                                         */}
+   742→        {/* ============================================================ */}
+   743→        <section id="solutions" className="py-20 sm:py-28 bg-muted/20">
+   744→          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+   745→            <AnimatedSection className="text-center mb-14 sm:mb-16">
+   746→              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
+   747→                {t('solutions.title')}
+   748→              </h2>
+   749→            </AnimatedSection>
+   750→
+   751→            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+   752→              {[
+   753→                {
+   754→                  title: t('solutions.training.title'),
+   755→                  desc: t('solutions.training.desc'),
+   756→                  stat: t('solutions.training.stat'),
+   757→                  icon: Database,
+   758→                },
+   759→                {
+   760→                  title: t('solutions.automation.title'),
+   761→                  desc: t('solutions.automation.desc'),
+   762→                  stat: t('solutions.automation.stat'),
+   763→                  icon: Workflow,
+   764→                },
+   765→                {
+   766→                  title: t('solutions.contact.title'),
+   767→                  desc: t('solutions.contact.desc'),
+   768→                  stat: t('solutions.contact.stat'),
+   769→                  icon: Bot,
+   770→                },
+   771→              ].map((sol) => (
+   772→                <AnimatedSection key={sol.title}>
+   773→                  <Card className="group h-full border border-emerald/20 bg-card hover:border-emerald/50 transition-colors duration-300 py-0 gap-0">
+   774→                    <CardContent className="p-6 sm:p-8 flex flex-col gap-5 h-full">
+   775→                      <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-emerald/10 text-emerald">
+   776→                        <sol.icon className="size-6" />
+   777→                      </div>
+   778→                      <div>
+   779→                        <h3 className="text-xl font-semibold mb-2">
+   780→                          {sol.title}
+   781→                        </h3>
+   782→                        <p className="text-sm text-muted-foreground leading-relaxed">
+   783→                          {sol.desc}
+   784→                        </p>
+   785→                      </div>
+   786→                      <div className="mt-auto pt-4 border-t border-border">
+   787→                        <span className="text-lg font-bold gradient-text">
+   788→                          {sol.stat}
+   789→                        </span>
+   790→                      </div>
+   791→                    </CardContent>
+   792→                  </Card>
+   793→                </AnimatedSection>
+   794→              ))}
+   795→            </div>
+   796→          </div>
+   797→        </section>
+   798→
+   799→        {/* ============================================================ */}
+   800→        {/*  7.5 OUR SERVICES (from Solutions page)                      */}
+   801→        {/* ============================================================ */}
+   802→        <section className="py-20 sm:py-28">
+   803→          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+   804→            <AnimatedSection className="text-center mb-14 sm:mb-16">
+   805→              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
+   806→                {t('services.title')}
+   807→              </h2>
+   808→              <p className="mx-auto mt-4 max-w-2xl text-muted-foreground text-base sm:text-lg leading-relaxed">
+   809→                {t('services.subtitle')}
+   810→              </p>
+   811→            </AnimatedSection>
+   812→
+   813→            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+   814→              {[
+   815→                {
+   816→                  icon: BookOpen,
+   817→                  name: t('services.hustleBasics.name'),
+   818→                  tag: t('services.hustleBasics.tag'),
+   819→                  desc: t('services.hustleBasics.desc'),
+   820→                  cta: t('services.hustleBasics.cta'),
+   821→                },
+   822→                {
+   823→                  icon: LayoutDashboard,
+   824→                  name: t('services.pm.name'),
+   825→                  tag: t('services.pm.tag'),
+   826→                  desc: t('services.pm.desc'),
+   827→                  cta: t('services.pm.cta'),
+   828→                },
+   829→                {
+   830→                  icon: Globe,
+   831→                  name: t('services.portal.name'),
+   832→                  tag: t('services.portal.tag'),
+   833→                  desc: t('services.portal.desc'),
+   834→                  cta: t('services.portal.cta'),
+   835→                },
+   836→                {
+   837→                  icon: MapPin,
+   838→                  name: t('services.local.name'),
+   839→                  tag: t('services.local.tag'),
+   840→                  desc: t('services.local.desc'),
+   841→                  cta: t('services.local.cta'),
+   842→                },
+   843→                {
+   844→                  icon: Target,
+   845→                  name: t('services.strategy.name'),
+   846→                  tag: t('services.strategy.tag'),
+   847→                  desc: t('services.strategy.desc'),
+   848→                  cta: t('services.strategy.cta'),
+   849→                },
+   850→              ].map((svc) => (
+   851→                <AnimatedSection key={svc.name}>
+   852→                  <motion.div
+   853→                    whileHover={{ y: -4 }}
+   854→                    transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+   855→                  >
+   856→                    <Card className="group h-full border-border/60 bg-card/80 backdrop-blur-sm hover:border-emerald/40 transition-colors duration-300 py-0 gap-0">
+   857→                      <CardContent className="p-6 flex flex-col gap-4 h-full">
+   858→                        <div className="flex items-center justify-between">
+   859→                          <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-gold/10 text-gold">
+   860→                            <svc.icon className="size-5" />
+   861→                          </div>
+   862→                          <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
+   863→                            {svc.tag}
+   864→                          </span>
+   865→                        </div>
+   866→                        <h3 className="text-lg font-semibold">{svc.name}</h3>
+   867→                        <p className="text-sm text-muted-foreground leading-relaxed flex-1">
+   868→                          {svc.desc}
+   869→                        </p>
+   870→                        <a
+   871→                          href="#"
+   872→                          className="inline-flex items-center gap-1 text-sm font-medium text-gold hover:gap-2 transition-all"
+   873→                        >
+   874→                          {svc.cta}
+   875→                          <ArrowRight className="size-3.5" />
+   876→                        </a>
+   877→                      </CardContent>
+   878→                    </Card>
+   879→                  </motion.div>
+   880→                </AnimatedSection>
+   881→              ))}
+   882→            </div>
+   883→
+   884→            {/* Trusted by clients bar */}
+   885→            <AnimatedSection className="mt-16 pt-12 border-t border-border">
+   886→              <div className="text-center mb-8">
+   887→                <h3 className="text-lg sm:text-xl font-semibold">
+   888→                  {t('services.clients.title')}
+   889→                </h3>
+   890→                <p className="text-sm text-muted-foreground mt-1">
+   891→                  {t('services.clients.subtitle')}
+   892→                </p>
+   893→              </div>
+   894→              <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
+   895→                {['Ubuntu', 'Gabonewe', 'Institute of Kemetic & Marcus Garvey Studies', 'body vision.online', 'sunshinefoods.co.za', 'Smoothie On The Go', 'On-Safari', 'Postnet Gardens', 'Just Hearing', 'Dr Wendy Dicks', 'Honest Travel Experience'].map((client) => (
+   896→                  <span
+   897→                    key={client}
+   898→                    className="text-sm text-muted-foreground/70 font-medium"
+   899→                  >
+   900→                    {client}
+   901→                  </span>
+   902→                ))}
+   903→              </div>
+   904→              <div className="mt-6 text-center">
+   905→                <p className="text-xs text-muted-foreground/60">
+   906→                  <span className="inline-flex items-center gap-1.5">
+   907→                    <Handshake className="size-3.5" />
+   908→                    {t('services.clients.collab')}
+   909→                  </span>
+   910→                </p>
+   911→              </div>
+   912→            </AnimatedSection>
+   913→          </div>
+   914→        </section>
+   915→
+   916→        {/* ============================================================ */}
+   917→        {/*  8. ABOUT SECTION                                             */}
+   918→        {/* ============================================================ */}
+   919→        <section id="about" className="py-20 sm:py-28">
+   920→          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+   921→            <AnimatedSection>
+   922→              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+   923→                {/* Text */}
+   924→                <div>
+   925→                  <Quote className="size-8 text-emerald/60 mb-4" />
+   926→                  <blockquote className="text-lg sm:text-xl font-medium leading-relaxed italic text-foreground/90 mb-6">
+   927→                    &ldquo;{t('about.quote')}&rdquo;
+   928→                  </blockquote>
+   929→                  <p className="text-sm text-muted-foreground mb-8">
+   930→                    {t('about.quoteAuthor')}
+   931→                  </p>
+   932→                  <p className="text-muted-foreground leading-relaxed mb-4">
+   933→                    {t('about.description')}
+   934→                  </p>
+   935→                  <p className="text-muted-foreground leading-relaxed mb-8">
+   936→                    {t('about.founded')}
+   937→                  </p>
+   938→                  <a
+   939→                    href="#"
+   940→                    className="inline-flex items-center gap-1.5 text-sm font-medium text-emerald hover:gap-2.5 transition-all"
+   941→                  >
+   942→                    {t('about.learnStory')}
+   943→                    <ArrowRight className="size-4" />
+   944→                  </a>
+   945→                </div>
+   946→
+   947→                {/* Visual */}
+   948→                <div className="relative">
+   949→                  <div className="aspect-square rounded-2xl overflow-hidden border border-border/60">
+   950→                    <div
+   951→                      className="absolute inset-0 bg-cover bg-center"
+   952→                      style={{
+   953→                        backgroundImage: 'url(/platform-bg.png)',
+   954→                        opacity: 0.5,
+   955→                      }}
+   956→                    />
+   957→                    <div className="absolute inset-0 dot-pattern" />
+   958→                    <div className="relative z-10 h-full flex items-center justify-center">
+   959→                      <div className="text-center p-8">
+   960→                        <div className="inline-flex h-20 w-20 items-center justify-center rounded-2xl bg-emerald/10 text-emerald mb-6 animate-float">
+   961→                          <Bot className="size-10" />
+   962→                        </div>
+   963→                        <p className="text-2xl sm:text-3xl font-bold tracking-tight">
+   964→                          {t('about.builtIn')}{' '}
+   965→                          <span className="gradient-text">Africa</span>,
+   966→                          <br />
+   967→                          {t('about.forAfrica')}
+   968→                        </p>
+   969→                      </div>
+   970→                    </div>
+   971→                  </div>
+   972→                </div>
+   973→              </div>
+   974→            </AnimatedSection>
+   975→          </div>
+   976→        </section>
+   977→
+   978→        {/* ============================================================ */}
+   979→        {/*  9. TESTIMONIALS                                              */}
+   980→        {/* ============================================================ */}
+   981→        <section className="py-20 sm:py-28 bg-muted/20">
+   982→          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+   983→            <AnimatedSection className="text-center mb-14 sm:mb-16">
+   984→              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
+   985→                {t('testimonials.title')}
+   986→              </h2>
+   987→            </AnimatedSection>
+   988→
+   989→            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+   990→              {[
+   991→                {
+   992→                  quote: t('testimonials.quote1'),
+   993→                  author: t('testimonials.author1'),
+   994→                  role: t('testimonials.role1'),
+   995→                },
+   996→                {
+   997→                  quote: t('testimonials.quote2'),
+   998→                  author: t('testimonials.author2'),
+   999→                  role: t('testimonials.role2'),
+  1000→                },
+  1001→                {
+  1002→                  quote: t('testimonials.quote3'),
+  1003→                  author: t('testimonials.author3'),
+  1004→                  role: t('testimonials.role3'),
+  1005→                },
+  1006→              ].map((t) => (
+  1007→                <AnimatedSection key={t.author}>
+  1008→                  <Card className="group h-full border-border/60 hover:border-emerald/30 transition-colors duration-300 py-0 gap-0">
+  1009→                    <CardContent className="p-6 flex flex-col gap-4 h-full">
+  1010→                      {/* Stars */}
+  1011→                      <div className="flex gap-0.5 text-gold">
+  1012→                        {Array.from({ length: 5 }).map((_, i) => (
+  1013→                          <Star
+  1014→                            key={i}
+  1015→                            className="size-4 fill-current"
+  1016→                          />
+  1017→                        ))}
+  1018→                      </div>
+  1019→                      <p className="text-sm text-muted-foreground leading-relaxed flex-1">
+  1020→                        &ldquo;{t.quote}&rdquo;
+  1021→                      </p>
+  1022→                      <div className="pt-3 border-t border-border">
+  1023→                        <p className="text-sm font-semibold">{t.author}</p>
+  1024→                        <p className="text-xs text-muted-foreground">
+  1025→                          {t.role}
+  1026→                        </p>
+  1027→                      </div>
+  1028→                    </CardContent>
+  1029→                  </Card>
+  1030→                </AnimatedSection>
+  1031→              ))}
+  1032→            </div>
+  1033→          </div>
+  1034→        </section>
+  1035→
+  1036→        {/* ============================================================ */}
+  1037→        {/*  10. RESOURCES HUB                                           */}
+  1038→        {/* ============================================================ */}
+  1039→        <ResourcesHub />
+  1040→
+  1041→        {/* ============================================================ */}
+  1042→        {/*  11. NEWSLETTER / CTA                                         */}
+  1043→        {/* ============================================================ */}
+  1044→        <section id="contact" className="py-20 sm:py-28 relative overflow-hidden">
+  1045→          <div className="absolute inset-0 glow" aria-hidden="true" />
+  1046→          <div className="relative z-10 mx-auto max-w-2xl px-4 sm:px-6 lg:px-8 text-center">
+  1047→            <AnimatedSection>
+  1048→              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-4">
+  1049→                {t('contact.title1')}
+  1050→                <br />
+  1051→                <span className="gradient-text">{t('contact.title2')}</span>
+  1052→              </h2>
+  1053→              <p className="text-muted-foreground text-base sm:text-lg mb-8 max-w-lg mx-auto">
+  1054→                {t('contact.subtitle')}
+  1055→              </p>
+  1056→              <form
+  1057→                onSubmit={(e: FormEvent) => e.preventDefault()}
+  1058→                className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
+  1059→              >
+  1060→                <Input
+  1061→                  type="email"
+  1062→                  placeholder={t('contact.placeholder')}
+  1063→                  required
+  1064→                  className="rounded-full h-11 px-5 bg-card border-border"
+  1065→                />
+  1066→                <Button type="submit" className="rounded-full h-11 px-7 whitespace-nowrap">
+  1067→                  {t('contact.subscribe')}
+  1068→                </Button>
+  1069→              </form>
+  1070→              <p className="mt-4 text-xs text-muted-foreground">
+  1071→                {t('contact.noSpam')}
+  1072→              </p>
+  1073→            </AnimatedSection>
+  1074→          </div>
+  1075→        </section>
+  1076→      </main>
+  1077→
+  1078→      {/* ============================================================ */}
+  1079→      {/*  12. FOOTER                                                   */}
+  1080→      {/* ============================================================ */}
+  1081→      <footer className="border-t border-border bg-muted/30 mt-auto">
+  1082→        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+  1083→          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+  1084→            {/* Brand */}
+  1085→            <div className="col-span-2 sm:col-span-2 lg:col-span-1">
+  1086→              <div className="flex items-center gap-2.5 mb-4">
+  1087→                <img
+  1088→                  src="/logo.svg"
+  1089→                  alt="Business Hustle"
+  1090→                  className="h-9 w-9 rounded-lg object-contain"
+  1091→                />
+  1092→                <span className="font-semibold text-lg tracking-tight">
+  1093→                  Business Hustle
+  1094→                </span>
+  1095→              </div>
+  1096→              <p className="text-sm text-muted-foreground leading-relaxed mb-5 max-w-xs">
+  1097→                {t('footer.brandDesc')}
+  1098→              </p>
+  1099→              <div className="flex gap-3">
+  1100→                {['twitter', 'linkedin', 'github'].map((social) => (
+  1101→                  <a
+  1102→                    key={social}
+  1103→                    href="#"
+  1104→                    aria-label={social}
+  1105→                    className="flex h-9 w-9 items-center justify-center rounded-lg border border-border text-muted-foreground hover:text-foreground hover:border-foreground/30 transition-colors"
+  1106→                  >
+  1107→                    {social === 'twitter' && (
+  1108→                      <svg className="size-4" fill="currentColor" viewBox="0 0 24 24">
+  1109→                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+  1110→                      </svg>
+  1111→                    )}
+  1112→                    {social === 'linkedin' && (
+  1113→                      <svg className="size-4" fill="currentColor" viewBox="0 0 24 24">
+  1114→                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+  1115→                      </svg>
+  1116→                    )}
+  1117→                    {social === 'github' && (
+  1118→                      <svg className="size-4" fill="currentColor" viewBox="0 0 24 24">
+  1119→                        <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+  1120→                      </svg>
+  1121→                    )}
+  1122→                  </a>
+  1123→                ))}
+  1124→              </div>
+  1125→            </div>
+  1126→
+  1127→            {/* Platform */}
+  1128→            <div>
+  1129→              <h4 className="text-sm font-semibold mb-4">{t('footer.platform')}</h4>
+  1130→              <ul className="space-y-2.5">
+  1131→                {['Vortex', 'Flux', 'Nexus', 'Pulse', 'Axon'].map((link) => (
+  1132→                  <li key={link}>
+  1133→                    <a
+  1134→                      href="#"
+  1135→                      className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+  1136→                    >
+  1137→                      {link}
+  1138→                    </a>
+  1139→                  </li>
+  1140→                ))}
+  1141→              </ul>
+  1142→            </div>
+  1143→
+  1144→            {/* Company */}
+  1145→            <div>
+  1146→              <h4 className="text-sm font-semibold mb-4">{t('footer.company')}</h4>
+  1147→              <ul className="space-y-2.5">
+  1148→                {[t('footer.about'), t('footer.careers'), t('footer.partnerships'), t('footer.blog'), t('footer.contactLink')].map(
+  1149→                  (link) => (
+  1150→                    <li key={link}>
+  1151→                      <a
+  1152→                        href="#"
+  1153→                        className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+  1154→                      >
+  1155→                        {link}
+  1156→                      </a>
+  1157→                    </li>
+  1158→                  )
+  1159→                )}
+  1160→              </ul>
+  1161→            </div>
+  1162→
+  1163→            {/* Legal */}
+  1164→            <div>
+  1165→              <h4 className="text-sm font-semibold mb-4">{t('footer.legal')}</h4>
+  1166→              <ul className="space-y-2.5">
+  1167→                {[t('footer.privacy'), t('footer.terms'), t('footer.cookies')].map((link) => (
+  1168→                  <li key={link}>
+  1169→                    <a
+  1170→                      href="#"
+  1171→                      className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+  1172→                    >
+  1173→                      {link}
+  1174→                    </a>
+  1175→                  </li>
+  1176→                ))}
+  1177→              </ul>
+  1178→            </div>
+  1179→          </div>
+  1180→        </div>
+  1181→
+  1182→        {/* Bottom bar */}
+  1183→        <div className="border-t border-border">
+  1184→          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-5">
+  1185→            <p className="text-xs text-muted-foreground text-center sm:text-left">
+  1186→              {t('footer.copyright')}
+  1187→            </p>
+  1188→          </div>
+  1189→        </div>
+  1190→      </footer>
+  1191→    </div>
+  1192→  )
+  1193→}

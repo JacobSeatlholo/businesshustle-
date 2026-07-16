@@ -24,68 +24,73 @@ type Translations = Record<Locale, TranslationMap>
 export const translations: Translations = {
   en: {
     // Nav
-    'nav.platform': 'Platform',
+    'nav.platform': 'What We Build',
     'nav.solutions': 'Solutions',
     'nav.industries': 'Industries',
     'nav.resources': 'Resources',
     'nav.about': 'About',
     'nav.contact': 'Contact',
-    'nav.bookDemo': 'Book a Demo',
+    'nav.bookDemo': 'Get Started',
     'nav.openMenu': 'Open menu',
 
     // Hero
-    'hero.badge': 'Explore. Adapt. Evolve.',
-    'hero.title1': 'AI Infrastructure',
-    'hero.title2': 'for African Business',
+    'hero.badge': 'People First. Build. Automate.',
+    'hero.title1': 'From Street-Level Commerce',
+    'hero.title2': 'to AI-Ready Operations',
     'hero.subtitle':
-      'From your first idea to AI-powered revenue — we build the systems that transform data and manual processes into intelligent, agent-ready workflows.',
-    'hero.cta1': 'Book a Demo',
-    'hero.cta2': 'Explore Platform',
-    'hero.stat1': 'Businesses Transformed',
+      'We bridge local business and frontier AI technology. From neighbourhood directories to open-source workflow automation — grounded in Batho Pele principles.',
+    'hero.cta1': 'Get Started',
+    'hero.cta2': 'How We Work',
+    'hero.stat1': 'Businesses Served',
     'hero.stat2': 'Client Retention',
-    'hero.stat3': 'AI Operations',
+    'hero.stat3': 'AI Operators Trained',
 
     // Trusted by
-    'trusted.text': 'Trusted by leading organisations across Southern Africa',
+    'trusted.text': 'Working with founders and organisations who value clarity, structure, and results',
 
-    // Platform
-    'platform.title': 'Building Blocks, Not Black Boxes',
+    // Platform (dual-engine)
+    'platform.title': 'Two Engines. One Mission.',
     'platform.subtitle':
-      'Deploy on your existing stack, configure for your operations, train on your data. Infrastructure that evolves with AI.',
-    'platform.vortex.tag': 'Data Platform',
-    'platform.vortex.desc':
-      'Get your messy, multi-source data machine-ready. Pulls scattered data into one governed, AI-ready platform.',
-    'platform.flux.tag': 'Process Builder',
-    'platform.flux.desc':
-      'Document manual workflows for automation. Visual map of how work gets done, running every step automatically.',
-    'platform.nexus.tag': 'Expert Network',
-    'platform.nexus.desc':
-      'A curated network of vetted AI specialists and domain experts deployed on demand for your projects.',
-    'platform.pulse.tag': 'Evaluations',
-    'platform.pulse.desc':
-      'Run rigorous evaluation for quality, safety, and accuracy. Measure AI performance against your actual use cases.',
-    'platform.axon.tag': 'AI Agents',
-    'platform.axon.desc':
-      'Build governed AI agents that mirror your workflows. Deploy agents that hand off finished results to your systems.',
+      'Street-level digital infrastructure that gives local businesses ownership — and AI operations that automate messy workflows with humans in the loop.',
+    'platform.card1.name': 'Local Digital Infrastructure',
+    'platform.card1.tag': 'Pillar A — The Now',
+    'platform.card1.desc':
+      'We build street-level digital layers and directories using open-source tools. Think KloofStreet.online — local businesses get digital ownership, not just a website.',
+    'platform.card2.name': 'GEO Optimisation',
+    'platform.card2.tag': 'Pillar A — Discovery',
+    'platform.card2.desc':
+      'We structure local business data so AI models and LLM assistants can read, cite, and recommend them. No local business gets left invisible.',
+    'platform.card3.name': 'S2S Workflow Automation',
+    'platform.card3.tag': 'Pillar B — The Next',
+    'platform.card3.desc':
+      'Our Services-to-Software operation automates messy enterprise workflows using open-source AI. Skilled humans stay in the loop for critical decisions.',
+    'platform.card4.name': 'AI Data Operations',
+    'platform.card4.tag': 'Pillar B — Intelligence',
+    'platform.card4.desc':
+      'Data curation, RLHF, and model evaluation. We train local youth to become elite AI operators and data specialists.',
+    'platform.card5.name': 'Talent Pipelines',
+    'platform.card5.tag': 'People First',
+    'platform.card5.desc':
+      'In partnership with Mafikeng Innovation Hub and the Western Cape Government, we build high-leverage talent pipelines for Africa\'s AI economy.',
     'platform.learnMore': 'Learn more',
 
     // How it works
-    'how.title': 'Weeks to Working AI, Not Months of Planning',
-    'how.step1.title': 'Discover',
+    'how.title': 'How We Work',
+    'how.step1.title': 'Listen & Audit',
     'how.step1.desc':
-      'We audit your data, workflows, and operations to identify where AI creates the most impact.',
-    'how.step2.title': 'Build',
+      'We start by understanding your business — your data, workflows, and where technology creates the most leverage. No assumptions, no fluff.',
+    'how.step2.title': 'Build & Integrate',
     'how.step2.desc':
-      'Our team designs, trains, and deploys custom AI solutions integrated with your existing systems.',
-    'how.step3.title': 'Scale',
+      'We design and deploy practical solutions using open-source tools, integrated with your existing systems. You own everything we build.',
+    'how.step3.title': 'Train & Scale',
     'how.step3.desc':
-      'Monitor, evaluate, and continuously improve. Your AI infrastructure grows as your business evolves.',
+      'We upskill your team and refine operations. Your infrastructure grows with your business — no vendor lock-in.',
 
     // Industries
-    'industries.title': 'Any Sector, Any Stack',
-    'industries.subtitle': 'Built for the industries driving Africa\'s growth.',
+    'industries.title': 'Built for How South Africa Works',
+    'industries.subtitle': 'Practical digital infrastructure and AI for the sectors that drive our economy.',
     'industries.finance': 'Financial Services',
-    'industries.finance.desc': 'Compliance, risk, and customer insight — AI that meets regulatory demands.',
+    'industries.finance.desc': 'Compliance, risk, and client insight — practical AI that meets regulatory demands.',
     'industries.health': 'Healthcare',
     'industries.health.desc': 'Custom AI for healthcare operations, diagnostics support, and patient flow.',
     'industries.mining': 'Mining & Energy',
@@ -93,39 +98,39 @@ export const translations: Translations = {
     'industries.agri': 'Agriculture',
     'industries.agri.desc': 'Forecast yields, optimise supply chains, and monitor crops with computer vision.',
     'industries.retail': 'Retail & E-commerce',
-    'industries.retail.desc': 'Forecast demand, automate inventory, and personalise customer experiences.',
+    'industries.retail.desc': 'Forecast demand, automate stock, and personalise the customer experience.',
     'industries.logistics': 'Logistics',
     'industries.logistics.desc': 'Route optimisation, fleet management, and real-time supply chain visibility.',
     'industries.public': 'Public Sector',
-    'industries.public.desc': 'Cut red tape, connect systems, and serve citizens better with AI.',
+    'industries.public.desc': 'Connect systems, cut red tape, and serve citizens better with practical technology.',
     'industries.edu': 'Education',
     'industries.edu.desc': 'Personalised learning paths, automated assessment, and institutional analytics.',
 
     // Solutions
-    'solutions.title': 'Featured Solutions',
-    'solutions.training.title': 'AI Training & Data',
+    'solutions.title': 'What This Looks Like',
+    'solutions.training.title': 'Local Digital Directories',
     'solutions.training.desc':
-      'Research-grade annotation, training, and evaluation for machine learning models.',
-    'solutions.training.stat': '100+ Models Trained',
-    'solutions.automation.title': 'Back-Office Automation',
+      'Street-level digital layers that give neighbourhoods and business districts real online ownership and visibility.',
+    'solutions.training.stat': '10+ Directories Live',
+    'solutions.automation.title': 'Workflow Automation',
     'solutions.automation.desc':
-      'Automate complex or tedious work that buries your team. Handle messy data with precision.',
-    'solutions.automation.stat': '70% Time Reduction',
-    'solutions.contact.title': 'Intelligent Contact Centre',
+      'Automate complex or tedious work that buries your team. Open-source AI with humans in the loop.',
+    'solutions.automation.stat': '70% Time Saved',
+    'solutions.contact.title': 'GEO & AI Visibility',
     'solutions.contact.desc':
-      'Unified data, automated QA, sentiment analysis, and AI voice agents.',
-    'solutions.contact.stat': '3x Efficiency Gains',
+      'Structure your business data so AI search engines and LLM assistants find, cite, and recommend you.',
+    'solutions.contact.stat': '3x More Discoverable',
 
-    // Services (from Solutions page)
+    // Services
     'services.title': 'Real Projects. Real Work. Real Outcomes.',
     'services.subtitle': 'From strategy and business structuring to digital platforms and AI — we deliver what your business actually needs.',
     'services.hustleBasics.name': 'Hustle Basics',
     'services.hustleBasics.tag': 'Book & Guide',
-    'services.hustleBasics.desc': 'The essential entry-level toolkit for entrepreneurs, freelancers, and small business owners. Turn overwhelm into clarity, ideas into action.',
+    'services.hustleBasics.desc': 'The essential toolkit for entrepreneurs, freelancers, and small business owners. Turn overwhelm into clarity, ideas into action.',
     'services.hustleBasics.cta': 'Learn More',
-    'services.pm.name': 'Project Manager',
-    'services.pm.tag': 'Business Execution',
-    'services.pm.desc': 'Our project management and execution platform — structure your business initiatives, track progress, and move from planning to execution consistently.',
+    'services.pm.name': 'Project Execution',
+    'services.pm.tag': 'Business Delivery',
+    'services.pm.desc': 'Structure your business initiatives, track progress, and move from planning to execution consistently. No guesswork.',
     'services.pm.cta': 'Access Platform',
     'services.portal.name': 'HustlePortal™',
     'services.portal.tag': 'Digital Launch',
@@ -140,17 +145,17 @@ export const translations: Translations = {
     'services.strategy.desc': 'Move from ideas and vision to clear business models, strategies, and operational structure that attract funding and enable growth.',
     'services.strategy.cta': 'Explore Solutions',
     'services.clients.title': 'Trusted by Founders Across Sectors',
-    'services.clients.subtitle': 'From wellness and technology to creative industries — delivering results where it matters.',
+    'services.clients.subtitle': 'From wellness and healthcare to food, travel, and retail — delivering results where it matters.',
     'services.clients.collab': 'In collaboration with Afrocentric Solutions',
 
     // About
     'about.quote':
       'Think of technology as a verb, not a noun. It provides the tools, creative people provide the imagination.',
-    'about.quoteAuthor': '— Red Burns',
+    'about.quoteAuthor': '— Tselakgosi Jacob Seatlholo, Founder',
     'about.description':
-      'Business Hustle is a complete AI solutions and digital transformation provider for African enterprises. From specialised AI agent development to data platform architecture, we handle it all — so you can focus on what matters most: your work.',
-    'about.founded': 'Founded in South Africa, serving the continent.',
-    'about.learnStory': 'Learn About Our Story',
+      'Business Hustle is a South African hybrid digital infrastructure and strategic AI operations agency. We bridge street-level local commerce and frontier AI technology — building directories, automating workflows, and training the next generation of AI operators. Grounded in Batho Pele principles: practical, transparent, and results-driven.',
+    'about.founded': 'Founded by Tselakgosi Jacob Seatlholo. Part of Simple Eternity Holdings (Pty) Ltd.',
+    'about.learnStory': 'Our Story',
     'about.builtIn': 'Built in',
     'about.forAfrica': 'for Africa',
 
@@ -177,18 +182,23 @@ export const translations: Translations = {
     'resources.clearFilters': 'Clear filters',
 
     // Newsletter / Contact
-    'contact.title1': 'Ready to Make AI Real',
-    'contact.title2': 'for Your Business?',
+    'contact.title1': 'Ready to Put Tech to Work?',
+    'contact.title2': "Let's Talk.",
     'contact.subtitle':
-      'Join 5,000+ African business leaders receiving insights at the bleeding edge of enterprise AI.',
+      'Join South African entrepreneurs and business leaders getting practical insights on digital infrastructure and AI operations.',
     'contact.placeholder': 'Enter your email',
     'contact.subscribe': 'Subscribe',
     'contact.noSpam': 'No spam. Unsubscribe anytime.',
 
     // Footer
     'footer.brandDesc':
-      'AI infrastructure and automation solutions built for African enterprises. Part of Simple Eternity Holdings (Pty) Ltd.',
-    'footer.platform': 'Platform',
+      'Street-level digital infrastructure and AI operations for South African entrepreneurs. Part of Simple Eternity Holdings (Pty) Ltd.',
+    'footer.services': 'Services',
+    'footer.serviceLinks.geo': 'GEO Optimisation',
+    'footer.serviceLinks.s2s': 'S2S Automation',
+    'footer.serviceLinks.talent': 'Talent Pipelines',
+    'footer.serviceLinks.local': 'Local Directories',
+    'footer.serviceLinks.automation': 'Workflow Automation',
     'footer.company': 'Company',
     'footer.legal': 'Legal',
     'footer.about': 'About',
@@ -199,74 +209,80 @@ export const translations: Translations = {
     'footer.privacy': 'Privacy Policy',
     'footer.terms': 'Terms of Service',
     'footer.cookies': 'Cookie Policy',
+    'footer.paia': 'PAIA Manual (POPIA)',
     'footer.copyright':
       '© 2025 Business Hustle Ltd. All rights reserved. Part of Simple Eternity Holdings (Pty) Ltd.',
   },
 
   af: {
     // Nav
-    'nav.platform': 'Platvorm',
+    'nav.platform': 'Wat Ons Bou',
     'nav.solutions': 'Oplossings',
     'nav.industries': 'Bedrywe',
     'nav.resources': 'Hulpbronne',
     'nav.about': 'Oor Ons',
     'nav.contact': 'Kontak',
-    'nav.bookDemo': 'Boek \'n Demo',
+    'nav.bookDemo': 'Beging Nou',
     'nav.openMenu': 'Open kieslys',
 
     // Hero
-    'hero.badge': 'Verken. Pas aan. Evolueer.',
-    'hero.title1': 'KI-infrastruktuur',
-    'hero.title2': 'vir Afrikaanse Besighede',
+    'hero.badge': 'Mense Eerst. Bou. Outomatiseer.',
+    'hero.title1': 'Van Straatvlak Handel',
+    'hero.title2': 'na KI-Gereelde Bedrywighede',
     'hero.subtitle':
-      'Van u eerste idee tot KI-aangedrewe inkomste — ons bou die stelsels wat data en handmatige prosesse in intelligente, agent-gereede werkvloei omskep.',
-    'hero.cta1': 'Boek \'n Demo',
-    'hero.cta2': 'Verken Platvorm',
-    'hero.stat1': 'Besighede Getransformeer',
+      'Ons verbind plaaslike besighede met voorste KI-tegnologie. Van buurtgids tot oopbron-werkvloei-outomatisering — gegrond op Batho Pele-beginsels.',
+    'hero.cta1': 'Beging Nou',
+    'hero.cta2': 'Hoe Ons Werk',
+    'hero.stat1': 'Besighede Bedien',
     'hero.stat2': 'Kliëntbehoud',
-    'hero.stat3': 'KI-bedrywighede',
+    'hero.stat3': 'KI-operateurs Oplei',
 
     // Trusted by
-    'trusted.text': 'Vertrou deur voorste organisasies dwarsdeur Suider-Afrika',
+    'trusted.text': 'Werk met stigters en organisasies wat duidelikheid, struktuur en resultate waardeer',
 
-    // Platform
-    'platform.title': 'Boublokke, Geen Swartkassies Nie',
+    // Platform (dual-engine)
+    'platform.title': 'Twee Enjins. Een Missie.',
     'platform.subtitle':
-      'Ontplooi op u bestaande stapel, konfigureer vir u bedrywighede, oplei op u data. Infrastruktuur wat met KI evolueer.',
-    'platform.vortex.tag': 'Dataplatform',
-    'platform.vortex.desc':
-      'Kry u gemorsige, multi-bron data masjien-gereed. Trek verstrooide data in een beheerde, KI-gereede platform.',
-    'platform.flux.tag': 'Prosesbouer',
-    'platform.flux.desc':
-      'Dokumenteer handmatige werkvloei vir outomatisering. Visuele kaart van hoe werk gedoen word, elke stap outomaties.',
-    'platform.nexus.tag': 'Kundigenetwerk',
-    'platform.nexus.desc':
-      '\'N behoefde netwerk van goedgekeurde KI-spesialiste en domeinkundiges wat op aanvraag vir u projekte ontplooi word.',
-    'platform.pulse.tag': 'Evaluasies',
-    'platform.pulse.desc':
-      'Voer streng evaluasie uit vir gehalte, veiligheid en akkuraatheid. Meet KI-prestasie teen u werklike gebruiksgewalle.',
-    'platform.axon.tag': 'KI-agente',
-    'platform.axon.desc':
-      'Bou beheerde KI-agente wat u werkvloei weerspieël. Ontplooi agente wat voltooide resultate aan u stelsels oorhandig.',
+      'Straatvlak digitale infrastruktuur wat plaaslike besighede eienaarskap gee — en KI-bedrywighede wat rommelige werkvloei outomatiseer met mense in die lus.',
+    'platform.card1.name': 'Plaaslike Digitale Infrastruktuur',
+    'platform.card1.tag': 'Pilaar A — Die Nou',
+    'platform.card1.desc':
+      'Ons bou straatsvlak digitale lae en gids met oopbron-gereedskap. Dink aan KloofStreet.online — plaaslike besighede kry digitale eienaarskap, nie net \'n webwerf nie.',
+    'platform.card2.name': 'GEO Optimalisering',
+    'platform.card2.tag': 'Pilaar A — Ontdekking',
+    'platform.card2.desc':
+      'Ons struktureer plaaslike besigheidsdata sodat KI-modelle en LLM-assistente dit kan lees, sit en aanbeveel. Geen plaaslike besigheid bly onsigbaar nie.',
+    'platform.card3.name': 'S2S Werkvloei-outomatisering',
+    'platform.card3.tag': 'Pilaar B — Die Volgende',
+    'platform.card3.desc':
+      'Ons Dienste-tot Sagteware-bewerking outomatiseer rommelige ondernemingswerkvloei met oopbron KI. Vaardige mense bly in die lus vir kritieke besluite.',
+    'platform.card4.name': 'KI Data Bedrywighede',
+    'platform.card4.tag': 'Pilaar B — Intelligensie',
+    'platform.card4.desc':
+      'Data-kuratie, RLHF en model-evaluasie. Ons oplei plaaslike jeug om top-KI-operateurs en data-spesialiste te word.',
+    'platform.card5.name': 'Talentye Pyplyne',
+    'platform.card5.tag': 'Mense Eerst',
+    'platform.card5.desc':
+      'In vennootskap met Mafikeng Innovation Hub en die Wes-Kaap-regering bou ons hoë-winstalentye-pyplyne vir Afrika se KI-ekonomie.',
     'platform.learnMore': 'Leer meer',
 
     // How it works
-    'how.title': 'Wekke na Werkende KI, Nie Maande van Beplanning Nie',
-    'how.step1.title': 'Ontdek',
+    'how.title': 'Hoe Ons Werk',
+    'how.step1.title': 'Luister & Oudit',
     'how.step1.desc':
-      'Ons ouditeer u data, werkvloei en bedrywighede om te identifiseer waar KI die meeste impak skep.',
-    'how.step2.title': 'Bou',
+      'Ons begin deur u besigheid te verstaan — u data, werkvloei, en waar tegnologie die meeste hefboomwerking skep. Geen aannames, geen pluis nie.',
+    'how.step2.title': 'Bou & Integreer',
     'how.step2.desc':
-      'Onspan ontwerp, oplei en ontplooi pasgemaakte KI-oplossings geïntegreer met u bestaande stelsels.',
-    'how.step3.title': 'Skaal',
+      'Ons ontwerp en ontplooi praktiese oplossings met oopbron-gereedskap, geïntegreer met u bestaande stelsels. U besit alles wat ons bou.',
+    'how.step3.title': 'Oplei & Skaleer',
     'how.step3.desc':
-      'Monitor, evalueer en verbeter voortdurend. U KI-infrastruktuur groei soos u besigheid evolueer.',
+      'Ons verhoog u span se vaardighede en verfyn bedrywighede. U infrastruktuur groei met u besigheid — geen verkoper-sluit-in nie.',
 
     // Industries
-    'industries.title': 'Enige Sektor, Enige Stapel',
-    'industries.subtitle': 'Gebou vir die bedrywe wat Afrika se groei dryf.',
+    'industries.title': 'Gebou vir Hoe Suid-Afrika Werk',
+    'industries.subtitle': 'Praktiese digitale infrastruktuur en KI vir die sektore wat ons ekonomie dryf.',
     'industries.finance': 'Finansiële Dienste',
-    'industries.finance.desc': 'Nalewing, risiko en kliëntinsig — KI wat aan regulatoriese vereistes voldoen.',
+    'industries.finance.desc': 'Nalewing, risiko en kliëntinsig — praktiese KI wat aan regulatoriese eise voldoen.',
     'industries.health': 'Gesondheidsorg',
     'industries.health.desc': 'Pasgemaakte KI vir gesondheidsorgbedrywighede, diagnostiekondersteuning en pasiëntvloei.',
     'industries.mining': 'Mynbou & Energie',
@@ -274,78 +290,78 @@ export const translations: Translations = {
     'industries.agri': 'Landbou',
     'industries.agri.desc': 'Voorspel oesopbrengste, optimaliseer toeleveringskettings en monitor gewasse met rekenaarvisie.',
     'industries.retail': 'Kleinhandel & E-handel',
-    'industries.retail.desc': 'Voorspel vraag, outomatiseer voorraad en personaliseer kliëntervarings.',
+    'industries.retail.desc': 'Voorspel vraag, outomatiseer voorraad en personaliseer die kliëntervaring.',
     'industries.logistics': 'Logistiek',
     'industries.logistics.desc': 'Roete-optimalisering, vlootbestuur en intydse toeleveringsketting-sigbaarheid.',
     'industries.public': 'Openbare Sektor',
-    'industries.public.desc': 'Sny rooi lint, verbind stelsels en bedien burgers beter met KI.',
+    'industries.public.desc': 'Verbind stelsels, sny rooi lint en bedien burgers beter met praktiese tegnologie.',
     'industries.edu': 'Onderwys',
-    'industries.edu.desc': 'Gepersonaliseerde leerbane, outomatiseerde assessering en institusionele analities.',
+    'industries.edu.desc': 'Gepersonaliseerde leerbane, outomatiseerde assessering en institusionele analise.',
 
     // Solutions
-    'solutions.title': 'Uitgestaalde Oplossings',
-    'solutions.training.title': 'KI-opleiding & Data',
+    'solutions.title': 'Wat Dit Lyk Soos',
+    'solutions.training.title': 'Plaaslike Digitale Gidse',
     'solutions.training.desc':
-      'Navorsingsgraad-annotasie, opleiding en evaluasie vir masjienleermodelle.',
-    'solutions.training.stat': '100+ Modelle Oplei',
-    'solutions.automation.title': 'Kantoor-outomatisering',
+      'Straatvlak digitale lae wat buurte en besigheidsdistrikte werklike aanlyn-eienaarskap en sigbaarheid gee.',
+    'solutions.training.stat': '10+ Gidse Lewendig',
+    'solutions.automation.title': 'Werkvloei-outomatisering',
     'solutions.automation.desc':
-      'Outomatiseer komplekse of lastige werk wat u span begrawe. Hanteer gemorsige data met presisie.',
-    'solutions.automation.stat': '70% Tydvermindering',
-    'solutions.contact.title': 'Intelligente KontakSentrum',
+      'Outomatiseer komplekse of lastige werk wat u span begrawe. Oopbron KI met mense in die lus.',
+    'solutions.automation.stat': '70% Tyd Gespaar',
+    'solutions.contact.title': 'GEO & KI Sigbaarheid',
     'solutions.contact.desc':
-      'Verenigde data, outomatiseerde gehalteversekering, sentimentanalise en KI-stemagente.',
-    'solutions.contact.stat': '3x Doeltreffendheid',
+      'Struktureer u besigheidsdata sodat KI-soekenjins en LLM-assistente u vind, sit en aanbeveel.',
+    'solutions.contact.stat': '3x Meer Ontdekbaar',
 
-    // Services (from Solutions page)
+    // Services
     'services.title': 'Regte Projekte. Regte Werk. Regte Uitslae.',
     'services.subtitle': 'Van strategie en besigheidstrukturering tot digitale platforme en KI — ons lewer wat u besigheid werklik benodig.',
     'services.hustleBasics.name': 'Hustle Basics',
     'services.hustleBasics.tag': 'Boek & Gids',
-    'services.hustleBasics.desc': 'Die noodsaaklike intree-vlak gereedskap vir entrepreneurs, vryskutters en kleinbesigheid eienaars. Beheer verwarring na helderheid.',
+    'services.hustleBasics.desc': 'Die noodsaaklike gereedskapstel vir entrepreneurs, vryskutters en kleinbesigheid eienaars. Beheer oorweldiging na helderheid, idees na aksie.',
     'services.hustleBasics.cta': 'Leer Meer',
-    'services.pm.name': 'Projekbestuurder',
-    'services.pm.tag': 'Besigheidsuitvoering',
-    'services.pm.desc': 'Ons projekbestuur- en uitvoeringsplatform — struktureer u besigheidsinisiatiewe, volg vordering, en beweeg van beplanning na uitvoering.',
+    'services.pm.name': 'Projekuitvoering',
+    'services.pm.tag': 'Besigheidslewering',
+    'services.pm.desc': 'Struktureer u besigheidsinisiatiewe, volg vordering en beweeg konsekwent van beplanning na uitvoering. Geen raaiwerk nie.',
     'services.pm.cta': 'Toegang tot Platvorm',
     'services.portal.name': 'HustlePortal™',
     'services.portal.tag': 'Digitale Lanseering',
     'services.portal.desc': '\'n Professioneel ontwerpte, SEO-gereed landingsblad vir u besigheid. Geloofwaardige aanlyn teenwoordigheid vir slegs R1,850/jaar.',
     'services.portal.cta': 'Lanseer Aanlyn',
     'services.local.name': 'BH LOCAL',
-    'services.local.tag': 'Buurt bemagtiging',
+    'services.local.tag': 'Buurt-bemagtiging',
     'services.local.desc': 'Voorstander en digitaal bemagtig buurte, strate en besigheidsdistrikte dwarsdeur Suid-Afrika.',
     'services.local.cta': 'Verken BH LOCAL',
     'services.strategy.name': 'Strategie & Strukturering',
     'services.strategy.tag': 'Konsultasie',
-    'services.strategy.desc': 'Beweeg van idees na duidelike besigheidsmodelle, strategieë en operasionele struktuur wat groei moontlik maak.',
+    'services.strategy.desc': 'Beweeg van idees en visie na duidelike besigheidsmodelle, strategieë en operasionele struktuur wat befondsing aantrek en groei moontlik maak.',
     'services.strategy.cta': 'Verken Oplossings',
     'services.clients.title': 'Vertrou deur Stigters Oor Sektore',
-    'services.clients.subtitle': 'Van welstand en tegnologie tot kreatiewe bedrywe — lewer resultate waar dit saakmaak.',
+    'services.clients.subtitle': 'Van welstand en gesondheidsorg tot kos, reis en kleinhandel — lewer resultate waar dit saakmaak.',
     'services.clients.collab': 'In samewerking met Afrocentric Solutions',
 
     // About
     'about.quote':
       'Dink aan tegnologie as \'n werkwoord, nie \'n selfstandige naamwoord nie. Dit verskaf die gereedskap, kreatiewe mense verskaf die verbeelding.',
-    'about.quoteAuthor': '— Red Burns',
+    'about.quoteAuthor': '— Tselakgosi Jacob Seatlholo, Stigter',
     'about.description':
-      'Business Hustle is \'n volledige KI-oplossings en digitale transformasie-verskaffer vir Afrikaanse ondernemings. Van gespesialiseerde KI-agentontwikkeling tot dataplatform-argitektuur, ons hanteer dit almal — sodat u kan fokus op wat die meeste saakmaak: u werk.',
-    'about.founded': 'Gestig in Suid-Afrika, dien die vasteland.',
-    'about.learnStory': 'Leer Oor Ons Storie',
+      'Business Hustle is \'n Suid-Afrikaanse hibriede digitale infrastruktuur en strategiese KI-bedrywighede agentskap. Ons verbind straatsvlak plaaslike handel en voorste KI-tegnologie — bou gidse, outomatiseer werkvloei en oplei die volgende geslag KI-operateurs. Gegrond op Batho Pele-beginsels: prakties, deursigtig en resultaatgedrewe.',
+    'about.founded': 'Gestig deur Tselakgosi Jacob Seatlholo. Deel van Simple Eternity Holdings (Pty) Ltd.',
+    'about.learnStory': 'Ons Storie',
     'about.builtIn': 'Gebou in',
     'about.forAfrica': 'vir Afrika',
 
-    // Testimonials
+    // Testimonials (kept in English — direct client quotes)
     'testimonials.title': 'Wat Onse Vennote Sê',
-    'testimonials.quote1': "Business Hustle se KI-oplossings het Ubuntu die digitale ruggraat gegee wat ons nodig gehad het. Ons werkvloei is vinniger, slimmer, en heeltemal getransformeer.",
+    'testimonials.quote1': "Business Hustle's AI solutions gave Ubuntu the digital backbone we needed. Our workflow is faster, smarter, and completely transformed.",
     'testimonials.author1': 'Ubuntu',
-    'testimonials.role1': 'Welstand & Lewenstyl',
-    'testimonials.quote2': "Vanaf dag een het hulle ons visie verstaan. Gabonewe loop nou op intelligente stelsels wat ons ure per week bespaar.",
+    'testimonials.role1': 'Wellness & Lifestyle',
+    'testimonials.quote2': "From day one they understood our vision. Gabonewe now runs on intelligent systems that save us hours every week.",
     'testimonials.author2': 'Gabonewe',
-    'testimonials.role2': 'Projekte & Ontwikkeling',
-    'testimonials.quote3': "Hulle KI-platform het ons pasiëntboekings en kommunikasie gestroomlyn. Dr Wendy Dicks se praktyk was nog nooit so doeltreffend nie.",
+    'testimonials.role2': 'Projects & Development',
+    'testimonials.quote3': "Their AI platform streamlined our patient booking and communications. Dr Wendy Dicks' practice has never been more efficient.",
     'testimonials.author3': 'Dr Wendy Dicks',
-    'testimonials.role3': 'Gesondheidspraktisyn',
+    'testimonials.role3': 'Healthcare Practitioner',
 
     // Resources
     'resources.badge': 'Gekureer vir Bouers',
@@ -358,18 +374,23 @@ export const translations: Translations = {
     'resources.clearFilters': 'Verwyder filters',
 
     // Newsletter / Contact
-    'contact.title1': 'Gereed om KI Werklik te Maak',
-    'contact.title2': 'vir U Besigheid?',
+    'contact.title1': 'Gereed om Tegnologie te Laat Werk?',
+    'contact.title2': 'Kom Praat.',
     'contact.subtitle':
-      'Sluit by 5,000+ Afrikaanse besigheidsleiers aan wat insigte ontvang aan die voorpunt van ondernemings-KI.',
+      'Sluit aan by Suid-Afrikaanse entrepreneurs en besigheidsleiers wat praktiese insigte kry oor digitale infrastruktuur en KI-bedrywighede.',
     'contact.placeholder': 'Voer u e-pos in',
     'contact.subscribe': 'Teken In',
     'contact.noSpam': 'Geen gemors. Ontteken enige tyd.',
 
     // Footer
     'footer.brandDesc':
-      'KI-infrastruktuur en outomatiseringsoplossings gebou vir Afrikaanse ondernemings. Deel van Simple Eternity Holdings (Pty) Ltd.',
-    'footer.platform': 'Platvorm',
+      'Straatvlak digitale infrastruktuur en KI-bedrywighede vir Suid-Afrikaanse entrepreneurs. Deel van Simple Eternity Holdings (Pty) Ltd.',
+    'footer.services': 'Dienste',
+    'footer.serviceLinks.geo': 'GEO Optimalisering',
+    'footer.serviceLinks.s2s': 'S2S Outomatisering',
+    'footer.serviceLinks.talent': 'Talentye Pyplyne',
+    'footer.serviceLinks.local': 'Plaaslike Gidse',
+    'footer.serviceLinks.automation': 'Werkvloei-outomatisering',
     'footer.company': 'Maatskappy',
     'footer.legal': 'Wettig',
     'footer.about': 'Oor Ons',
@@ -380,74 +401,82 @@ export const translations: Translations = {
     'footer.privacy': 'Privaatheidsbeleid',
     'footer.terms': 'Diensvoorwaardes',
     'footer.cookies': 'Koekiebeleid',
+    'footer.paia': 'PAIA-handleiding (POPIA)',
     'footer.copyright':
       '© 2025 Business Hustle Ltd. Alle regte voorbehou. Deel van Simple Eternity Holdings (Pty) Ltd.',
   },
 
   zu: {
     // Nav
-    'nav.platform': 'Iplatifomu',
+    'nav.platform': 'Sakha Okwakhiwa',
     'nav.solutions': 'Izinkombiso',
     'nav.industries': 'Amasayini',
     'nav.resources': 'Izinsiza',
     'nav.about': 'Ngathi',
     'nav.contact': 'Ukuxhumana',
-    'nav.bookDemo': 'Bhukha iDemo',
+    'nav.bookDemo': 'Qala Ngoku',
     'nav.openMenu': 'Vula imenyu',
 
     // Hero
-    'hero.badge': 'Sihlola. Sifaka isimo. Sikhula.',
-    'hero.title1': 'Insiza Ye-AI',
-    'hero.title2': 'Kwamabhizinisi Afrika',
+    'hero.badge': 'Abantu Kuqala. Yakha. Zenzise.',
+    'hero.title1': 'Kusukela Kwisitha Samaphoyisa',
+    'hero.title2': 'Kuya Kwezisebenzo Ze-AI Ezilungele',
     'hero.subtitle':
-      'Kusukela kwencwadi yakho yokuqala ukuya ekukhiqizeni okunamandla oku-AI — sibakha amasistimu abaguqula idatha namasu ahlala ngemva abe ngamasevisi anokuzenzakalela.',
-    'hero.cta1': 'Bhukha iDemo',
-    'hero.cta2': 'Sihlola Iplatifomu',
-    'hero.stat1': 'Amabhizinisi Aqhubekile',
+      'Siphunga amabhizinisi endaweni nomkhondo we-AI oqonde kakhulu. Kusukela kumadiresi asekuhlathini kuya kumasevisi okuzenzakalela okhululekile — okusekelwe kumigomo ka-Batho Pele.',
+    'hero.cta1': 'Qala Ngoku',
+    'hero.cta2': 'Sisebenza Kanjani',
+    'hero.stat1': 'Amabhizinisi Asiziwe',
     'hero.stat2': 'Ukugcinwa Kwamakhasimende',
-    'hero.stat3': 'Amasevisi E-AI',
+    'hero.stat3': 'Abasebenzi Be-AI Bafundiswe',
 
     // Trusted by
-    'trusted.text': 'Abathembekile abahlanganyeli abakhulu kunzansi ye-Afrika',
+    'trusted.text': 'Sisebenza nabasunguli namahlanganise aqonde ukucacisa, isakhiwo, namaphetho',
 
-    // Platform
-    'platform.title': 'Izakhiwo, HHayi Amabhokisi Amnyama',
+    // Platform (dual-engine)
+    'platform.title': 'Amamotho Amabili. Injongo Eyodwa.',
     'platform.subtitle':
-      'Qamba kusistimu yakho, lungisa ngamasevisi akho, funda ngamadatha akho. Insiza ekhula nge-AI.',
-    'platform.vortex.tag': 'Iplatifomu Yedatha',
-    'platform.vortex.desc':
-      'Thola idatha yakho edidaywa ibe ngento evumelekile ku-AI. Hlanganisa idatha edayelayo kube nguwo wonke.',
-    'platform.flux.tag': 'Umbanji Wamasu',
-    'platform.flux.desc':
-      'Bhala amasu akho okwenza ngemva ukuthi zibe ngamasevisi okuzenzakalela.',
-    'platform.nexus.tag': 'Uxhumano Lwabakhulu',
-    'platform.nexus.desc':
-      'Inethiwekhi yabacwaningi be-AI nabantu abaqondise abahamba ngezibopho.',
-    'platform.pulse.tag': 'Ukuhlola',
-    'platform.pulse.desc':
-      'Qamba ukuhlola okuqinile ngo-quality, ukuphepha, nokunembile. Velela inzuzo ye-AI.',
-    'platform.axon.tag': 'Amagenti E-AI',
-    'platform.axon.desc':
-      'Yakha amagenti e-AI alawula amasu akho. Qamba amagenti adlulela iziphumo ku-systems yakho.',
+      'Insiza yezobuchwepheshe ezingumphakathi emadolobheni enika amabhizinisi endaweno umnikazi — kanye namasevisi e-AI azenzisa kahle umsebenzi ongcolile nothando lwabantu.',
+    'platform.card1.name': 'Insiza Yezobuchwepheshe Endaweni',
+    'platform.card1.tag': 'Iqanda A — Okwamanje',
+    'platform.card1.desc':
+      'Sakha amaqoqo amaphupho wemibhalo nge-inthanethi asetshenziswa amathuluzi ahululekile. Cabanga nge-KloofStreet.online — amabhizinisi endaweno athola ukubamba kwedijithali, hhayi kuphela iwebhusayithi.',
+    'platform.card2.name': 'Ukuqondisa i-GEO',
+    'platform.card2.tag': 'Iqanda A — Ukuthola',
+    'platform.card2.desc':
+      'Sihlela idatha yamabhizinisi endaweno ngendlela amamodeli e-AI nabasizi be-LLM bangayifunda, bayibeka, bawanikisa. Akukho bhizinisi elingaboniwa.',
+    'platform.card3.name': 'S2S Ukuzenzakalela Komsebenzi',
+    'platform.card3.tag': 'Iqanda B — Okulandelayo',
+    'platform.card3.desc':
+      'Umsebenzi wethu wamasevisi ukuya kusofthiwe uthola umsebenzi ongcolile wezinkampani nge-AI evulekile. Abantu abanamakhono bahlala kumqondo wamabheseni abalulekile.',
+    'platform.card4.name': 'Amasevisi Edatha Ye-AI',
+    'platform.card4.tag': 'Iqanda B — Ubuchwepheshe',
+    'platform.card4.desc':
+      'Ukuqoqa idatha, RLHF, kanye nokuhlolwa kwamamodeli. Sifundisa abafana abadala ukuthi babe ngabasebenzi be-AI abakhulu kakhulu kwanom specialists bedatha.',
+    'platform.card5.name': 'Izinkalo Zobulili',
+    'platform.card5.tag': 'Abantu Kuqala',
+    'platform.card5.desc':
+      'Ngokubambisana no-Mafikeng Innovation Hub nomphakathi weWestern Cape, sakha izinkalo zomsebenzi ezinamandla kakhulu wezomnotho we-AI e-Afrika.',
     'platform.learnMore': 'Funda kabanzi',
 
     // How it works
-    'how.title': 'Amasonto ku-AI Osebenzayo, HHayi Izinyanga Zokuhlela',
-    'how.step1.title': 'Thola',
+    'how.title': 'Sisebenza Kanjani',
+    'how.step1.title': 'Lalela & Hlola',
     'how.step1.desc':
-      'Sihlola idatha, amasu, namasevisi akho ukuthola lapho i-AI inenzuzo kakhulu.',
-    'how.step2.title': 'Yakha',
+      'Siqala nokuqonda ibhizinisi lakho — idatha yakho, umsebenzi wakho, naphi ukuthi teknoloji idala amandla amakhulu. Akukho okucinga, akukho okungahleli.',
+    'how.step2.title': 'Yakha & Hlanganisa',
     'how.step2.desc':
-      'Iqembu lethu ldizayina, ifunde, futhi iqambe izinkombiso ze-AI ezihlanganisiwe ne-systems yakho.',
-    'how.step3.title': 'Ngcenisa',
+      'Sakha bese sithuthela izinkombiso ezisebenzayo ezisebenzisa amathuluzi ahululekile, ezihlanganisiwe ngezistimu zakho. Wena unamalungelo wonke okwakhiwa kwethu.',
+    'how.step3.title': 'Fundisa & Ngcenisa',
     'how.step3.desc':
-      'Buka, hlola, futhiThuthukisa ngokuhamba kwesikhathi. Insiza ye-AI yakho ikhula njengoba ibhizinisi lakho lithuthuka.',
+      'Siphucula amakhono eqembu lakho futhi sixazulula umsebenzi. Insiza yakho ikhula nomkhondo webhizinisi lakho — asikho isikhalazo sokuthenga kumuntu.'
+
+    ,
 
     // Industries
-    'industries.title': 'Noma Iyiphi Indawo, Noma Iyiphi Isethi',
-    'industries.subtitle': 'Yakhiwe ngamasevisi aqhutsha ukukhula kwe-Afrika.',
+    'industries.title': 'Yakhiwe Ngendlela iNingizimu Afrika Esebenza Ngayo',
+    'industries.subtitle': 'Insiza yezobuchwepheshe ezingumphakathi namasevisi e-AI kuma-sector adlala indima enkulu kumnotho wethu.',
     'industries.finance': 'Amasevisi Ezezimali',
-    'industries.finance.desc': 'Ukuzonda umthetho, isibopho, nokubona abakhasimende — i-AI ezimisele ukulandela imithetho.',
+    'industries.finance.desc': 'Ukuzonda umthetho, isibopho, nokubona abakhasimende — i-AI esebenzayo edlula kumthetho.',
     'industries.health': 'Amasevisi Ezempilo',
     'industries.health.desc': 'I-AI eqondile kwezempilo, usizo lokuhlola, nokuhamba kwabagula.',
     'industries.mining': 'Ukutshungula Amandla',
@@ -455,39 +484,39 @@ export const translations: Translations = {
     'industries.agri': 'Ukulima',
     'industries.agri.desc': 'Ibala okuzuzwa, lungisa ukuhamba kwezinto, futhi buka imifino ngekhompyutha.',
     'industries.retail': 'Ukuthengisa & Othongi',
-    'industries.retail.desc': 'Bala isidingo, zenzise ukugcinwa kwamagodi, futhienze amakhasimende.',
+    'industries.retail.desc': 'Bala isidingo, zenzise ukugcinwa kwamagodi, futhi enze ukuhumusha okuhle kumakhasimende.',
     'industries.logistics': 'Ukuthutha',
     'industries.logistics.desc': 'Ukulinganisa indlela, ukuphatha amamoto, nokubona okungokoqobo.',
     'industries.public': 'Amasevisi Aphakeme',
-    'industries.public.desc': 'Sika umkhawulo, hlanganisa amasistimu, futhi sisebenzise abantu nge-AI.',
+    'industries.public.desc': 'Hlanganisa amasistimu, sika umkhawulo, futhi sisebenzise abantu ngezobuchwepheshe ezisebenzayo.',
     'industries.edu': 'Imfundo',
     'industries.edu.desc': 'Indlela zokufunda ezilungele umuntu, ukuhlola okuzenzakalelayo, namakhasi.',
 
     // Solutions
-    'solutions.title': 'Izinkombiso Ezikhombisiwe',
-    'solutions.training.title': 'Ukufunda I-AI & Idatha',
+    'solutions.title': 'Lokhu Kubonakala Kanjani',
+    'solutions.training.title': 'Amadiresi Adijithali Endaweni',
     'solutions.training.desc':
-      'Ukuhlela okuyisisekelo, ukufunda, nokuhlola amamodeli okufunda ngamashini.',
-    'solutions.training.stat': '100+ Amamodeli Afundiswe',
-    'solutions.automation.title': 'Ukuzenzakalela KwaseOfisini',
+      'Amalaya edijithali asemaphoyiseni anika amadolobha namadibhana amabhizinisi ukubamba nokubonakala ku-inthanethi.',
+    'solutions.training.stat': '10+ Amadiresi Ayasebenza',
+    'solutions.automation.title': 'Ukuzenzakalela Komsebenzi',
     'solutions.automation.desc':
-      'Zenzise umsebenzi onzima noma omdala owabeka iqembu lakho. Phatha idatha edayelayo nokuqondene.',
-    'solutions.automation.stat': '70% Ukunciphisa Isikhathi',
-    'solutions.contact.title': 'I-Centre Lokuxhumana Eliphephile',
+      'Zenzise umsebenzi onzima noma omdala owabeka iqembu lakho. I-AI evulekile nothando lwabantu.',
+    'solutions.automation.stat': '70% Isikhathi Esigcinwe',
+    'solutions.contact.title': 'GEO & Ukubonakala kwe-AI',
     'solutions.contact.desc':
-      'Idatha ehlanganisiwe, ukuzenzakalela kwe-QA, ukuhlola isimo, namagumbi e-AI.',
-    'solutions.contact.stat': '3x Ukuzenzakalela Okuphezulu',
+      'Hlela idatha yebhizinisi lakho ukuze izinjiniyozokusesha ze-AI nabasizi be-LLM bakuthole, bakubeka, bakanikisa.',
+    'solutions.contact.stat': '3x Kubonakala Kakhulu',
 
-    // Services (from Solutions page)
+    // Services
     'services.title': 'Izinhlelo Ezinqamuleli. Umsebenzi Omuhle. Amaphetho Azinzile.',
-    'services.subtitle': 'Kusuka ku-strategy namakhowudi abhizinisi ukuya kuma-platform ayakhonjiwo nge-AI — sithulela okudinga ibhizinisi lakho.',
+    'services.subtitle': 'Kusuka ku-strategy namakhowudi abhizinisi ukuya kuma-platform ayakhonjiwo nge-AI — sithulela okudinga ibhizinisi lakho ngempela.',
     'services.hustleBasics.name': 'Hustle Basics',
     'services.hustleBasics.tag': 'Incwadi & Umbhalo',
-    'services.hustleBasics.desc': 'Amathuluzi awoqala abalulekile kubabhijini, abasebenzi bakhulu nabakhosibili. Shintsha ukungazazi ukubona okucacile.',
+    'services.hustleBasics.desc': 'Amathuluzi awoqala abalulekile kubabhijini, abasebenzi bakhulu nabakhosibili. Shintsha ukungazazi ukubona okucacile, amathuba akuvele.',
     'services.hustleBasics.cta': 'Funda Kabanzi',
-    'services.pm.name': 'Umphathi Wezinhlelo',
-    'services.pm.tag': 'Ukusebenza Kwabhizinisi',
-    'services.pm.desc': 'I-platform yethu yokuphatha izinhlelo nokuzenzakalela — yakha izinhlelo zakho zokubhizinisa, ulandele inqubo, uze uhambise ukuphlanza ukuya ekusebenzeni.',
+    'services.pm.name': 'Ukusebenza Kwezinhlelo',
+    'services.pm.tag': 'Ukulethwa Kwabhizinisi',
+    'services.pm.desc': 'Yakha izinhlelo zakho zokubhizinisa, ulandele inqubo, uze uhambise ngokuhamba kwesikhathi ukusuka kwipulani ukuya ekusebenzeni. Akukho okulinganisi.',
     'services.pm.cta': 'Fika Ku-Platform',
     'services.portal.name': 'HustlePortal™',
     'services.portal.tag': 'Ukuqalisa Ku-inthanethi',
@@ -502,31 +531,31 @@ export const translations: Translations = {
     'services.strategy.desc': 'Sukuma kumiklamo nohlangothi ukuya kumamodeli abhizinisi aqinisekile, amasu nokumisa okusebenza akhulisa ukukhula.',
     'services.strategy.cta': 'Sihlola Izinkombiso',
     'services.clients.title': 'Abathembekile Abasungulwe Abasebenza Ezimbalwa',
-    'services.clients.subtitle': 'Kusuka ku-wellness kuya kwi-technology — silulela amaphetho lapho kudingeka khona.',
+    'services.clients.subtitle': 'Kusuka ku-wellness kuya kwezempilo, ukudla, ukuhamba, nokuthengisa — silulela amaphetho lapho kudingeka khona.',
     'services.clients.collab': 'Ngokubambisana ne-Afrocentric Solutions',
 
     // About
     'about.quote':
       'Cabanga nge-technology njengesenzo, hhayi isabizwana. Iya ngezinsiza, abantu abaqondise baya ngesibonelo.',
-    'about.quoteAuthor': '— Red Burns',
+    'about.quoteAuthor': '— Tselakgosi Jacob Seatlholo, Owesungula',
     'about.description':
-      'I-Business Hustle yinkampani ephelele ye-AI nokushintshela kwedijithali kwamabhizinisi ase-Afrika. Kusukela kumagumbi e-AI aqondile ukuya kwakhiwo kwedatha, siphatha konke — bakwazi ukuzabalaza ngokuthi kunconywa kakhulu: umsebenzi wakho.',
-    'about.founded': 'Yasungulwa eNingizimu Afrika, isebenza kuwo wonke amazwe.',
-    'about.learnStory': 'Funda Ngangesiko Lethu',
+      'I-Business Hustle inkampani yaseNingizimu Afrika ephatha insiza yezobuchwepheshe nokuqonda i-AI. Siphunga amabhizinisi endaweni namandla e-AI oqonde kakhulu — sakha amadiresi, sithuthela umsebenzi, futhi sifundisa abantu abaqhubekayo abasebenzi be-AI. Esekelwe kumigomo ka-Batho Pele: okusebenzayo, okucacile, nokugcizelele amaphetho.',
+    'about.founded': 'Yasungulwa ngu-Tselakgosi Jacob Seatlholo. Ingxenye ye-Simple Eternity Holdings (Pty) Ltd.',
+    'about.learnStory': 'Ibali Lethu',
     'about.builtIn': 'Yakhiwe e-',
     'about.forAfrica': 'kanye ne- Afrika',
 
-    // Testimonials
+    // Testimonials (kept in English — direct client quotes)
     'testimonials.title': 'Abahlanganyeli Bathi Ngoni',
-    'testimonials.quote1': "Amasistimu okubhekana namakhompiyutha e-Business Hustle anikeze Ubuntu isisekelo esingakanani. Umsebenzi wethu usheshile, ongakhombisi futhi ushintshiwe ngokuphelele.",
+    'testimonials.quote1': "Business Hustle's AI solutions gave Ubuntu the digital backbone we needed. Our workflow is faster, smarter, and completely transformed.",
     'testimonials.author1': 'Ubuntu',
-    'testimonials.role1': 'Impilo & Isiphilo',
-    'testimonials.quote2': "Kusukela ngosuku lokuqala baqonde isibonelo sethu. Gabonewe manje isebenzisa izinhlelo ezinamandla eziyigcina amahora ngosuku.",
+    'testimonials.role1': 'Wellness & Lifestyle',
+    'testimonials.quote2': "From day one they understood our vision. Gabonewe now runs on intelligent systems that save us hours every week.",
     'testimonials.author2': 'Gabonewe',
-    'testimonials.role2': 'Amaphrojekthi & Ukwakhiwa',
-    'testimonials.quote3': "Umkhondo wabo wokusebenzisa i-AI uhlule isikhathi sokubooka abaguli nokuxhumana. Umkhandlu ka-Dr Wendy Dicks awuzange ube mnandi kangaka.",
+    'testimonials.role2': 'Projects & Development',
+    'testimonials.quote3': "Their AI platform streamlined our patient booking and communications. Dr Wendy Dicks' practice has never been more efficient.",
     'testimonials.author3': 'Dr Wendy Dicks',
-    'testimonials.role3': 'Umtholampilo',
+    'testimonials.role3': 'Healthcare Practitioner',
 
     // Resources
     'resources.badge': 'Okulungisiwe Abakhi',
@@ -539,18 +568,23 @@ export const translations: Translations = {
     'resources.clearFilters': 'Sula amafayela',
 
     // Newsletter / Contact
-    'contact.title1': 'Ulungele Ukwenza I-AI Iyiqiniso',
-    'contact.title2': 'Kwabhizinisi Lakho?',
+    'contact.title1': 'Ulungele Ukuze Teknoloji Isebenze?',
+    'contact.title2': 'Sikhuluma.',
     'contact.subtitle':
-      'Joinal abaholi abangu-5,000+ ababhizimini base-Afrika abathola izinsizo ezintsha ngomumo we-AI.',
+      'Joinal abasunguli nabaholi ababhizimini baseNingizimu Afrika abathola izinsizo ezisebenzayo ngobuchwepheshe namasevisi e-AI.',
     'contact.placeholder': 'Faka i-imeyli yakho',
     'contact.subscribe': 'Bhalisa',
     'contact.noSpam': 'Akukho dili. Uyakwazi ukuyekela noma yini.',
 
     // Footer
     'footer.brandDesc':
-      'Insiza ye-AI namasolutions okuzenzakalela akhiwe ngamabhizinisi ase-Afrika. Ingxenye ye-Simple Eternity Holdings (Pty) Ltd.',
-    'footer.platform': 'Iplatifomu',
+      'Insiza yezobuchwepheshe ezingumphakathi namasevisi e-AI kubasunguli baseNingizimu Afrika. Ingxenye ye-Simple Eternity Holdings (Pty) Ltd.',
+    'footer.services': 'Amasevisi',
+    'footer.serviceLinks.geo': 'Ukuqondisa i-GEO',
+    'footer.serviceLinks.s2s': 'Ukuzenzakalela i-S2S',
+    'footer.serviceLinks.talent': 'Izinkalo Zobulili',
+    'footer.serviceLinks.local': 'Amadiresi Endaweni',
+    'footer.serviceLinks.automation': 'Ukuzenzakalela Komsebenzi',
     'footer.company': 'Inkampani',
     'footer.legal': 'Amalungelo',
     'footer.about': 'Ngathi',
@@ -561,74 +595,80 @@ export const translations: Translations = {
     'footer.privacy': 'Inkathi Yokuziba',
     'footer.terms': 'Imigomo Yomsebenzi',
     'footer.cookies': 'Inkathi Ye-Cookie',
+    'footer.paia': 'I-PAIA Manual (POPIA)',
     'footer.copyright':
       '© 2025 Business Hustle Ltd. Wonke amalungelo agodliwe. Ingxenye ye-Simple Eternity Holdings (Pty) Ltd.',
   },
 
   fr: {
     // Nav
-    'nav.platform': 'Plateforme',
+    'nav.platform': 'Ce Que Nous Construisons',
     'nav.solutions': 'Solutions',
     'nav.industries': 'Industries',
     'nav.resources': 'Ressources',
     'nav.about': 'À propos',
     'nav.contact': 'Contact',
-    'nav.bookDemo': 'Réserver une démo',
+    'nav.bookDemo': 'Commencer',
     'nav.openMenu': 'Ouvrir le menu',
 
     // Hero
-    'hero.badge': 'Explorer. S\'adapter. Évoluer.',
-    'hero.title1': 'Infrastructure IA',
-    'hero.title2': 'pour les Entreprises Africaines',
+    'hero.badge': 'Les Gens D\'abord. Construire. Automatiser.',
+    'hero.title1': 'Du Commerce de Proximité',
+    'hero.title2': 'aux Opérations Prêtes pour l\'IA',
     'hero.subtitle':
-      'De votre première idée aux revenus propulsés par l\'IA — nous construisons les systèmes qui transforment les données et les processus manuels en flux de travail intelligents et prêts pour les agents.',
-    'hero.cta1': 'Réserver une démo',
-    'hero.cta2': 'Explorer la plateforme',
-    'hero.stat1': 'Entreprises transformées',
-    'hero.stat2': 'Rétention client',
-    'hero.stat3': 'Opérations IA',
+      'Nous relions les entreprises locales et les technologies IA de pointe. Des annuaires de quartier à l\'automatisation des flux de travail en open source — fondé sur les principes Batho Pele.',
+    'hero.cta1': 'Commencer',
+    'hero.cta2': 'Comment Nous Travaillons',
+    'hero.stat1': 'Entreprises Desservies',
+    'hero.stat2': 'Rétention Client',
+    'hero.stat3': 'Opérateurs IA Formés',
 
     // Trusted by
-    'trusted.text': 'La confiance des organisations leaders en Afrique australe',
+    'trusted.text': 'Travailler avec des fondateurs et des organisations qui valorisent la clarté, la structure et les résultats',
 
-    // Platform
-    'platform.title': 'Blocs de construction, pas des boîtes noires',
+    // Platform (dual-engine)
+    'platform.title': 'Deux Moteurs. Une Mission.',
     'platform.subtitle':
-      'Déployez sur votre stack existante, configurez pour vos opérations, entraînez sur vos données. Une infrastructure qui évolue avec l\'IA.',
-    'platform.vortex.tag': 'Plateforme de données',
-    'platform.vortex.desc':
-      'Rendez vos données multi-sources prêtes pour le machine learning. Centralisez vos données éparpillées en une plateforme gouvernée et prête pour l\'IA.',
-    'platform.flux.tag': 'Constructeur de processus',
-    'platform.flux.desc':
-      'Documentez les processus manuels pour l\'automatisation. Cartographie visuelle du travail, chaque étape exécutée automatiquement.',
-    'platform.nexus.tag': 'Réseau d\'experts',
-    'platform.nexus.desc':
-      'Un réseau de spécialistes IA et d\'experts métier vérifiés, déployés à la demande pour vos projets.',
-    'platform.pulse.tag': 'Évaluations',
-    'platform.pulse.desc':
-      'Menez des évaluations rigoureuses pour la qualité, la sécurité et la précision. Mesurez les performances de l\'IA.',
-    'platform.axon.tag': 'Agents IA',
-    'platform.axon.desc':
-      'Construisez des agents IA gouvernés qui reflètent vos workflows. Déployez des agents qui livrent les résultats finis.',
+      'Infrastructure numérique de proximité qui donne aux entreprises locales la propriété — et opérations IA qui automatisent les flux de travail complexes avec des humains dans la boucle.',
+    'platform.card1.name': 'Infrastructure Numérique Locale',
+    'platform.card1.tag': 'Pilier A — Le Présent',
+    'platform.card1.desc':
+      'Nous construisons des couches numériques et des annuaires de proximité avec des outils open source. Pensez à KloofStreet.online — les entreprises locales obtiennent une propriété numérique, pas juste un site web.',
+    'platform.card2.name': 'Optimisation GEO',
+    'platform.card2.tag': 'Pilier A — Découverte',
+    'platform.card2.desc':
+      'Nous structurons les données des entreprises locales pour que les modèles IA et les assistants LLM puissent les lire, les citer et les recommander. Aucune entreprise locale ne reste invisible.',
+    'platform.card3.name': 'Automatisation de Flux S2S',
+    'platform.card3.tag': 'Pilier B — L\'Avenir',
+    'platform.card3.desc':
+      'Notre opération Services-vers-Logiciel automatise les flux de travail d\'entreprise complexes grâce à l\'IA open source. Des humains qualifiés restent dans la boucle pour les décisions critiques.',
+    'platform.card4.name': 'Opérations de Données IA',
+    'platform.card4.tag': 'Pilier B — Intelligence',
+    'platform.card4.desc':
+      'Curation de données, RLHF et évaluation de modèles. Nous formons les jeunes locaux pour devenir des opérateurs IA et des spécialistes de données d\'élite.',
+    'platform.card5.name': 'Filières de Talents',
+    'platform.card5.tag': 'Les Gens D\'abord',
+    'platform.card5.desc':
+      'En partenariat avec le Mafikeng Innovation Hub et le gouvernement du Cap-Occidental, nous construisons des filières de talents à fort impact pour l\'économie IA de l\'Afrique.',
     'platform.learnMore': 'En savoir plus',
 
     // How it works
-    'how.title': 'Des semaines vers une IA fonctionnelle, pas des mois de planification',
-    'how.step1.title': 'Découvrir',
+    'how.title': 'Comment Nous Travaillons',
+    'how.step1.title': 'Écouter & Auditer',
     'how.step1.desc':
-      'Nous auditons vos données, workflows et opérations pour identifier où l\'IA a le plus d\'impact.',
-    'how.step2.title': 'Construire',
+      'Nous commençons par comprendre votre entreprise — vos données, vos flux de travail, et où la technologie crée le plus de levier. Pas de suppositions, pas de discours.',
+    'how.step2.title': 'Construire & Intégrer',
     'how.step2.desc':
-      'Notre équipe conçoit, entraîne et déploie des solutions IA personnalisées intégrées à vos systèmes.',
-    'how.step3.title': 'Évoluer',
+      'Nous concevons et déployons des solutions pratiques avec des outils open source, intégrés à vos systèmes existants. Vous possédez tout ce que nous construisons.',
+    'how.step3.title': 'Former & Évoluer',
     'how.step3.desc':
-      'Surveillez, évaluez et améliorez en continu. Votre infrastructure IA grandit avec votre entreprise.',
+      'Nous montons en compétences votre équipe et affinons les opérations. Votre infrastructure grandit avec votre entreprise — pas de verrouillage fournisseur.',
 
     // Industries
-    'industries.title': 'Tous les secteurs, toutes les stacks',
-    'industries.subtitle': 'Conçu pour les industries qui propulsent la croissance de l\'Afrique.',
+    'industries.title': 'Construit pour Comment l\'Afrique du Sud Fonctionne',
+    'industries.subtitle': 'Infrastructure numérique pratique et IA pour les secteurs qui font tourner notre économie.',
     'industries.finance': 'Services financiers',
-    'industries.finance.desc': 'Conformité, risque et analyse client — une IA qui répond aux exigences réglementaires.',
+    'industries.finance.desc': 'Conformité, risque et analyse client — une IA pratique qui répond aux exigences réglementaires.',
     'industries.health': 'Santé',
     'industries.health.desc': 'IA personnalisée pour les opérations de santé, aide au diagnostic et flux des patients.',
     'industries.mining': 'Mines & Énergie',
@@ -640,74 +680,74 @@ export const translations: Translations = {
     'industries.logistics': 'Logistique',
     'industries.logistics.desc': 'Optimisation des itinéraires, gestion de flotte et visibilité en temps réel.',
     'industries.public': 'Secteur public',
-    'industries.public.desc': 'Réduisez la bureaucratie, connectez les systèmes et servez mieux les citoyens avec l\'IA.',
+    'industries.public.desc': 'Connectez les systèmes, réduisez la bureaucratie et servez mieux les citoyens avec une technologie pratique.',
     'industries.edu': 'Éducation',
     'industries.edu.desc': 'Parcours d\'apprentissage personnalisés, évaluation automatique et analytique institutionnelle.',
 
     // Solutions
-    'solutions.title': 'Solutions en vedette',
-    'solutions.training.title': 'Formation IA & Données',
+    'solutions.title': 'À Quoi Ça Ressemble',
+    'solutions.training.title': 'Annuaires Numériques Locaux',
     'solutions.training.desc':
-      'Annotation, formation et évaluation de niveau recherche pour les modèles d\'apprentissage automatique.',
-    'solutions.training.stat': '100+ Modèles formés',
-    'solutions.automation.title': 'Automatisation du back-office',
+      'Couches numériques de proximité qui donnent aux quartiers et districts commerciaux une véritable propriété et visibilité en ligne.',
+    'solutions.training.stat': '10+ Annuaires en Ligne',
+    'solutions.automation.title': 'Automatisation des Flux de Travail',
     'solutions.automation.desc':
-      'Automatisez le travail complexe ou fastidieux. Traitez les données complexes avec précision.',
-    'solutions.automation.stat': '70% de réduction du temps',
-    'solutions.contact.title': 'Centre de contact intelligent',
+      'Automatisez le travail complexe ou fastidieux qui enterre votre équipe. IA open source avec des humains dans la boucle.',
+    'solutions.automation.stat': '70% de Temps Gagné',
+    'solutions.contact.title': 'GEO & Visibilité IA',
     'solutions.contact.desc':
-      'Données unifiées, QA automatique, analyse de sentiment et agents vocaux IA.',
-    'solutions.contact.stat': '3x Gains d\'efficacité',
+      'Structurez vos données d\'entreprise pour que les moteurs de recherche IA et les assistants LLM vous trouvent, vous citent et vous recommandent.',
+    'solutions.contact.stat': '3x Plus Découvrable',
 
-    // Services (from Solutions page)
+    // Services
     'services.title': 'De Vrais Projets. Du Vrai Travail. De Vrais Résultats.',
     'services.subtitle': 'De la stratégie et de la structuration d\'entreprise aux plateformes numériques et à l\'IA — nous livrons ce dont votre entreprise a vraiment besoin.',
     'services.hustleBasics.name': 'Hustle Basics',
     'services.hustleBasics.tag': 'Livre & Guide',
-    'services.hustleBasics.desc': 'La boîte à outils essentielle pour les entrepreneurs, freelances et petites entreprises. Transformez la confusion en clarté et les idées en action.',
+    'services.hustleBasics.desc': 'La boîte à outils essentielle pour les entrepreneurs, freelances et petites entreprises. Transformez la surcharge en clarté, les idées en action.',
     'services.hustleBasics.cta': 'En savoir plus',
-    'services.pm.name': 'Gestionnaire de Projets',
-    'services.pm.tag': 'Exécution',
-    'services.pm.desc': 'Notre plateforme de gestion et d\'exution — structurez vos initiatives, suivez les progrès et passez de la planification à l\'action.',
+    'services.pm.name': 'Exécution de Projet',
+    'services.pm.tag': 'Livraison Commerciale',
+    'services.pm.desc': 'Structurez vos initiatives, suivez les progrès et passez de la planification à l\'exécution de manière constante. Pas de suppositions.',
     'services.pm.cta': 'Accéder à la plateforme',
     'services.portal.name': 'HustlePortal™',
     'services.portal.tag': 'Lancement Digital',
     'services.portal.desc': 'Une page d\'atterrissage professionnelle et optimisée SEO pour votre entreprise. Présence en ligne crédible pour seulement 1 850 R/an.',
     'services.portal.cta': 'Lancer en ligne',
     'services.local.name': 'BH LOCAL',
-    'services.local.tag': 'Quartiers Empowered',
-    'services.local.desc': 'Championner et autonomiser numériquement les quartiers, rues et districts commerciaux à travers l\'Afrique du Sud.',
+    'services.local.tag': 'Autonomisation des Quartiers',
+    'services.local.desc': 'Soutenir et autonomiser numériquement les quartiers, rues et districts commerciaux à travers l\'Afrique du Sud.',
     'services.local.cta': 'Explorer BH LOCAL',
     'services.strategy.name': 'Stratégie & Structuration',
     'services.strategy.tag': 'Conseil',
-    'services.strategy.desc': 'Passez des idées à des modèles commerciaux clairs, des stratégies et une structure opérationnelle qui attirent le financement.',
+    'services.strategy.desc': 'Passez des idées et de la vision à des modèles commerciaux clairs, des stratégies et une structure opérationnelle qui attirent le financement.',
     'services.strategy.cta': 'Explorer les solutions',
     'services.clients.title': 'La Confiance des Fondateurs de Tous les Secteurs',
-    'services.clients.subtitle': 'Du bien-être à la technologie en passant par les industries créatives — des résultats concrets.',
+    'services.clients.subtitle': 'Du bien-être et de la santé à l\'alimentation, aux voyages et au commerce — des résultats concrets.',
     'services.clients.collab': 'En collaboration avec Afrocentric Solutions',
 
     // About
     'about.quote':
       'Pensez à la technologie comme un verbe, pas un nom. Elle fournit les outils, les gens créatifs fournissent l\'imagination.',
-    'about.quoteAuthor': '— Red Burns',
+    'about.quoteAuthor': '— Tselakgosi Jacob Seatlholo, Fondateur',
     'about.description':
-      'Business Hustle est un fournisseur complet de solutions IA et de transformation numérique pour les entreprises africaines. Du développement d\'agents IA spécialisés à l\'architecture de plateformes de données, nous gérons tout.',
-    'about.founded': 'Fondé en Afrique du Sud, au service du continent.',
-    'about.learnStory': 'Découvrir notre histoire',
+      'Business Hustle est une agence sud-africaine hybride d\'infrastructure numérique et d\'opérations IA stratégiques. Nous relions le commerce local de proximité et la technologie IA de pointe — construisant des annuaires, automatisant les flux de travail et formant la prochaine génération d\'opérateurs IA. Fondé sur les principes Batho Pele : pratique, transparent et axé sur les résultats.',
+    'about.founded': 'Fondé par Tselakgosi Jacob Seatlholo. Partie de Simple Eternity Holdings (Pty) Ltd.',
+    'about.learnStory': 'Notre Histoire',
     'about.builtIn': 'Construit en',
     'about.forAfrica': 'pour l\'Afrique',
 
-    // Testimonials
+    // Testimonials (kept in English — direct client quotes)
     'testimonials.title': 'Ce que disent nos partenaires',
-    'testimonials.quote1': "Les solutions IA de Business Hustle ont donné à Ubuntu l'infrastructure numérique dont nous avions besoin. Notre flux de travail est plus rapide, plus intelligent et entièrement transformé.",
+    'testimonials.quote1': "Business Hustle's AI solutions gave Ubuntu the digital backbone we needed. Our workflow is faster, smarter, and completely transformed.",
     'testimonials.author1': 'Ubuntu',
-    'testimonials.role1': 'Bien-être & Style de vie',
-    'testimonials.quote2': "Dès le premier jour, ils ont compris notre vision. Gabonewe fonctionne désormais sur des systèmes intelligents qui nous font gagner des heures chaque semaine.",
+    'testimonials.role1': 'Wellness & Lifestyle',
+    'testimonials.quote2': "From day one they understood our vision. Gabonewe now runs on intelligent systems that save us hours every week.",
     'testimonials.author2': 'Gabonewe',
-    'testimonials.role2': 'Projets & Développement',
-    'testimonials.quote3': "Leur plateforme IA a rationalisé nos réservations de patients et nos communications. Le cabinet du Dr Wendy Dicks n'a jamais été aussi efficace.",
+    'testimonials.role2': 'Projects & Development',
+    'testimonials.quote3': "Their AI platform streamlined our patient booking and communications. Dr Wendy Dicks' practice has never been more efficient.",
     'testimonials.author3': 'Dr Wendy Dicks',
-    'testimonials.role3': 'Praticien de santé',
+    'testimonials.role3': 'Healthcare Practitioner',
 
     // Resources
     'resources.badge': 'Sélectionné pour les constructeurs',
@@ -720,18 +760,23 @@ export const translations: Translations = {
     'resources.clearFilters': 'Effacer les filtres',
 
     // Newsletter / Contact
-    'contact.title1': 'Prêt à rendre l\'IA réelle',
-    'contact.title2': 'pour votre entreprise ?',
+    'contact.title1': 'Prêt à Mettre la Technologie au Travail ?',
+    'contact.title2': 'Parlons-en.',
     'contact.subtitle':
-      'Rejoignez 5 000+ dirigeants d\'entreprise africains recevant des analyses à la pointe de l\'IA.',
+      'Rejoignez les entrepreneurs et dirigeants sud-africains qui obtiennent des insights pratiques sur l\'infrastructure numérique et les opérations IA.',
     'contact.placeholder': 'Entrez votre email',
     'contact.subscribe': 'S\'abonner',
     'contact.noSpam': 'Pas de spam. Désabonnez-vous à tout moment.',
 
     // Footer
     'footer.brandDesc':
-      'Infrastructure IA et solutions d\'automatisation conçues pour les entreprises africaines. Partie de Simple Eternity Holdings (Pty) Ltd.',
-    'footer.platform': 'Plateforme',
+      'Infrastructure numérique de proximité et opérations IA pour les entrepreneurs sud-africains. Partie de Simple Eternity Holdings (Pty) Ltd.',
+    'footer.services': 'Services',
+    'footer.serviceLinks.geo': 'Optimisation GEO',
+    'footer.serviceLinks.s2s': 'Automatisation S2S',
+    'footer.serviceLinks.talent': 'Filières de Talents',
+    'footer.serviceLinks.local': 'Annuaires Locaux',
+    'footer.serviceLinks.automation': 'Automatisation des Flux',
     'footer.company': 'Entreprise',
     'footer.legal': 'Juridique',
     'footer.about': 'À propos',
@@ -742,74 +787,80 @@ export const translations: Translations = {
     'footer.privacy': 'Politique de confidentialité',
     'footer.terms': 'Conditions d\'utilisation',
     'footer.cookies': 'Politique de cookies',
+    'footer.paia': 'Manuel PAIA (POPIA)',
     'footer.copyright':
       '© 2025 Business Hustle Ltd. Tous droits réservés. Partie de Simple Eternity Holdings (Pty) Ltd.',
   },
 
   pt: {
     // Nav
-    'nav.platform': 'Plataforma',
+    'nav.platform': 'O Que Construímos',
     'nav.solutions': 'Soluções',
     'nav.industries': 'Indústrias',
     'nav.resources': 'Recursos',
     'nav.about': 'Sobre',
     'nav.contact': 'Contato',
-    'nav.bookDemo': 'Agendar Demo',
+    'nav.bookDemo': 'Começar',
     'nav.openMenu': 'Abrir menu',
 
     // Hero
-    'hero.badge': 'Explorar. Adaptar. Evoluir.',
-    'hero.title1': 'Infraestrutura de IA',
-    'hero.title2': 'para Empresas Africanas',
+    'hero.badge': 'Pessoas Primeiro. Construir. Automatizar.',
+    'hero.title1': 'Do Comércio de Rua',
+    'hero.title2': 'a Operações Prontas para IA',
     'hero.subtitle':
-      'Da sua primeira ideia a receitas impulsionadas por IA — construímos os sistemas que transformam dados e processos manuais em fluxos de trabalho inteligentes e prontos para agentes.',
-    'hero.cta1': 'Agendar Demo',
-    'hero.cta2': 'Explorar Plataforma',
-    'hero.stat1': 'Empresas Transformadas',
+      'Conectamos negócios locais e tecnologia IA de ponta. De diretórios de bairro à automação de fluxos de trabalho em código aberto — baseado nos princípios Batho Pele.',
+    'hero.cta1': 'Começar',
+    'hero.cta2': 'Como Trabalhamos',
+    'hero.stat1': 'Negócios Atendidos',
     'hero.stat2': 'Retenção de Clientes',
-    'hero.stat3': 'Operações de IA',
+    'hero.stat3': 'Operadores de IA Treinados',
 
     // Trusted by
-    'trusted.text': 'Confiado por organizações líderes na África Austral',
+    'trusted.text': 'Trabalhando com fundadores e organizações que valorizam clareza, estrutura e resultados',
 
-    // Platform
-    'platform.title': 'Blocos de Construção, Não Caixas Pretas',
+    // Platform (dual-engine)
+    'platform.title': 'Dois Motores. Uma Missão.',
     'platform.subtitle':
-      'Implante na sua stack existente, configure para suas operações, treine com seus dados. Infraestrutura que evolui com a IA.',
-    'platform.vortex.tag': 'Plataforma de Dados',
-    'platform.vortex.desc':
-      'Prepare seus dados multi-fonte para uso. Centralize dados dispersos em uma plataforma governada e pronta para IA.',
-    'platform.flux.tag': 'Construtor de Processos',
-    'platform.flux.desc':
-      'Documente processos manuais para automação. Mapa visual de como o trabalho é feito, cada passo executado automaticamente.',
-    'platform.nexus.tag': 'Rede de Especialistas',
-    'platform.nexus.desc':
-      'Uma rede curada de especialistas em IA e especialistas de domínio implantados sob demanda para seus projetos.',
-    'platform.pulse.tag': 'Avaliações',
-    'platform.pulse.desc':
-      'Execute avaliações rigorosas de qualidade, segurança e precisão. Meça o desempenho da IA nos seus casos reais.',
-    'platform.axon.tag': 'Agentes de IA',
-    'platform.axon.desc':
-      'Construa agentes de IA governados que espelham seus workflows. Implante agentes que entregam resultados ao seus sistemas.',
+      'Infraestrutura digital de rua que dá propriedade aos negócios locais — e operações de IA que automatizam fluxos de trabalho complexos com humanos no loop.',
+    'platform.card1.name': 'Infraestrutura Digital Local',
+    'platform.card1.tag': 'Pilar A — O Agora',
+    'platform.card1.desc':
+      'Construímos camadas digitais e diretórios de rua usando ferramentas de código aberto. Pense no KloofStreet.online — negócios locais ganham propriedade digital, não apenas um site.',
+    'platform.card2.name': 'Otimização GEO',
+    'platform.card2.tag': 'Pilar A — Descoberta',
+    'platform.card2.desc':
+      'Estruturamos dados de negócios locais para que modelos de IA e assistentes LLM possam ler, citar e recomendá-los. Nenhum negócio local fica invisível.',
+    'platform.card3.name': 'Automação de Fluxos S2S',
+    'platform.card3.tag': 'Pilar B — O Próximo',
+    'platform.card3.desc':
+      'Nossa operação Serviços-para-Software automatiza fluxos de trabalho empresariais complexos usando IA de código aberto. Humanos qualificados permanecem no loop para decisões críticas.',
+    'platform.card4.name': 'Operações de Dados de IA',
+    'platform.card4.tag': 'Pilar B — Inteligência',
+    'platform.card4.desc':
+      'Curadoria de dados, RLHF e avaliação de modelos. Treinamos jovens locais para se tornarem operadores de IA e especialistas em dados de elite.',
+    'platform.card5.name': 'Pipelines de Talentos',
+    'platform.card5.tag': 'Pessoas Primeiro',
+    'platform.card5.desc':
+      'Em parceria com o Mafikeng Innovation Hub e o Governo do Cabo Ocidental, construímos pipelines de talentos de alto impacto para a economia de IA da África.',
     'platform.learnMore': 'Saiba mais',
 
     // How it works
-    'how.title': 'Semanas para IA Funcional, Não Meses de Planejamento',
-    'how.step1.title': 'Descobrir',
+    'how.title': 'Como Trabalhamos',
+    'how.step1.title': 'Ouvir & Auditar',
     'how.step1.desc':
-      'Auditamos seus dados, workflows e operações para identificar onde a IA cria mais impacto.',
-    'how.step2.title': 'Construir',
+      'Começamos entendendo seu negócio — seus dados, fluxos de trabalho e onde a tecnologia cria mais alavancagem. Sem suposições, sem firula.',
+    'how.step2.title': 'Construir & Integrar',
     'how.step2.desc':
-      'Nossa equipe projeta, treina e implanta soluções de IA personalizadas integradas aos seus sistemas.',
-    'how.step3.title': 'Escalar',
+      'Projetamos e implantamos soluções práticas usando ferramentas de código aberto, integradas aos seus sistemas existentes. Você possui tudo o que construímos.',
+    'how.step3.title': 'Treinar & Escalar',
     'how.step3.desc':
-      'Monitore, avalie e melhore continuamente. Sua infraestrutura de IA cresce conforme seu negócio evolui.',
+      'Capacitamos sua equipe e refinamos operações. Sua infraestrutura cresce com seu negócio — sem travamento de fornecedor.',
 
     // Industries
-    'industries.title': 'Qualquer Setor, Qualquer Stack',
-    'industries.subtitle': 'Construído para as indústrias que impulsionam o crescimento da África.',
+    'industries.title': 'Construído para Como a África do Sul Funciona',
+    'industries.subtitle': 'Infraestrutura digital prática e IA para os setores que impulsionam nossa economia.',
     'industries.finance': 'Serviços Financeiros',
-    'industries.finance.desc': 'Conformidade, risco e análise de clientes — IA que atende demandas regulatórias.',
+    'industries.finance.desc': 'Conformidade, risco e análise de clientes — IA prática que atende demandas regulatórias.',
     'industries.health': 'Saúde',
     'industries.health.desc': 'IA personalizada para operações de saúde, suporte diagnóstico e fluxo de pacientes.',
     'industries.mining': 'Mineração & Energia',
@@ -817,39 +868,39 @@ export const translations: Translations = {
     'industries.agri': 'Agricultura',
     'industries.agri.desc': 'Preveja safras, otimize cadeias de suprimentos e monitore lavouras com visão computacional.',
     'industries.retail': 'Varejo & E-commerce',
-    'industries.retail.desc': 'Preveja demanda, automatize estoque e personalize experiências do cliente.',
+    'industries.retail.desc': 'Preveja demanda, automatize estoque e personalize a experiência do cliente.',
     'industries.logistics': 'Logística',
     'industries.logistics.desc': 'Otimização de rotas, gestão de frotas e visibilidade em tempo real da cadeia de suprimentos.',
     'industries.public': 'Setor Público',
-    'industries.public.desc': 'Corte burocracia, conecte sistemas e sirva melhor os cidadãos com IA.',
+    'industries.public.desc': 'Conecte sistemas, corte burocracia e sirva melhor os cidadãos com tecnologia prática.',
     'industries.edu': 'Educação',
     'industries.edu.desc': 'Trilhas de aprendizagem personalizadas, avaliação automatizada e análise institucional.',
 
     // Solutions
-    'solutions.title': 'Soluções em Destaque',
-    'solutions.training.title': 'Treinamento de IA & Dados',
+    'solutions.title': 'Como Isso Se Parece',
+    'solutions.training.title': 'Diretórios Digitais Locais',
     'solutions.training.desc':
-      'Anotação de nível de pesquisa, treinamento e avaliação para modelos de aprendizado de máquina.',
-    'solutions.training.stat': '100+ Modelos Treinados',
-    'solutions.automation.title': 'Automação de Back-office',
+      'Camadas digitais de rua que dão a bairros e distritos comerciais verdadeira propriedade e visibilidade online.',
+    'solutions.training.stat': '10+ Diretórios ao Vivo',
+    'solutions.automation.title': 'Automação de Fluxos de Trabalho',
     'solutions.automation.desc':
-      'Automatize trabalho complexo ou tedioso. Trate dados confusos com precisão.',
-    'solutions.automation.stat': '70% de Redução de Tempo',
-    'solutions.contact.title': 'Central de Contato Inteligente',
+      'Automatize trabalho complexo ou tedioso que enterra sua equipe. IA de código aberto com humanos no loop.',
+    'solutions.automation.stat': '70% de Tempo Economizado',
+    'solutions.contact.title': 'GEO & Visibilidade de IA',
     'solutions.contact.desc':
-      'Dados unificados, QA automatizado, análise de sentimento e agentes de voz com IA.',
-    'solutions.contact.stat': '3x Ganhos de Eficiência',
+      'Estruture os dados do seu negócio para que mecanismos de busca de IA e assistentes LLM encontrem, citem e recomendem você.',
+    'solutions.contact.stat': '3x Mais Descobrível',
 
-    // Services (from Solutions page)
+    // Services
     'services.title': 'Projetos Reais. Trabalho Real. Resultados Reais.',
     'services.subtitle': 'Da estratégia e estruturação empresarial a plataformas digitais e IA — entregamos o que seu negócio realmente precisa.',
     'services.hustleBasics.name': 'Hustle Basics',
     'services.hustleBasics.tag': 'Livro & Guia',
-    'services.hustleBasics.desc': 'O kit de ferramentas essencial para empreendedores, freelancers e pequenas empresas. Transforme confusão em clareza e ideias em ação.',
+    'services.hustleBasics.desc': 'O kit de ferramentas essencial para empreendedores, freelancers e pequenas empresas. Transforme sobrecarga em clareza, ideias em ação.',
     'services.hustleBasics.cta': 'Saiba mais',
-    'services.pm.name': 'Gerenciador de Projetos',
-    'services.pm.tag': 'Execução de Negócios',
-    'services.pm.desc': 'Nossa plataforma de gestão e execução — estruture suas iniciativas, acompanhe o progresso e passe do planejamento à execução.',
+    'services.pm.name': 'Execução de Projeto',
+    'services.pm.tag': 'Entrega Comercial',
+    'services.pm.desc': 'Estruture suas iniciativas, acompanhe o progresso e passe do planejamento à execução de forma consistente. Sem suposições.',
     'services.pm.cta': 'Acessar plataforma',
     'services.portal.name': 'HustlePortal™',
     'services.portal.tag': 'Lançamento Digital',
@@ -861,34 +912,34 @@ export const translations: Translations = {
     'services.local.cta': 'Explorar BH LOCAL',
     'services.strategy.name': 'Estratégia & Estruturação',
     'services.strategy.tag': 'Consultoria',
-    'services.strategy.desc': 'Mova de ideias para modelos de negócios claros, estratégias e estrutura operacional que atrai financiamento.',
+    'services.strategy.desc': 'Mova de ideias e visão para modelos de negócios claros, estratégias e estrutura operacional que atraem financiamento e viabilizam crescimento.',
     'services.strategy.cta': 'Explorar soluções',
     'services.clients.title': 'Confiado por Fundadores de Diversos Setores',
-    'services.clients.subtitle': 'De bem-estar a tecnologia — entregando resultados onde importa.',
+    'services.clients.subtitle': 'De bem-estar e saúde a alimentação, viagens e varejo — entregando resultados onde importa.',
     'services.clients.collab': 'Em colaboração com Afrocentric Solutions',
 
     // About
     'about.quote':
       'Pense na tecnologia como um verbo, não um substantivo. Ela fornece as ferramentas, pessoas criativas fornecem a imaginação.',
-    'about.quoteAuthor': '— Red Burns',
+    'about.quoteAuthor': '— Tselakgosi Jacob Seatlholo, Fundador',
     'about.description':
-      'A Business Hustle é um provedor completo de soluções de IA e transformação digital para empresas africanas. Do desenvolvimento de agentes de IA especializados à arquitetura de plataformas de dados, cuidamos de tudo.',
-    'about.founded': 'Fundada na África do Sul, servindo o continente.',
-    'about.learnStory': 'Conheça Nossa História',
+      'A Business Hustle é uma agência sul-africana híbrida de infraestrutura digital e operações estratégicas de IA. Conectamos o comércio local de rua e a tecnologia IA de ponta — construindo diretórios, automatizando fluxos de trabalho e treinando a próxima geração de operadores de IA. Baseado nos princípios Batho Pele: prático, transparente e focado em resultados.',
+    'about.founded': 'Fundada por Tselakgosi Jacob Seatlholo. Parte da Simple Eternity Holdings (Pty) Ltd.',
+    'about.learnStory': 'Nossa História',
     'about.builtIn': 'Construído na',
     'about.forAfrica': 'para a África',
 
-    // Testimonials
+    // Testimonials (kept in English — direct client quotes)
     'testimonials.title': 'O Que Nossos Parceiros Dizem',
-    'testimonials.quote1': "As soluções de IA do Business Hustle deram ao Ubuntu a base digital que precisávamos. Nosso fluxo de trabalho é mais rápido, inteligente e completamente transformado.",
+    'testimonials.quote1': "Business Hustle's AI solutions gave Ubuntu the digital backbone we needed. Our workflow is faster, smarter, and completely transformed.",
     'testimonials.author1': 'Ubuntu',
-    'testimonials.role1': 'Bem-estar & Estilo de vida',
-    'testimonials.quote2': "Desde o primeiro dia eles entenderam nossa visão. A Gabonewe agora opera com sistemas inteligentes que nos economizam horas toda semana.",
+    'testimonials.role1': 'Wellness & Lifestyle',
+    'testimonials.quote2': "From day one they understood our vision. Gabonewe now runs on intelligent systems that save us hours every week.",
     'testimonials.author2': 'Gabonewe',
-    'testimonials.role2': 'Projetos & Desenvolvimento',
-    'testimonials.quote3': "A plataforma de IA deles otimizou nossos agendamentos de pacientes e comunicações. O consultório da Drª Wendy Dicks nunca foi tão eficiente.",
+    'testimonials.role2': 'Projects & Development',
+    'testimonials.quote3': "Their AI platform streamlined our patient booking and communications. Dr Wendy Dicks' practice has never been more efficient.",
     'testimonials.author3': 'Dr Wendy Dicks',
-    'testimonials.role3': 'Profissional de saúde',
+    'testimonials.role3': 'Healthcare Practitioner',
 
     // Resources
     'resources.badge': 'Curado para Construtores',
@@ -901,18 +952,23 @@ export const translations: Translations = {
     'resources.clearFilters': 'Limpar filtros',
 
     // Newsletter / Contact
-    'contact.title1': 'Pronto Para Tornar a IA Realidade',
-    'contact.title2': 'Para Seu Negócio?',
+    'contact.title1': 'Pronto Para Colocar a Tecnologia Para Trabalhar?',
+    'contact.title2': 'Vamos Conversar.',
     'contact.subtitle':
-      'Junte-se a 5.000+ líderes empresariais africanos recebendo insights na vanguarda da IA empresarial.',
+      'Junte-se a empreendedores e líderes sul-africanos recebendo insights práticos sobre infraestrutura digital e operações de IA.',
     'contact.placeholder': 'Digite seu email',
     'contact.subscribe': 'Inscrever-se',
     'contact.noSpam': 'Sem spam. Cancele a qualquer momento.',
 
     // Footer
     'footer.brandDesc':
-      'Infraestrutura de IA e soluções de automação construídas para empresas africanas. Parte da Simple Eternity Holdings (Pty) Ltd.',
-    'footer.platform': 'Plataforma',
+      'Infraestrutura digital de rua e operações de IA para empreendedores sul-africanos. Parte da Simple Eternity Holdings (Pty) Ltd.',
+    'footer.services': 'Serviços',
+    'footer.serviceLinks.geo': 'Otimização GEO',
+    'footer.serviceLinks.s2s': 'Automação S2S',
+    'footer.serviceLinks.talent': 'Pipelines de Talentos',
+    'footer.serviceLinks.local': 'Diretórios Locais',
+    'footer.serviceLinks.automation': 'Automação de Fluxos',
     'footer.company': 'Empresa',
     'footer.legal': 'Legal',
     'footer.about': 'Sobre',
@@ -923,118 +979,124 @@ export const translations: Translations = {
     'footer.privacy': 'Política de Privacidade',
     'footer.terms': 'Termos de Serviço',
     'footer.cookies': 'Política de Cookies',
+    'footer.paia': 'Manual PAIA (POPIA)',
     'footer.copyright':
       '© 2025 Business Hustle Ltd. Todos os direitos reservados. Parte da Simple Eternity Holdings (Pty) Ltd.',
   },
 
   sw: {
     // Nav
-    'nav.platform': 'Jukwaa',
+    'nav.platform': 'Tunachojenga',
     'nav.solutions': 'Suluhisho',
     'nav.industries': 'Viwanda',
     'nav.resources': 'Rasilimali',
     'nav.about': 'Kuhusu',
     'nav.contact': 'Mawasiliano',
-    'nav.bookDemo': 'Panga Demo',
+    'nav.bookDemo': 'Anza Sasa',
     'nav.openMenu': 'Fungua menyu',
 
     // Hero
-    'hero.badge': 'Chunguza. Kubali. Endelea.',
-    'hero.title1': 'Miundombinu ya AI',
-    'hero.title2': 'kwa Biashara za Afrika',
+    'hero.badge': 'Watu Kwanza. Jenga. Otomatisha.',
+    'hero.title1': 'Kutoka Biashara ya Mtaa',
+    'hero.title2': 'hadi Uendeshaji Uliotayarishwa kwa AI',
     'hero.subtitle':
-      'Kutoka wazo lako la kwanza hadi mapato yanayotokana na AI — tunajenga mifumo inayobadilisha data na mchakato wa kibinadamu kuwa mtiririko wa kazi wenye akili.',
-    'hero.cta1': 'Panga Demo',
-    'hero.cta2': 'Chunguza Jukwaa',
-    'hero.stat1': 'Biashara Zilizobadilishwa',
-    'hero.stat2': 'Ushikamaji wa Wateja',
-    'hero.stat3': 'Uendeshaji wa AI',
+      'Tunapunganuza biashara za ndani na teknolojia za mwisho za AI. Kutoka kwa orodha za mitaa hadi otomatiki ya mtiririko wa kazi ya chanzo huria — inayotegemea misingi ya Batho Pele.',
+    'hero.cta1': 'Anza Sasa',
+    'hero.cta2': 'Jinsi Tunavyofanya Kazi',
+    'hero.stat1': 'Biashara Zinazotumikiwa',
+    'hero.stat2': 'Ushikamani wa Wateja',
+    'hero.stat3': 'Waendeshaji wa AI Waliofundishwa',
 
     // Trusted by
-    'trusted.text': 'Wanaotegemewa na mashirika yanayoongoza kusini mwa Afrika',
+    'trusted.text': 'Tunafanya kazi na waanzilishi na mashirika yanayothamini uwazi, muundo, na matokeo',
 
-    // Platform
-    'platform.title': 'Vifungo vya Ujenzi, Si Sanduku Nyeusi',
+    // Platform (dual-engine)
+    'platform.title': 'Injini Mbili. Dharura Moja.',
     'platform.subtitle':
-      'Sanikisha kwenye mfumo wako, sanifisha kwa shughuli zako, funza kwa data yako. Miundombinu inayoendelea na AI.',
-    'platform.vortex.tag': 'Jukwaa la Data',
-    'platform.vortex.desc':
-      'Pata data yako iliyochanganyika iwe tayari kwa mashine. Kusanya data iliyosambazwa kwenye jukwaa moja.',
-    'platform.flux.tag': 'Muundaji wa Mchakato',
-    'platform.flux.desc':
-      'Andika mchakato wa kibinadamu kwa otomatiki. Ramani ya kuona jinsi kazi inavyofanywa, kila hatua ikitembea peke yake.',
-    'platform.nexus.tag': 'Mtandao wa Wataalam',
-    'platform.nexus.desc':
-      'Mtandao uliochaguliwa wa wataalamu wa AI na wataalam wa uwanja wanaotumwa kwa ombi kwa miradi yako.',
-    'platform.pulse.tag': 'Tathmini',
-    'platform.pulse.desc':
-      'Fanya tathmini kali ya ubora, usalama, na usahihi. Pima utendaji wa AI dhidi ya matumizi yako halisi.',
-    'platform.axon.tag': 'Wakala wa AI',
-    'platform.axon.desc':
-      'Jenga wakala wa AI wenye utawala wanaoakisi mchakato wako. Sanikisha wakala wanaohandisha matokeo kwa mifumo yako.',
+      'Miundombinu ya kidijitali ya mtaa inayowapa biashara za ndani umiliki — na uendeshaji wa AI unaotumia mtiririko wa kazi uliochanganyika na binadamu katika mzunguko.',
+    'platform.card1.name': 'Miundombinu ya Kidijitali ya Ndani',
+    'platform.card1.tag': 'Nguzo A — Sasa Hivi',
+    'platform.card1.desc':
+      'Tunajenga safu za kidijitali za mtaa na orodha kwa kutumia zana za chanzo huria. Fikiria KloofStreet.online — biashara za ndani zinapata umiliki wa kidijitali, sio tu tovuti.',
+    'platform.card2.name': 'Uboreshaji wa GEO',
+    'platform.card2.tag': 'Nguzo A — Ugunduzi',
+    'platform.card2.desc':
+      'Tunapanga data za biashara za ndani ili mifumo ya AI na wasaidizi wa LLM waweze kuisoma, kuitaja, na kuiendea. Hakuna biashara ya ndani inabaki haioneekani.',
+    'platform.card3.name': 'Otomatiki ya Mtiririko wa Kazi ya S2S',
+    'platform.card3.tag': 'Nguzo B — Ijayo',
+    'platform.card3.desc':
+      'Uendeshaji wetu wa Huduma-kwa-Programu unatengeneza mtiririko wa kazi uliochanganyika wa kampuni kwa kutumia AI ya chanzo huria. Binadamu wenye ujuzi wanaendelea kuwa katika mzunguko kwa maamuzi muhimu.',
+    'platform.card4.name': 'Uendeshaji wa Data ya AI',
+    'platform.card4.tag': 'Nguzo B — Akili',
+    'platform.card4.desc':
+      'Ukusanyaji wa data, RLHF, na tathmini ya mifumo. Tunafundisha vijana wa ndani kuwa waendeshaji wa AI na wataalamu wa data wa kiwango cha juu.',
+    'platform.card5.name': 'Miradi ya Vipaji',
+    'platform.card5.tag': 'Watu Kwanza',
+    'platform.card5.desc':
+      'Kwa ushirikiano na Mafikeng Innovation Hub na Serikali ya Western Cape, tunajenga miradi ya vipaji yenye athari kubwa kwa uchumi wa AI wa Afrika.',
     'platform.learnMore': 'Soma zaidi',
 
     // How it works
-    'how.title': 'Wiki za AI Inayofanya Kazi, Si Miezi ya Mpango',
-    'how.step1.title': 'Gundua',
+    'how.title': 'Jinsi Tunavyofanya Kazi',
+    'how.step1.title': 'Sikiliza & Pitia',
     'how.step1.desc':
-      'Tunakagua data yako, mchakato wako, na shughuli zako kutambua mahali AI ina athari kubwa zaidi.',
-    'how.step2.title': 'Jenga',
+      'Tunaanza kwa kuelewa biashara yako — data yako, mtiririko wa kazi, na nini teknolojia inayounda athari kubwa zaidi. Hakuna dhana, hakuna maneno mengi.',
+    'how.step2.title': 'Jenga & Unganisha',
     'how.step2.desc':
-      'Timu yetu inabuni, inafunza, na kusanikisha suluhisho za AI zilizobinafsishwa zilizounganishwa na mifumo yako.',
-    'how.step3.title': 'Panua',
+      'Tunabuni na kusanikisha suluhisho zenye maana kwa kutumia zana za chanzo huria, zilizounganishwa na mifumo yako iliyopo. Wewe unamiliki kila tunachojenga.',
+    'how.step3.title': 'Fundisha & Panua',
     'how.step3.desc':
-      'Fuatilia, tathmini, na boresha endelea. Miundombinu yako ya AI inakua kadiri biashara yako inavyobadilika.',
+      'Tunaongeza ujuzi wa timu yako na kuboresha uendeshaji. Miundombinu yako inakua pamoja na biashara yako — hakuna kufungwa kwa muuzaji.',
 
     // Industries
-    'industries.title': 'Sekta Yoyote, Mfumo Wowote',
-    'industries.subtitle': 'Iliyoundwa kwa viwanda vinavyoendesha ukuaji wa Afrika.',
+    'industries.title': 'Imeundwa kwa Jinsi Afrika Kusini Inavyofanya Kazi',
+    'industries.subtitle': 'Miundombinu ya kidijitali ya vitendo na AI kwa sekta zinazoendesha uchumi wetu.',
     'industries.finance': 'Huduma za Kifedha',
-    'industries.finance.desc': 'Uzingatiaji, hatari, na uchambuzi wa wateja — AI inayotimiza mahitaji ya kanuni.',
+    'industries.finance.desc': 'Uzingatiaji, hatari, na uchambuzi wa wateja — AI ya vitendo inayotimiza mahitaji ya kanuni.',
     'industries.health': 'Afya',
     'industries.health.desc': 'AI ya kibinafsi kwa shughuli za afya, msaada wa uchambuzi, na mtiririko wa wagonjwa.',
     'industries.mining': 'Uchimbaji Madini & Nishati',
-    'industries.mining.desc': 'Gundua hatari, punguza hasara,uzuia kusimamishwa kwa akili ya kutabiri.',
+    'industries.mining.desc': 'Gundua hatari, punguza hasara, zuia kusimamishwa kwa akili ya kutabiri.',
     'industries.agri': 'Kilimo',
     'industries.agri.desc': 'Tabiri mavuno, boresha mnyororo wa usambazaji, na uchunguze mazao kwa kompyuta.',
-    'industries.retail': 'Biashara ya Mauzo',
+    'industries.retail': 'Biashara ya Mauzo & Biashara ya Mtandaoni',
     'industries.retail.desc': 'Tabiri mahitaji, otomatisha akiba, na binafsisha uzoefu wa wateja.',
     'industries.logistics': 'Uchukuzi',
     'industries.logistics.desc': 'Uboreshaji wa njia, usimamizi wa gari, na mwonekano wa wakati halisi.',
     'industries.public': 'Sekta ya Umma',
-    'industries.public.desc': 'Kata ulegevu, unganisha mifumo, na tumikie raia vyema kwa AI.',
+    'industries.public.desc': 'Unganisha mifumo, kata ulegevu, na tumikie raia vyema kwa teknolojia ya vitendo.',
     'industries.edu': 'Elimu',
     'industries.edu.desc': 'Njia za kujifunza za kibinafsi, tathmini ya moja kwa moja, na uchambuzi wa taasisi.',
 
     // Solutions
-    'solutions.title': 'Suluhisho Zinazoangaziwa',
-    'solutions.training.title': 'Mafunzo ya AI & Data',
+    'solutions.title': 'Inavyonekana',
+    'solutions.training.title': 'Orodha za Kidijitali za Ndani',
     'solutions.training.desc':
-      'Uandishi wa kiwango cha utafiti, mafunzo, na tathmini kwa mifumo ya kujifunza mashine.',
-    'solutions.training.stat': '100+ Mifumo Iliyofunzwa',
-    'solutions.automation.title': 'Otomatiki ya Ofisi',
+      'Safu za kidijitali za mtaa zinazowapa mitaa na maeneo ya biashara umiliki halisi na kuonekana kwenye mtandao.',
+    'solutions.training.stat': '10+ Orodha Ziko Hai',
+    'solutions.automation.title': 'Otomatiki ya Mtiririko wa Kazi',
     'solutions.automation.desc':
-      'Otomatisa kazi ngumu au ya kuchosha. Tatua data iliyochanganyika kwa usahihi.',
-    'solutions.automation.stat': '70% Upungufu wa Wakati',
-    'solutions.contact.title': 'Kituo cha Mawasiliano',
+      'Otomatisa kazi ngumu au ya kuchosha inayozama timu yako. AI ya chanzo huria na binadamu katika mzunguko.',
+    'solutions.automation.stat': '70% Wakati Uliohifadhiwa',
+    'solutions.contact.title': 'GEO & Kuonekana kwa AI',
     'solutions.contact.desc':
-      'Data iliyounganishwa, QA ya moja kwa moja, uchambuzi hisia, na wakala wa sauti wa AI.',
-    'solutions.contact.stat': '3x Maendeleo ya Ufanisi',
+      'Panga data ya biashara yako ili injini za utafutaji za AI na wasaidizi wa LLM wakupate, wakutaje, na wakupendekeze.',
+    'solutions.contact.stat': '3x Zaidi ya Kuonekana',
 
-    // Services (from Solutions page)
+    // Services
     'services.title': 'Miradi Halisi. Kazi Halisi. Matokeo Halisi.',
     'services.subtitle': 'Kutoka kwenye mkakati na muundo wa biashara hadi kwenye mitandao ya kidijitali na AI — tunawaletea biashara yako inayohitajika.',
     'services.hustleBasics.name': 'Hustle Basics',
     'services.hustleBasics.tag': 'Kitabu & Mwongozo',
-    'services.hustleBasics.desc': 'Zana muhimu kwa wajasiriamali, wafanyakazi huria na wamiliki wa biashara ndogo. Badilisha mkanganyiko kuwa uwazi.',
+    'services.hustleBasics.desc': 'Zana muhimu kwa wajasiriamali, wafanyakazi huria na wamiliki wa biashara ndogo. Badilisha mkanganyiko kuwa uwazi, mawazo kuwa hatua.',
     'services.hustleBasics.cta': 'Soma zaidi',
-    'services.pm.name': 'Meneja wa Miradi',
-    'services.pm.tag': 'Utekelezi wa Biashara',
-    'services.pm.desc': 'Jukwaa letu la usimamizi wa miradi — panga miradi yako, fuatilia maendeleo na songa kutoka mpanga kwaka utekelezo.',
+    'services.pm.name': 'Utekelezi wa Miradi',
+    'services.pm.tag': 'Utoaji wa Biashara',
+    'services.pm.desc': 'Panga miradi yako, fuatilia maendeleo, na songa kutoka kupanga kwenda kutekeleza kwa uendelevu. Hakuna kufikiria bila hakika.',
     'services.pm.cta': 'Fikia jukwaa',
     'services.portal.name': 'HustlePortal™',
     'services.portal.tag': 'Uzinduzi wa Kidijitali',
-    'services.portal.desc': 'Ukurasa wa kuangukia wenye ubunifu na unaofaa SEO. Uwepo wa mtandaoni kwa R1,850 kwa mwaka.',
+    'services.portal.desc': 'Ukurasa wa kuangukia wenye ubunifu unaofaa SEO. Uwepo wa mtandaoni kwa R1,850 kwa mwaka.',
     'services.portal.cta': 'Uzinduzi mtandaoni',
     'services.local.name': 'BH LOCAL',
     'services.local.tag': 'Uwezeshaji wa Mitaa',
@@ -1042,34 +1104,34 @@ export const translations: Translations = {
     'services.local.cta': 'Tafuta BH LOCAL',
     'services.strategy.name': 'Mkakati & Muundo',
     'services.strategy.tag': 'Ushauri',
-    'services.strategy.desc': 'Hamisha kutoka mawazo kwenda mifumo ya biashara wazi, mikakati na muundo wa uendeshaji unaovuta ufadhili.',
+    'services.strategy.desc': 'Hamisha kutoka mawazo na hadhira kwenda mifumo ya biashara wazi, mikakati na muundo wa uendeshaji unaovuta ufadhili.',
     'services.strategy.cta': 'Tafuta suluhisho',
     'services.clients.title': 'Waaminika na Waanzilishi wa Sekta Zote',
-    'services.clients.subtitle': 'Kutoka afya hadi teknolojia — tunatoa matokeo yanayohesabika.',
+    'services.clients.subtitle': 'Kutoka afya hadi chakula, usafiri na biashara — tunatoa matokeo yanayohesabika.',
     'services.clients.collab': 'Kwa ushirikiano na Afrocentric Solutions',
 
     // About
     'about.quote':
       'Fikiria teknolojia kama kitenzi, si kiumbe. Inatoa zana, watu wenye ubunifu wanaleta taswira.',
-    'about.quoteAuthor': '— Red Burns',
+    'about.quoteAuthor': '— Tselakgosi Jacob Seatlholo, Mwanzilishi',
     'about.description':
-      'Business Hustle ni mtayarishaji kamili wa suluhisho za AI na mabadiliko ya kidijitali kwa biashara za Afrika. Kutoka kwa uendelezaji wa wakala maalum wa AI hadi usanifu wa jukwaa la data, tunashughulikia yote.',
-    'about.founded': 'Ilianzishwa Afrika Kusini, ikihudumia bara.',
-    'about.learnStory': 'Jifunze Kuhusu Hadithi Yetu',
+      'Business Hustle ni shirika la Afrika Kusini la hibridi la miundombinu ya kidijitali na uendeshaji wa kimkakati wa AI. Tunapunganuza biashara za ndani za mtaa na teknolojia ya mwisho ya AI — tukiijenga orodha, tukiotomatisha mtiririko wa kazi, na tukifundisha kizazi kijacho cha waendeshaji wa AI. Inayotegemea misingi ya Batho Pele: ya vitendo, wazi, na inayolenga matokeo.',
+    'about.founded': 'Ilianzishwa na Tselakgosi Jacob Seatlholo. Sehemu ya Simple Eternity Holdings (Pty) Ltd.',
+    'about.learnStory': 'Hadithi Yetu',
     'about.builtIn': 'Iliyojengwa',
     'about.forAfrica': 'kwa Afrika',
 
-    // Testimonials
+    // Testimonials (kept in English — direct client quotes)
     'testimonials.title': 'Washirika Wetu Wanasema Nini',
-    'testimonials.quote1': "Mfumo wa AI wa Business Hustle ulimpatia Ubuntu msingi wa kidijitali tuliomhitaji. Kazi yetu sasa ni haraka, na ufanisi wake umebadilika kabisa.",
+    'testimonials.quote1': "Business Hustle's AI solutions gave Ubuntu the digital backbone we needed. Our workflow is faster, smarter, and completely transformed.",
     'testimonials.author1': 'Ubuntu',
-    'testimonials.role1': 'Afya & Maisha',
-    'testimonials.quote2': "Toka siku ya kwanza walielewa dira yetu. Gabonewe sasa inatumia mifumo endelevu inayotupunguza masaa kila wiki.",
+    'testimonials.role1': 'Wellness & Lifestyle',
+    'testimonials.quote2': "From day one they understood our vision. Gabonewe now runs on intelligent systems that save us hours every week.",
     'testimonials.author2': 'Gabonewe',
-    'testimonials.role2': 'Miradi & Maendeleo',
-    'testimonials.quote3': "Jukwaa lao la AI lilisafisha mapango ya wagonjwa na mawasiliano. Zoezi la Dkt. Wendy Dicks halijawahi kuwa na ufanisi kama huu.",
+    'testimonials.role2': 'Projects & Development',
+    'testimonials.quote3': "Their AI platform streamlined our patient booking and communications. Dr Wendy Dicks' practice has never been more efficient.",
     'testimonials.author3': 'Dr Wendy Dicks',
-    'testimonials.role3': 'Mtaalamu wa afya',
+    'testimonials.role3': 'Healthcare Practitioner',
 
     // Resources
     'resources.badge': 'Ilivyochaguliwa kwa Wajenzi',
@@ -1082,18 +1144,23 @@ export const translations: Translations = {
     'resources.clearFilters': 'Futa vichujio',
 
     // Newsletter / Contact
-    'contact.title1': 'Umeandaliwa Kufanya AI iwe',
-    'contact.title2': 'Kwa Biashara Yako?',
+    'contact.title1': 'Umeandaliwa Kuweka Teknolojia Kazi?',
+    'contact.title2': 'Tuongee.',
     'contact.subtitle':
-      'Jiunge na viongozi 5,000+ wa biashara za Afrika wanaopata maarifa ya kisasa zaidi ya AI.',
+      'Jiunge na wajasiriamali na viongozi wa biashara wa Afrika Kusini wanaopata maarifa ya vitendo kuhusu miundombinu ya kidijitali na uendeshaji wa AI.',
     'contact.placeholder': 'Ingiza barua pepe yako',
     'contact.subscribe': 'Jisajili',
     'contact.noSpam': 'Hakuna barua taka. Jiondoe wakati wowote.',
 
     // Footer
     'footer.brandDesc':
-      'Miundombinu ya AI na suluhisho za otomatiki zilizojengwa kwa biashara za Afrika. Sehemu ya Simple Eternity Holdings (Pty) Ltd.',
-    'footer.platform': 'Jukwaa',
+      'Miundombinu ya kidijitali ya mtaa na uendeshaji wa AI kwa wajasiriamali wa Afrika Kusini. Sehemu ya Simple Eternity Holdings (Pty) Ltd.',
+    'footer.services': 'Huduma',
+    'footer.serviceLinks.geo': 'Uboreshaji wa GEO',
+    'footer.serviceLinks.s2s': 'Otomatiki ya S2S',
+    'footer.serviceLinks.talent': 'Miradi ya Vipaji',
+    'footer.serviceLinks.local': 'Orodha za Ndani',
+    'footer.serviceLinks.automation': 'Otomatiki ya Mtiririko wa Kazi',
     'footer.company': 'Kampuni',
     'footer.legal': 'Kisheria',
     'footer.about': 'Kuhusu',
@@ -1104,74 +1171,80 @@ export const translations: Translations = {
     'footer.privacy': 'Sera ya Faragha',
     'footer.terms': 'Masharti ya Huduma',
     'footer.cookies': 'Sera ya Kuki',
+    'footer.paia': 'Mwongozo wa PAIA (POPIA)',
     'footer.copyright':
       '© 2025 Business Hustle Ltd. Haki zote zimehifadhiwa. Sehemu ya Simple Eternity Holdings (Pty) Ltd.',
   },
 
   ar: {
     // Nav
-    'nav.platform': 'المنصة',
+    'nav.platform': 'ما نبنيه',
     'nav.solutions': 'الحلول',
     'nav.industries': 'الصناعات',
     'nav.resources': 'الموارد',
     'nav.about': 'حول',
     'nav.contact': 'اتصل',
-    'nav.bookDemo': 'احجز عرضاً',
+    'nav.bookDemo': 'ابدأ الآن',
     'nav.openMenu': 'فتح القائمة',
 
     // Hero
-    'hero.badge': 'استكشف. تكيّف. تطوّر.',
-    'hero.title1': 'بنية تحتية للذكاء الاصطناعي',
-    'hero.title2': 'للأعمال التجارية الأفريقية',
+    'hero.badge': 'الناس أولاً. نبني. نؤتمت.',
+    'hero.title1': 'من تجارة الشارع',
+    'hero.title2': 'إلى عمليات جاهزة للذكاء الاصطناعي',
     'hero.subtitle':
-      'من فكرتك الأولى إلى إيرادات مدعومة بالذكاء الاصطناعي — نبني الأنظمة التي تحول البيانات والعمليات اليدوية إلى سير عمل ذكي.',
-    'hero.cta1': 'احجز عرضاً',
-    'hero.cta2': 'استكشف المنصة',
-    'hero.stat1': 'شركات محوّلة',
+      'نربط الأعمال المحلية وتكنولوجيا الذكاء الاصطناعي المتقدمة. من أدلة الأحياء إلى أتمتة سير العمل بمصدر مفتوح — مبنية على مبادئ Batho Pele.',
+    'hero.cta1': 'ابدأ الآن',
+    'hero.cta2': 'كيف نعمل',
+    'hero.stat1': 'شركات مخدومة',
     'hero.stat2': 'الاحتفاظ بالعملاء',
-    'hero.stat3': 'عمليات الذكاء الاصطناعي',
+    'hero.stat3': 'مشغلو ذكاء اصطناعي مدربون',
 
     // Trusted by
-    'trusted.text': 'موثوق من قبل المنظمات الرائدة في جنوب أفريقيا',
+    'trusted.text': 'نعمل مع مؤسسين ومنظمات يقدرون الوضوح والهيكلية والنتائج',
 
-    // Platform
-    'platform.title': 'لبنات بناء، وليس صناديق سوداء',
+    // Platform (dual-engine)
+    'platform.title': 'محركان. مهمة واحدة.',
     'platform.subtitle':
-      'انشر على بنيتك الحالية، وقم بالتكوين لعملياتك، وتدرب على بياناتك. بنية تحتية تتطور مع الذكاء الاصطناعي.',
-    'platform.vortex.tag': 'منصة بيانات',
-    'platform.vortex.desc':
-      'اجعل بياناتك المتعددة المصادر جاهزة للآلة. اجمع البيانات المبعثرة في منصة واحدة منظمة.',
-    'platform.flux.tag': 'منشئ العمليات',
-    'platform.flux.desc':
-      'وثّق العمليات اليدوية للأتمتة. خريطة بصرية لكيفية إنجاز العمل، كل خطوة تعمل تلقائياً.',
-    'platform.nexus.tag': 'شبكة الخبراء',
-    'platform.nexus.desc':
-      'شبكة منتقاة من متخصصي الذكاء الاصطناعي وخبراء المجال يتم نشرهم عند الطلب لمشاريعك.',
-    'platform.pulse.tag': 'التقييمات',
-    'platform.pulse.desc':
-      'أجرِ تقييمات صارمة للجودة والسلامة والدقة. قيس أداء الذكاء الاصطناعي مقابل حالات الاستخدام الفعلية.',
-    'platform.axon.tag': 'وكلاء ذكاء اصطناعي',
-    'platform.axon.desc':
-      'ابنِ وكلاء ذكاء اصطناعي منظمين يعكسون سير عملك. انشر وكلاء يسلمون النتائج النهائية لأنظمتك.',
+      'بنية تحتية رقمية على مستوى الشارع تمنح الأعمال المحلية الملكية — وعمليات ذكاء اصطناعي تؤتمت سير العمل المعقد مع بقاء الإنسان في الحلقة.',
+    'platform.card1.name': 'البنية الرقمية المحلية',
+    'platform.card1.tag': 'الركيزة أ — الآن',
+    'platform.card1.desc':
+      'نبني طبقات رقمية وأدلة على مستوى الشارع باستخدام أدوات مفتوحة المصدر. فكّر في KloofStreet.online — الأعمال المحلية تحصل على ملكية رقمية، وليس مجرد موقع ويب.',
+    'platform.card2.name': 'تحسين GEO',
+    'platform.card2.tag': 'الركيزة أ — الاكتشاف',
+    'platform.card2.desc':
+      'نُهيكل بيانات الأعمال المحلية حتى يتمكن نماذج الذكاء الاصطناعي ومساعدو LLM من قراءتها واستشهادها والتوصية بها. لا تُترك أي أعمال محلية غير مرئية.',
+    'platform.card3.name': 'أتمتة سير عمل S2S',
+    'platform.card3.tag': 'الركيزة ب — المستقبل',
+    'platform.card3.desc':
+      'عملياتنا من الخدمات إلى البرمجيات تؤتمت سير العمل المعقد للشركات باستخدام ذكاء اصطناعي مفتوح المصدر. يبقى البشر المهرة في الحلقة للقرارات الحاسمة.',
+    'platform.card4.name': 'عمليات بيانات الذكاء الاصطناعي',
+    'platform.card4.tag': 'الركيزة ب — الذكاء',
+    'platform.card4.desc':
+      'تنظيم البيانات وRLHF وتقييم النماذج. ندرب الشباب المحلي ليصبحوا مشغلي ذكاء اصطناعي ومتخصصي بيانات من الطراز الأول.',
+    'platform.card5.name': 'خطوط المواهب',
+    'platform.card5.tag': 'الناس أولاً',
+    'platform.card5.desc':
+      'بالشراكة مع Mafikeng Innovation Hub وحكومة ويسترن كيب، نبني خطوط مواهب عالية التأثير لاقتصاد الذكاء الاصطناعي في أفريقيا.',
     'platform.learnMore': 'اعرف المزيد',
 
     // How it works
-    'how.title': 'أسابيع لذكاء اصطناعي عامل، وليس أشهر من التخطيط',
-    'how.step1.title': 'اكتشف',
+    'how.title': 'كيف نعمل',
+    'how.step1.title': 'استمع وافحص',
     'how.step1.desc':
-      'نراجع بياناتك وسير عملك وعملياتك لتحديد المكان الذي يخلق فيه الذكاء الاصطناعي أكبر تأثير.',
-    'how.step2.title': 'ابنِ',
+      'نبدأ بفهم عملك — بياناتك، سير عملك، وأين تخلق التكنولوجيا أكبر تأثير. بدون افتراضات، بدون حشو.',
+    'how.step2.title': 'ابنِ وادمج',
     'how.step2.desc':
-      'يصمم فريقنا ويدرب وينشر حلول ذكاء اصطناعي مخصصة مدمجة مع أنظمتك الحالية.',
-    'how.step3.title': 'وسّع',
+      'نصمم وننشر حلولاً عملية باستخدام أدوات مفتوحة المصدر، مدمجة مع أنظمتك الحالية. أنت تملك كل ما نبنيه.',
+    'how.step3.title': 'دّرب ووسّع',
     'how.step3.desc':
-      'راقب وقيم وحسّن باستمرار. بنيتك التحتية للذكاء الاصطناعي تنمو مع تطور أعمالك.',
+      'نطوّر مهارات فريقك ونحسّن العمليات. بنيتك التحتية تنمو مع عملك — بدون قفل بائع.',
 
     // Industries
-    'industries.title': 'أي قطاع، أي بنية',
-    'industries.subtitle': 'مُصمم للصناعات التي تقود نمو أفريقيا.',
+    'industries.title': 'مُصمم لكيفية عمل جنوب أفريقيا',
+    'industries.subtitle': 'بنية تحتية رقمية عملية وذكاء اصطناعي للقطاعات التي تقود اقتصادنا.',
     'industries.finance': 'الخدمات المالية',
-    'industries.finance.desc': 'الامتثال والمخاطر ورؤى العملاء — ذكاء اصطناعي يلبي المتطلبات التنظيمية.',
+    'industries.finance.desc': 'الامتثال والمخاطرورؤى العملاء — ذكاء اصطناعي عملي يلبي المتطلبات التنظيمية.',
     'industries.health': 'الرعاية الصحية',
     'industries.health.desc': 'ذكاء اصطناعي مخصص لعمليات الرعاية الصحية ودعم التشخيص وتدفق المرضى.',
     'industries.mining': 'التعدين والطاقة',
@@ -1183,35 +1256,35 @@ export const translations: Translations = {
     'industries.logistics': 'اللوجستيات',
     'industries.logistics.desc': 'تحسين المسارات وإدارة الأسطول ورؤية سلسلة التوريد في الوقت الفعلي.',
     'industries.public': 'القطاع العام',
-    'industries.public.desc': 'اقطع البيروقراطية واربط الأنظمة وخدم المواطنين بشكل أفضل بالذكاء الاصطناعي.',
+    'industries.public.desc': 'اربط الأنظمة واخترق البيروقراطية وخدم المواطنين بشكل أفضل بتكنولوجيا عملية.',
     'industries.edu': 'التعليم',
     'industries.edu.desc': 'مسارات تعلم مخصصة وتقييم آلي وتحليلات مؤسسية.',
 
     // Solutions
-    'solutions.title': 'حلول مميزة',
-    'solutions.training.title': 'تدريب الذكاء الاصطناعي والبيانات',
+    'solutions.title': 'كيف يبدو هذا عملياً',
+    'solutions.training.title': 'أدلة رقمية محلية',
     'solutions.training.desc':
-      'تعليق وتدريب وتقييم بمستوى البحث لنماذج التعلم الآلي.',
-    'solutions.training.stat': '+100 نموذج مدرب',
-    'solutions.automation.title': 'أتمتة المكتب الخلفي',
+      'طبقات رقمية على مستوى الشارع تمنح الأحياء والمناطق التجارية ملكية وحضوراً حقيقياً على الإنترنت.',
+    'solutions.training.stat': '+10 أدلة فعّالة',
+    'solutions.automation.title': 'أتمتة سير العمل',
     'solutions.automation.desc':
-      'أتمت العمل المعقد أو الممل. تعامل مع البيانات الفوضوية بدقة.',
-    'solutions.automation.stat': '70% تقليل في الوقت',
-    'solutions.contact.title': 'مركز اتصال ذكي',
+      'أتمت العمل المعقد أو الممل الذي ي bury فريقك. ذكاء اصطناعي مفتوح المصدر مع بقاء الإنسان في الحلقة.',
+    'solutions.automation.stat': '70% وفّر في الوقت',
+    'solutions.contact.title': 'GEO وظهور الذكاء الاصطناعي',
     'solutions.contact.desc':
-      'بيانات موحدة وضمان جودة آلي وتحليل المشاعر ووكلاء صوت بالذكاء الاصطناعي.',
-    'solutions.contact.stat': '3x مكاسب في الكفاءة',
+      'هيكل بيانات عملك حتى يجدك محركات بحث الذكاء الاصطناعي ومساعدو LLM ويستشهدوا بك ويوصوا بك.',
+    'solutions.contact.stat': '3x أكثر ظهوراً',
 
-    // Services (from Solutions page)
+    // Services
     'services.title': 'مشاريع حقيقية. عمل حقيقي. نتائج حقيقية.',
     'services.subtitle': 'من الاستراتيجية وهيكلة الأعمال إلى المنصات الرقمية والذكاء الاصطناعي — نقدم ما تحتاجه أعمالك فعلاً.',
     'services.hustleBasics.name': 'Hustle Basics',
     'services.hustleBasics.tag': 'كتاب ودليل',
     'services.hustleBasics.desc': 'مجموعة الأدوات الأساسية لرواد الأعمال والمستقلين وأصحاب الأعمال الصغيرة. حوّل الفوضى إلى وضوح والأفكار إلى عمل.',
     'services.hustleBasics.cta': 'اعرف المزيد',
-    'services.pm.name': 'مدير المشاريع',
-    'services.pm.tag': 'تنفيذ الأعمال',
-    'services.pm.desc': 'منصتنا لإدارة المشاريع والتنفيذ — هيكل مبادراتك وتتبع التقدم وانتقل من التخطيط إلى التنفيذ.',
+    'services.pm.name': 'تنفيذ المشاريع',
+    'services.pm.tag': 'تسليم الأعمال',
+    'services.pm.desc': 'هيكل مبادراتك وتتبع التقدم وانتقل من التخطيط إلى التنفيذ باتساق. بدون تخمين.',
     'services.pm.cta': 'الوصول إلى المنصة',
     'services.portal.name': 'HustlePortal™',
     'services.portal.tag': 'إطلاق رقمي',
@@ -1223,34 +1296,34 @@ export const translations: Translations = {
     'services.local.cta': 'استكشف BH LOCAL',
     'services.strategy.name': 'الاستراتيجية والهيكلة',
     'services.strategy.tag': 'استشارات',
-    'services.strategy.desc': 'انتقل من الأفكار إلى نماذج أعمال واضحة واستراتيجيات وهيكل تشغيلي يجذب التمويل ويمكّن النمو.',
+    'services.strategy.desc': 'انتقل من الأفكار والرؤية إلى نماذج أعمال واضحة واستراتيجيات وهيكل تشغيلي يجذب التمويل ويمكّن النمو.',
     'services.strategy.cta': 'استكشف الحلول',
     'services.clients.title': 'موثوق من قبل مؤسسي القطاعات المختلفة',
-    'services.clients.subtitle': 'من الصحة والتكنولوجيا إلى الصناعات الإبداعية — نحقق نتائج حيث يهم.',
+    'services.clients.subtitle': 'من العافية والرعاية الصحية إلى الغذاء والسفر والتجزئة — نحقق نتائج حيث يهم.',
     'services.clients.collab': 'بالتعاون مع Afrocentric Solutions',
 
     // About
     'about.quote':
       'فكر في التكنولوجيا كفعل، لا كاسم. هي توفر الأدوات، والأشخاص المبدعون يوفرون الخيال.',
-    'about.quoteAuthor': '— ريد بيرنز',
+    'about.quoteAuthor': '— Tselakgosi Jacob Seatlholo، المؤسس',
     'about.description':
-      'بيزنس هاسل هي مزود كامل لحلول الذكاء الاصطناعي والتحول الرقمي للشركات الأفريقية. من تطوير وكلاء الذكاء الاصطناعي المتخصصين إلى هندسة منصات البيانات، نتولى كل شيء.',
-    'about.founded': 'تأسست في جنوب أفريقيا، تخدم القارة.',
-    'about.learnStory': 'تعرف على قصتنا',
+      'بيزنس هاسل هي وكالة جنوب أفريقية هجينة للبنية الرقمية التحتية وعمليات الذكاء الاصطناعي الاستراتيجية. نربط تجارة الشارع المحلية وتكنولوجيا الذكاء الاصطناعي المتقدمة — نبني الأدلة، نؤتمت سير العمل، وندرب الجيل القادم من مشغلي الذكاء الاصطناعي. مبنية على مبادئ Batho Pele: عملية وشفافة ونتائجية.',
+    'about.founded': 'تأسست بواسطة Tselakgosi Jacob Seatlholo. جزء من Simple Eternity Holdings (Pty) Ltd.',
+    'about.learnStory': 'قصتنا',
     'about.builtIn': 'بُنيت في',
     'about.forAfrica': 'لأفريقيا',
 
-    // Testimonials
+    // Testimonials (kept in English — direct client quotes)
     'testimonials.title': 'ماذا يقول شركاؤنا',
-    'testimonials.quote1': "منحت حلول الذكاء الاصطناعي من Business Hustle شركة Ubuntu البنية الرقمية التي كنا نحتاجها. سير العمل لدينا أصبح أسرع وأذكى ومتحولًا بالكامل.",
+    'testimonials.quote1': "Business Hustle's AI solutions gave Ubuntu the digital backbone we needed. Our workflow is faster, smarter, and completely transformed.",
     'testimonials.author1': 'Ubuntu',
-    'testimonials.role1': 'العافية ونمط الحياة',
-    'testimonials.quote2': "من اليوم الأول فهموا رؤيتنا. تعمل Gabonewe الآن بأنظمة ذكية توفر علينا ساعات كل أسبوع.",
+    'testimonials.role1': 'Wellness & Lifestyle',
+    'testimonials.quote2': "From day one they understood our vision. Gabonewe now runs on intelligent systems that save us hours every week.",
     'testimonials.author2': 'Gabonewe',
-    'testimonials.role2': 'المشاريع والتطوير',
-    'testimonials.quote3': "بسّطت منصتهم حجوزات المرضى واتصالاتنا. لم يكن عيادة د. ويندی ديكز أكثر كفاءة من أي وقت مضى.",
+    'testimonials.role2': 'Projects & Development',
+    'testimonials.quote3': "Their AI platform streamlined our patient booking and communications. Dr Wendy Dicks' practice has never been more efficient.",
     'testimonials.author3': 'Dr Wendy Dicks',
-    'testimonials.role3': 'أخصائية رعاية صحية',
+    'testimonials.role3': 'Healthcare Practitioner',
 
     // Resources
     'resources.badge': 'منتقاة للبنائين',
@@ -1263,18 +1336,23 @@ export const translations: Translations = {
     'resources.clearFilters': 'مسح الفلاتر',
 
     // Newsletter / Contact
-    'contact.title1': 'مستعد لجعل الذكاء الاصطناعي حقيقة',
-    'contact.title2': 'لعملك؟',
+    'contact.title1': 'مستعد لوضع التكنولوجيا في العمل؟',
+    'contact.title2': 'لنتحدث.',
     'contact.subtitle':
-      'انضم إلى أكثر من 5,000 قائد أعمال أفريقي يتلقون رؤى في طليعة الذكاء الاصطناعي المؤسسي.',
+      'انضم إلى رواد الأعمال وقادة الأعمال في جنوب أفريقيا الحاصلين على رؤى عملية حول البنية الرقمية وعمليات الذكاء الاصطناعي.',
     'contact.placeholder': 'أدخل بريدك الإلكتروني',
     'contact.subscribe': 'اشترك',
     'contact.noSpam': 'لا رسائل مزعجة. إلغاء الاشتراك في أي وقت.',
 
     // Footer
     'footer.brandDesc':
-      'بنية تحتية للذكاء الاصطناعي وحلول أتمتة مبنية للشركات الأفريقية. جزء من Simple Eternity Holdings (Pty) Ltd.',
-    'footer.platform': 'المنصة',
+      'بنية تحتية رقمية على مستوى الشارع وعمليات ذكاء اصطناعي لرواد الأعمال في جنوب أفريقيا. جزء من Simple Eternity Holdings (Pty) Ltd.',
+    'footer.services': 'الخدمات',
+    'footer.serviceLinks.geo': 'تحسين GEO',
+    'footer.serviceLinks.s2s': 'أتمتة S2S',
+    'footer.serviceLinks.talent': 'خطوط المواهب',
+    'footer.serviceLinks.local': 'الأدلة المحلية',
+    'footer.serviceLinks.automation': 'أتمتة سير العمل',
     'footer.company': 'الشركة',
     'footer.legal': 'قانوني',
     'footer.about': 'حول',
@@ -1285,6 +1363,7 @@ export const translations: Translations = {
     'footer.privacy': 'سياسة الخصوصية',
     'footer.terms': 'شروط الخدمة',
     'footer.cookies': 'سياسة ملفات تعريف الارتباط',
+    'footer.paia': 'دليل PAIA (POPIA)',
     'footer.copyright':
       '© 2025 Business Hustle Ltd. جميع الحقوق محفوظة. جزء من Simple Eternity Holdings (Pty) Ltd.',
   },

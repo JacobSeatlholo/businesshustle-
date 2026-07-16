@@ -6,7 +6,6 @@ import {
   Database,
   Workflow,
   Users,
-  Activity,
   Bot,
   Landmark,
   Heart,
@@ -537,41 +536,36 @@ export default function Home() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {[
                 {
-                  icon: Database,
-                  name: 'Vortex',
-                  tag: t('platform.vortex.tag'),
-                  description:
-                    t('platform.vortex.desc'),
+                  icon: Globe,
+                  name: t('platform.card1.name'),
+                  tag: t('platform.card1.tag'),
+                  description: t('platform.card1.desc'),
+                },
+                {
+                  icon: Target,
+                  name: t('platform.card2.name'),
+                  tag: t('platform.card2.tag'),
+                  description: t('platform.card2.desc'),
                 },
                 {
                   icon: Workflow,
-                  name: 'Flux',
-                  tag: t('platform.flux.tag'),
-                  description:
-                    t('platform.flux.desc'),
+                  name: t('platform.card3.name'),
+                  tag: t('platform.card3.tag'),
+                  description: t('platform.card3.desc'),
+                },
+                {
+                  icon: Database,
+                  name: t('platform.card4.name'),
+                  tag: t('platform.card4.tag'),
+                  description: t('platform.card4.desc'),
                 },
                 {
                   icon: Users,
-                  name: 'Nexus',
-                  tag: t('platform.nexus.tag'),
-                  description:
-                    t('platform.nexus.desc'),
+                  name: t('platform.card5.name'),
+                  tag: t('platform.card5.tag'),
+                  description: t('platform.card5.desc'),
                 },
-                {
-                  icon: Activity,
-                  name: 'Pulse',
-                  tag: t('platform.pulse.tag'),
-                  description:
-                    t('platform.pulse.desc'),
-                },
-                {
-                  icon: Bot,
-                  name: 'Axon',
-                  tag: t('platform.axon.tag'),
-                  description:
-                    t('platform.axon.desc'),
-                },
-              ].map((item, i) => (
+              ].map((item) => (
                 <AnimatedSection key={item.name}>
                   <motion.div
                     whileHover={{ y: -4 }}
@@ -1124,11 +1118,11 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Platform */}
+            {/* Services */}
             <div>
-              <h4 className="text-sm font-semibold mb-4">{t('footer.platform')}</h4>
+              <h4 className="text-sm font-semibold mb-4">{t('footer.services')}</h4>
               <ul className="space-y-2.5">
-                {['Vortex', 'Flux', 'Nexus', 'Pulse', 'Axon'].map((link) => (
+                {[t('footer.serviceLinks.geo'), t('footer.serviceLinks.s2s'), t('footer.serviceLinks.talent'), t('footer.serviceLinks.local'), t('footer.serviceLinks.automation')].map((link) => (
                   <li key={link}>
                     <a
                       href="#"
@@ -1174,6 +1168,16 @@ export default function Home() {
                     </a>
                   </li>
                 ))}
+                <li>
+                  <a
+                    href="https://app.businesshustle.co.za/wp-content/uploads/2025/12/BHW-PAIA-Manual-Integrated-with-POPIA.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    {t('footer.paia')}
+                  </a>
+                </li>
               </ul>
             </div>
           </div>

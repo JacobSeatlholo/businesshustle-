@@ -16,39 +16,42 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Business Hustle | AI Solutions for African Enterprises",
+  title: "Business Hustle | Digital Infrastructure & AI Operations for South Africa",
   icons: {
     icon: [
       { url: "/icon.svg", type: "image/svg+xml" },
     ],
   },
   description:
-    "Business Hustle transforms African businesses with AI-powered automation, intelligent agents, and data platforms. From your first idea to your first AI-powered revenue — we build the infrastructure that makes AI work.",
+    "Business Hustle builds street-level digital infrastructure and AI operations for South African entrepreneurs. Grounded in Batho Pele principles — from local directories and GEO optimisation to open-source AI workflow automation.",
   keywords: [
     "Business Hustle",
-    "AI solutions",
-    "African enterprises",
-    "AI automation",
-    "machine learning",
-    "intelligent agents",
-    "data platform",
+    "digital infrastructure",
+    "AI operations",
+    "GEO optimisation",
+    "South African business",
+    "Batho Pele",
+    "S2S automation",
+    "local digital directories",
+    "AI operators",
+    "Mafikeng Innovation Hub",
+    "KloofStreet",
+    "open-source AI",
     "South Africa",
-    "enterprise AI",
-    "digital transformation",
   ],
-  authors: [{ name: "Business Hustle Ltd" }],
+  authors: [{ name: "Tselakgosi Jacob Seatlholo" }, { name: "Business Hustle Ltd" }],
   openGraph: {
-    title: "Business Hustle | AI Solutions for African Enterprises",
+    title: "Business Hustle | Digital Infrastructure & AI Operations for South Africa",
     description:
-      "Transform your business with AI-powered automation, intelligent agents, and enterprise-grade data platforms.",
+      "Street-level digital infrastructure and AI operations for South African entrepreneurs. Grounded in Batho Pele principles.",
     siteName: "Business Hustle",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Business Hustle | AI Solutions for African Enterprises",
+    title: "Business Hustle | Digital Infrastructure & AI Operations for South Africa",
     description:
-      "Transform your business with AI-powered automation, intelligent agents, and enterprise-grade data platforms.",
+      "Street-level digital infrastructure and AI operations for South African entrepreneurs. Grounded in Batho Pele principles.",
   },
 };
 

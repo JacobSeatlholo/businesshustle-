@@ -1,114 +1,122 @@
-# Business Hustle - AI Solutions for African Enterprises
+# Business Hustle - Street-Level Digital Infrastructure & AI Operations
 # https://businesshustle.co.za
 # Last updated: 2025
 
-> Business Hustle transforms African businesses with AI-powered automation, intelligent agents, and enterprise-grade data platforms. Founded in South Africa, serving the continent. Part of Simple Eternity Holdings (Pty) Ltd.
+> Business Hustle is a South African hybrid digital infrastructure and strategic AI operations agency founded by Tselakgosi Jacob Seatlholo. Grounded in Batho Pele principles, the company bridges street-level local commerce and frontier AI technology. Part of Simple Eternity Holdings (Pty) Ltd.
 
 ## About
 
-Business Hustle is a complete AI solutions and digital transformation provider for African enterprises. From specialised AI agent development to data platform architecture, the company builds the infrastructure that makes AI work for businesses across the continent.
+Business Hustle builds digital infrastructure and AI operations for South African entrepreneurs. The company runs a dual-engine model: street-level digital infrastructure that gives local businesses digital ownership, and AI operations that automate messy enterprise workflows — with skilled humans in the loop.
 
-The company provides AI infrastructure for African businesses — building systems that transform data and manual processes into intelligent, agent-ready workflows. Their approach is: "Building Blocks, Not Black Boxes." Deploy on your existing stack, configure for your operations, train on your data.
+The company believes that as the world transitions to AI-driven search and automated workflows, local businesses cannot be left invisible, and local youth must be the ones building the infrastructure. Grounded, authentic, and highly technical without being pretentious.
 
-## Platform Products
+## Dual-Engine Model
 
-### Vortex — Data Platform
-Get your messy, multi-source data machine-ready. Pulls scattered data into one governed, AI-ready platform.
+### Pillar A: Local Digital Infrastructure & GEO (The Now)
 
-### Flux — Process Builder
-Document manual workflows for automation. Visual map of how work gets done, running every step automatically.
+Building street-level digital layers and directories (e.g., KloofStreet.online) using open-source tools to give local businesses digital ownership. Optimising for Generative Engine Optimization (GEO) — structuring local business data so AI models and LLM assistants can easily read, cite, and recommend them.
 
-### Nexus — Expert Network
-A curated network of vetted AI specialists and domain experts deployed on demand for your projects.
+### Pillar B: AI & Data Operations (The Next)
 
-### Pulse — Evaluations
-Run rigorous evaluation for quality, safety, and accuracy. Measure AI performance against your actual use cases.
+Running a "Services-to-Software" (S2S) operation that automates messy enterprise workflows using open-source AI, keeping skilled human minds in the loop for critical decision-making. Building high-leverage talent pipelines — in partnership with Mafikeng Innovation Hub and the Western Cape Government, training local youth to become elite AI operators, data curators, and RLHF specialists.
 
-### Axon — AI Agents
-Build governed AI agents that mirror your workflows. Deploy agents that hand off finished results to your systems.
+## What We Build
 
-## How It Works
+### Local Digital Infrastructure
+Street-level digital layers and directories using open-source tools. Think KloofStreet.online — local businesses get digital ownership, not just a website. (Pillar A — The Now)
 
-1. **Discover** — Audit data, workflows, and operations to identify where AI creates the most impact.
-2. **Build** — Design, train, and deploy custom AI solutions integrated with existing systems.
-3. **Scale** — Monitor, evaluate, and continuously improve. AI infrastructure grows as the business evolves.
+### GEO Optimisation
+Structure local business data so AI models and LLM assistants can read, cite, and recommend them. No local business gets left invisible. (Pillar A — Discovery)
+
+### S2S Workflow Automation
+Services-to-Software operation that automates messy enterprise workflows using open-source AI. Skilled humans stay in the loop for critical decisions. (Pillar B — The Next)
+
+### AI Data Operations
+Data curation, RLHF, and model evaluation. Training local youth to become elite AI operators and data specialists. (Pillar B — Intelligence)
+
+### Talent Pipelines
+In partnership with Mafikeng Innovation Hub and the Western Cape Government, building high-leverage talent pipelines for Africa's AI economy. (People First)
+
+## How We Work
+
+1. **Listen & Audit** — Understand your business — your data, workflows, and where technology creates the most leverage. No assumptions, no fluff.
+2. **Build & Integrate** — Design and deploy practical solutions using open-source tools, integrated with existing systems. You own everything we build.
+3. **Train & Scale** — Upskill your team and refine operations. Infrastructure grows with your business — no vendor lock-in.
 
 ## Industries Served
 
-- **Financial Services** — Compliance, risk, and customer insight — AI that meets regulatory demands.
+- **Financial Services** — Compliance, risk, and client insight — practical AI that meets regulatory demands.
 - **Healthcare** — Custom AI for healthcare operations, diagnostics support, and patient flow.
 - **Mining & Energy** — Catch hazards, cut losses, prevent downtime with predictive intelligence.
 - **Agriculture** — Forecast yields, optimise supply chains, and monitor crops with computer vision.
-- **Retail & E-commerce** — Forecast demand, automate inventory, and personalise customer experiences.
+- **Retail & E-commerce** — Forecast demand, automate stock, and personalise the customer experience.
 - **Logistics** — Route optimisation, fleet management, and real-time supply chain visibility.
-- **Public Sector** — Cut red tape, connect systems, and serve citizens better with AI.
+- **Public Sector** — Connect systems, cut red tape, and serve citizens better with practical technology.
 - **Education** — Personalised learning paths, automated assessment, and institutional analytics.
 
-## Featured Solutions
+## Solutions
 
-### AI Training & Data
-Research-grade annotation, training, and evaluation for machine learning models. 100+ Models Trained.
+### Local Digital Directories
+Street-level digital layers that give neighbourhoods and business districts real online ownership and visibility. 10+ Directories Live.
 
-### Back-Office Automation
-Automate complex or tedious work that buries your team. Handle messy data with precision. 70% Time Reduction.
+### Workflow Automation
+Automate complex or tedious work that buries your team. Open-source AI with humans in the loop. 70% Time Saved.
 
-### Intelligent Contact Centre
-Unified data, automated QA, sentiment analysis, and AI voice agents. 3x Efficiency Gains.
+### GEO & AI Visibility
+Structure your business data so AI search engines and LLM assistants find, cite, and recommend you. 3x More Discoverable.
 
-## Services & Solutions
+## Services
 
-Real Projects. Real Work. Real Outcomes. Business Hustle is a delivery-first business development partner working across wellness, technology, creative industries, NPOs, and small businesses.
+Real Projects. Real Work. Real Outcomes.
 
 ### Hustle Basics — Book & Guide
-The essential entry-level toolkit for entrepreneurs, freelancers, and small business owners. Clarity frameworks, foundational planning tools, essential strategy & systems. Turns overwhelm into clarity, ideas into action.
+The essential toolkit for entrepreneurs, freelancers, and small business owners. Turns overwhelm into clarity, ideas into action.
 
-### Business Hustle Project Manager — Business Execution
-A project management and execution platform built around how entrepreneurs and small teams actually operate. Structure business initiatives, break strategy into actionable tasks, track progress, and move from planning to execution consistently.
+### Project Execution — Business Delivery
+Structure business initiatives, track progress, move from planning to execution consistently. No guesswork.
 
 ### HustlePortal™ — Digital Launch
-A professionally designed, SEO-ready landing page solution for entrepreneurs, startups, and SMEs in South Africa. Credible online presence for only R1,850/year. Turns visitors into enquiries and customers.
+Professionally designed, SEO-ready landing pages for South African businesses. R1,850/year.
 
 ### BH LOCAL — Neighbourhood Empowerment
-An initiative to champion, elevate, and digitally empower neighbourhoods, streets, and business districts across South Africa. Flagship project: KloofStreet.online — the digital heart of Cape Town's most vibrant street.
+Digitally empowering neighbourhoods, streets, and business districts across South Africa. Flagship: KloofStreet.online.
 
-### Strategy & Business Structuring — Consulting
-Move from ideas and vision to clear business models, strategies, and operational structure. Business strategy and planning, service and offer structuring, business model refinement, governance and operational frameworks.
+### Strategy & Structuring — Consulting
+Move from ideas to clear business models, strategies, and operational structure that attract funding and enable growth.
 
-### Notable Clients
-Ubuntu Wellness, Office of Dr Koketso Rakhudu, Gabonewe Projects, Institute of Kemetic & Marcus Garvey Studies.
+## Clients
+
+Ubuntu, Gabonewe, Institute of Kemetic & Marcus Garvey Studies, body vision.online, sunshinefoods.co.za, Smoothie On The Go, On-Safari, Postnet Gardens, Just Hearing, Dr Wendy Dicks, Honest Travel Experience.
+
+In collaboration with Afrocentric Solutions.
 
 ## Key Metrics
 
-- 50+ Businesses Transformed
+- 50+ Businesses Served
 - 98% Client Retention
-- 24/7 AI Operations
+- 24 AI Operators Trained
 
 ## Resources Hub
 
-Business Hustle provides a curated hub of 120+ tools and resources across 21 categories for builders and entrepreneurs, covering:
+120+ curated tools and resources across 21 categories for builders and entrepreneurs, covering design, AI/ML, no-code, analytics, DevOps, productivity, marketing, cloud, and more.
 
-- Design & UI tools
-- AI & Machine Learning platforms
-- No-code & Low-code builders
-- Analytics & Data tools
-- DevOps & Infrastructure
-- Productivity & Collaboration
-- Marketing & Growth
-- Cloud & Hosting
-- And 13 more categories
+## Compliance
+
+- PAIA Manual (Integrated with POPIA): https://app.businesshustle.co.za/wp-content/uploads/2025/12/BHW-PAIA-Manual-Integrated-with-POPIA.pdf
 
 ## Contact
 
 - Website: https://businesshustle.co.za
 - Company: Business Hustle Ltd (Part of Simple Eternity Holdings (Pty) Ltd)
+- Founder: Tselakgosi Jacob Seatlholo
 - Location: South Africa, serving the African continent
 - Available languages: English, Afrikaans, isiZulu, French, Portuguese, Swahili, Arabic
 
 ## Navigation
 
-- [Platform](#platform) — AI infrastructure products
-- [Solutions](#solutions) — Featured enterprise solutions
-- [Industries](#industries) — Sectors served across Africa
+- [What We Build](#what-we-build) — Dual-engine: local digital infrastructure and AI operations
+- [Solutions](#solutions) — Featured solutions and outcomes
+- [Industries](#industries) — Sectors served across South Africa
 - [Resources](#resources) — 120+ curated tools for builders
-- [About](#about) — Company story and mission
-- [Contact](#contact) — Get in touch and book a demo
+- [About](#about) — Company story and founder
+- [Contact](#contact) — Get in touch and get started
