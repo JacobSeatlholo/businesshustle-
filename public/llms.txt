@@ -2,13 +2,13 @@
 # https://businesshustle.co.za
 # Last updated: 2025
 
-> Business Hustle is a South African hybrid digital infrastructure and strategic AI operations agency founded by Tselakgosi Jacob Seatlholo. Grounded in Batho Pele principles, the company bridges street-level local commerce and frontier AI technology. Part of Simple Eternity Holdings (Pty) Ltd.
+> Business Hustle is a South African hybrid digital infrastructure and strategic AI operations agency founded by Tselakgosi Jacob Seatlholo. Grounded in Batho Pele principles, the company bridges street-level local commerce and frontier AI technology. Product of Simple Eternity Holdings (Pty) Ltd.
 
 ## About
 
 Business Hustle builds digital infrastructure and AI operations for South African entrepreneurs. The company runs a dual-engine model: street-level digital infrastructure that gives local businesses digital ownership, and AI operations that automate messy enterprise workflows — with skilled humans in the loop.
 
-The company believes that as the world transitions to AI-driven search and automated workflows, local businesses cannot be left invisible, and local youth must be the ones building the infrastructure. Grounded, authentic, and highly technical without being pretentious.
+The company believes that as the world transitions to AI-driven search and automated workflows, local businesses cannot be left invisible, and local youth must be the ones building the infrastructure. Grounded, authentic, and highly technical without being pretentious. Tagline: Explore. Adapt. Evolve.
 
 ## Dual-Engine Model
 
@@ -35,7 +35,7 @@ Services-to-Software operation that automates messy enterprise workflows using o
 Data curation, RLHF, and model evaluation. Training local youth to become elite AI operators and data specialists. (Pillar B — Intelligence)
 
 ### Talent Pipelines
-In partnership with Mafikeng Innovation Hub and the Western Cape Government, building high-leverage talent pipelines for Africa's AI economy. (People First)
+Training local youth as AI operators, data curators, and RLHF specialists — in partnership with Mafikeng Innovation Hub and the Western Cape Government. (People First)
 
 ## How We Work
 
@@ -43,7 +43,9 @@ In partnership with Mafikeng Innovation Hub and the Western Cape Government, bui
 2. **Build & Integrate** — Design and deploy practical solutions using open-source tools, integrated with existing systems. You own everything we build.
 3. **Train & Scale** — Upskill your team and refine operations. Infrastructure grows with your business — no vendor lock-in.
 
-## Industries Served
+## Built for How Business Works
+
+Practical digital infrastructure and AI for the sectors that drive the economy.
 
 - **Financial Services** — Compliance, risk, and client insight — practical AI that meets regulatory demands.
 - **Healthcare** — Custom AI for healthcare operations, diagnostics support, and patient flow.
@@ -107,8 +109,9 @@ In collaboration with Afrocentric Solutions.
 ## Contact
 
 - Website: https://businesshustle.co.za
-- Company: Business Hustle Ltd (Part of Simple Eternity Holdings (Pty) Ltd)
+- Company: Business Hustle Ltd (Product of Simple Eternity Holdings (Pty) Ltd)
 - Founder: Tselakgosi Jacob Seatlholo
+- Quote: "Think of technology as a verb, not a noun. It provides the tools, creative people provide the imagination." — Red Burns
 - Location: South Africa, serving the African continent
 - Available languages: English, Afrikaans, isiZulu, French, Portuguese, Swahili, Arabic
 

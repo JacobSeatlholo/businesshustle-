@@ -243,3 +243,25 @@ Stage Summary:
 - llms.txt updated for LLM/SEO discoverability
 - Dev server compiles cleanly, all elements verified in browser
 
+---
+Task ID: 12
+Agent: Main Agent
+Task: Specific copy refinements per user feedback
+
+Work Log:
+- Attempted to fetch Google reviews via web search, page reader, DuckDuckGo, Bing, and agent-browser — all blocked by Google CAPTCHA/anti-bot measures
+- Reverted hero badge from "People First. Build. Automate." back to "Explore. Adapt. Evolve." across all 7 languages
+- Reverted hero title2 from "to AI-Ready Operations" back to "for African Business" across all 7 languages
+- Rewrote talent pipelines card: from marketing-heavy copy to grounded "We train local youth as AI operators, data curators, and RLHF specialists — in partnership with Mafikeng Innovation Hub and the Western Cape Government." across all 7 languages
+- Changed industries title from "Built for How South Africa Works" to "Built for How Business Works" across all 7 languages
+- Updated industries subtitle to match (removed "our" from "our economy")
+- Reverted quote author from "Tselakgosi Jacob Seatlholo, Founder" back to "— Red Burns" across all 7 languages
+- Changed "Part of" to "Product of" Simple Eternity Holdings in 21 occurrences (about.founded, footer.brandDesc, footer.copyright × 7 languages)
+- Updated llms.txt: talent pipelines, industries heading, "Product of", Red Burns quote, tagline
+- Verified all 9 changes pass in Agent Browser
+
+Stage Summary:
+- All copy changes applied and verified
+- Google reviews could NOT be accessed (server IP blocked by Google) — testimonials remain as-is, user needs to paste them manually
+- llms.txt updated for consistency
+

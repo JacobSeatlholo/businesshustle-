@@ -34,9 +34,9 @@ export const translations: Translations = {
     'nav.openMenu': 'Open menu',
 
     // Hero
-    'hero.badge': 'People First. Build. Automate.',
+    'hero.badge': 'Explore. Adapt. Evolve.',
     'hero.title1': 'From Street-Level Commerce',
-    'hero.title2': 'to AI-Ready Operations',
+    'hero.title2': 'for African Business',
     'hero.subtitle':
       'We bridge local business and frontier AI technology. From neighbourhood directories to open-source workflow automation — grounded in Batho Pele principles.',
     'hero.cta1': 'Get Started',
@@ -71,7 +71,7 @@ export const translations: Translations = {
     'platform.card5.name': 'Talent Pipelines',
     'platform.card5.tag': 'People First',
     'platform.card5.desc':
-      'In partnership with Mafikeng Innovation Hub and the Western Cape Government, we build high-leverage talent pipelines for Africa\'s AI economy.',
+      'We train local youth as AI operators, data curators, and RLHF specialists — in partnership with Mafikeng Innovation Hub and the Western Cape Government.',
     'platform.learnMore': 'Learn more',
 
     // How it works
@@ -87,8 +87,8 @@ export const translations: Translations = {
       'We upskill your team and refine operations. Your infrastructure grows with your business — no vendor lock-in.',
 
     // Industries
-    'industries.title': 'Built for How South Africa Works',
-    'industries.subtitle': 'Practical digital infrastructure and AI for the sectors that drive our economy.',
+    'industries.title': 'Built for How Business Works',
+    'industries.subtitle': 'Practical digital infrastructure and AI for the sectors that drive the economy.',
     'industries.finance': 'Financial Services',
     'industries.finance.desc': 'Compliance, risk, and client insight — practical AI that meets regulatory demands.',
     'industries.health': 'Healthcare',
@@ -151,10 +151,10 @@ export const translations: Translations = {
     // About
     'about.quote':
       'Think of technology as a verb, not a noun. It provides the tools, creative people provide the imagination.',
-    'about.quoteAuthor': '— Tselakgosi Jacob Seatlholo, Founder',
+    'about.quoteAuthor': '— Red Burns',
     'about.description':
       'Business Hustle is a South African hybrid digital infrastructure and strategic AI operations agency. We bridge street-level local commerce and frontier AI technology — building directories, automating workflows, and training the next generation of AI operators. Grounded in Batho Pele principles: practical, transparent, and results-driven.',
-    'about.founded': 'Founded by Tselakgosi Jacob Seatlholo. Part of Simple Eternity Holdings (Pty) Ltd.',
+    'about.founded': 'Founded by Tselakgosi Jacob Seatlholo. Product of Simple Eternity Holdings (Pty) Ltd.',
     'about.learnStory': 'Our Story',
     'about.builtIn': 'Built in',
     'about.forAfrica': 'for Africa',
@@ -192,7 +192,7 @@ export const translations: Translations = {
 
     // Footer
     'footer.brandDesc':
-      'Street-level digital infrastructure and AI operations for South African entrepreneurs. Part of Simple Eternity Holdings (Pty) Ltd.',
+      'Street-level digital infrastructure and AI operations for South African entrepreneurs. Product of Simple Eternity Holdings (Pty) Ltd.',
     'footer.services': 'Services',
     'footer.serviceLinks.geo': 'GEO Optimisation',
     'footer.serviceLinks.s2s': 'S2S Automation',
@@ -211,7 +211,7 @@ export const translations: Translations = {
     'footer.cookies': 'Cookie Policy',
     'footer.paia': 'PAIA Manual (POPIA)',
     'footer.copyright':
-      '© 2025 Business Hustle Ltd. All rights reserved. Part of Simple Eternity Holdings (Pty) Ltd.',
+      '© 2025 Business Hustle Ltd. All rights reserved. Product of Simple Eternity Holdings (Pty) Ltd.',
   },
 
   af: {
@@ -226,9 +226,9 @@ export const translations: Translations = {
     'nav.openMenu': 'Open kieslys',
 
     // Hero
-    'hero.badge': 'Mense Eerst. Bou. Outomatiseer.',
+    'hero.badge': 'Verken. Pas aan. Evolueer.',
     'hero.title1': 'Van Straatvlak Handel',
-    'hero.title2': 'na KI-Gereelde Bedrywighede',
+    'hero.title2': 'vir Afrika Besighede',
     'hero.subtitle':
       'Ons verbind plaaslike besighede met voorste KI-tegnologie. Van buurtgids tot oopbron-werkvloei-outomatisering — gegrond op Batho Pele-beginsels.',
     'hero.cta1': 'Beging Nou',
@@ -263,7 +263,7 @@ export const translations: Translations = {
     'platform.card5.name': 'Talentye Pyplyne',
     'platform.card5.tag': 'Mense Eerst',
     'platform.card5.desc':
-      'In vennootskap met Mafikeng Innovation Hub en die Wes-Kaap-regering bou ons hoë-winstalentye-pyplyne vir Afrika se KI-ekonomie.',
+      'Ons oplei plaaslike jeug as KI-operateurs, datakurators en RLHF-spesialiste — in vennootskap met Mafikeng Innovation Hub en die Wes-Kaap-regering.',
     'platform.learnMore': 'Leer meer',
 
     // How it works
@@ -279,8 +279,8 @@ export const translations: Translations = {
       'Ons verhoog u span se vaardighede en verfyn bedrywighede. U infrastruktuur groei met u besigheid — geen verkoper-sluit-in nie.',
 
     // Industries
-    'industries.title': 'Gebou vir Hoe Suid-Afrika Werk',
-    'industries.subtitle': 'Praktiese digitale infrastruktuur en KI vir die sektore wat ons ekonomie dryf.',
+    'industries.title': 'Gebou vir Hoe Besigheid Werk',
+    'industries.subtitle': 'Praktiese digitale infrastruktuur en KI vir die sektore wat die ekonomie aandryf.',
     'industries.finance': 'Finansiële Dienste',
     'industries.finance.desc': 'Nalewing, risiko en kliëntinsig — praktiese KI wat aan regulatoriese eise voldoen.',
     'industries.health': 'Gesondheidsorg',
@@ -343,10 +343,10 @@ export const translations: Translations = {
     // About
     'about.quote':
       'Dink aan tegnologie as \'n werkwoord, nie \'n selfstandige naamwoord nie. Dit verskaf die gereedskap, kreatiewe mense verskaf die verbeelding.',
-    'about.quoteAuthor': '— Tselakgosi Jacob Seatlholo, Stigter',
+    'about.quoteAuthor': '— Red Burns',
     'about.description':
       'Business Hustle is \'n Suid-Afrikaanse hibriede digitale infrastruktuur en strategiese KI-bedrywighede agentskap. Ons verbind straatsvlak plaaslike handel en voorste KI-tegnologie — bou gidse, outomatiseer werkvloei en oplei die volgende geslag KI-operateurs. Gegrond op Batho Pele-beginsels: prakties, deursigtig en resultaatgedrewe.',
-    'about.founded': 'Gestig deur Tselakgosi Jacob Seatlholo. Deel van Simple Eternity Holdings (Pty) Ltd.',
+    'about.founded': 'Gestig deur Tselakgosi Jacob Seatlholo. Produk van Simple Eternity Holdings (Pty) Ltd.',
     'about.learnStory': 'Ons Storie',
     'about.builtIn': 'Gebou in',
     'about.forAfrica': 'vir Afrika',
@@ -384,7 +384,7 @@ export const translations: Translations = {
 
     // Footer
     'footer.brandDesc':
-      'Straatvlak digitale infrastruktuur en KI-bedrywighede vir Suid-Afrikaanse entrepreneurs. Deel van Simple Eternity Holdings (Pty) Ltd.',
+      'Straatvlak digitale infrastruktuur en KI-bedrywighede vir Suid-Afrikaanse entrepreneurs. Produk van Simple Eternity Holdings (Pty) Ltd.',
     'footer.services': 'Dienste',
     'footer.serviceLinks.geo': 'GEO Optimalisering',
     'footer.serviceLinks.s2s': 'S2S Outomatisering',
@@ -403,7 +403,7 @@ export const translations: Translations = {
     'footer.cookies': 'Koekiebeleid',
     'footer.paia': 'PAIA-handleiding (POPIA)',
     'footer.copyright':
-      '© 2025 Business Hustle Ltd. Alle regte voorbehou. Deel van Simple Eternity Holdings (Pty) Ltd.',
+      '© 2025 Business Hustle Ltd. Alle regte voorbehou. Produk van Simple Eternity Holdings (Pty) Ltd.',
   },
 
   zu: {
@@ -418,9 +418,9 @@ export const translations: Translations = {
     'nav.openMenu': 'Vula imenyu',
 
     // Hero
-    'hero.badge': 'Abantu Kuqala. Yakha. Zenzise.',
+    'hero.badge': 'Hlola. Vumelanisa. Qhubeka.',
     'hero.title1': 'Kusukela Kwisitha Samaphoyisa',
-    'hero.title2': 'Kuya Kwezisebenzo Ze-AI Ezilungele',
+    'hero.title2': 'kumabhizinisi ase-Afrika',
     'hero.subtitle':
       'Siphunga amabhizinisi endaweni nomkhondo we-AI oqonde kakhulu. Kusukela kumadiresi asekuhlathini kuya kumasevisi okuzenzakalela okhululekile — okusekelwe kumigomo ka-Batho Pele.',
     'hero.cta1': 'Qala Ngoku',
@@ -455,7 +455,7 @@ export const translations: Translations = {
     'platform.card5.name': 'Izinkalo Zobulili',
     'platform.card5.tag': 'Abantu Kuqala',
     'platform.card5.desc':
-      'Ngokubambisana no-Mafikeng Innovation Hub nomphakathi weWestern Cape, sakha izinkalo zomsebenzi ezinamandla kakhulu wezomnotho we-AI e-Afrika.',
+      'Sifundisa abasha basekhaya njengo-abasebenzi be-AI, abakhiqizi bedatha kanye nabaspeshalisti be-RLHF — ngokubambisana noMafikeng Innovation Hub noMbuso weNtshonalanga Kapa.',
     'platform.learnMore': 'Funda kabanzi',
 
     // How it works
@@ -473,8 +473,8 @@ export const translations: Translations = {
     ,
 
     // Industries
-    'industries.title': 'Yakhiwe Ngendlela iNingizimu Afrika Esebenza Ngayo',
-    'industries.subtitle': 'Insiza yezobuchwepheshe ezingumphakathi namasevisi e-AI kuma-sector adlala indima enkulu kumnotho wethu.',
+    'industries.title': 'Yakhiwe Ngendlela Amabhizinisi Asebenza Ngayo',
+    'industries.subtitle': 'Insiza yezobuchwepheshe ezenziwayo ne-AI kumasektora adlula isimo sezimali.',
     'industries.finance': 'Amasevisi Ezezimali',
     'industries.finance.desc': 'Ukuzonda umthetho, isibopho, nokubona abakhasimende — i-AI esebenzayo edlula kumthetho.',
     'industries.health': 'Amasevisi Ezempilo',
@@ -537,10 +537,10 @@ export const translations: Translations = {
     // About
     'about.quote':
       'Cabanga nge-technology njengesenzo, hhayi isabizwana. Iya ngezinsiza, abantu abaqondise baya ngesibonelo.',
-    'about.quoteAuthor': '— Tselakgosi Jacob Seatlholo, Owesungula',
+    'about.quoteAuthor': '— Red Burns',
     'about.description':
       'I-Business Hustle inkampani yaseNingizimu Afrika ephatha insiza yezobuchwepheshe nokuqonda i-AI. Siphunga amabhizinisi endaweni namandla e-AI oqonde kakhulu — sakha amadiresi, sithuthela umsebenzi, futhi sifundisa abantu abaqhubekayo abasebenzi be-AI. Esekelwe kumigomo ka-Batho Pele: okusebenzayo, okucacile, nokugcizelele amaphetho.',
-    'about.founded': 'Yasungulwa ngu-Tselakgosi Jacob Seatlholo. Ingxenye ye-Simple Eternity Holdings (Pty) Ltd.',
+    'about.founded': 'Yasungulwa ngu-Tselakgosi Jacob Seatlholo. Inkalo ye-Simple Eternity Holdings (Pty) Ltd.',
     'about.learnStory': 'Ibali Lethu',
     'about.builtIn': 'Yakhiwe e-',
     'about.forAfrica': 'kanye ne- Afrika',
@@ -578,7 +578,7 @@ export const translations: Translations = {
 
     // Footer
     'footer.brandDesc':
-      'Insiza yezobuchwepheshe ezingumphakathi namasevisi e-AI kubasunguli baseNingizimu Afrika. Ingxenye ye-Simple Eternity Holdings (Pty) Ltd.',
+      'Insiza yezobuchwepheshe ezingumphakathi namasevisi e-AI kubasunguli baseNingizimu Afrika. Inkalo ye-Simple Eternity Holdings (Pty) Ltd.',
     'footer.services': 'Amasevisi',
     'footer.serviceLinks.geo': 'Ukuqondisa i-GEO',
     'footer.serviceLinks.s2s': 'Ukuzenzakalela i-S2S',
@@ -597,7 +597,7 @@ export const translations: Translations = {
     'footer.cookies': 'Inkathi Ye-Cookie',
     'footer.paia': 'I-PAIA Manual (POPIA)',
     'footer.copyright':
-      '© 2025 Business Hustle Ltd. Wonke amalungelo agodliwe. Ingxenye ye-Simple Eternity Holdings (Pty) Ltd.',
+      '© 2025 Business Hustle Ltd. Wonke amalungelo agodliwe. Inkalo ye-Simple Eternity Holdings (Pty) Ltd.',
   },
 
   fr: {
@@ -612,9 +612,9 @@ export const translations: Translations = {
     'nav.openMenu': 'Ouvrir le menu',
 
     // Hero
-    'hero.badge': 'Les Gens D\'abord. Construire. Automatiser.',
+    'hero.badge': 'Explorer. S\'adapter. Évoluer.',
     'hero.title1': 'Du Commerce de Proximité',
-    'hero.title2': 'aux Opérations Prêtes pour l\'IA',
+    'hero.title2': 'pour les Entreprises Africaines',
     'hero.subtitle':
       'Nous relions les entreprises locales et les technologies IA de pointe. Des annuaires de quartier à l\'automatisation des flux de travail en open source — fondé sur les principes Batho Pele.',
     'hero.cta1': 'Commencer',
@@ -649,7 +649,7 @@ export const translations: Translations = {
     'platform.card5.name': 'Filières de Talents',
     'platform.card5.tag': 'Les Gens D\'abord',
     'platform.card5.desc':
-      'En partenariat avec le Mafikeng Innovation Hub et le gouvernement du Cap-Occidental, nous construisons des filières de talents à fort impact pour l\'économie IA de l\'Afrique.',
+      'Nous formons les jeunes locaux en tant qu\'opérateurs IA, curateurs de données et spécialistes RLHF — en partenariat avec le Mafikeng Innovation Hub et le gouvernement du Cap-Occidental.',
     'platform.learnMore': 'En savoir plus',
 
     // How it works
@@ -665,8 +665,8 @@ export const translations: Translations = {
       'Nous montons en compétences votre équipe et affinons les opérations. Votre infrastructure grandit avec votre entreprise — pas de verrouillage fournisseur.',
 
     // Industries
-    'industries.title': 'Construit pour Comment l\'Afrique du Sud Fonctionne',
-    'industries.subtitle': 'Infrastructure numérique pratique et IA pour les secteurs qui font tourner notre économie.',
+    'industries.title': 'Conçu pour Comment Fonctionnent les Entreprises',
+    'industries.subtitle': 'Infrastructure numérique pratique et IA pour les secteurs qui font avancer l\'économie.',
     'industries.finance': 'Services financiers',
     'industries.finance.desc': 'Conformité, risque et analyse client — une IA pratique qui répond aux exigences réglementaires.',
     'industries.health': 'Santé',
@@ -729,10 +729,10 @@ export const translations: Translations = {
     // About
     'about.quote':
       'Pensez à la technologie comme un verbe, pas un nom. Elle fournit les outils, les gens créatifs fournissent l\'imagination.',
-    'about.quoteAuthor': '— Tselakgosi Jacob Seatlholo, Fondateur',
+    'about.quoteAuthor': '— Red Burns',
     'about.description':
       'Business Hustle est une agence sud-africaine hybride d\'infrastructure numérique et d\'opérations IA stratégiques. Nous relions le commerce local de proximité et la technologie IA de pointe — construisant des annuaires, automatisant les flux de travail et formant la prochaine génération d\'opérateurs IA. Fondé sur les principes Batho Pele : pratique, transparent et axé sur les résultats.',
-    'about.founded': 'Fondé par Tselakgosi Jacob Seatlholo. Partie de Simple Eternity Holdings (Pty) Ltd.',
+    'about.founded': 'Fondé par Tselakgosi Jacob Seatlholo. Produit de Simple Eternity Holdings (Pty) Ltd.',
     'about.learnStory': 'Notre Histoire',
     'about.builtIn': 'Construit en',
     'about.forAfrica': 'pour l\'Afrique',
@@ -770,7 +770,7 @@ export const translations: Translations = {
 
     // Footer
     'footer.brandDesc':
-      'Infrastructure numérique de proximité et opérations IA pour les entrepreneurs sud-africains. Partie de Simple Eternity Holdings (Pty) Ltd.',
+      'Infrastructure numérique de proximité et opérations IA pour les entrepreneurs sud-africains. Produit de Simple Eternity Holdings (Pty) Ltd.',
     'footer.services': 'Services',
     'footer.serviceLinks.geo': 'Optimisation GEO',
     'footer.serviceLinks.s2s': 'Automatisation S2S',
@@ -789,7 +789,7 @@ export const translations: Translations = {
     'footer.cookies': 'Politique de cookies',
     'footer.paia': 'Manuel PAIA (POPIA)',
     'footer.copyright':
-      '© 2025 Business Hustle Ltd. Tous droits réservés. Partie de Simple Eternity Holdings (Pty) Ltd.',
+      '© 2025 Business Hustle Ltd. Tous droits réservés. Produit de Simple Eternity Holdings (Pty) Ltd.',
   },
 
   pt: {
@@ -804,9 +804,9 @@ export const translations: Translations = {
     'nav.openMenu': 'Abrir menu',
 
     // Hero
-    'hero.badge': 'Pessoas Primeiro. Construir. Automatizar.',
+    'hero.badge': 'Explorar. Adaptar. Evoluir.',
     'hero.title1': 'Do Comércio de Rua',
-    'hero.title2': 'a Operações Prontas para IA',
+    'hero.title2': 'para Negócios Africanos',
     'hero.subtitle':
       'Conectamos negócios locais e tecnologia IA de ponta. De diretórios de bairro à automação de fluxos de trabalho em código aberto — baseado nos princípios Batho Pele.',
     'hero.cta1': 'Começar',
@@ -841,7 +841,7 @@ export const translations: Translations = {
     'platform.card5.name': 'Pipelines de Talentos',
     'platform.card5.tag': 'Pessoas Primeiro',
     'platform.card5.desc':
-      'Em parceria com o Mafikeng Innovation Hub e o Governo do Cabo Ocidental, construímos pipelines de talentos de alto impacto para a economia de IA da África.',
+      'Treinamos jovens locais como operadores de IA, curadores de dados e especialistas em RLHF — em parceria com o Mafikeng Innovation Hub e o Governo do Cabo Ocidental.',
     'platform.learnMore': 'Saiba mais',
 
     // How it works
@@ -857,8 +857,8 @@ export const translations: Translations = {
       'Capacitamos sua equipe e refinamos operações. Sua infraestrutura cresce com seu negócio — sem travamento de fornecedor.',
 
     // Industries
-    'industries.title': 'Construído para Como a África do Sul Funciona',
-    'industries.subtitle': 'Infraestrutura digital prática e IA para os setores que impulsionam nossa economia.',
+    'industries.title': 'Construído para Como os Negócios Funcionam',
+    'industries.subtitle': 'Infraestrutura digital prática e IA para os setores que impulsionam a economia.',
     'industries.finance': 'Serviços Financeiros',
     'industries.finance.desc': 'Conformidade, risco e análise de clientes — IA prática que atende demandas regulatórias.',
     'industries.health': 'Saúde',
@@ -921,10 +921,10 @@ export const translations: Translations = {
     // About
     'about.quote':
       'Pense na tecnologia como um verbo, não um substantivo. Ela fornece as ferramentas, pessoas criativas fornecem a imaginação.',
-    'about.quoteAuthor': '— Tselakgosi Jacob Seatlholo, Fundador',
+    'about.quoteAuthor': '— Red Burns',
     'about.description':
       'A Business Hustle é uma agência sul-africana híbrida de infraestrutura digital e operações estratégicas de IA. Conectamos o comércio local de rua e a tecnologia IA de ponta — construindo diretórios, automatizando fluxos de trabalho e treinando a próxima geração de operadores de IA. Baseado nos princípios Batho Pele: prático, transparente e focado em resultados.',
-    'about.founded': 'Fundada por Tselakgosi Jacob Seatlholo. Parte da Simple Eternity Holdings (Pty) Ltd.',
+    'about.founded': 'Fundada por Tselakgosi Jacob Seatlholo. Produto da Simple Eternity Holdings (Pty) Ltd.',
     'about.learnStory': 'Nossa História',
     'about.builtIn': 'Construído na',
     'about.forAfrica': 'para a África',
@@ -962,7 +962,7 @@ export const translations: Translations = {
 
     // Footer
     'footer.brandDesc':
-      'Infraestrutura digital de rua e operações de IA para empreendedores sul-africanos. Parte da Simple Eternity Holdings (Pty) Ltd.',
+      'Infraestrutura digital de rua e operações de IA para empreendedores sul-africanos. Produto da Simple Eternity Holdings (Pty) Ltd.',
     'footer.services': 'Serviços',
     'footer.serviceLinks.geo': 'Otimização GEO',
     'footer.serviceLinks.s2s': 'Automação S2S',
@@ -981,7 +981,7 @@ export const translations: Translations = {
     'footer.cookies': 'Política de Cookies',
     'footer.paia': 'Manual PAIA (POPIA)',
     'footer.copyright':
-      '© 2025 Business Hustle Ltd. Todos os direitos reservados. Parte da Simple Eternity Holdings (Pty) Ltd.',
+      '© 2025 Business Hustle Ltd. Todos os direitos reservados. Produto da Simple Eternity Holdings (Pty) Ltd.',
   },
 
   sw: {
@@ -996,9 +996,9 @@ export const translations: Translations = {
     'nav.openMenu': 'Fungua menyu',
 
     // Hero
-    'hero.badge': 'Watu Kwanza. Jenga. Otomatisha.',
+    'hero.badge': 'Chunguza. Kubali. Endelea.',
     'hero.title1': 'Kutoka Biashara ya Mtaa',
-    'hero.title2': 'hadi Uendeshaji Uliotayarishwa kwa AI',
+    'hero.title2': 'kwa Biashara za Afrika',
     'hero.subtitle':
       'Tunapunganuza biashara za ndani na teknolojia za mwisho za AI. Kutoka kwa orodha za mitaa hadi otomatiki ya mtiririko wa kazi ya chanzo huria — inayotegemea misingi ya Batho Pele.',
     'hero.cta1': 'Anza Sasa',
@@ -1033,7 +1033,7 @@ export const translations: Translations = {
     'platform.card5.name': 'Miradi ya Vipaji',
     'platform.card5.tag': 'Watu Kwanza',
     'platform.card5.desc':
-      'Kwa ushirikiano na Mafikeng Innovation Hub na Serikali ya Western Cape, tunajenga miradi ya vipaji yenye athari kubwa kwa uchumi wa AI wa Afrika.',
+      'Tunafundisha vijana wa karibu kuwa waendeshaji wa AI, wakusanyaji wa data na wataalamu wa RLHF — kwa ushirikiano na Mafikeng Innovation Hub na Serikali ya Western Cape.',
     'platform.learnMore': 'Soma zaidi',
 
     // How it works
@@ -1049,8 +1049,8 @@ export const translations: Translations = {
       'Tunaongeza ujuzi wa timu yako na kuboresha uendeshaji. Miundombinu yako inakua pamoja na biashara yako — hakuna kufungwa kwa muuzaji.',
 
     // Industries
-    'industries.title': 'Imeundwa kwa Jinsi Afrika Kusini Inavyofanya Kazi',
-    'industries.subtitle': 'Miundombinu ya kidijitali ya vitendo na AI kwa sekta zinazoendesha uchumi wetu.',
+    'industries.title': 'Imeundwa kwa Jinsi Biashara Inavyofanya Kazi',
+    'industries.subtitle': 'Miundombinu ya kidijitali ya vitendo na AI kwa sekta zinazosukuma uchumi.',
     'industries.finance': 'Huduma za Kifedha',
     'industries.finance.desc': 'Uzingatiaji, hatari, na uchambuzi wa wateja — AI ya vitendo inayotimiza mahitaji ya kanuni.',
     'industries.health': 'Afya',
@@ -1113,10 +1113,10 @@ export const translations: Translations = {
     // About
     'about.quote':
       'Fikiria teknolojia kama kitenzi, si kiumbe. Inatoa zana, watu wenye ubunifu wanaleta taswira.',
-    'about.quoteAuthor': '— Tselakgosi Jacob Seatlholo, Mwanzilishi',
+    'about.quoteAuthor': '— Red Burns',
     'about.description':
       'Business Hustle ni shirika la Afrika Kusini la hibridi la miundombinu ya kidijitali na uendeshaji wa kimkakati wa AI. Tunapunganuza biashara za ndani za mtaa na teknolojia ya mwisho ya AI — tukiijenga orodha, tukiotomatisha mtiririko wa kazi, na tukifundisha kizazi kijacho cha waendeshaji wa AI. Inayotegemea misingi ya Batho Pele: ya vitendo, wazi, na inayolenga matokeo.',
-    'about.founded': 'Ilianzishwa na Tselakgosi Jacob Seatlholo. Sehemu ya Simple Eternity Holdings (Pty) Ltd.',
+    'about.founded': 'Ilianzishwa na Tselakgosi Jacob Seatlholo. Bidhaa ya Simple Eternity Holdings (Pty) Ltd.',
     'about.learnStory': 'Hadithi Yetu',
     'about.builtIn': 'Iliyojengwa',
     'about.forAfrica': 'kwa Afrika',
@@ -1154,7 +1154,7 @@ export const translations: Translations = {
 
     // Footer
     'footer.brandDesc':
-      'Miundombinu ya kidijitali ya mtaa na uendeshaji wa AI kwa wajasiriamali wa Afrika Kusini. Sehemu ya Simple Eternity Holdings (Pty) Ltd.',
+      'Miundombinu ya kidijitali ya mtaa na uendeshaji wa AI kwa wajasiriamali wa Afrika Kusini. Bidhaa ya Simple Eternity Holdings (Pty) Ltd.',
     'footer.services': 'Huduma',
     'footer.serviceLinks.geo': 'Uboreshaji wa GEO',
     'footer.serviceLinks.s2s': 'Otomatiki ya S2S',
@@ -1173,7 +1173,7 @@ export const translations: Translations = {
     'footer.cookies': 'Sera ya Kuki',
     'footer.paia': 'Mwongozo wa PAIA (POPIA)',
     'footer.copyright':
-      '© 2025 Business Hustle Ltd. Haki zote zimehifadhiwa. Sehemu ya Simple Eternity Holdings (Pty) Ltd.',
+      '© 2025 Business Hustle Ltd. Haki zote zimehifadhiwa. Bidhaa ya Simple Eternity Holdings (Pty) Ltd.',
   },
 
   ar: {
@@ -1188,9 +1188,9 @@ export const translations: Translations = {
     'nav.openMenu': 'فتح القائمة',
 
     // Hero
-    'hero.badge': 'الناس أولاً. نبني. نؤتمت.',
+    'hero.badge': 'استكشاف. تكيّف. تطوّر.',
     'hero.title1': 'من تجارة الشارع',
-    'hero.title2': 'إلى عمليات جاهزة للذكاء الاصطناعي',
+    'hero.title2': 'لأعمال إفريقيا',
     'hero.subtitle':
       'نربط الأعمال المحلية وتكنولوجيا الذكاء الاصطناعي المتقدمة. من أدلة الأحياء إلى أتمتة سير العمل بمصدر مفتوح — مبنية على مبادئ Batho Pele.',
     'hero.cta1': 'ابدأ الآن',
@@ -1225,7 +1225,7 @@ export const translations: Translations = {
     'platform.card5.name': 'خطوط المواهب',
     'platform.card5.tag': 'الناس أولاً',
     'platform.card5.desc':
-      'بالشراكة مع Mafikeng Innovation Hub وحكومة ويسترن كيب، نبني خطوط مواهب عالية التأثير لاقتصاد الذكاء الاصطناعي في أفريقيا.',
+      'ندرب الشباب المحلي ليصبحوا مشغلي ذكاء اصطناعي ومكتبي بيانات ومتخصصين في RLHF — بالشراكة مع Mafikeng Innovation Hub وحكومة ويسترن كيب.',
     'platform.learnMore': 'اعرف المزيد',
 
     // How it works
@@ -1241,8 +1241,8 @@ export const translations: Translations = {
       'نطوّر مهارات فريقك ونحسّن العمليات. بنيتك التحتية تنمو مع عملك — بدون قفل بائع.',
 
     // Industries
-    'industries.title': 'مُصمم لكيفية عمل جنوب أفريقيا',
-    'industries.subtitle': 'بنية تحتية رقمية عملية وذكاء اصطناعي للقطاعات التي تقود اقتصادنا.',
+    'industries.title': 'مُصمم لكيفية عمل الأعمال',
+    'industries.subtitle': 'بنية تحتية رقمية عملية وذكاء اصطناعي للقطاعات التي تدفع عجلة الاقتصاد.',
     'industries.finance': 'الخدمات المالية',
     'industries.finance.desc': 'الامتثال والمخاطرورؤى العملاء — ذكاء اصطناعي عملي يلبي المتطلبات التنظيمية.',
     'industries.health': 'الرعاية الصحية',
@@ -1305,10 +1305,10 @@ export const translations: Translations = {
     // About
     'about.quote':
       'فكر في التكنولوجيا كفعل، لا كاسم. هي توفر الأدوات، والأشخاص المبدعون يوفرون الخيال.',
-    'about.quoteAuthor': '— Tselakgosi Jacob Seatlholo، المؤسس',
+    'about.quoteAuthor': '— Red Burns',
     'about.description':
       'بيزنس هاسل هي وكالة جنوب أفريقية هجينة للبنية الرقمية التحتية وعمليات الذكاء الاصطناعي الاستراتيجية. نربط تجارة الشارع المحلية وتكنولوجيا الذكاء الاصطناعي المتقدمة — نبني الأدلة، نؤتمت سير العمل، وندرب الجيل القادم من مشغلي الذكاء الاصطناعي. مبنية على مبادئ Batho Pele: عملية وشفافة ونتائجية.',
-    'about.founded': 'تأسست بواسطة Tselakgosi Jacob Seatlholo. جزء من Simple Eternity Holdings (Pty) Ltd.',
+    'about.founded': 'تأسست بواسطة Tselakgosi Jacob Seatlholo. منتج من Simple Eternity Holdings (Pty) Ltd.',
     'about.learnStory': 'قصتنا',
     'about.builtIn': 'بُنيت في',
     'about.forAfrica': 'لأفريقيا',
@@ -1346,7 +1346,7 @@ export const translations: Translations = {
 
     // Footer
     'footer.brandDesc':
-      'بنية تحتية رقمية على مستوى الشارع وعمليات ذكاء اصطناعي لرواد الأعمال في جنوب أفريقيا. جزء من Simple Eternity Holdings (Pty) Ltd.',
+      'بنية تحتية رقمية على مستوى الشارع وعمليات ذكاء اصطناعي لرواد الأعمال في جنوب أفريقيا. منتج من Simple Eternity Holdings (Pty) Ltd.',
     'footer.services': 'الخدمات',
     'footer.serviceLinks.geo': 'تحسين GEO',
     'footer.serviceLinks.s2s': 'أتمتة S2S',
@@ -1365,6 +1365,6 @@ export const translations: Translations = {
     'footer.cookies': 'سياسة ملفات تعريف الارتباط',
     'footer.paia': 'دليل PAIA (POPIA)',
     'footer.copyright':
-      '© 2025 Business Hustle Ltd. جميع الحقوق محفوظة. جزء من Simple Eternity Holdings (Pty) Ltd.',
+      '© 2025 Business Hustle Ltd. جميع الحقوق محفوظة. منتج من Simple Eternity Holdings (Pty) Ltd.',
   },
 }
