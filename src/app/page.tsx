@@ -48,7 +48,7 @@ import {
 } from '@/components/ui/sheet'
 
 /* ------------------------------------------------------------------ */
-/*  AI Opportunity Finder                                              */
+/*  Idea Generator                                              */
 /* ------------------------------------------------------------------ */
 type Idea = { title: string; description: string; impact: string }
 
@@ -88,7 +88,7 @@ function IdeaGenerator() {
             Free AI Tool
           </Badge>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
-            AI Opportunity <span className="gradient-text">Finder</span>
+            Idea <span className="gradient-text">Generator</span>
           </h2>
           <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
             Describe your business in one sentence. Our AI finds three practical
@@ -431,6 +431,7 @@ export default function Home() {
     { key: 'industries', label: t('nav.industries') },
     { key: 'resources', label: t('nav.resources') },
     { key: 'about', label: t('nav.about') },
+    { key: 'idea-generator', label: 'Idea Generator' },
     { key: 'contact', label: t('nav.contact') },
   ]
 
@@ -1123,6 +1124,102 @@ export default function Home() {
                 </div>
               </div>
             </AnimatedSection>
+          </div>
+        </section>
+
+        {/* ============================================================ */}
+        {/*  BUILT BY US, USED BY MANY                                    */}
+        {/* ============================================================ */}
+        <section id="portfolio" className="py-20 sm:py-28 bg-muted/20">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <AnimatedSection className="text-center mb-12">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
+                Built by us, <span className="gradient-text">Used by many</span>
+              </h2>
+              <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
+                We don&apos;t just build for clients — we ship and operate our own
+                platforms. Live products, real users, South African problems solved.
+              </p>
+            </AnimatedSection>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              {([
+                {
+                  name: 'KloofStreet.online',
+                  url: 'https://www.kloofstreet.online/',
+                  desc: 'Curated directory for Kloof Street — ranked #22 on Time Out\u2019s World\u2019s Coolest Streets. 50+ businesses, AI concierge.',
+                  tag: 'Hyperlocal',
+                },
+                {
+                  name: 'FundingStatsSA',
+                  url: 'https://www.fundingstatssa.online/',
+                  desc: 'Civic dashboard tracking South African development funding — verified figures, clear visualisations.',
+                  tag: 'Civic Tech',
+                },
+                {
+                  name: 'OpenTender ZA',
+                  url: 'https://www.opentender.online/',
+                  desc: 'Procurement transparency with supplier verification and trust ratings across public tenders.',
+                  tag: 'Civic Tech',
+                },
+                {
+                  name: 'PoliceData ZA',
+                  url: 'https://www.policedata.online/',
+                  desc: 'Crime statistics made accessible — real SAPS figures, interactive heat maps, launched Human Rights Day 2026.',
+                  tag: 'Civic Tech',
+                },
+                {
+                  name: 'BlackBiz',
+                  url: 'https://blackbiz.co.za/',
+                  desc: 'South Africa\u2019s Black Business Intelligence Platform — verified directory, business feed, and growth tools.',
+                  tag: 'Platform',
+                },
+                {
+                  name: 'MoveCape.online',
+                  url: 'https://www.movecape.online/',
+                  desc: 'Cape Town on the move — a hyperlocal platform connecting people to the city.',
+                  tag: 'Hyperlocal',
+                },
+              ] as { name: string; url: string; desc: string; tag: string }[]).map((p) => (
+                <a
+                  key={p.name}
+                  href={p.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group"
+                >
+                  <Card className="h-full border-border/60 bg-card/80 backdrop-blur-sm group-hover:border-gold/40 transition-colors py-0 gap-0">
+                    <CardContent className="p-6 flex flex-col gap-3 h-full">
+                      <div className="flex items-center justify-between">
+                        <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-emerald/10 text-emerald">
+                          <Globe className="size-5" />
+                        </div>
+                        <Badge variant="outline" className="text-xs border-border text-muted-foreground">
+                          {p.tag}
+                        </Badge>
+                      </div>
+                      <h3 className="font-semibold flex items-center gap-1.5">
+                        {p.name}
+                        <ExternalLink className="size-3.5 text-muted-foreground group-hover:text-gold transition-colors" />
+                      </h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed flex-1">
+                        {p.desc}
+                      </p>
+                    </CardContent>
+                  </Card>
+                </a>
+              ))}
+            </div>
+            <div className="mt-10 text-center">
+              <a
+                href="https://app.businesshustle.co.za/shop/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-sm font-medium text-gold hover:gap-2.5 transition-all"
+              >
+                Browse our online store
+                <ArrowRight className="size-4" />
+              </a>
+            </div>
           </div>
         </section>
 

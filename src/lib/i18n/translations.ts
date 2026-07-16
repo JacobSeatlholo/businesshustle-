@@ -111,7 +111,7 @@ export const translations: Translations = {
     'solutions.training.title': 'Local Digital Directories',
     'solutions.training.desc':
       'Street-level digital layers that give neighbourhoods and business districts real online ownership and visibility.',
-    'solutions.training.stat': '10+ Directories Live',
+    'solutions.training.stat': '7+ Platforms Live',
     'solutions.automation.title': 'Workflow Automation',
     'solutions.automation.desc':
       'Automate complex or tedious work that buries your team. Open-source AI with humans in the loop.',
@@ -303,7 +303,7 @@ export const translations: Translations = {
     'solutions.training.title': 'Plaaslike Digitale Gidse',
     'solutions.training.desc':
       'Straatvlak digitale lae wat buurte en besigheidsdistrikte werklike aanlyn-eienaarskap en sigbaarheid gee.',
-    'solutions.training.stat': '10+ Gidse Lewendig',
+    'solutions.training.stat': '7+ Platforms Lewendig',
     'solutions.automation.title': 'Werkvloei-outomatisering',
     'solutions.automation.desc':
       'Outomatiseer komplekse of lastige werk wat u span begrawe. Oopbron KI met mense in die lus.',
@@ -497,7 +497,7 @@ export const translations: Translations = {
     'solutions.training.title': 'Amadiresi Adijithali Endaweni',
     'solutions.training.desc':
       'Amalaya edijithali asemaphoyiseni anika amadolobha namadibhana amabhizinisi ukubamba nokubonakala ku-inthanethi.',
-    'solutions.training.stat': '10+ Amadiresi Ayasebenza',
+    'solutions.training.stat': '7+ Amapulatifomu Ayasebenza',
     'solutions.automation.title': 'Ukuzenzakalela Komsebenzi',
     'solutions.automation.desc':
       'Zenzise umsebenzi onzima noma omdala owabeka iqembu lakho. I-AI evulekile nothando lwabantu.',
@@ -689,7 +689,7 @@ export const translations: Translations = {
     'solutions.training.title': 'Annuaires Numériques Locaux',
     'solutions.training.desc':
       'Couches numériques de proximité qui donnent aux quartiers et districts commerciaux une véritable propriété et visibilité en ligne.',
-    'solutions.training.stat': '10+ Annuaires en Ligne',
+    'solutions.training.stat': '7+ Plateformes en Ligne',
     'solutions.automation.title': 'Automatisation des Flux de Travail',
     'solutions.automation.desc':
       'Automatisez le travail complexe ou fastidieux qui enterre votre équipe. IA open source avec des humains dans la boucle.',
@@ -881,7 +881,7 @@ export const translations: Translations = {
     'solutions.training.title': 'Diretórios Digitais Locais',
     'solutions.training.desc':
       'Camadas digitais de rua que dão a bairros e distritos comerciais verdadeira propriedade e visibilidade online.',
-    'solutions.training.stat': '10+ Diretórios ao Vivo',
+    'solutions.training.stat': '7+ Plataformas ao Vivo',
     'solutions.automation.title': 'Automação de Fluxos de Trabalho',
     'solutions.automation.desc':
       'Automatize trabalho complexo ou tedioso que enterra sua equipe. IA de código aberto com humanos no loop.',
@@ -1073,7 +1073,7 @@ export const translations: Translations = {
     'solutions.training.title': 'Orodha za Kidijitali za Ndani',
     'solutions.training.desc':
       'Safu za kidijitali za mtaa zinazowapa mitaa na maeneo ya biashara umiliki halisi na kuonekana kwenye mtandao.',
-    'solutions.training.stat': '10+ Orodha Ziko Hai',
+    'solutions.training.stat': '7+ Mifumo Iko Hai',
     'solutions.automation.title': 'Otomatiki ya Mtiririko wa Kazi',
     'solutions.automation.desc':
       'Otomatisa kazi ngumu au ya kuchosha inayozama timu yako. AI ya chanzo huria na binadamu katika mzunguko.',
