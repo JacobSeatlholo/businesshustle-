@@ -34,7 +34,7 @@ export const translations: Translations = {
     'nav.openMenu': 'Open menu',
 
     // Hero
-    'hero.badge': 'Building African business infrastructure since 2018',
+    'hero.badge': 'Explore. Adapt. Evolve.',
     'hero.title1': "Building Africa’s",
     'hero.title2': 'Business Operating System',
     'hero.subtitle':
@@ -226,7 +226,7 @@ export const translations: Translations = {
     'nav.openMenu': 'Open kieslys',
 
     // Hero
-    'hero.badge': 'Building African business infrastructure since 2018',
+    'hero.badge': 'Verken. Pas aan. Evolueer.',
     'hero.title1': "Building Africa’s",
     'hero.title2': 'Business Operating System',
     'hero.subtitle':
@@ -418,7 +418,7 @@ export const translations: Translations = {
     'nav.openMenu': 'Vula imenyu',
 
     // Hero
-    'hero.badge': 'Building African business infrastructure since 2018',
+    'hero.badge': 'Hlola. Vumelanisa. Qhubeka.',
     'hero.title1': "Building Africa’s",
     'hero.title2': 'Business Operating System',
     'hero.subtitle':
@@ -612,7 +612,7 @@ export const translations: Translations = {
     'nav.openMenu': 'Ouvrir le menu',
 
     // Hero
-    'hero.badge': 'Building African business infrastructure since 2018',
+    'hero.badge': 'Explorer. S\'adapter. Évoluer.',
     'hero.title1': "Building Africa’s",
     'hero.title2': 'Business Operating System',
     'hero.subtitle':
@@ -804,7 +804,7 @@ export const translations: Translations = {
     'nav.openMenu': 'Abrir menu',
 
     // Hero
-    'hero.badge': 'Building African business infrastructure since 2018',
+    'hero.badge': 'Explorar. Adaptar. Evoluir.',
     'hero.title1': "Building Africa’s",
     'hero.title2': 'Business Operating System',
     'hero.subtitle':
@@ -996,7 +996,7 @@ export const translations: Translations = {
     'nav.openMenu': 'Fungua menyu',
 
     // Hero
-    'hero.badge': 'Building African business infrastructure since 2018',
+    'hero.badge': 'Chunguza. Badilika. Endelea.',
     'hero.title1': "Building Africa’s",
     'hero.title2': 'Business Operating System',
     'hero.subtitle':
@@ -1188,7 +1188,7 @@ export const translations: Translations = {
     'nav.openMenu': 'فتح القائمة',
 
     // Hero
-    'hero.badge': 'Building African business infrastructure since 2018',
+    'hero.badge': 'استكشف. تكيّف. تطوّر.',
     'hero.title1': "Building Africa’s",
     'hero.title2': 'Business Operating System',
     'hero.subtitle':

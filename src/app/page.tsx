@@ -662,6 +662,15 @@ export default function Home() {
               </div>
             ))}
           </motion.div>
+
+          <motion.p
+            className="relative z-10 mt-8 text-center text-xs sm:text-sm uppercase tracking-[0.2em] text-muted-foreground/70"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.85 }}
+          >
+            Building African business infrastructure since 2018
+          </motion.p>
         </section>
 
         {/* ============================================================ */}
