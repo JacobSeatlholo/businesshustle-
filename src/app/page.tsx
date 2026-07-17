@@ -435,12 +435,38 @@ export default function Home() {
     { key: 'contact', label: t('nav.contact') },
   ]
 
+  const [subscribeEmail, setSubscribeEmail] = useState('')
+  const [subscribeStatus, setSubscribeStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
+  const [subscribeMessage, setSubscribeMessage] = useState('')
+
+  const handleSubscribe = async (e: FormEvent) => {
+    e.preventDefault()
+    if (subscribeStatus === 'loading') return
+    setSubscribeStatus('loading')
+    setSubscribeMessage('')
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: subscribeEmail.trim(), type: 'newsletter' }),
+      })
+      const data = await res.json()
+      if (!res.ok) throw new Error(data.error || 'Something went wrong')
+      setSubscribeStatus('success')
+      setSubscribeMessage(data.message || 'Welcome aboard!')
+      setSubscribeEmail('')
+    } catch (err) {
+      setSubscribeStatus('error')
+      setSubscribeMessage(err instanceof Error ? err.message : 'Something went wrong. Please try again.')
+    }
+  }
+
   const { count: c1, ref: r1 } = useCounter(50)
   const { count: c2, ref: r2 } = useCounter(98)
   const { count: c3, ref: r3 } = useCounter(24)
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div id="top" className="min-h-screen flex flex-col">
       {/* ============================================================ */}
       {/*  1. NAVIGATION                                                */}
       {/* ============================================================ */}
@@ -453,7 +479,7 @@ export default function Home() {
       >
         <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2.5">
+          <a href="#top" className="flex items-center gap-2.5">
             <img
               src="/logo.svg"
               alt="Business Hustle"
@@ -482,8 +508,8 @@ export default function Home() {
           <div className="hidden md:flex items-center gap-2">
             <ThemeToggle />
             <LanguageSwitcher />
-            <Button size="sm" className="rounded-full px-5">
-              {t('nav.bookDemo')}
+            <Button size="sm" className="rounded-full px-5" asChild>
+              <a href="#contact">{t('nav.bookDemo')}</a>
             </Button>
           </div>
 
@@ -521,7 +547,7 @@ export default function Home() {
                     </a>
                   ))}
                   <Separator className="my-3" />
-                  <Button className="rounded-full w-full">{t('nav.bookDemo')}</Button>
+                  <Button className="rounded-full w-full" asChild><a href="#contact">{t('nav.bookDemo')}</a></Button>
                 </div>
               </SheetContent>
             </Sheet>
@@ -708,7 +734,7 @@ export default function Home() {
                           {item.description}
                         </p>
                         <a
-                          href="#"
+                          href="#contact"
                           className="inline-flex items-center gap-1 text-sm font-medium text-emerald hover:gap-2 transition-all"
                         >
                           {t('platform.learnMore')}
@@ -984,7 +1010,7 @@ export default function Home() {
                           {svc.desc}
                         </p>
                         <a
-                          href="#"
+                          href="#contact"
                           className="inline-flex items-center gap-1 text-sm font-medium text-gold hover:gap-2 transition-all"
                         >
                           {svc.cta}
@@ -1088,7 +1114,7 @@ export default function Home() {
                     {t('about.founded')}
                   </p>
                   <a
-                    href="#"
+                    href="#contact"
                     className="inline-flex items-center gap-1.5 text-sm font-medium text-emerald hover:gap-2.5 transition-all"
                   >
                     {t('about.learnStory')}
@@ -1304,22 +1330,41 @@ export default function Home() {
                 {t('contact.subtitle')}
               </p>
               <form
-                onSubmit={(e: FormEvent) => e.preventDefault()}
+                onSubmit={handleSubscribe}
                 className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
               >
                 <Input
                   type="email"
+                  value={subscribeEmail}
+                  onChange={(e) => setSubscribeEmail(e.target.value)}
                   placeholder={t('contact.placeholder')}
                   required
+                  disabled={subscribeStatus === 'loading'}
                   className="rounded-full h-11 px-5 bg-card border-border"
                 />
-                <Button type="submit" className="rounded-full h-11 px-7 whitespace-nowrap">
-                  {t('contact.subscribe')}
+                <Button
+                  type="submit"
+                  disabled={subscribeStatus === 'loading'}
+                  className="rounded-full h-11 px-7 whitespace-nowrap"
+                >
+                  {subscribeStatus === 'loading' ? (
+                    <Loader2 className="size-4 animate-spin" />
+                  ) : (
+                    t('contact.subscribe')
+                  )}
                 </Button>
               </form>
-              <p className="mt-4 text-xs text-muted-foreground">
-                {t('contact.noSpam')}
-              </p>
+              {subscribeMessage ? (
+                <p
+                  className={`mt-4 text-sm ${subscribeStatus === 'error' ? 'text-destructive' : 'text-emerald'}`}
+                >
+                  {subscribeMessage}
+                </p>
+              ) : (
+                <p className="mt-4 text-xs text-muted-foreground">
+                  {t('contact.noSpam')}
+                </p>
+              )}
             </AnimatedSection>
           </div>
         </section>
@@ -1347,10 +1392,16 @@ export default function Home() {
                 {t('footer.brandDesc')}
               </p>
               <div className="flex gap-3">
-                {['twitter', 'linkedin', 'github'].map((social) => (
+                {(['twitter', 'linkedin', 'github'] as const).map((social) => (
                   <a
                     key={social}
-                    href="#"
+                    href={{
+                      twitter: 'https://x.com/TeeJaySeatlholo',
+                      linkedin: 'https://www.linkedin.com/company/business-hustle',
+                      github: 'https://github.com/JacobSeatlholo',
+                    }[social]}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     aria-label={social}
                     className="flex h-9 w-9 items-center justify-center rounded-lg border border-border text-muted-foreground hover:text-foreground hover:border-foreground/30 transition-colors"
                   >
@@ -1381,7 +1432,7 @@ export default function Home() {
                 {[t('footer.serviceLinks.geo'), t('footer.serviceLinks.s2s'), t('footer.serviceLinks.talent'), t('footer.serviceLinks.local'), t('footer.serviceLinks.automation')].map((link) => (
                   <li key={link}>
                     <a
-                      href="#"
+                      href="#solutions"
                       className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                     >
                       {link}
@@ -1395,14 +1446,20 @@ export default function Home() {
             <div>
               <h4 className="text-sm font-semibold mb-4">{t('footer.company')}</h4>
               <ul className="space-y-2.5">
-                {[t('footer.about'), t('footer.careers'), t('footer.partnerships'), t('footer.blog'), t('footer.contactLink')].map(
+                {([
+                  { label: t('footer.about'), href: '#about' },
+                  { label: t('footer.careers'), href: '#contact' },
+                  { label: t('footer.partnerships'), href: '#contact' },
+                  { label: t('footer.blog'), href: '#resources' },
+                  { label: t('footer.contactLink'), href: '#contact' },
+                ] as { label: string; href: string }[]).map(
                   (link) => (
-                    <li key={link}>
+                    <li key={link.label}>
                       <a
-                        href="#"
+                        href={link.href}
                         className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                       >
-                        {link}
+                        {link.label}
                       </a>
                     </li>
                   )
