@@ -1414,13 +1414,17 @@ export default function Home() {
             <div>
               <h4 className="text-sm font-semibold mb-4">{t('footer.legal')}</h4>
               <ul className="space-y-2.5">
-                {[t('footer.privacy'), t('footer.terms'), t('footer.cookies')].map((link) => (
-                  <li key={link}>
+                {([
+                  { label: t('footer.privacy'), href: '/privacy' },
+                  { label: t('footer.terms'), href: '/terms' },
+                  { label: t('footer.cookies'), href: '/cookies' },
+                ] as { label: string; href: string }[]).map((link) => (
+                  <li key={link.href}>
                     <a
-                      href="#"
+                      href={link.href}
                       className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                     >
-                      {link}
+                      {link.label}
                     </a>
                   </li>
                 ))}
