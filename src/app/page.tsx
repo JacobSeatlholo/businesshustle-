@@ -607,22 +607,29 @@ export default function Home() {
               {t('hero.subtitle')}
             </motion.p>
 
+            <p className="mt-1 text-sm sm:text-base font-medium text-gold">
+              Helping entrepreneurs launch, grow, and automate their businesses — all from one platform.
+            </p>
+
             <motion.div
               className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.5 }}
             >
-              <Button size="lg" className="rounded-full px-7 text-sm">
-                {t('hero.cta1')}
-                <ArrowRight className="size-4" />
+              <Button size="lg" className="rounded-full px-7 text-sm" asChild>
+                <a href="#contact">
+                  {t('hero.cta1')}
+                  <ArrowRight className="size-4" />
+                </a>
               </Button>
               <Button
                 variant="outline"
                 size="lg"
                 className="rounded-full px-7 text-sm"
+                asChild
               >
-                {t('hero.cta2')}
+                <a href="#idea-generator">{t('hero.cta2')}</a>
               </Button>
             </motion.div>
           </div>
@@ -1449,7 +1456,7 @@ export default function Home() {
                 {([
                   { label: t('footer.about'), href: '#about' },
                   { label: t('footer.careers'), href: '#contact' },
-                  { label: t('footer.partnerships'), href: '#contact' },
+                  { label: t('footer.partnerships'), href: '#portfolio' },
                   { label: t('footer.blog'), href: '#resources' },
                   { label: t('footer.contactLink'), href: '#contact' },
                 ] as { label: string; href: string }[]).map(
