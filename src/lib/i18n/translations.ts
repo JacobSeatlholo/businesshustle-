@@ -34,16 +34,16 @@ export const translations: Translations = {
     'nav.openMenu': 'Open menu',
 
     // Hero
-    'hero.badge': 'Explore. Adapt. Evolve.',
-    'hero.title1': 'From Street-Level Commerce',
-    'hero.title2': 'for African Business',
+    'hero.badge': 'Building African business infrastructure since 2018',
+    'hero.title1': "Building Africa’s",
+    'hero.title2': 'Business Operating System',
     'hero.subtitle':
       'We bridge local business and frontier AI technology. From neighbourhood directories to open-source workflow automation — grounded in Batho Pele principles.',
     'hero.cta1': 'Get Started',
     'hero.cta2': 'Try AI Idea Generator',
-    'hero.stat1': 'Businesses Served',
-    'hero.stat2': 'Client Retention',
-    'hero.stat3': 'AI Operators Trained',
+    'hero.stat1': 'Projects Delivered',
+    'hero.stat2': 'Years Experience',
+    'hero.stat3': 'Platforms Live',
 
     // Trusted by
     'trusted.text': 'Working with founders and organisations who value clarity, structure, and results',
@@ -226,16 +226,16 @@ export const translations: Translations = {
     'nav.openMenu': 'Open kieslys',
 
     // Hero
-    'hero.badge': 'Verken. Pas aan. Evolueer.',
-    'hero.title1': 'Van Straatvlak Handel',
-    'hero.title2': 'vir Afrika Besighede',
+    'hero.badge': 'Building African business infrastructure since 2018',
+    'hero.title1': "Building Africa’s",
+    'hero.title2': 'Business Operating System',
     'hero.subtitle':
       'Ons verbind plaaslike besighede met voorste KI-tegnologie. Van buurtgids tot oopbron-werkvloei-outomatisering — gegrond op Batho Pele-beginsels.',
     'hero.cta1': 'Beging Nou',
     'hero.cta2': 'Try AI Idea Generator',
-    'hero.stat1': 'Besighede Bedien',
-    'hero.stat2': 'Kliëntbehoud',
-    'hero.stat3': 'KI-operateurs Oplei',
+    'hero.stat1': 'Projects Delivered',
+    'hero.stat2': 'Years Experience',
+    'hero.stat3': 'Platforms Live',
 
     // Trusted by
     'trusted.text': 'Werk met stigters en organisasies wat duidelikheid, struktuur en resultate waardeer',
@@ -418,16 +418,16 @@ export const translations: Translations = {
     'nav.openMenu': 'Vula imenyu',
 
     // Hero
-    'hero.badge': 'Hlola. Vumelanisa. Qhubeka.',
-    'hero.title1': 'Kusukela Kwisitha Samaphoyisa',
-    'hero.title2': 'kumabhizinisi ase-Afrika',
+    'hero.badge': 'Building African business infrastructure since 2018',
+    'hero.title1': "Building Africa’s",
+    'hero.title2': 'Business Operating System',
     'hero.subtitle':
       'Siphunga amabhizinisi endaweni nomkhondo we-AI oqonde kakhulu. Kusukela kumadiresi asekuhlathini kuya kumasevisi okuzenzakalela okhululekile — okusekelwe kumigomo ka-Batho Pele.',
     'hero.cta1': 'Qala Ngoku',
     'hero.cta2': 'Try AI Idea Generator',
-    'hero.stat1': 'Amabhizinisi Asiziwe',
-    'hero.stat2': 'Ukugcinwa Kwamakhasimende',
-    'hero.stat3': 'Abasebenzi Be-AI Bafundiswe',
+    'hero.stat1': 'Projects Delivered',
+    'hero.stat2': 'Years Experience',
+    'hero.stat3': 'Platforms Live',
 
     // Trusted by
     'trusted.text': 'Sisebenza nabasunguli namahlanganise aqonde ukucacisa, isakhiwo, namaphetho',
@@ -612,16 +612,16 @@ export const translations: Translations = {
     'nav.openMenu': 'Ouvrir le menu',
 
     // Hero
-    'hero.badge': 'Explorer. S\'adapter. Évoluer.',
-    'hero.title1': 'Du Commerce de Proximité',
-    'hero.title2': 'pour les Entreprises Africaines',
+    'hero.badge': 'Building African business infrastructure since 2018',
+    'hero.title1': "Building Africa’s",
+    'hero.title2': 'Business Operating System',
     'hero.subtitle':
       'Nous relions les entreprises locales et les technologies IA de pointe. Des annuaires de quartier à l\'automatisation des flux de travail en open source — fondé sur les principes Batho Pele.',
     'hero.cta1': 'Commencer',
     'hero.cta2': 'Try AI Idea Generator',
-    'hero.stat1': 'Entreprises Desservies',
-    'hero.stat2': 'Rétention Client',
-    'hero.stat3': 'Opérateurs IA Formés',
+    'hero.stat1': 'Projects Delivered',
+    'hero.stat2': 'Years Experience',
+    'hero.stat3': 'Platforms Live',
 
     // Trusted by
     'trusted.text': 'Travailler avec des fondateurs et des organisations qui valorisent la clarté, la structure et les résultats',
@@ -804,16 +804,16 @@ export const translations: Translations = {
     'nav.openMenu': 'Abrir menu',
 
     // Hero
-    'hero.badge': 'Explorar. Adaptar. Evoluir.',
-    'hero.title1': 'Do Comércio de Rua',
-    'hero.title2': 'para Negócios Africanos',
+    'hero.badge': 'Building African business infrastructure since 2018',
+    'hero.title1': "Building Africa’s",
+    'hero.title2': 'Business Operating System',
     'hero.subtitle':
       'Conectamos negócios locais e tecnologia IA de ponta. De diretórios de bairro à automação de fluxos de trabalho em código aberto — baseado nos princípios Batho Pele.',
     'hero.cta1': 'Começar',
     'hero.cta2': 'Try AI Idea Generator',
-    'hero.stat1': 'Negócios Atendidos',
-    'hero.stat2': 'Retenção de Clientes',
-    'hero.stat3': 'Operadores de IA Treinados',
+    'hero.stat1': 'Projects Delivered',
+    'hero.stat2': 'Years Experience',
+    'hero.stat3': 'Platforms Live',
 
     // Trusted by
     'trusted.text': 'Trabalhando com fundadores e organizações que valorizam clareza, estrutura e resultados',
@@ -996,16 +996,16 @@ export const translations: Translations = {
     'nav.openMenu': 'Fungua menyu',
 
     // Hero
-    'hero.badge': 'Chunguza. Kubali. Endelea.',
-    'hero.title1': 'Kutoka Biashara ya Mtaa',
-    'hero.title2': 'kwa Biashara za Afrika',
+    'hero.badge': 'Building African business infrastructure since 2018',
+    'hero.title1': "Building Africa’s",
+    'hero.title2': 'Business Operating System',
     'hero.subtitle':
       'Tunapunganuza biashara za ndani na teknolojia za mwisho za AI. Kutoka kwa orodha za mitaa hadi otomatiki ya mtiririko wa kazi ya chanzo huria — inayotegemea misingi ya Batho Pele.',
     'hero.cta1': 'Anza Sasa',
     'hero.cta2': 'Try AI Idea Generator',
-    'hero.stat1': 'Biashara Zinazotumikiwa',
-    'hero.stat2': 'Ushikamani wa Wateja',
-    'hero.stat3': 'Waendeshaji wa AI Waliofundishwa',
+    'hero.stat1': 'Projects Delivered',
+    'hero.stat2': 'Years Experience',
+    'hero.stat3': 'Platforms Live',
 
     // Trusted by
     'trusted.text': 'Tunafanya kazi na waanzilishi na mashirika yanayothamini uwazi, muundo, na matokeo',
@@ -1188,16 +1188,16 @@ export const translations: Translations = {
     'nav.openMenu': 'فتح القائمة',
 
     // Hero
-    'hero.badge': 'استكشاف. تكيّف. تطوّر.',
-    'hero.title1': 'من تجارة الشارع',
-    'hero.title2': 'لأعمال إفريقيا',
+    'hero.badge': 'Building African business infrastructure since 2018',
+    'hero.title1': "Building Africa’s",
+    'hero.title2': 'Business Operating System',
     'hero.subtitle':
       'نربط الأعمال المحلية وتكنولوجيا الذكاء الاصطناعي المتقدمة. من أدلة الأحياء إلى أتمتة سير العمل بمصدر مفتوح — مبنية على مبادئ Batho Pele.',
     'hero.cta1': 'ابدأ الآن',
     'hero.cta2': 'Try AI Idea Generator',
-    'hero.stat1': 'شركات مخدومة',
-    'hero.stat2': 'الاحتفاظ بالعملاء',
-    'hero.stat3': 'مشغلو ذكاء اصطناعي مدربون',
+    'hero.stat1': 'Projects Delivered',
+    'hero.stat2': 'Years Experience',
+    'hero.stat3': 'Platforms Live',
 
     // Trusted by
     'trusted.text': 'نعمل مع مؤسسين ومنظمات يقدرون الوضوح والهيكلية والنتائج',
