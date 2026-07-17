@@ -426,12 +426,12 @@ export default function Home() {
   }, [])
 
   const navLinks = [
+    { key: 'idea-generator', label: 'Idea Generator' },
     { key: 'platform', label: t('nav.platform') },
     { key: 'solutions', label: t('nav.solutions') },
     { key: 'industries', label: t('nav.industries') },
     { key: 'resources', label: t('nav.resources') },
     { key: 'about', label: t('nav.about') },
-    { key: 'idea-generator', label: 'Idea Generator' },
     { key: 'contact', label: t('nav.contact') },
   ]
 
@@ -461,9 +461,9 @@ export default function Home() {
     }
   }
 
-  const { count: c1, ref: r1 } = useCounter(50)
-  const { count: c2, ref: r2 } = useCounter(98)
-  const { count: c3, ref: r3 } = useCounter(24)
+  const { count: c1, ref: r1 } = useCounter(500)
+  const { count: c2, ref: r2 } = useCounter(9)
+  const { count: c3, ref: r3 } = useCounter(7)
 
   return (
     <div id="top" className="min-h-screen flex flex-col">
@@ -587,6 +587,9 @@ export default function Home() {
               </Badge>
             </motion.div>
 
+            <p className="mb-4 text-xs sm:text-sm font-medium tracking-wide uppercase text-muted-foreground">
+              Building African business infrastructure since 2017
+            </p>
             <motion.h1
               className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1]"
               initial={{ opacity: 0, y: 20 }}
@@ -643,8 +646,8 @@ export default function Home() {
           >
             {[
               { value: c1, suffix: '+', ref: r1, label: t('hero.stat1') },
-              { value: c2, suffix: '%', ref: r2, label: t('hero.stat2') },
-              { value: c3, suffix: '/7', ref: r3, label: t('hero.stat3') },
+              { value: c2, suffix: '+', ref: r2, label: t('hero.stat2') },
+              { value: c3, suffix: '+', ref: r3, label: t('hero.stat3') },
             ].map((stat) => (
               <div key={stat.label} className="text-center">
                 <div className="text-2xl sm:text-3xl font-bold text-foreground">
