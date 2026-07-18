@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { ThemeProvider } from "next-themes";
-import { Toaster } from "@/components/ui/toaster";
-import { I18nProvider } from "@/lib/i18n";
-import { CookieConsent } from "@/components/cookie-consent";
 import "./globals.css";
+import { Toaster } from "@/components/ui/toaster";
+import { SessionProvider } from "@/components/providers/session-provider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,42 +15,27 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Business Hustle | Digital Infrastructure & AI Operations for South Africa",
-  icons: {
-    icon: [
-      { url: "/icon.svg", type: "image/svg+xml" },
-    ],
-  },
-  description:
-    "Business Hustle builds street-level digital infrastructure and AI operations for South African entrepreneurs. Grounded in Batho Pele principles — from local directories and GEO optimisation to open-source AI workflow automation.",
+  title: "BusinessHustle - Real-Time Social Platform",
+  description: "Next-generation real-time social platform with gamified economy, virtual gifting, and Discord integration. Powered by businesshustle.co.za",
   keywords: [
-    "Business Hustle",
-    "digital infrastructure",
-    "AI operations",
-    "GEO optimisation",
-    "South African business",
-    "Batho Pele",
-    "S2S automation",
-    "local digital directories",
-    "AI operators",
-    "Mafikeng Innovation Hub",
-    "KloofStreet",
-    "open-source AI",
-    "South Africa",
+    "BusinessHustle", 
+    "Social Platform", 
+    "Discord Integration", 
+    "Virtual Economy", 
+    "Real-time Chat",
+    "Gifting",
+    "South Africa"
   ],
-  authors: [{ name: "Tselakgosi Jacob Seatlholo" }, { name: "Business Hustle Ltd" }],
-  openGraph: {
-    title: "Business Hustle | Digital Infrastructure & AI Operations for South Africa",
-    description:
-      "Street-level digital infrastructure and AI operations for South African entrepreneurs. Grounded in Batho Pele principles.",
-    siteName: "Business Hustle",
-    type: "website",
+  authors: [{ name: "BusinessHustle Team" }],
+  icons: {
+    icon: "/favicon.ico",
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Business Hustle | Digital Infrastructure & AI Operations for South Africa",
-    description:
-      "Street-level digital infrastructure and AI operations for South African entrepreneurs. Grounded in Batho Pele principles.",
+  openGraph: {
+    title: "BusinessHustle - Real-Time Social Platform",
+    description: "Connect, gift, and thrive in our gamified social ecosystem",
+    url: "https://www.businesshustle.co.za",
+    siteName: "BusinessHustle",
+    type: "website",
   },
 };
 
@@ -64,20 +47,12 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased bg-background text-foreground`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-slate-950 text-white`}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <I18nProvider>
-            {children}
-            <CookieConsent />
-            <Toaster />
-          </I18nProvider>
-        </ThemeProvider>
+        <SessionProvider>
+          {children}
+          <Toaster />
+        </SessionProvider>
       </body>
     </html>
   );

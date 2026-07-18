@@ -52,5 +52,3 @@ prompt
 server.log
 # Skills directory
 /skills/
-.next/
-node_modules/
