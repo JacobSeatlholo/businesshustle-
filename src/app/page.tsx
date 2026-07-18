@@ -57,6 +57,29 @@ function IdeaGenerator() {
   const [ideas, setIdeas] = useState<Idea[]>([])
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
+  const [captureEmail, setCaptureEmail] = useState('')
+  const [captureStatus, setCaptureStatus] = useState<'idle' | 'loading' | 'done' | 'error'>('idle')
+
+  const sendIdeas = async () => {
+    if (captureStatus === 'loading' || !captureEmail.trim()) return
+    setCaptureStatus('loading')
+    try {
+      const summary = ideas.map((i, n) => `${n + 1}) ${i.title} — ${i.impact}`).join(' | ')
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: captureEmail.trim(),
+          type: 'demo',
+          message: `Idea Generator lead. Business: "${business.trim()}". Ideas: ${summary}`,
+        }),
+      })
+      if (!res.ok) throw new Error('failed')
+      setCaptureStatus('done')
+    } catch {
+      setCaptureStatus('error')
+    }
+  }
 
   const generate = async () => {
     if (business.trim().length < 3 || loading) return
@@ -150,12 +173,52 @@ function IdeaGenerator() {
                 </CardContent>
               </Card>
             ))}
-            <div className="md:col-span-3 text-center mt-2">
+            <div className="md:col-span-3 mt-4 max-w-xl mx-auto text-center">
+              {captureStatus === 'done' ? (
+                <p className="text-sm text-emerald font-medium">
+                  Sent! Check your inbox — we&apos;ll follow up personally.
+                </p>
+              ) : (
+                <>
+                  <p className="text-sm text-muted-foreground mb-3">
+                    Want these ideas in your inbox plus a rough cost to build them?
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                    <Input
+                      type="email"
+                      value={captureEmail}
+                      onChange={(e) => setCaptureEmail(e.target.value)}
+                      onKeyDown={(e) => e.key === 'Enter' && sendIdeas()}
+                      placeholder="you@business.co.za"
+                      disabled={captureStatus === 'loading'}
+                      className="h-11 sm:max-w-xs"
+                    />
+                    <Button
+                      onClick={sendIdeas}
+                      disabled={captureStatus === 'loading' || !captureEmail.trim()}
+                      className="h-11 px-6 bg-gold text-background hover:bg-gold/90 font-semibold"
+                    >
+                      {captureStatus === 'loading' ? (
+                        <Loader2 className="size-4 animate-spin" />
+                      ) : (
+                        'Email me these ideas'
+                      )}
+                    </Button>
+                  </div>
+                  {captureStatus === 'error' && (
+                    <p className="text-sm text-destructive mt-2">
+                      Couldn&apos;t send — please try again.
+                    </p>
+                  )}
+                </>
+              )}
               <a
-                href="#contact"
-                className="inline-flex items-center gap-1.5 text-sm font-medium text-gold hover:gap-2.5 transition-all"
+                href={`https://wa.me/27744815163?text=${encodeURIComponent('Hi Jacob, I used the Idea Generator on businesshustle.co.za and want to chat about building one of the ideas.')}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-gold hover:gap-2.5 transition-all"
               >
-                Want us to build one of these? Book a free consult
+                Or chat to us on WhatsApp now
                 <ArrowRight className="size-4" />
               </a>
             </div>
