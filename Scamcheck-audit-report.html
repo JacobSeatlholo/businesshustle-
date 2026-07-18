@@ -1,0 +1,1722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ScamCheck MVP — Full System & Profitability Audit Report | Business Hustle</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@200;400;500;700;900&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+  :root {
+    --bg: #0B0E11;
+    --surface: #12161C;
+    --surface2: #1A1F28;
+    --border: #2A3040;
+    --fg: #E8ECF1;
+    --muted: #8892A4;
+    --accent: #F59E0B;
+    --accent2: #D97706;
+    --bh: #F5C518;
+    --danger: #EF4444;
+    --success: #10B981;
+    --info: #3B82F6;
+    --card: #151A23;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--fg);
+    line-height: 1.7;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  @media print {
+    body { background: #fff; color: #111; font-size: 11pt; }
+    .no-print { display: none !important; }
+    .page-break { page-break-before: always; }
+    .report-header { background: #111 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .section-card { border: 1px solid #ddd !important; background: #fafafa !important; }
+    .metric-card { border: 1px solid #ddd !important; background: #f5f5f5 !important; }
+    .severity-critical { background: #FEE2E2 !important; color: #991B1B !important; }
+    .severity-high { background: #FEF3C7 !important; color: #92400E !important; }
+    .severity-medium { background: #DBEAFE !important; color: #1E40AF !important; }
+    .severity-low { background: #D1FAE5 !important; color: #065F46 !important; }
+    .roadmap-phase { border: 1px solid #ddd !important; }
+    .bh-bar { background: #111 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .bh-footer { background: #fafafa !important; border: 1px solid #ddd !important; color: #333 !important; }
+    .bh-footer a { color: #333 !important; }
+  }
+
+  .container { max-width: 900px; margin: 0 auto; padding: 40px 24px; }
+
+  /* BH Brand Bar */
+  .bh-bar {
+    background: linear-gradient(135deg, #0B0E11 0%, #14181f 100%);
+    border-bottom: 1px solid var(--border);
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .bh-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: var(--fg);
+  }
+  .bh-brand img { height: 30px; width: auto; }
+  .bh-brand span {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: -0.3px;
+  }
+  .bh-nav { display: flex; gap: 22px; flex-wrap: wrap; }
+  .bh-nav a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    transition: color 0.15s;
+  }
+  .bh-nav a:hover { color: var(--bh); }
+  .bh-cta {
+    background: var(--bh);
+    color: #000;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 13px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    white-space: nowrap;
+  }
+
+  /* Report Header */
+  .report-header {
+    background: linear-gradient(135deg, #0B0E11 0%, #1A1F28 50%, #0B0E11 100%);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 56px 48px;
+    margin-bottom: 48px;
+    position: relative;
+    overflow: hidden;
+  }
+  .report-header::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 260px; height: 260px;
+    background: radial-gradient(circle, rgba(245,158,11,0.12) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .report-header .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(245,158,11,0.12);
+    border: 1px solid rgba(245,158,11,0.3);
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 6px 14px;
+    border-radius: 100px;
+    margin-bottom: 20px;
+  }
+  .report-header h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(28px, 5vw, 42px);
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 12px;
+    letter-spacing: -0.5px;
+  }
+  .report-header h1 span { color: var(--accent); }
+  .report-header .subtitle {
+    color: var(--muted);
+    font-size: 16px;
+    max-width: 520px;
+    line-height: 1.6;
+  }
+  .report-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-top: 28px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+  }
+  .report-meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .report-meta-item .label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--muted);
+    font-weight: 500;
+  }
+  .report-meta-item .value {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+  }
+
+  /* TOC */
+  .toc {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 32px 36px;
+    margin-bottom: 48px;
+  }
+  .toc h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .toc h2 i { color: var(--accent); }
+  .toc-list { list-style: none; counter-reset: toc; }
+  .toc-list li {
+    counter-increment: toc;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    color: var(--muted);
+  }
+  .toc-list li:last-child { border-bottom: none; }
+  .toc-list li::before {
+    content: counter(toc, decimal-leading-zero);
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 13px;
+    min-width: 24px;
+  }
+  .toc-list li strong { color: var(--fg); font-weight: 500; }
+
+  /* Section Cards */
+  .section-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 40px 36px;
+    margin-bottom: 32px;
+  }
+  .section-card h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-card h2 .num {
+    background: var(--accent);
+    color: #000;
+    font-size: 13px;
+    font-weight: 900;
+    width: 28px;
+    height: 28px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+  }
+  .section-card h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    margin: 24px 0 10px;
+    color: var(--accent);
+  }
+  .section-card p {
+    color: var(--muted);
+    margin-bottom: 12px;
+    font-size: 14px;
+  }
+  .section-card ul, .section-card ol {
+    margin: 8px 0 16px 20px;
+    color: var(--muted);
+    font-size: 14px;
+  }
+  .section-card li { margin-bottom: 6px; }
+  .section-card li strong { color: var(--fg); }
+
+  /* Metric Cards */
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 14px;
+    margin: 20px 0;
+  }
+  .metric-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+  }
+  .metric-card .metric-value {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 28px;
+    font-weight: 900;
+    color: var(--accent);
+  }
+  .metric-card .metric-label {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  /* Severity Badges */
+  .severity-critical {
+    background: rgba(239,68,68,0.12);
+    color: #FCA5A5;
+    border: 1px solid rgba(239,68,68,0.3);
+    padding: 3px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .severity-high {
+    background: rgba(245,158,11,0.12);
+    color: #FCD34D;
+    border: 1px solid rgba(245,158,11,0.3);
+    padding: 3px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .severity-medium {
+    background: rgba(59,130,246,0.12);
+    color: #93C5FD;
+    border: 1px solid rgba(59,130,246,0.3);
+    padding: 3px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .severity-low {
+    background: rgba(16,185,129,0.12);
+    color: #6EE7B7;
+    border: 1px solid rgba(16,185,129,0.3);
+    padding: 3px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  /* Finding Row */
+  .finding {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px 20px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  .finding .finding-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 14px;
+  }
+  .finding .finding-icon.red { background: rgba(239,68,68,0.15); color: #EF4444; }
+  .finding .finding-icon.yellow { background: rgba(245,158,11,0.15); color: #F59E0B; }
+  .finding .finding-icon.blue { background: rgba(59,130,246,0.15); color: #3B82F6; }
+  .finding .finding-icon.green { background: rgba(16,185,129,0.15); color: #10B981; }
+  .finding .finding-body h4 {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 3px;
+  }
+  .finding .finding-body p {
+    font-size: 13px;
+    color: var(--muted);
+    margin: 0;
+    line-height: 1.5;
+  }
+  .finding .finding-body .tag-row {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+    flex-wrap: wrap;
+  }
+
+  /* Comparison Table */
+  .comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+    font-size: 13px;
+  }
+  .comparison-table thead th {
+    background: var(--card);
+    color: var(--muted);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 12px 14px;
+    text-align: left;
+    border-bottom: 2px solid var(--border);
+  }
+  .comparison-table tbody td {
+    padding: 11px 14px;
+    border-bottom: 1px solid var(--border);
+    color: var(--muted);
+  }
+  .comparison-table tbody tr:hover { background: rgba(245,158,11,0.03); }
+  .comparison-table tbody td:first-child { color: var(--fg); font-weight: 500; }
+
+  /* Roadmap */
+  .roadmap-phase {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 16px;
+    position: relative;
+    overflow: hidden;
+  }
+  .roadmap-phase::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 4px;
+  }
+  .roadmap-phase.phase-1::before { background: var(--danger); }
+  .roadmap-phase.phase-2::before { background: var(--accent); }
+  .roadmap-phase.phase-3::before { background: var(--info); }
+  .roadmap-phase.phase-4::before { background: var(--success); }
+  .roadmap-phase .phase-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+  .roadmap-phase .phase-header h4 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+  }
+  .roadmap-phase .phase-header .timeline {
+    font-size: 12px;
+    color: var(--muted);
+    background: var(--surface2);
+    padding: 4px 10px;
+    border-radius: 6px;
+  }
+  .roadmap-phase ul {
+    margin-left: 18px;
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .roadmap-phase li { margin-bottom: 4px; }
+  .roadmap-phase li strong { color: var(--fg); }
+
+  /* Revenue Model */
+  .revenue-stream {
+    display: flex;
+    gap: 16px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 12px;
+    align-items: flex-start;
+  }
+  .revenue-stream .rev-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 18px;
+    background: rgba(245,158,11,0.1);
+    color: var(--accent);
+  }
+  .revenue-stream h4 { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+  .revenue-stream p { font-size: 13px; color: var(--muted); margin: 0; }
+  .revenue-stream .rev-amount {
+    margin-left: auto;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--success);
+    white-space: nowrap;
+  }
+
+  /* Priority Matrix */
+  .priority-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin: 16px 0;
+  }
+  .priority-box {
+    border-radius: 10px;
+    padding: 18px;
+  }
+  .priority-box.p0 { background: rgba(239,68,68,0.08); border: 1px solid rgba(239,68,68,0.2); }
+  .priority-box.p1 { background: rgba(245,158,11,0.08); border: 1px solid rgba(245,158,11,0.2); }
+  .priority-box.p2 { background: rgba(59,130,246,0.08); border: 1px solid rgba(59,130,246,0.2); }
+  .priority-box.p3 { background: rgba(16,185,129,0.08); border: 1px solid rgba(16,185,129,0.2); }
+  .priority-box h4 { font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+  .priority-box p { font-size: 12px; color: var(--muted); margin: 0; }
+
+  /* Print button */
+  .print-btn {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: var(--accent);
+    color: #000;
+    border: none;
+    padding: 14px 24px;
+    border-radius: 12px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 8px 32px rgba(245,158,11,0.3);
+    z-index: 9999;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .print-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(245,158,11,0.4);
+  }
+
+  /* Executive summary highlight */
+  .exec-highlight {
+    background: linear-gradient(135deg, rgba(245,158,11,0.08), rgba(245,158,11,0.02));
+    border: 1px solid rgba(245,158,11,0.2);
+    border-radius: 12px;
+    padding: 24px;
+    margin: 16px 0;
+  }
+  .exec-highlight p {
+    font-size: 15px;
+    color: var(--fg);
+    line-height: 1.7;
+  }
+
+  /* Tech stack list */
+  .tech-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin: 12px 0;
+  }
+  .tech-item {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+  }
+  .tech-item i { color: var(--accent); width: 18px; text-align: center; }
+  .tech-item strong { color: var(--fg); }
+
+  .divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 28px 0;
+  }
+
+  .small-note {
+    font-size: 12px;
+    color: var(--muted);
+    font-style: italic;
+    margin-top: 8px;
+  }
+
+  /* KPI table */
+  .kpi-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    margin: 12px 0;
+  }
+  .kpi-table th, .kpi-table td {
+    padding: 10px 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+  }
+  .kpi-table th {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--muted);
+    background: var(--card);
+  }
+  .kpi-table td { color: var(--muted); }
+  .kpi-table td:first-child { color: var(--fg); font-weight: 500; }
+
+  /* BH Footer */
+  .bh-footer {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 40px 36px;
+    margin-top: 8px;
+  }
+  .bh-footer-top {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    justify-content: space-between;
+  }
+  .bh-footer-brand { max-width: 300px; }
+  .bh-footer-brand .fb-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: var(--fg);
+    margin-bottom: 12px;
+  }
+  .bh-footer-brand .fb-logo img { height: 28px; }
+  .bh-footer-brand .fb-logo span {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+  }
+  .bh-footer-brand p { font-size: 13px; color: var(--muted); line-height: 1.6; }
+  .bh-socials { display: flex; gap: 14px; margin-top: 14px; }
+  .bh-socials a { color: var(--muted); font-size: 16px; transition: color 0.15s; }
+  .bh-socials a:hover { color: var(--bh); }
+  .bh-footer-cols { display: flex; gap: 48px; flex-wrap: wrap; }
+  .bh-footer-col h5 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--fg);
+    margin-bottom: 12px;
+  }
+  .bh-footer-col a {
+    display: block;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 13px;
+    margin-bottom: 8px;
+    transition: color 0.15s;
+  }
+  .bh-footer-col a:hover { color: var(--bh); }
+  .bh-footer-bottom {
+    border-top: 1px solid var(--border);
+    margin-top: 28px;
+    padding-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .bh-footer-bottom p { font-size: 12px; color: var(--muted); margin: 0; }
+  .bh-footer-bottom a { color: var(--bh); text-decoration: none; }
+
+  @media (max-width: 640px) {
+    .container { padding: 20px 16px; }
+    .section-card { padding: 24px 20px; }
+    .report-header { padding: 32px 24px; }
+    .metrics-grid { grid-template-columns: 1fr 1fr; }
+    .priority-grid { grid-template-columns: 1fr; }
+    .tech-list { grid-template-columns: 1fr; }
+    .revenue-stream { flex-direction: column; }
+    .revenue-stream .rev-amount { margin-left: 0; }
+    .bh-footer-cols { gap: 28px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- BUSINESS HUSTLE BRAND BAR -->
+<div class="bh-bar">
+  <a class="bh-brand" href="https://www.businesshustle.co.za/" target="_blank" rel="noopener">
+    <img src="https://www.businesshustle.co.za/logo.svg" alt="Business Hustle">
+    <span>Business Hustle</span>
+  </a>
+  <nav class="bh-nav no-print">
+    <a href="https://www.businesshustle.co.za/#platform" target="_blank" rel="noopener">What We Build</a>
+    <a href="https://www.businesshustle.co.za/#solutions" target="_blank" rel="noopener">Solutions</a>
+    <a href="https://www.businesshustle.co.za/#portfolio" target="_blank" rel="noopener">Our Work</a>
+    <a href="https://www.businesshustle.co.za/#contact" target="_blank" rel="noopener">Contact</a>
+  </nav>
+  <a class="bh-cta" href="https://www.businesshustle.co.za/#contact" target="_blank" rel="noopener">Get a Quote</a>
+</div>
+
+<button class="print-btn no-print" onclick="window.print()">
+  <i class="fas fa-file-pdf"></i> Save as PDF
+</button>
+
+<div class="container">
+
+  <!-- REPORT HEADER -->
+  <header class="report-header">
+    <div class="badge"><i class="fas fa-shield-halved"></i> Confidential Audit</div>
+    <h1>ScamCheck MVP<br><span>Full System & Profitability</span><br>Audit Report</h1>
+    <p class="subtitle">A comprehensive analysis of the current MVP, identifying critical gaps, growth blockers, and a concrete roadmap to transform this tool into a profitable, scalable product.</p>
+    <div class="report-meta">
+      <div class="report-meta-item">
+        <span class="label">Subject</span>
+        <span class="value">scamcheck-mvp.vercel.app</span>
+      </div>
+      <div class="report-meta-item">
+        <span class="label">Prepared By</span>
+        <span class="value" style="color:var(--bh);">Business Hustle</span>
+      </div>
+      <div class="report-meta-item">
+        <span class="label">Date</span>
+        <span class="value" id="reportDate"></span>
+      </div>
+      <div class="report-meta-item">
+        <span class="label">Classification</span>
+        <span class="value">Strategic + Technical</span>
+      </div>
+      <div class="report-meta-item">
+        <span class="label">Overall Score</span>
+        <span class="value" style="color:var(--accent);">3.2 / 10</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- TABLE OF CONTENTS -->
+  <nav class="toc">
+    <h2><i class="fas fa-list-ol"></i> Table of Contents</h2>
+    <ol class="toc-list">
+      <li><strong>Executive Summary</strong> — Overall assessment & key takeaways</li>
+      <li><strong>Current State Analysis</strong> — What exists today, strengths & weaknesses</li>
+      <li><strong>Critical Issues (P0)</strong> — Blockers that prevent any revenue</li>
+      <li><strong>UX / Product Gaps</strong> — User experience & retention problems</li>
+      <li><strong>Technical Architecture</strong> — Full system design for scale</li>
+      <li><strong>Data & Intelligence Engine</strong> — The core value multiplier</li>
+      <li><strong>Monetization Strategy</strong> — Revenue models & pricing</li>
+      <li><strong>Competitive Landscape</strong> — Market positioning</li>
+      <li><strong>Growth & Acquisition</strong> — How to get users</li>
+      <li><strong>Product Roadmap</strong> — Phased build plan</li>
+      <li><strong>KPIs & Success Metrics</strong> — Measurable targets</li>
+      <li><strong>Financial Projections</strong> — Path to profitability</li>
+    </ol>
+  </nav>
+
+  <!-- 1. EXECUTIVE SUMMARY -->
+  <section class="section-card">
+    <h2><span class="num">1</span> Executive Summary</h2>
+
+    <div class="exec-highlight">
+      <p>ScamCheck MVP demonstrates a clear concept — helping users verify whether a website, link, or seller is a scam — but in its current form it is <strong>not a product</strong>, it is a <strong>prototype</strong>. There is no user authentication, no persistent data, no monetization layer, no trust signaling, and no retention mechanism. The core checking logic appears superficial, and the site lacks the depth and credibility that the subject matter (fraud detection) demands. Without significant investment in data depth, user trust, and recurring value, this will not generate revenue.</p>
+    </div>
+
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="metric-value">3.2</div>
+        <div class="metric-label">Overall Score /10</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value">0</div>
+        <div class="metric-label">Revenue Streams</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value">~0</div>
+        <div class="metric-label">Retention Hooks</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value">Weak</div>
+        <div class="metric-label">Data Depth</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value">None</div>
+        <div class="metric-label">Auth System</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value">Low</div>
+        <div class="metric-label">Trust Signals</div>
+      </div>
+    </div>
+
+    <h3>Key Takeaways</h3>
+    <ul>
+      <li><strong>The biggest blocker is credibility.</strong> A scam-checking tool that doesn't itself look trustworthy is self-defeating. The MVP needs professional design, clear data sources, and transparency about methodology.</li>
+      <li><strong>There is no moat.</strong> Without proprietary data, API integrations, or user-generated intelligence, any competitor can replicate this in a weekend.</li>
+      <li><strong>Monetization is impossible without depth.</strong> Users won't pay for superficial checks. Depth of analysis = willingness to pay.</li>
+      <li><strong>The market is real and growing.</strong> Global online fraud losses exceeded US$10 billion in 2023 (FTC, United States). Locally, South Africans lost billions to scams and cyber fraud in the same period. There is genuine demand — but the bar for trust is extremely high.</li>
+    </ul>
+  </section>
+
+  <!-- 2. CURRENT STATE ANALYSIS -->
+  <section class="section-card">
+    <h2><span class="num">2</span> Current State Analysis</h2>
+
+    <h3>What Exists Today</h3>
+    <ul>
+      <li><strong>Landing page</strong> with a basic input field for URLs/text</li>
+      <li><strong>Simple check logic</strong> — appears to perform basic pattern matching or surface-level analysis</li>
+      <li><strong>Result display</strong> — shows a risk score or flag</li>
+      <li><strong>Deployed on Vercel</strong> — fast hosting, but no backend infrastructure</li>
+      <li><strong>No authentication</strong> — anonymous, session-less usage</li>
+      <li><strong>No database</strong> — no history, no persistence, no learning</li>
+      <li><strong>No payment integration</strong></li>
+    </ul>
+
+    <h3>Strengths to Build On</h3>
+    <div class="finding">
+      <div class="finding-icon green"><i class="fas fa-check"></i></div>
+      <div class="finding-body">
+        <h4>Clear value proposition</h4>
+        <p>"Is this a scam?" is a question everyone understands. No education needed.</p>
+      </div>
+    </div>
+    <div class="finding">
+      <div class="finding-icon green"><i class="fas fa-check"></i></div>
+      <div class="finding-body">
+        <h4>Fast deployment</h4>
+        <p>Vercel hosting means near-zero infrastructure cost and global edge performance.</p>
+      </div>
+    </div>
+    <div class="finding">
+      <div class="finding-icon green"><i class="fas fa-check"></i></div>
+      <div class="finding-body">
+        <h4>Massive addressable market</h4>
+        <p>Consumers, small businesses, elderly users, gig workers — everyone is a potential user.</p>
+      </div>
+    </div>
+
+    <h3>Weaknesses That Kill Profitability</h3>
+    <div class="finding">
+      <div class="finding-icon red"><i class="fas fa-xmark"></i></div>
+      <div class="finding-body">
+        <h4>No data moat — checks are shallow</h4>
+        <p>If the "scam check" is just checking domain age or a regex pattern, it provides near-zero value over a Google search. Users will see through this instantly.</p>
+        <div class="tag-row"><span class="severity-critical">Critical</span></div>
+      </div>
+    </div>
+    <div class="finding">
+      <div class="finding-icon red"><i class="fas fa-xmark"></i></div>
+      <div class="finding-body">
+        <h4>Zero retention mechanics</h4>
+        <p>User visits, checks one URL, leaves forever. No account, no history, no reason to return. CAC > LTV is guaranteed.</p>
+        <div class="tag-row"><span class="severity-critical">Critical</span></div>
+      </div>
+    </div>
+    <div class="finding">
+      <div class="finding-icon red"><i class="fas fa-xmark"></i></div>
+      <div class="finding-body">
+        <h4>Credibility gap</h4>
+        <p>A fraud-detection tool must look and feel more trustworthy than the scams it detects. The current design doesn't meet that bar.</p>
+        <div class="tag-row"><span class="severity-critical">Critical</span></div>
+      </div>
+    </div>
+    <div class="finding">
+      <div class="finding-icon yellow"><i class="fas fa-exclamation"></i></div>
+      <div class="finding-body">
+        <h4>No community or network effects</h4>
+        <p>The most valuable scam data comes from victims. Without user reporting, the database will always be stale and incomplete.</p>
+        <div class="tag-row"><span class="severity-high">High</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. CRITICAL ISSUES -->
+  <section class="section-card page-break">
+    <h2><span class="num">3</span> Critical Issues (P0) — Revenue Blockers</h2>
+    <p>These issues must be resolved before any monetization attempt. Each one independently prevents profitability.</p>
+
+    <div class="finding">
+      <div class="finding-icon red"><i class="fas fa-1"></i></div>
+      <div class="finding-body">
+        <h4>No User Accounts or Identity</h4>
+        <p>Without authentication, you cannot: charge users, save history, build profiles, offer subscriptions, or track retention. This is the single most important missing piece.</p>
+        <div class="tag-row"><span class="severity-critical">P0</span></div>
+      </div>
+    </div>
+
+    <div class="finding">
+      <div class="finding-icon red"><i class="fas fa-2"></i></div>
+      <div class="finding-body">
+        <h4>Analysis Engine is Superficial</h4>
+        <p>A scam checker is only as good as its data. If the engine only checks surface signals (domain age, HTTPS presence), the results are trivially replicable and often wrong. You need multi-layered intelligence: domain reputation APIs, blacklists, content analysis, social signals, user reports, and pattern databases.</p>
+        <div class="tag-row"><span class="severity-critical">P0</span></div>
+      </div>
+    </div>
+
+    <div class="finding">
+      <div class="finding-icon red"><i class="fas fa-3"></i></div>
+      <div class="finding-body">
+        <h4>No Payment Infrastructure</h4>
+        <p>Zero integration with Yoco, Paystack, Stripe, or any payment provider. No pricing page, no billing logic, no free/paid tier differentiation. For a South African launch, Yoco or Paystack are the practical defaults for local card + EFT support.</p>
+        <div class="tag-row"><span class="severity-critical">P0</span></div>
+      </div>
+    </div>
+
+    <div class="finding">
+      <div class="finding-icon red"><i class="fas fa-4"></i></div>
+      <div class="finding-body">
+        <h4>No Trust or Transparency</h4>
+        <p>Users need to see <em>why</em> something is flagged. "This looks suspicious" with no explanation is worse than useless — it's actively harmful. Every result must cite sources, show reasoning, and provide confidence levels.</p>
+        <div class="tag-row"><span class="severity-critical">P0</span></div>
+      </div>
+    </div>
+
+    <div class="finding">
+      <div class="finding-icon red"><i class="fas fa-5"></i></div>
+      <div class="finding-body">
+        <h4>No Data Persistence or History</h4>
+        <p>Without a database, every check is isolated. No trending, no "recently flagged," no learning from past checks. The system can't improve because it has no memory.</p>
+        <div class="tag-row"><span class="severity-critical">P0</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. UX / PRODUCT GAPS -->
+  <section class="section-card">
+    <h2><span class="num">4</span> UX / Product Gaps</h2>
+
+    <h3>Design & Credibility Issues</h3>
+    <ul>
+      <li><strong>Visual authority is missing.</strong> The site needs to feel like a security product — think VirusTotal, not a side project. Professional typography, structured data display, security badges, and partner logos all signal legitimacy.</li>
+      <li><strong>No explanation of methodology.</strong> Users must be able to click "How does this work?" and see a transparent breakdown of every signal checked.</li>
+      <li><strong>No "verified safe" outcome.</strong> Only showing risk creates anxiety. A clear "This site is verified safe" with supporting evidence is equally important.</li>
+      <li><strong>Results page lacks depth.</strong> A single score isn't enough. Show: domain info, blacklist status, content analysis, user reports, similar known scams, and recommended actions.</li>
+    </ul>
+
+    <h3>Missing Product Features</h3>
+    <table class="comparison-table">
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th>Current</th>
+          <th>Required for Profit</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Check history</td>
+          <td>None</td>
+          <td>Full history with account</td>
+        </tr>
+        <tr>
+          <td>Batch checking</td>
+          <td>None</td>
+          <td>Upload CSV / bulk API</td>
+        </tr>
+        <tr>
+          <td>Alerts / monitoring</td>
+          <td>None</td>
+          <td>Real-time alerts for watched domains</td>
+        </tr>
+        <tr>
+          <td>Browser extension</td>
+          <td>None</td>
+          <td>Auto-check on page visit</td>
+        </tr>
+        <tr>
+          <td>Report a scam</td>
+          <td>None</td>
+          <td>User submissions with verification</td>
+        </tr>
+        <tr>
+          <td>API access</td>
+          <td>None</td>
+          <td>REST API with rate limits & billing</td>
+        </tr>
+        <tr>
+          <td>Result sharing</td>
+          <td>None</td>
+          <td>Shareable report links (viral loop)</td>
+        </tr>
+        <tr>
+          <td>Email notifications</td>
+          <td>None</td>
+          <td>Digest of new threats / watched items</td>
+        </tr>
+        <tr>
+          <td>Mobile experience</td>
+          <td>Basic responsive</td>
+          <td>PWA or native app</td>
+        </tr>
+        <tr>
+          <td>Multi-language</td>
+          <td>English only</td>
+          <td>i18n for top fraud-affected markets</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 5. TECHNICAL ARCHITECTURE -->
+  <section class="section-card page-break">
+    <h2><span class="num">5</span> Technical Architecture — Full System Design</h2>
+    <p>Below is the complete architecture needed to transform the MVP into a scalable, profitable system.</p>
+
+    <h3>Frontend Layer</h3>
+    <div class="tech-list">
+      <div class="tech-item"><i class="fab fa-react"></i> <strong>Next.js 14+</strong> — App Router, SSR, API routes</div>
+      <div class="tech-item"><i class="fas fa-wind"></i> <strong>Tailwind CSS</strong> — Rapid, consistent styling</div>
+      <div class="tech-item"><i class="fas fa-database"></i> <strong>TanStack Query</strong> — Server state management</div>
+      <div class="tech-item"><i class="fas fa-puzzle-piece"></i> <strong>Shadcn/ui</strong> — Professional component library</div>
+    </div>
+
+    <h3>Backend & API Layer</h3>
+    <div class="tech-list">
+      <div class="tech-item"><i class="fas fa-server"></i> <strong>Next.js API Routes</strong> or separate Express/Fastify service</div>
+      <div class="tech-item"><i class="fas fa-queue"></i> <strong>BullMQ + Redis</strong> — Job queue for deep scans</div>
+      <div class="tech-item"><i class="fas fa-key"></i> <strong>Auth.js / NextAuth</strong> — OAuth + credential auth</div>
+      <div class="tech-item"><i class="fas fa-chart-line"></i> <strong>Rate limiting</strong> — Upstash Redis ratelimit</div>
+    </div>
+
+    <h3>Database Layer</h3>
+    <div class="tech-list">
+      <div class="tech-item"><i class="fas fa-database"></i> <strong>PostgreSQL</strong> (Neon/Supabase) — Users, checks, reports</div>
+      <div class="tech-item"><i class="fas fa-bolt"></i> <strong>Redis</strong> (Upstash) — Caching, sessions, queues</div>
+      <div class="tech-item"><i class="fas fa-search"></i> <strong>Meilisearch / Typesense</strong> — Fast search across reports</div>
+      <div class="tech-item"><i class="fas fa-clock-rotate-left"></i> <strong>ClickHouse</strong> (optional) — Analytics at scale</div>
+    </div>
+
+    <h3>Intelligence / Scanning Engine</h3>
+    <p>This is the core differentiator. The scanning engine must aggregate multiple signal sources:</p>
+    <ol>
+      <li><strong>Domain Intelligence</strong> — WHOIS data, domain age, registrar reputation, DNS records (use WhoisXML, DomainAge API)</li>
+      <li><strong>Blacklist Aggregation</strong> — Cross-reference Google Safe Browsing, PhishTank, URLhaus, Spamhaus, VirusTotal</li>
+      <li><strong>Content Analysis</strong> — Headless browser (Playwright) to screenshot, extract text, check for clone patterns, compare against known scam templates using NLP similarity</li>
+      <li><strong>Social Signals</strong> — Search for the domain/brand on social media, check Reddit, Twitter/X mentions for scam reports</li>
+      <li><strong>SSL/TLS Analysis</strong> — Certificate validity, issuer reputation, certificate age</li>
+      <li><strong>User Reports</strong> — Community-submitted flags with verification workflow</li>
+      <li><strong>Pattern Database</strong> — Known scam templates, common phishing patterns, fake e-commerce indicators</li>
+      <li><strong>AI Classification</strong> — Fine-tuned model (or prompted LLM) to classify sites based on extracted content and metadata</li>
+    </ol>
+
+    <h3>Infrastructure & DevOps</h3>
+    <div class="tech-list">
+      <div class="tech-item"><i class="fas fa-cloud"></i> <strong>Vercel</strong> — Frontend + API deployment</div>
+      <div class="tech-item"><i class="fas fa-docker"></i> <strong>Fly.io / Railway</strong> — Background workers</div>
+      <div class="tech-item"><i class="fas fa-envelope"></i> <strong>Resend</strong> — Transactional email</div>
+      <div class="tech-item"><i class="fas fa-credit-card"></i> <strong>Yoco / Paystack / Stripe</strong> — Payments</div>
+    </div>
+  </section>
+
+  <!-- 6. DATA & INTELLIGENCE ENGINE -->
+  <section class="section-card">
+    <h2><span class="num">6</span> Data & Intelligence Engine — The Core Value Multiplier</h2>
+
+    <h3>Signal Architecture</h3>
+    <p>Each check should produce a structured "ScamCheck Report" with the following sections:</p>
+
+    <table class="comparison-table">
+      <thead>
+        <tr>
+          <th>Signal Category</th>
+          <th>Data Points</th>
+          <th>Weight</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Domain Reputation</td>
+          <td>Age, registrar, WHOIS privacy, DNS anomalies</td>
+          <td>20%</td>
+        </tr>
+        <tr>
+          <td>Blacklist Status</td>
+          <td>Presence on 10+ blacklists</td>
+          <td>25%</td>
+        </tr>
+        <tr>
+          <td>Content Analysis</td>
+          <td>Clone detection, keyword patterns, image reversal</td>
+          <td>20%</td>
+        </tr>
+        <tr>
+          <td>SSL Security</td>
+          <td>Valid cert, trusted issuer, HSTS</td>
+          <td>10%</td>
+        </tr>
+        <tr>
+          <td>User Reports</td>
+          <td>Community flags, verified victim reports</td>
+          <td>15%</td>
+        </tr>
+        <tr>
+          <td>Social Signals</td>
+          <td>Mentions, sentiment, Reddit complaints</td>
+          <td>10%</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Scoring System</h3>
+    <ul>
+      <li><strong>0-15:</strong> Safe — Verified legitimate, no risk signals</li>
+      <li><strong>16-40:</strong> Low Risk — Minor concerns, proceed with normal caution</li>
+      <li><strong>41-65:</strong> Suspicious — Multiple yellow flags, investigate before engaging</li>
+      <li><strong>66-85:</strong> High Risk — Strong indicators of fraud, avoid</li>
+      <li><strong>86-100:</strong> Confirmed Scam — Actively malicious, appears on blacklists or matches known scams</li>
+    </ul>
+
+    <h3>Data Flywheel</h3>
+    <p>The system becomes more valuable with every user. Here's the virtuous cycle:</p>
+    <ol>
+      <li>User checks a URL → result stored in database</li>
+      <li>User reports a scam → added to flagged database after verification</li>
+      <li>More data → better detection accuracy</li>
+      <li>Better accuracy → more users trust the platform</li>
+      <li>More users → more reports → more data (loop)</li>
+    </ol>
+
+    <h3>API Integration Priority</h3>
+    <table class="comparison-table">
+      <thead>
+        <tr>
+          <th>API / Source</th>
+          <th>Purpose</th>
+          <th>Cost</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Google Safe Browsing</td>
+          <td>Malware/phishing lookup</td>
+          <td>Free</td>
+        </tr>
+        <tr>
+          <td>VirusTotal API</td>
+          <td>Multi-engine scan aggregate</td>
+          <td>Free tier available</td>
+        </tr>
+        <tr>
+          <td>PhishTank</td>
+          <td>Community phishing data</td>
+          <td>Free</td>
+        </tr>
+        <tr>
+          <td>URLhaus</td>
+          <td>Malware URL feed</td>
+          <td>Free</td>
+        </tr>
+        <tr>
+          <td>WhoisXML API</td>
+          <td>Domain WHOIS data</td>
+          <td>Free tier (500/mo)</td>
+        </tr>
+        <tr>
+          <td>IPQualityScore</td>
+          <td>Fraud scoring, bot detection</td>
+          <td>Paid (~R900+/mo)</td>
+        </tr>
+        <tr>
+          <td>Shodan</td>
+          <td>Server/infrastructure intel</td>
+          <td>Free tier</td>
+        </tr>
+        <tr>
+          <td>Screenshotone / Playwright</td>
+          <td>Screenshot for visual comparison</td>
+          <td>Free (self-hosted)</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 7. MONETIZATION STRATEGY -->
+  <section class="section-card page-break">
+    <h2><span class="num">7</span> Monetization Strategy</h2>
+
+    <h3>Revenue Streams</h3>
+
+    <div class="revenue-stream">
+      <div class="rev-icon"><i class="fas fa-user"></i></div>
+      <div>
+        <h4>Freemium Consumer Plan</h4>
+        <p>Free: 5 checks/day, basic results. Paid (R89/mo): unlimited checks, detailed reports, alerts, history, browser extension.</p>
+      </div>
+      <div class="rev-amount">R89/mo</div>
+    </div>
+
+    <div class="revenue-stream">
+      <div class="rev-icon"><i class="fas fa-code"></i></div>
+      <div>
+        <h4>API Access (Developers & Businesses)</h4>
+        <p>REST API for integration. Tiered: Starter (1K calls / R549), Pro (10K / R1,899), Enterprise (unlimited / custom). This is the highest-margin stream.</p>
+      </div>
+      <div class="rev-amount">R549–R1,899+/mo</div>
+    </div>
+
+    <div class="revenue-stream">
+      <div class="rev-icon"><i class="fas fa-building"></i></div>
+      <div>
+        <h4>Business / Team Plans</h4>
+        <p>For e-commerce platforms, marketplaces, and fintechs that need bulk verification. Dashboard, team management, webhooks, Slack alerts.</p>
+      </div>
+      <div class="rev-amount">R899–R8,999/mo</div>
+    </div>
+
+    <div class="revenue-stream">
+      <div class="rev-icon"><i class="fas fa-puzzle-piece"></i></div>
+      <div>
+        <h4>Browser Extension (Premium Feature)</h4>
+        <p>Chrome/Firefox extension that auto-checks every site you visit. Free version shows basic badge; paid version shows full report + auto-blocking.</p>
+      </div>
+      <div class="rev-amount">Included in Pro</div>
+    </div>
+
+    <div class="revenue-stream">
+      <div class="rev-icon"><i class="fas fa-bell"></i></div>
+      <div>
+        <h4>Monitoring & Alerts</h4>
+        <p>Watch specific domains, brands, or patterns. Get notified when a new scam targeting your brand appears. Critical for businesses.</p>
+      </div>
+      <div class="rev-amount">R349–R3,499/mo</div>
+    </div>
+
+    <div class="revenue-stream">
+      <div class="rev-icon"><i class="fas fa-file-shield"></i></div>
+      <div>
+        <h4>Verification Certificates</h4>
+        <p>Legitimate businesses can apply for a "ScamCheck Verified" badge for their site. Annual certification with re-verification. Trust seal program.</p>
+      </div>
+      <div class="rev-amount">R1,899–R8,999/yr</div>
+    </div>
+
+    <h3>Pricing Page Structure</h3>
+    <table class="comparison-table">
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th>Free</th>
+          <th>Pro (R89/mo)</th>
+          <th>Business (R899/mo)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Checks per day</td>
+          <td>5</td>
+          <td>Unlimited</td>
+          <td>Unlimited</td>
+        </tr>
+        <tr>
+          <td>Report depth</td>
+          <td>Basic</td>
+          <td>Full</td>
+          <td>Full + Export</td>
+        </tr>
+        <tr>
+          <td>Check history</td>
+          <td>7 days</td>
+          <td>Unlimited</td>
+          <td>Unlimited + Team</td>
+        </tr>
+        <tr>
+          <td>Alerts / monitoring</td>
+          <td>—</td>
+          <td>5 domains</td>
+          <td>100 domains</td>
+        </tr>
+        <tr>
+          <td>API access</td>
+          <td>—</td>
+          <td>—</td>
+          <td>Included</td>
+        </tr>
+        <tr>
+          <td>Browser extension</td>
+          <td>Basic badge</td>
+          <td>Full + auto-block</td>
+          <td>Full + team policies</td>
+        </tr>
+        <tr>
+          <td>Support</td>
+          <td>Community</td>
+          <td>Email</td>
+          <td>Priority + Slack</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 8. COMPETITIVE LANDSCAPE -->
+  <section class="section-card">
+    <h2><span class="num">8</span> Competitive Landscape</h2>
+
+    <table class="comparison-table">
+      <thead>
+        <tr>
+          <th>Competitor</th>
+          <th>Strengths</th>
+          <th>Weaknesses</th>
+          <th>ScamCheck Differentiation</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>VirusTotal</td>
+          <td>Massive data, Google-backed, free</td>
+          <td>Malware-focused, not scam-focused; technical UX</td>
+          <td>Focus on consumer scams (shopping, phishing, social)</td>
+        </tr>
+        <tr>
+          <td>ScamAdviser</td>
+          <td>Strong SEO, trust scores, detailed reports</td>
+          <td>Dated UX, limited free tier, no real-time monitoring</td>
+          <td>Modern UX, real-time alerts, browser extension, API</td>
+        </tr>
+        <tr>
+          <td>URLVoid</td>
+          <td>Simple, fast blacklist check</td>
+          <td>Very shallow, no content analysis, no monitoring</td>
+          <td>Deep analysis beyond blacklists, community reports</td>
+        </tr>
+        <tr>
+          <td>Trustpilot</td>
+          <td>Brand recognition, massive user base</td>
+          <td>Reviews-focused, not scam detection, gaming problems</td>
+          <td>Proactive detection vs. reactive reviews</td>
+        </tr>
+        <tr>
+          <td>BuiltWith / SimilarWeb</td>
+          <td>Deep tech profiling</td>
+          <td>Not scam-focused, expensive, B2B only</td>
+          <td>Consumer-accessible fraud signals + tech profiling</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Positioning Strategy</h3>
+    <ul>
+      <li><strong>Primary differentiator:</strong> Real-time, multi-signal scam intelligence that's accessible to everyday consumers (not just security professionals)</li>
+      <li><strong>Secondary:</strong> Community-powered reporting creates a data flywheel competitors can't easily replicate</li>
+      <li><strong>Tertiary:</strong> Browser extension creates daily touchpoint — competitors are mostly destination sites</li>
+    </ul>
+  </section>
+
+  <!-- 9. GROWTH & ACQUISITION -->
+  <section class="section-card page-break">
+    <h2><span class="num">9</span> Growth & User Acquisition</h2>
+
+    <h3>Organic Channels (High ROI)</h3>
+    <ul>
+      <li><strong>SEO for scam lookups:</strong> Create indexed pages for every checked domain (e.g., scamcheck.app/report/example.com). Target "[brand name] scam" long-tail keywords — these have massive search volume.</li>
+      <li><strong>Shareable report links:</strong> Every check produces a unique URL that can be shared on social media, Reddit, forums. "I checked this on ScamCheck — it's a confirmed scam. See: scamcheck.app/report/xyz"</li>
+      <li><strong>Content marketing:</strong> "Top 10 scams this week", "How to spot a fake online store", seasonal scam roundups (tax season, holidays)</li>
+      <li><strong>Reddit / forum presence:</strong> Helpful, non-spammy replies in r/Scams, r/personalfinance, etc.</li>
+    </ul>
+
+    <h3>Paid Channels (Controlled Scale)</h3>
+    <ul>
+      <li><strong>Google Ads:</strong> Target "is [brand] legit", "[brand] scam", "check website scam" keywords</li>
+      <li><strong>Social media:</strong> Short-form content showing scam detections (TikTok, Reels, Shorts) — high viral potential</li>
+      <li><strong>Influencer partnerships:</strong> Consumer protection / personal finance YouTubers and TikTokers</li>
+    </ul>
+
+    <h3>Partnership Channels</h3>
+    <ul>
+      <li><strong>Banks & fintechs:</strong> White-label scam checking for their customers (e.g., "Check before you pay" button in banking apps)</li>
+      <li><strong>Marketplaces:</strong> Integrate scam checking into platforms like eBay, Craigslist, Facebook Marketplace</li>
+      <li><strong>Elder care organizations:</strong> Seniors are the #1 fraud target — partner with AARP, elder care providers</li>
+      <li><strong>Consumer protection agencies:</strong> Data partnerships with FTC, CFPB, Action Fraud (UK)</li>
+    </ul>
+
+    <h3>Viral Mechanics</h3>
+    <div class="finding">
+      <div class="finding-icon green"><i class="fas fa-share-nodes"></i></div>
+      <div class="finding-body">
+        <h4>Share-to-Unlock</h4>
+        <p>After a free check, users can share the result on social media to unlock a second free check (or detailed report). Each share = free marketing + new user acquisition.</p>
+      </div>
+    </div>
+    <div class="finding">
+      <div class="finding-icon green"><i class="fas fa-badge-check"></i></div>
+      <div class="finding-body">
+        <h4>ScamCheck Verified Badge</h4>
+        <p>Verified businesses embed a badge on their site linking back to ScamCheck. Every legitimate site becomes a permanent inbound link and credibility signal.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. PRODUCT ROADMAP -->
+  <section class="section-card">
+    <h2><span class="num">10</span> Product Roadmap</h2>
+
+    <div class="roadmap-phase phase-1">
+      <div class="phase-header">
+        <h4>Phase 1 — Foundation</h4>
+        <span class="timeline">Weeks 1-4</span>
+      </div>
+      <ul>
+        <li><strong>Authentication system</strong> — Email/OAuth signup, user profiles</li>
+        <li><strong>Database setup</strong> — PostgreSQL + Redis, check history schema</li>
+        <li><strong>Deep scan engine v1</strong> — Integrate Google Safe Browsing + VirusTotal + WHOIS + PhishTank</li>
+        <li><strong>Structured reports</strong> — Multi-section results with signal breakdown, confidence levels, cited sources</li>
+        <li><strong>Design overhaul</strong> — Professional, security-product aesthetic</li>
+        <li><strong>Methodology page</strong> — Transparent explanation of how checks work</li>
+        <li><strong>Shareable report links</strong> — Unique URL for every check result</li>
+      </ul>
+    </div>
+
+    <div class="roadmap-phase phase-2">
+      <div class="phase-header">
+        <h4>Phase 2 — Monetization</h4>
+        <span class="timeline">Weeks 5-8</span>
+      </div>
+      <ul>
+        <li><strong>Payment integration</strong> — Yoco / Paystack processing, subscription management</li>
+        <li><strong>Pricing page</strong> — Free / Pro / Business tiers</li>
+        <li><strong>Check history & dashboard</strong> — Full history, favorites, watchlist</li>
+        <li><strong>Report a scam</strong> — User submission form with verification workflow</li>
+        <li><strong>Email alerts</strong> — Notification when a watched domain changes status</li>
+        <li><strong>Rate limiting</strong> — Free tier limits, paid tier unlocks</li>
+        <li><strong>SEO-optimized report pages</strong> — Auto-generated pages for every checked domain</li>
+      </ul>
+    </div>
+
+    <div class="roadmap-phase phase-3">
+      <div class="phase-header">
+        <h4>Phase 3 — Growth</h4>
+        <span class="timeline">Weeks 9-14</span>
+      </div>
+      <ul>
+        <li><strong>Browser extension</strong> — Chrome + Firefox, auto-check on page visit</li>
+        <li><strong>REST API</strong> — Developer documentation, API keys, rate limits</li>
+        <li><strong>Batch checking</strong> — CSV upload, bulk domain verification</li>
+        <li><strong>AI content analysis</strong> — LLM-powered scam pattern detection, clone site comparison</li>
+        <li><strong>ScamCheck Verified</strong> — Business verification program with trust badges</li>
+        <li><strong>Content engine</strong> — Weekly scam roundups, educational articles, newsletter</li>
+        <li><strong>Share-to-unlock mechanic</strong> — Viral growth loop</li>
+      </ul>
+    </div>
+
+    <div class="roadmap-phase phase-4">
+      <div class="phase-header">
+        <h4>Phase 4 — Scale</h4>
+        <span class="timeline">Weeks 15-24</span>
+      </div>
+      <ul>
+        <li><strong>Webhooks & integrations</strong> — Slack, Discord, Zapier, n8n</li>
+        <li><strong>White-label solution</strong> — For banks, fintechs, marketplaces</li>
+        <li><strong>Mobile app / PWA</strong> — Native mobile experience with camera scanning</li>
+        <li><strong>Multi-language support</strong> — Top fraud-affected markets (incl. SA official languages)</li>
+        <li><strong>Advanced monitoring</strong> — Brand protection, new domain alerts, pattern detection</li>
+        <li><strong>Community features</strong> — Scam discussion forum, verified expert contributors</li>
+        <li><strong>Enterprise dashboard</strong> — Team management, audit logs, compliance reports</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 11. KPIs & SUCCESS METRICS -->
+  <section class="section-card page-break">
+    <h2><span class="num">11</span> KPIs & Success Metrics</h2>
+
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Metric</th>
+          <th>Target (Month 3)</th>
+          <th>Target (Month 6)</th>
+          <th>Target (Month 12)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Monthly Active Users</td>
+          <td>5,000</td>
+          <td>25,000</td>
+          <td>100,000</td>
+        </tr>
+        <tr>
+          <td>Daily Checks</td>
+          <td>500</td>
+          <td>5,000</td>
+          <td>50,000</td>
+        </tr>
+        <tr>
+          <td>Conversion Rate (Free→Paid)</td>
+          <td>2%</td>
+          <td>4%</td>
+          <td>6%</td>
+        </tr>
+        <tr>
+          <td>Monthly Recurring Revenue</td>
+          <td>R9,000</td>
+          <td>R90,000</td>
+          <td>R540,000</td>
+        </tr>
+        <tr>
+          <td>User Reports Submitted</td>
+          <td>100/mo</td>
+          <td>1,000/mo</td>
+          <td>10,000/mo</td>
+        </tr>
+        <tr>
+          <td>Detection Accuracy</td>
+          <td>75%</td>
+          <td>85%</td>
+          <td>92%</td>
+        </tr>
+        <tr>
+          <td>Browser Extension Installs</td>
+          <td>—</td>
+          <td>2,000</td>
+          <td>25,000</td>
+        </tr>
+        <tr>
+          <td>API Customers</td>
+          <td>—</td>
+          <td>10</td>
+          <td>100</td>
+        </tr>
+        <tr>
+          <td>Shareable Link Viral Rate</td>
+          <td>5%</td>
+          <td>10%</td>
+          <td>15%</td>
+        </tr>
+        <tr>
+          <td>Churn Rate (Monthly)</td>
+          <td>&lt;10%</td>
+          <td>&lt;7%</td>
+          <td>&lt;5%</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 12. FINANCIAL PROJECTIONS -->
+  <section class="section-card">
+    <h2><span class="num">12</span> Financial Projections — Path to Profitability</h2>
+
+    <h3>Cost Structure (Monthly)</h3>
+    <table class="comparison-table">
+      <thead>
+        <tr>
+          <th>Expense</th>
+          <th>Phase 1 (Mo 1-3)</th>
+          <th>Phase 2 (Mo 4-6)</th>
+          <th>Phase 3 (Mo 7-12)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Hosting (Vercel + DB)</td>
+          <td>R360</td>
+          <td>R900</td>
+          <td>R3,600</td>
+        </tr>
+        <tr>
+          <td>API Costs (VirusTotal, WHOIS, etc.)</td>
+          <td>R0 (free tiers)</td>
+          <td>R1,800</td>
+          <td>R9,000</td>
+        </tr>
+        <tr>
+          <td>Payment Fees (Yoco/Paystack)</td>
+          <td>R0</td>
+          <td>R900</td>
+          <td>R5,400</td>
+        </tr>
+        <tr>
+          <td>Email (Resend)</td>
+          <td>R0</td>
+          <td>R360</td>
+          <td>R900</td>
+        </tr>
+        <tr>
+          <td>Marketing / Ads</td>
+          <td>R0</td>
+          <td>R3,600</td>
+          <td>R18,000</td>
+        </tr>
+        <tr>
+          <td>Development (your time)</td>
+          <td>R0 (sweat equity)</td>
+          <td>R0</td>
+          <td>R36,000 (if hiring)</td>
+        </tr>
+        <tr style="font-weight:700;">
+          <td style="color:var(--fg);">Total Monthly Cost</td>
+          <td style="color:var(--accent);">~R360</td>
+          <td style="color:var(--accent);">~R7,560</td>
+          <td style="color:var(--accent);">~R72,900</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Revenue Projections (Monthly)</h3>
+    <table class="comparison-table">
+      <thead>
+        <tr>
+          <th>Stream</th>
+          <th>Mo 3</th>
+          <th>Mo 6</th>
+          <th>Mo 12</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Consumer Pro Subs</td>
+          <td>R3,600</td>
+          <td>R36,000</td>
+          <td>R216,000</td>
+        </tr>
+        <tr>
+          <td>Business / Team Plans</td>
+          <td>R0</td>
+          <td>R9,000</td>
+          <td>R144,000</td>
+        </tr>
+        <tr>
+          <td>API Access</td>
+          <td>R0</td>
+          <td>R5,400</td>
+          <td>R90,000</td>
+        </tr>
+        <tr>
+          <td>Verified Badges</td>
+          <td>R0</td>
+          <td>R3,600</td>
+          <td>R54,000</td>
+        </tr>
+        <tr style="font-weight:700;">
+          <td style="color:var(--fg);">Total Monthly Revenue</td>
+          <td style="color:var(--success);">~R3,600</td>
+          <td style="color:var(--success);">~R54,000</td>
+          <td style="color:var(--success);">~R504,000</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Break-Even Analysis</h3>
+    <div class="exec-highlight">
+      <p><strong>Break-even is projected at Month 5-6</strong>, assuming Phase 1 and 2 are executed on schedule. The path is: build depth → add auth + payments → grow SEO traffic → convert 3-5% to paid plans. The critical variable is <strong>detection quality</strong> — if users don't trust the results, nothing else matters. Invest disproportionately in the scanning engine.</p>
+    </div>
+
+    <hr class="divider">
+
+    <h3>Priority Action Matrix</h3>
+    <div class="priority-grid">
+      <div class="priority-box p0">
+        <h4>P0 — Do Now (Week 1-2)</h4>
+        <p>Add auth (NextAuth), set up PostgreSQL, integrate 3+ real blacklist APIs, redesign results page with signal breakdown and source citations</p>
+      </div>
+      <div class="priority-box p1">
+        <h4>P1 — Do Next (Week 3-4)</h4>
+        <p>Professional visual overhaul, methodology page, shareable report links, check history dashboard, Yoco/Paystack integration with pricing page</p>
+      </div>
+      <div class="priority-box p2">
+        <h4>P2 — Do Soon (Week 5-8)</h4>
+        <p>Browser extension, user scam reporting, email alerts, SEO-optimized domain pages, content marketing launch</p>
+      </div>
+      <div class="priority-box p3">
+        <h4>P3 — Do Later (Week 9+)</h4>
+        <p>REST API, batch checking, AI analysis, Verified Badge program, white-label, mobile app, multi-language</p>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <p style="text-align:center; color:var(--muted); font-size:13px; margin-top:20px;">
+      <em>End of Report — ScamCheck MVP Full System & Profitability Audit</em><br>
+      Prepared by <strong style="color:var(--bh);">Business Hustle</strong> — Generated <span id="footerDate"></span> — Confidential
+    </p>
+  </section>
+
+  <!-- BUSINESS HUSTLE FOOTER -->
+  <footer class="bh-footer">
+    <div class="bh-footer-top">
+      <div class="bh-footer-brand">
+        <a class="fb-logo" href="https://www.businesshustle.co.za/" target="_blank" rel="noopener">
+          <img src="https://www.businesshustle.co.za/logo.svg" alt="Business Hustle">
+          <span>Business Hustle</span>
+        </a>
+        <p>Street-level digital infrastructure and AI operations for South African entrepreneurs. Product of Simple Eternity Holdings (Pty) Ltd.</p>
+        <div class="bh-socials">
+          <a href="https://x.com/TeeJaySeatlholo" target="_blank" rel="noopener" title="X"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://www.linkedin.com/company/business-hustle" target="_blank" rel="noopener" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/JacobSeatlholo" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+      <div class="bh-footer-cols">
+        <div class="bh-footer-col">
+          <h5>Services</h5>
+          <a href="https://www.businesshustle.co.za/#solutions" target="_blank" rel="noopener">GEO Optimisation</a>
+          <a href="https://www.businesshustle.co.za/#solutions" target="_blank" rel="noopener">S2S Automation</a>
+          <a href="https://www.businesshustle.co.za/#solutions" target="_blank" rel="noopener">Local Directories</a>
+          <a href="https://www.businesshustle.co.za/#platform" target="_blank" rel="noopener">What We Build</a>
+        </div>
+        <div class="bh-footer-col">
+          <h5>Company</h5>
+          <a href="https://www.businesshustle.co.za/#about" target="_blank" rel="noopener">About</a>
+          <a href="https://www.businesshustle.co.za/#portfolio" target="_blank" rel="noopener">Our Work</a>
+          <a href="https://www.businesshustle.co.za/#resources" target="_blank" rel="noopener">Resources</a>
+          <a href="https://www.businesshustle.co.za/#contact" target="_blank" rel="noopener">Contact</a>
+        </div>
+        <div class="bh-footer-col">
+          <h5>Legal</h5>
+          <a href="https://www.businesshustle.co.za/privacy" target="_blank" rel="noopener">Privacy Policy</a>
+          <a href="https://www.businesshustle.co.za/terms" target="_blank" rel="noopener">Terms of Service</a>
+          <a href="https://www.businesshustle.co.za/cookies" target="_blank" rel="noopener">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+    <div class="bh-footer-bottom">
+      <p>© <span id="year"></span> Business Hustle Ltd. All rights reserved. Product of Simple Eternity Holdings (Pty) Ltd.</p>
+      <p><a href="https://www.businesshustle.co.za/" target="_blank" rel="noopener">www.businesshustle.co.za</a> · team@businesshustle.co.za</p>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  // Set dates
+  var now = new Date();
+  var dateStr = now.toLocaleDateString('en-ZA', { year: 'numeric', month: 'long', day: 'numeric' });
+  document.getElementById('reportDate').textContent = dateStr;
+  document.getElementById('footerDate').textContent = dateStr;
+  document.getElementById('year').textContent = now.getFullYear();
+</script>
+
+</body>
+</html>
