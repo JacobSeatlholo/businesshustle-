@@ -669,7 +669,7 @@ export default function Home() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.85 }}
           >
-            Building African business infrastructure since 2018
+            Trusted by startups, nonprofits and growing businesses across South Africa
           </motion.p>
         </section>
 
