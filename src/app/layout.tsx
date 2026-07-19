@@ -68,9 +68,12 @@ export default function RootLayout({
         <Script
           defer
           data-domain="businesshustle.co.za"
-          src="https://plausible-production-63a6.up.railway.app/js/script.js"
+          src="https://plausible-production-63a6.up.railway.app/js/script.hash.outbound-links.js"
           strategy="afterInteractive"
         />
+        <Script id="plausible-init" strategy="afterInteractive">
+          {`window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }`}
+        </Script>
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased bg-background text-foreground`}

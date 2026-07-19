@@ -50,6 +50,16 @@ import {
 /* ------------------------------------------------------------------ */
 /*  Idea Generator                                              */
 /* ------------------------------------------------------------------ */
+declare global {
+  interface Window {
+    plausible?: (event: string, opts?: { props?: Record<string, string> }) => void
+  }
+}
+
+const track = (event: string, props?: Record<string, string>) => {
+  if (typeof window !== 'undefined' && window.plausible) window.plausible(event, props ? { props } : undefined)
+}
+
 type Idea = { title: string; description: string; impact: string }
 
 function IdeaGenerator() {
@@ -76,6 +86,7 @@ function IdeaGenerator() {
       })
       if (!res.ok) throw new Error('failed')
       setCaptureStatus('done')
+      track('Lead Captured', { source: 'idea-generator' })
     } catch {
       setCaptureStatus('error')
     }
@@ -95,6 +106,7 @@ function IdeaGenerator() {
       const data = await res.json()
       if (!res.ok) throw new Error(data.error || 'Something went wrong')
       setIdeas(data.ideas)
+      track('Idea Generated')
     } catch (e) {
       setError(e instanceof Error ? e.message : 'Something went wrong. Please try again.')
     } finally {
@@ -216,6 +228,7 @@ function IdeaGenerator() {
                 href={`https://wa.me/27744815163?text=${encodeURIComponent('Hi Jacob, I used the Idea Generator on businesshustle.co.za and want to chat about building one of the ideas.')}`}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => track('WhatsApp Click', { source: 'idea-generator' })}
                 className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-gold hover:gap-2.5 transition-all"
               >
                 Or chat to us on WhatsApp now
@@ -516,6 +529,7 @@ export default function Home() {
       const data = await res.json()
       if (!res.ok) throw new Error(data.error || 'Something went wrong')
       setSubscribeStatus('success')
+      track('Newsletter Signup')
       setSubscribeMessage(data.message || 'Welcome aboard!')
       setSubscribeEmail('')
     } catch (err) {
