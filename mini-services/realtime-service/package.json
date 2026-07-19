@@ -1,1 +1,0 @@
-{"name": "businesshustle-realtime", "version": "1.0.0", "private": true, "type": "module", "scripts": {"dev": "bun --hot index.ts"}, "dependencies": {"socket.io": "^4.8.1", "@prisma/client": "^6.11.1"}}
