@@ -1345,6 +1345,105 @@ export default function Home() {
           </div>
         </section>
 
+        {/* ============================================================ */}
+        {/*  HUSTLE STORE — productized services                          */}
+        {/* ============================================================ */}
+        <section id="store" className="py-20 sm:py-28">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <AnimatedSection className="text-center mb-12">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
+                Plug Into the <span className="gradient-text">OS</span>
+              </h2>
+              <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
+                Fixed-scope products with clear pricing — pick a module, check
+                out online, and we get to work. No proposals, no waiting.
+              </p>
+            </AnimatedSection>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+              {([
+                {
+                  title: 'Launch',
+                  blurb: 'Everything to get a brand live and looking professional.',
+                  items: [
+                    { name: 'Brand Launch Package', slug: 'brand-launch-package' },
+                    { name: 'Landing Page', slug: 'landing-page' },
+                    { name: 'Brand Strategist Starter Kit', slug: 'brand-strategist-starter-kit' },
+                    { name: 'Web Hosting', slug: 'web-hosting' },
+                  ],
+                },
+                {
+                  title: 'Grow',
+                  blurb: 'Creative and strategy firepower for brands scaling up.',
+                  items: [
+                    { name: 'Brand Scale Up Bundle', slug: 'brand-scale-up-bundle' },
+                    { name: 'Brand Consulting', slug: 'brand-consulting' },
+                    { name: 'Content Creation', slug: 'content-creation' },
+                    { name: 'Influencer Campaign', slug: 'influencer-campaign' },
+                    { name: 'Business Case Planning', slug: 'business-case-planning' },
+                  ],
+                },
+                {
+                  title: 'Design Studio',
+                  blurb: 'Visual assets produced by our in-house studio.',
+                  items: [
+                    { name: 'Graphic Design', slug: 'graphic-design' },
+                    { name: '3D Design', slug: '3d-design' },
+                  ],
+                },
+                {
+                  title: 'Learn & Subscribe',
+                  blurb: 'Knowledge products and memberships for hustlers.',
+                  items: [
+                    { name: 'Hustle Basics eBook', slug: 'hustle-basics-ebook' },
+                    { name: 'Hustle Guru Subscription', slug: 'hustle-guru-subscription' },
+                    { name: 'HustlePortal Pro Membership', slug: 'hustle-portal-pro-membership' },
+                  ],
+                },
+              ] as { title: string; blurb: string; items: { name: string; slug: string }[] }[]).map((cat) => (
+                <Card
+                  key={cat.title}
+                  className="border-border/60 bg-card/80 backdrop-blur-sm hover:border-gold/40 transition-colors py-0 gap-0"
+                >
+                  <CardContent className="p-6 flex flex-col gap-3 h-full">
+                    <h3 className="font-semibold text-lg">{cat.title}</h3>
+                    <p className="text-sm text-muted-foreground">{cat.blurb}</p>
+                    <ul className="mt-1 space-y-2 flex-1">
+                      {cat.items.map((item) => (
+                        <li key={item.slug}>
+                          <a
+                            href={`https://app.businesshustle.co.za/product/${item.slug}/`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="group inline-flex items-center gap-1.5 text-sm text-foreground/85 hover:text-gold transition-colors"
+                          >
+                            {item.name}
+                            <ArrowRight className="size-3.5 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+            <div className="mt-10 text-center">
+              <Button asChild className="rounded-full px-7 bg-gold text-background hover:bg-gold/90 font-semibold">
+                <a
+                  href="https://app.businesshustle.co.za/shop/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Browse the full store
+                  <ArrowRight className="size-4" />
+                </a>
+              </Button>
+              <p className="mt-3 text-xs text-muted-foreground">
+                KloofStreet feature packages available in-store for Kloof Street businesses.
+              </p>
+            </div>
+          </div>
+        </section>
+
         <IdeaGenerator />
 
         {/* ============================================================ */}
