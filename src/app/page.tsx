@@ -1392,14 +1392,15 @@ export default function Home() {
                 },
                 {
                   title: 'Learn & Subscribe',
-                  blurb: 'Knowledge products and memberships for hustlers.',
+                  blurb: 'Knowledge products, memberships, and community.',
                   items: [
                     { name: 'Hustle Basics eBook', slug: 'hustle-basics-ebook' },
                     { name: 'Hustle Guru Subscription', slug: 'hustle-guru-subscription' },
                     { name: 'HustlePortal Pro Membership', slug: 'hustle-portal-pro-membership' },
+                    { name: 'Join our Discord community — free', url: 'https://discord.gg/APmbAKhFr' },
                   ],
                 },
-              ] as { title: string; blurb: string; items: { name: string; slug: string }[] }[]).map((cat) => (
+              ] as { title: string; blurb: string; items: { name: string; slug?: string; url?: string }[] }[]).map((cat) => (
                 <Card
                   key={cat.title}
                   className="border-border/60 bg-card/80 backdrop-blur-sm hover:border-gold/40 transition-colors py-0 gap-0"
@@ -1409,9 +1410,9 @@ export default function Home() {
                     <p className="text-sm text-muted-foreground">{cat.blurb}</p>
                     <ul className="mt-1 space-y-2 flex-1">
                       {cat.items.map((item) => (
-                        <li key={item.slug}>
+                        <li key={item.name}>
                           <a
-                            href={`https://app.businesshustle.co.za/product/${item.slug}/`}
+                            href={item.url ?? `https://app.businesshustle.co.za/product/${item.slug}/`}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="group inline-flex items-center gap-1.5 text-sm text-foreground/85 hover:text-gold transition-colors"
