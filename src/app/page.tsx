@@ -503,6 +503,7 @@ export default function Home() {
 
   const navLinks = [
     { key: 'idea-generator', label: 'Idea Generator' },
+    { key: 'store', label: 'Store' },
     { key: 'platform', label: t('nav.platform') },
     { key: 'solutions', label: t('nav.solutions') },
     { key: 'industries', label: t('nav.industries') },
@@ -1501,6 +1502,17 @@ export default function Home() {
                   </Card>
                 </AnimatedSection>
               ))}
+            </div>
+            <div className="mt-10 text-center">
+              <a
+                href="https://g.page/r/CW0v2u5NGkl2EAE/review"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-sm font-medium text-gold hover:gap-2.5 transition-all"
+              >
+                4.8 ★ on Google — read more or leave us a review
+                <ArrowRight className="size-4" />
+              </a>
             </div>
           </div>
         </section>
