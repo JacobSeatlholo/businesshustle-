@@ -50,8 +50,8 @@ export async function POST(request: NextRequest) {
       {
         message:
           type === "newsletter"
-            ? "Welcome aboard! Check your inbox for confirmation."
-            : "Thank you! We'll be in touch within 24 hours.",
+            ? "You are subscribed. Check your inbox for confirmation."
+            : "Thank you. We will reply within 24 hours.",
       },
       { status: 201 }
     );

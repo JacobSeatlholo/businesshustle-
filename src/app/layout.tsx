@@ -18,42 +18,40 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Business Hustle | Digital Infrastructure & AI Operations for South Africa",
+  title: "Business Hustle | Websites, Directories and AI Automation for South African Businesses",
   icons: {
     icon: [
       { url: "/icon.svg", type: "image/svg+xml" },
     ],
   },
   description:
-    "Business Hustle builds street-level digital infrastructure and AI operations for South African entrepreneurs. Grounded in Batho Pele principles — from local directories and GEO optimisation to open-source AI workflow automation.",
+    "Business Hustle builds websites, online directories, and AI automation for South African businesses. You own everything we build. We follow the Batho Pele principle: People First.",
   keywords: [
     "Business Hustle",
-    "digital infrastructure",
-    "AI operations",
-    "GEO optimisation",
-    "South African business",
+    "websites for South African businesses",
+    "online directories",
+    "AI automation",
+    "AI search visibility",
+    "local business directories",
     "Batho Pele",
-    "S2S automation",
-    "local digital directories",
-    "AI operators",
     "Mafikeng Innovation Hub",
     "KloofStreet",
-    "open-source AI",
+    "HustlePortal",
     "South Africa",
   ],
   authors: [{ name: "Tselakgosi Jacob Seatlholo" }, { name: "Business Hustle Ltd" }],
   openGraph: {
-    title: "Business Hustle | Digital Infrastructure & AI Operations for South Africa",
+    title: "Business Hustle | Websites, Directories and AI Automation for South African Businesses",
     description:
-      "Street-level digital infrastructure and AI operations for South African entrepreneurs. Grounded in Batho Pele principles.",
+      "Websites, online directories, and AI automation for South African businesses. You own everything we build.",
     siteName: "Business Hustle",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Business Hustle | Digital Infrastructure & AI Operations for South Africa",
+    title: "Business Hustle | Websites, Directories and AI Automation for South African Businesses",
     description:
-      "Street-level digital infrastructure and AI operations for South African entrepreneurs. Grounded in Batho Pele principles.",
+      "Websites, online directories, and AI automation for South African businesses. You own everything we build.",
   },
 };
 

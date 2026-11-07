@@ -1,125 +1,91 @@
-# Business Hustle - Street-Level Digital Infrastructure & AI Operations
+# Business Hustle
 # https://businesshustle.co.za
-# Last updated: 2025
+# Last updated: 2026
 
-> Business Hustle is a South African hybrid digital infrastructure and strategic AI operations agency founded by Tselakgosi Jacob Seatlholo. Grounded in Batho Pele principles, the company bridges street-level local commerce and frontier AI technology. Product of Simple Eternity Holdings (Pty) Ltd.
+> Business Hustle is a South African technology company. It builds websites, online directories, and AI automation for local businesses. It also trains young South Africans to work with AI. The company was founded by Tselakgosi Jacob Seatlholo. Business Hustle is a product of Simple Eternity Holdings (Pty) Ltd. The company follows the Batho Pele principle. Batho Pele means People First.
 
-## About
+## What Business Hustle Does
 
-Business Hustle builds digital infrastructure and AI operations for South African entrepreneurs. The company runs a dual-engine model: street-level digital infrastructure that gives local businesses digital ownership, and AI operations that automate messy enterprise workflows — with skilled humans in the loop.
+### Websites and Directories
+Business Hustle builds websites and online directories for local businesses. Example: KloofStreet.online. This is a directory of businesses on Kloof Street in Cape Town. The business keeps ownership of its information.
 
-The company believes that as the world transitions to AI-driven search and automated workflows, local businesses cannot be left invisible, and local youth must be the ones building the infrastructure. Grounded, authentic, and highly technical without being pretentious. Tagline: Explore. Adapt. Evolve.
+### AI Search Visibility
+Business Hustle sets up business information so AI assistants like ChatGPT can find it and recommend it. When people ask AI for local services, listed businesses show up.
 
-## Dual-Engine Model
+### Task Automation
+Business Hustle uses AI to do repetitive office work. Examples: data entry, reports, and admin. A person checks every important step.
 
-### Pillar A: Local Digital Infrastructure & GEO (The Now)
+### AI Data Work
+Business Hustle prepares and checks data used to train AI models. This work is called data curation and model evaluation.
 
-Building street-level digital layers and directories (e.g., KloofStreet.online) using open-source tools to give local businesses digital ownership. Optimising for Generative Engine Optimization (GEO) — structuring local business data so AI models and LLM assistants can easily read, cite, and recommend them.
+### AI Training For Youth
+Business Hustle trains young South Africans to work with AI. Partners: Mafikeng Innovation Hub and the Western Cape Government.
 
-### Pillar B: AI & Data Operations (The Next)
+## How Business Hustle Works
 
-Running a "Services-to-Software" (S2S) operation that automates messy enterprise workflows using open-source AI, keeping skilled human minds in the loop for critical decision-making. Building high-leverage talent pipelines — in partnership with Mafikeng Innovation Hub and the Western Cape Government, training local youth to become elite AI operators, data curators, and RLHF specialists.
+1. We Listen First. We study your business. We find where technology saves you the most time. We ask before we build.
+2. We Build. We build with open source tools. We connect the new tools to the systems you already use. You own everything we build.
+3. We Train Your Team. We show your team how to use the new tools. You are never locked into us.
 
-## What We Build
+## Industries Served
 
-### Local Digital Infrastructure
-Street-level digital layers and directories using open-source tools. Think KloofStreet.online — local businesses get digital ownership, not just a website. (Pillar A — The Now)
+- Financial Services. AI tools for compliance and risk work.
+- Healthcare. AI for bookings, patient messages, and practice admin.
+- Mining and Energy. AI that warns about equipment problems before they stop work.
+- Agriculture. Crop monitoring with cameras and AI.
+- Retail and Online Stores. AI that predicts demand and keeps stock levels right.
+- Logistics. Better delivery routes and full supply chain view.
+- Public Sector. Systems that help government offices serve people faster.
+- Education. Learning tools that adapt to each student.
 
-### GEO Optimisation
-Structure local business data so AI models and LLM assistants can read, cite, and recommend them. No local business gets left invisible. (Pillar A — Discovery)
+## Our Own Live Products
 
-### S2S Workflow Automation
-Services-to-Software operation that automates messy enterprise workflows using open-source AI. Skilled humans stay in the loop for critical decisions. (Pillar B — The Next)
+- KloofStreet.online. A business directory for Kloof Street in Cape Town. Time Out ranks the street number 22 in the world. 50+ businesses listed.
+- FundingStatsSA. A public dashboard that tracks development funding in South Africa. Every number is verified.
+- OpenTender ZA. A public database of government tenders. It checks suppliers and shows trust ratings.
+- PoliceData ZA. Official South African crime statistics on simple maps. Launched on Human Rights Day 2026.
+- BlackBiz. A verified directory of Black businesses in South Africa. It includes a news feed and growth tools.
+- MoveCape.online. A local platform that connects people with businesses and services in Cape Town.
+- HustlePortal.online. A tool that runs business admin. Leads, clients, invoices, calendar, and reports in one place. Free to start.
 
-### AI Data Operations
-Data curation, RLHF, and model evaluation. Training local youth to become elite AI operators and data specialists. (Pillar B — Intelligence)
+## The Hustle Store
 
-### Talent Pipelines
-Training local youth as AI operators, data curators, and RLHF specialists — in partnership with Mafikeng Innovation Hub and the Western Cape Government. (People First)
+The Hustle Store sells services with fixed prices. Pay online. Work starts right away.
+Categories: Launch, Grow, Design Studio, Learn and Subscribe.
+HustlePortal (TM): A professional website for your business. R1,850 per year.
+Store: https://app.businesshustle.co.za/shop/
 
-## How We Work
+## Free AI Tool
 
-1. **Listen & Audit** — Understand your business — your data, workflows, and where technology creates the most leverage. No assumptions, no fluff.
-2. **Build & Integrate** — Design and deploy practical solutions using open-source tools, integrated with existing systems. You own everything we build.
-3. **Train & Scale** — Upskill your team and refine operations. Infrastructure grows with your business — no vendor lock-in.
-
-## Built for How Business Works
-
-Practical digital infrastructure and AI for the sectors that drive the economy.
-
-- **Financial Services** — Compliance, risk, and client insight — practical AI that meets regulatory demands.
-- **Healthcare** — Custom AI for healthcare operations, diagnostics support, and patient flow.
-- **Mining & Energy** — Catch hazards, cut losses, prevent downtime with predictive intelligence.
-- **Agriculture** — Forecast yields, optimise supply chains, and monitor crops with computer vision.
-- **Retail & E-commerce** — Forecast demand, automate stock, and personalise the customer experience.
-- **Logistics** — Route optimisation, fleet management, and real-time supply chain visibility.
-- **Public Sector** — Connect systems, cut red tape, and serve citizens better with practical technology.
-- **Education** — Personalised learning paths, automated assessment, and institutional analytics.
-
-## Solutions
-
-### Local Digital Directories
-Street-level digital layers that give neighbourhoods and business districts real online ownership and visibility. 10+ Directories Live.
-
-### Workflow Automation
-Automate complex or tedious work that buries your team. Open-source AI with humans in the loop. 70% Time Saved.
-
-### GEO & AI Visibility
-Structure your business data so AI search engines and LLM assistants find, cite, and recommend you. 3x More Discoverable.
-
-## Services
-
-Real Projects. Real Work. Real Outcomes.
-
-### Hustle Basics — Book & Guide
-The essential toolkit for entrepreneurs, freelancers, and small business owners. Turns overwhelm into clarity, ideas into action.
-
-### Project Execution — Business Delivery
-Structure business initiatives, track progress, move from planning to execution consistently. No guesswork.
-
-### HustlePortal™ — Digital Launch
-Professionally designed, SEO-ready landing pages for South African businesses. R1,850/year.
-
-### BH LOCAL — Neighbourhood Empowerment
-Digitally empowering neighbourhoods, streets, and business districts across South Africa. Flagship: KloofStreet.online.
-
-### Strategy & Structuring — Consulting
-Move from ideas to clear business models, strategies, and operational structure that attract funding and enable growth.
+The Idea Generator. Type one sentence about your business. The AI suggests three ways to automate your work. It is free.
 
 ## Clients
 
-Ubuntu, Gabonewe, Institute of Kemetic & Marcus Garvey Studies, body vision.online, sunshinefoods.co.za, Smoothie On The Go, On-Safari, Postnet Gardens, Just Hearing, Dr Wendy Dicks, Honest Travel Experience.
+Ubuntu Wellness, Gabonewe, Institute of Kemetic and Marcus Garvey Studies, Khotso Seatlholo Institute, BodyVision.online, Sunshine Foods, Smoothie On The Go, On-Safari Photography, Cape Town MediSpa, Trudy Christians, Revive Studio, PostNet Gardens, Dr Dale Geoffreys, HS Physio, Dr Wendy Dicks, Honest Travel Experience, StarFM Radio, Wilscha Skincare, Arnolds Restaurant, Starve to Thrive.
 
-In collaboration with Afrocentric Solutions.
+In partnership with Afrocentric Solutions.
 
 ## Key Metrics
 
-- 50+ Businesses Served
+- 500+ Projects Delivered
+- 9+ Years Experience
+- 7+ Platforms Live
 - 98% Client Retention
 - 24 AI Operators Trained
 
 ## Resources Hub
 
-120+ curated tools and resources across 21 categories for builders and entrepreneurs, covering design, AI/ML, no-code, analytics, DevOps, productivity, marketing, cloud, and more.
+A free list of 120+ tools for building a business. 21 categories. We picked and tested every tool.
 
 ## Compliance
 
-- PAIA Manual (Integrated with POPIA): https://app.businesshustle.co.za/wp-content/uploads/2025/12/BHW-PAIA-Manual-Integrated-with-POPIA.pdf
+PAIA Manual (integrated with POPIA): https://app.businesshustle.co.za/wp-content/uploads/2025/12/BHW-PAIA-Manual-Integrated-with-POPIA.pdf
 
 ## Contact
 
 - Website: https://businesshustle.co.za
-- Company: Business Hustle Ltd (Product of Simple Eternity Holdings (Pty) Ltd)
+- WhatsApp: +27 74 481 5163
+- Company: Business Hustle Ltd. A product of Simple Eternity Holdings (Pty) Ltd.
 - Founder: Tselakgosi Jacob Seatlholo
-- Quote: "Think of technology as a verb, not a noun. It provides the tools, creative people provide the imagination." — Red Burns
-- Location: South Africa, serving the African continent
-- Available languages: English, Afrikaans, isiZulu, French, Portuguese, Swahili, Arabic
-
-## Navigation
-
-- [What We Build](#what-we-build) — Dual-engine: local digital infrastructure and AI operations
-- [Solutions](#solutions) — Featured solutions and outcomes
-- [Industries](#industries) — Sectors served across South Africa
-- [Resources](#resources) — 120+ curated tools for builders
-- [About](#about) — Company story and founder
-- [Contact](#contact) — Get in touch and get started
+- Location: South Africa. We serve the whole African continent.
+- Languages: English, Afrikaans, isiZulu, French, Portuguese, Swahili, Arabic

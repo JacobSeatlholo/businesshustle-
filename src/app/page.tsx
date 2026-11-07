@@ -235,7 +235,7 @@ function IdeaGenerator() {
     if (captureStatus === 'loading' || !captureEmail.trim()) return
     setCaptureStatus('loading')
     try {
-      const summary = ideas.map((i, n) => `${n + 1}) ${i.title} — ${i.impact}`).join(' | ')
+      const summary = ideas.map((i, n) => `${n + 1}) ${i.title}: ${i.impact}`).join(' | ')
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -287,8 +287,8 @@ function IdeaGenerator() {
             Idea <span className="gradient-text">Generator</span>
           </h2>
           <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
-            Describe your business in one sentence. Our AI finds three practical
-            automation opportunities you could deploy this quarter.
+            Type one sentence about your business. The AI suggests three
+            ways to automate your work. It is free.
           </p>
         </AnimatedSection>
 
@@ -298,7 +298,7 @@ function IdeaGenerator() {
               value={business}
               onChange={(e) => setBusiness(e.target.value)}
               onKeyDown={(e) => e.key === 'Enter' && generate()}
-              placeholder="e.g. I run a physiotherapy practice in Gardens, Cape Town"
+              placeholder="Example: I run a physiotherapy practice in Cape Town"
               maxLength={300}
               className="h-12"
             />
@@ -315,7 +315,7 @@ function IdeaGenerator() {
               ) : (
                 <>
                   <Sparkles className="size-4 mr-2" />
-                  Find Opportunities
+                  Show Me Ideas
                 </>
               )}
             </Button>
@@ -349,12 +349,12 @@ function IdeaGenerator() {
             <div className="md:col-span-3 mt-4 max-w-xl mx-auto text-center">
               {captureStatus === 'done' ? (
                 <p className="text-sm text-emerald font-medium">
-                  Sent! Check your inbox — we&apos;ll follow up personally.
+                  Sent. Check your inbox. We will follow up personally.
                 </p>
               ) : (
                 <>
                   <p className="text-sm text-muted-foreground mb-3">
-                    Want these ideas in your inbox plus a rough cost to build them?
+                    Do you want these ideas in your inbox, with a cost estimate for each one?
                   </p>
                   <div className="flex flex-col sm:flex-row gap-3 justify-center">
                     <Input
@@ -374,13 +374,13 @@ function IdeaGenerator() {
                       {captureStatus === 'loading' ? (
                         <Loader2 className="size-4 animate-spin" />
                       ) : (
-                        'Email me these ideas'
+                        'Email Me These Ideas'
                       )}
                     </Button>
                   </div>
                   {captureStatus === 'error' && (
                     <p className="text-sm text-destructive mt-2">
-                      Couldn&apos;t send — please try again.
+                      Could not send. Please try again.
                     </p>
                   )}
                 </>
@@ -392,7 +392,7 @@ function IdeaGenerator() {
                 onClick={() => track('WhatsApp Click', { source: 'idea-generator' })}
                 className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-gold hover:gap-2.5 transition-all"
               >
-                Or chat to us on WhatsApp now
+                Or chat to us on WhatsApp
                 <ArrowRight className="size-4" />
               </a>
             </div>
@@ -833,7 +833,7 @@ export default function Home() {
             </motion.div>
 
             <p className="mb-4 text-xs sm:text-sm font-medium tracking-wide uppercase text-muted-foreground">
-              Building African business infrastructure since 2017
+              Serving South African businesses since 2017
             </p>
             <motion.h1
               className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1]"
@@ -856,7 +856,7 @@ export default function Home() {
             </motion.p>
 
             <p className="mt-1 text-sm sm:text-base font-medium text-gold">
-              Helping entrepreneurs launch, grow, and automate their businesses — all from one platform.
+              One platform for your whole business.
             </p>
 
             {/* Terminal-style typing line (ported from HUSTLE//2157) */}
@@ -925,7 +925,7 @@ export default function Home() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.85 }}
           >
-            Trusted by startups, nonprofits and growing businesses across South Africa
+            Websites. Directories. AI Automation. Training.
           </motion.p>
         </section>
 
@@ -1442,8 +1442,8 @@ export default function Home() {
                 Built by us, <span className="gradient-text">Used by many</span>
               </h2>
               <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
-                We don&apos;t just build for clients — we ship and operate our own
-                platforms. Live products, real users, South African problems solved.
+                These are our own live products. People use them today. Each
+                one solves a real South African problem.
               </p>
             </AnimatedSection>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -1451,43 +1451,43 @@ export default function Home() {
                 {
                   name: 'KloofStreet.online',
                   url: 'https://www.kloofstreet.online/',
-                  desc: 'Curated directory for Kloof Street — ranked #22 on Time Out\u2019s World\u2019s Coolest Streets. 50+ businesses, AI concierge.',
+                  desc: 'A business directory for Kloof Street in Cape Town. Time Out ranks the street number 22 in the world. 50+ businesses listed.',
                   tag: 'Hyperlocal',
                 },
                 {
                   name: 'FundingStatsSA',
                   url: 'https://www.fundingstatssa.online/',
-                  desc: 'Civic dashboard tracking South African development funding — verified figures, clear visualisations.',
+                  desc: 'A public dashboard that tracks development funding in South Africa. Every number is verified and shown in clear charts.',
                   tag: 'Civic Tech',
                 },
                 {
                   name: 'OpenTender ZA',
                   url: 'https://www.opentender.online/',
-                  desc: 'Procurement transparency with supplier verification and trust ratings across public tenders.',
+                  desc: 'A public database of government tenders. It checks suppliers and shows trust ratings.',
                   tag: 'Civic Tech',
                 },
                 {
                   name: 'PoliceData ZA',
                   url: 'https://www.policedata.online/',
-                  desc: 'Crime statistics made accessible — real SAPS figures, interactive heat maps, launched Human Rights Day 2026.',
+                  desc: 'Official South African crime statistics on simple maps. Launched on Human Rights Day 2026.',
                   tag: 'Civic Tech',
                 },
                 {
                   name: 'BlackBiz',
                   url: 'https://blackbiz.co.za/',
-                  desc: 'South Africa\u2019s Black Business Intelligence Platform — verified directory, business feed, and growth tools.',
+                  desc: 'A verified directory of Black businesses in South Africa. It includes a news feed and business growth tools.',
                   tag: 'Platform',
                 },
                 {
                   name: 'MoveCape.online',
                   url: 'https://www.movecape.online/',
-                  desc: 'Cape Town on the move — a hyperlocal platform connecting people to the city.',
+                  desc: 'A local platform that connects people with businesses and services in Cape Town.',
                   tag: 'Hyperlocal',
                 },
                 {
                   name: 'HustlePortal.online',
                   url: 'https://www.hustleportal.online/',
-                  desc: 'The business OS for South African entrepreneurs — leads, clients, invoicing, calendar and reports in one place, with an AI helper. Free to start.',
+                  desc: 'A tool that runs your business admin. Leads, clients, invoices, calendar, and reports in one place. An AI helper is included. Free to start.',
                   tag: 'Platform',
                 },
               ] as { name: string; url: string; desc: string; tag: string }[]).map((p) => (
@@ -1541,18 +1541,18 @@ export default function Home() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <AnimatedSection className="text-center mb-12">
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
-                Plug Into the <span className="gradient-text">OS</span>
+                The <span className="gradient-text">Hustle Store</span>
               </h2>
               <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
-                Fixed-scope products with clear pricing — pick a module, check
-                out online, and we get to work. No proposals, no waiting.
+                Fixed prices. Pay online. We start work right away.
+                No quotes. No waiting.
               </p>
             </AnimatedSection>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
               {([
                 {
                   title: 'Launch',
-                  blurb: 'Everything to get a brand live and looking professional.',
+                  blurb: 'Everything you need to launch your brand.',
                   items: [
                     { name: 'Brand Launch Package', slug: 'brand-launch-package' },
                     { name: 'Landing Page', slug: 'landing-page' },
@@ -1562,7 +1562,7 @@ export default function Home() {
                 },
                 {
                   title: 'Grow',
-                  blurb: 'Creative and strategy firepower for brands scaling up.',
+                  blurb: 'Marketing and strategy help for growing brands.',
                   items: [
                     { name: 'Brand Scale Up Bundle', slug: 'brand-scale-up-bundle' },
                     { name: 'Brand Consulting', slug: 'brand-consulting' },
@@ -1573,7 +1573,7 @@ export default function Home() {
                 },
                 {
                   title: 'Design Studio',
-                  blurb: 'Visual assets produced by our in-house studio.',
+                  blurb: 'Design work from our own studio.',
                   items: [
                     { name: 'Graphic Design', slug: 'graphic-design' },
                     { name: '3D Design', slug: '3d-design' },
@@ -1581,12 +1581,12 @@ export default function Home() {
                 },
                 {
                   title: 'Learn & Subscribe',
-                  blurb: 'Knowledge products, memberships, and community.',
+                  blurb: 'Books, memberships, and our community.',
                   items: [
                     { name: 'Hustle Basics eBook', slug: 'hustle-basics-ebook' },
                     { name: 'Hustle Guru Subscription', slug: 'hustle-guru-subscription' },
                     { name: 'HustlePortal Pro Membership', slug: 'hustle-portal-pro-membership' },
-                    { name: 'Join our Discord community — free', url: 'https://discord.gg/APmbAKhFr' },
+                    { name: 'Join our Discord community for free', url: 'https://discord.gg/APmbAKhFr' },
                   ],
                 },
               ] as { title: string; blurb: string; items: { name: string; slug?: string; url?: string }[] }[]).map((cat) => (
@@ -1628,7 +1628,7 @@ export default function Home() {
                 </a>
               </Button>
               <p className="mt-3 text-xs text-muted-foreground">
-                KloofStreet feature packages available in-store for Kloof Street businesses.
+                Feature packages for Kloof Street businesses are available in the store.
               </p>
             </div>
           </div>
@@ -1698,7 +1698,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 text-sm font-medium text-gold hover:gap-2.5 transition-all"
               >
-                4.8 ★ on Google — read more or leave us a review
+                Rated 4.8 stars on Google. Read the reviews or leave one.
                 <ArrowRight className="size-4" />
               </a>
             </div>
@@ -1761,6 +1761,17 @@ export default function Home() {
                   {t('contact.noSpam')}
                 </p>
               )}
+              <p className="mt-3 text-xs text-muted-foreground">
+                Need help now? Chat to us on WhatsApp:{' '}
+                <a
+                  href="https://wa.me/27744815163"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gold hover:underline"
+                >
+                  +27 74 481 5163
+                </a>
+              </p>
             </AnimatedSection>
           </div>
         </section>

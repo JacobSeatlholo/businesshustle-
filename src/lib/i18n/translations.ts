@@ -30,133 +30,133 @@ export const translations: Translations = {
     'nav.resources': 'Resources',
     'nav.about': 'About',
     'nav.contact': 'Contact',
-    'nav.bookDemo': 'Get Started',
+    'nav.bookDemo': 'Contact Us',
     'nav.openMenu': 'Open menu',
 
     // Hero
     'hero.badge': 'Explore. Adapt. Evolve.',
-    'hero.title1': "Building Africa’s",
-    'hero.title2': 'Business Operating System',
+    'hero.title1': 'We Build The Tools',
+    'hero.title2': 'Your Business Needs',
     'hero.subtitle':
-      'We bridge local business and frontier AI technology. From neighbourhood directories to open-source workflow automation — grounded in Batho Pele principles.',
+      'We build websites, online directories, and AI automation for South African businesses. You own everything we build. We follow the Batho Pele principle: People First.',
     'hero.typing':
-      'Loading automation opportunities…|Connecting local AI operators…|Preparing workflow automation…|Structuring data for AI visibility…',
-    'hero.cta1': 'Get Started',
-    'hero.cta2': 'Try AI Idea Generator',
+      'Your website, built for you|Your business listed where people search|Your admin, done by AI|Your data, always yours',
+    'hero.cta1': 'Contact Us',
+    'hero.cta2': 'Try The Free AI Tool',
     'hero.stat1': 'Projects Delivered',
     'hero.stat2': 'Years Experience',
     'hero.stat3': 'Platforms Live',
 
     // Trusted by
-    'trusted.text': 'Working with founders and organisations who value clarity, structure, and results',
+    'trusted.text': 'Trusted by business owners across South Africa',
 
     // Platform (dual-engine)
-    'platform.title': 'Two Engines. One Mission.',
+    'platform.title': 'We Do Two Things',
     'platform.subtitle':
-      'Street-level digital infrastructure that gives local businesses ownership — and AI operations that automate messy workflows with humans in the loop.',
-    'platform.card1.name': 'Local Digital Infrastructure',
-    'platform.card1.tag': 'Pillar A — The Now',
+      'First, we build websites and online directories for local businesses. Second, we automate office work with AI. A person always checks the AI work.',
+    'platform.card1.name': 'Websites & Directories',
+    'platform.card1.tag': 'What We Build',
     'platform.card1.desc':
-      'We build street-level digital layers and directories using open-source tools. Think KloofStreet.online — local businesses get digital ownership, not just a website.',
-    'platform.card2.name': 'GEO Optimisation',
-    'platform.card2.tag': 'Pillar A — Discovery',
+      'We build websites and online directories for local businesses. Example: KloofStreet.online. Your business information stays yours.',
+    'platform.card2.name': 'AI Search Visibility',
+    'platform.card2.tag': 'Get Found',
     'platform.card2.desc':
-      'We structure local business data so AI models and LLM assistants can read, cite, and recommend them. No local business gets left invisible.',
-    'platform.card3.name': 'S2S Workflow Automation',
-    'platform.card3.tag': 'Pillar B — The Next',
+      'We set up your business information so AI assistants like ChatGPT can find you and recommend you. When people ask AI for local services, your business shows up.',
+    'platform.card3.name': 'Task Automation',
+    'platform.card3.tag': 'Save Time',
     'platform.card3.desc':
-      'Our Services-to-Software operation automates messy enterprise workflows using open-source AI. Skilled humans stay in the loop for critical decisions.',
-    'platform.card4.name': 'AI Data Operations',
-    'platform.card4.tag': 'Pillar B — Intelligence',
+      'We use AI to do repetitive office work. Examples: data entry, reports, and admin. A person checks every important step.',
+    'platform.card4.name': 'AI Data Work',
+    'platform.card4.tag': 'For Companies',
     'platform.card4.desc':
-      'Data curation, RLHF, and model evaluation. We train local youth to become elite AI operators and data specialists.',
-    'platform.card5.name': 'Talent Pipelines',
+      'We prepare and check the data used to train AI models. This work is called data curation and model evaluation.',
+    'platform.card5.name': 'AI Training For Youth',
     'platform.card5.tag': 'People First',
     'platform.card5.desc':
-      'We train local youth as AI operators, data curators, and RLHF specialists — in partnership with Mafikeng Innovation Hub and the Western Cape Government.',
-    'platform.learnMore': 'Learn more',
+      'We train young South Africans to work with AI. Partners: Mafikeng Innovation Hub and the Western Cape Government.',
+    'platform.learnMore': 'Ask us about this',
 
     // How it works
     'how.title': 'How We Work',
-    'how.step1.title': 'Listen & Audit',
+    'how.step1.title': 'We Listen First',
     'how.step1.desc':
-      'We start by understanding your business — your data, workflows, and where technology creates the most leverage. No assumptions, no fluff.',
-    'how.step2.title': 'Build & Integrate',
+      'We study your business first. We look at your data and your daily work. We find where technology saves you the most time. We ask before we build.',
+    'how.step2.title': 'We Build',
     'how.step2.desc':
-      'We design and deploy practical solutions using open-source tools, integrated with your existing systems. You own everything we build.',
-    'how.step3.title': 'Train & Scale',
+      'We build your solution with open source tools. We connect the new tools to the systems you already use. You own everything we build.',
+    'how.step3.title': 'We Train Your Team',
     'how.step3.desc':
-      'We upskill your team and refine operations. Your infrastructure grows with your business — no vendor lock-in.',
+      'We show your team how to use the new tools. Your system grows as your business grows. You are never locked into us.',
 
     // Industries
-    'industries.title': 'Built for How Business Works',
-    'industries.subtitle': 'Practical digital infrastructure and AI for the sectors that drive the economy.',
+    'industries.title': 'Industries We Serve',
+    'industries.subtitle': 'We work with businesses in these sectors across South Africa.',
     'industries.finance': 'Financial Services',
-    'industries.finance.desc': 'Compliance, risk, and client insight — practical AI that meets regulatory demands.',
+    'industries.finance.desc': 'AI tools for compliance and risk work. Built to follow financial rules.',
     'industries.health': 'Healthcare',
-    'industries.health.desc': 'Custom AI for healthcare operations, diagnostics support, and patient flow.',
+    'industries.health.desc': 'AI for bookings, patient messages, and practice admin.',
     'industries.mining': 'Mining & Energy',
-    'industries.mining.desc': 'Catch hazards, cut losses, prevent downtime with predictive intelligence.',
+    'industries.mining.desc': 'AI that warns about equipment problems before they stop work.',
     'industries.agri': 'Agriculture',
-    'industries.agri.desc': 'Forecast yields, optimise supply chains, and monitor crops with computer vision.',
-    'industries.retail': 'Retail & E-commerce',
-    'industries.retail.desc': 'Forecast demand, automate stock, and personalise the customer experience.',
+    'industries.agri.desc': 'Crop monitoring with cameras and AI. Better planning for harvests and supplies.',
+    'industries.retail': 'Retail & Online Stores',
+    'industries.retail.desc': 'AI that predicts demand and keeps stock levels right.',
     'industries.logistics': 'Logistics',
-    'industries.logistics.desc': 'Route optimisation, fleet management, and real-time supply chain visibility.',
+    'industries.logistics.desc': 'Better delivery routes. Full view of your fleet and supply chain at all times.',
     'industries.public': 'Public Sector',
-    'industries.public.desc': 'Connect systems, cut red tape, and serve citizens better with practical technology.',
+    'industries.public.desc': 'Systems that help government offices serve people faster.',
     'industries.edu': 'Education',
-    'industries.edu.desc': 'Personalised learning paths, automated assessment, and institutional analytics.',
+    'industries.edu.desc': 'Learning tools that adapt to each student. Automated marking and reports.',
 
     // Solutions
-    'solutions.title': 'What This Looks Like',
-    'solutions.training.title': 'Local Digital Directories',
+    'solutions.title': 'Real Results',
+    'solutions.training.title': 'Local Online Directories',
     'solutions.training.desc':
-      'Street-level digital layers that give neighbourhoods and business districts real online ownership and visibility.',
-    'solutions.training.stat': '7+ Platforms Live',
-    'solutions.automation.title': 'Workflow Automation',
+      'We build online directories for neighbourhoods and business districts. Local businesses get found. Example: KloofStreet.online.',
+    'solutions.training.stat': '7+ Platforms Online',
+    'solutions.automation.title': 'Task Automation',
     'solutions.automation.desc':
-      'Automate complex or tedious work that buries your team. Open-source AI with humans in the loop.',
-    'solutions.automation.stat': '70% Time Saved',
-    'solutions.contact.title': 'GEO & AI Visibility',
+      'We automate repetitive work with AI. A person checks every important step.',
+    'solutions.automation.stat': '70% Less Admin Time',
+    'solutions.contact.title': 'AI Search Visibility',
     'solutions.contact.desc':
-      'Structure your business data so AI search engines and LLM assistants find, cite, and recommend you.',
-    'solutions.contact.stat': '3x More Discoverable',
+      'We set up your business information so AI assistants like ChatGPT can find it and recommend it.',
+    'solutions.contact.stat': '3x Easier To Find',
 
     // Services
-    'services.title': 'Real Projects. Real Work. Real Outcomes.',
-    'services.subtitle': 'From strategy and business structuring to digital platforms and AI — we deliver what your business actually needs.',
+    'services.title': 'Services You Can Order',
+    'services.subtitle': 'Five services. Tell us what you need. We start.',
     'services.hustleBasics.name': 'Hustle Basics',
     'services.hustleBasics.tag': 'Book & Guide',
-    'services.hustleBasics.desc': 'The essential toolkit for entrepreneurs, freelancers, and small business owners. Turn overwhelm into clarity, ideas into action.',
+    'services.hustleBasics.desc': 'A simple guide that shows you how to start and run a business. Step by step. Made for South African entrepreneurs.',
     'services.hustleBasics.cta': 'Learn More',
     'services.pm.name': 'Project Execution',
     'services.pm.tag': 'Business Delivery',
-    'services.pm.desc': 'Structure your business initiatives, track progress, and move from planning to execution consistently. No guesswork.',
-    'services.pm.cta': 'Access Platform',
+    'services.pm.desc': 'We plan your projects, set the steps, and track progress until the work is done.',
+    'services.pm.cta': 'See How It Works',
     'services.portal.name': 'HustlePortal™',
-    'services.portal.tag': 'Digital Launch',
-    'services.portal.desc': 'A professionally designed, SEO-ready landing page for your business. Credible online presence for only R1,850/year.',
-    'services.portal.cta': 'Launch Online',
+    'services.portal.tag': 'Website',
+    'services.portal.desc': 'A professional website for your business. Set up to rank on Google. R1,850 per year. No hidden costs.',
+    'services.portal.cta': 'Get Your Website',
     'services.local.name': 'BH LOCAL',
-    'services.local.tag': 'Neighbourhood Empowerment',
-    'services.local.desc': 'Championing and digitally empowering neighbourhoods, streets, and business districts across South Africa.',
-    'services.local.cta': 'Explore BH LOCAL',
+    'services.local.tag': 'Local Directories',
+    'services.local.desc': 'We list and promote local businesses on our own directories across South Africa. Flagship: KloofStreet.online.',
+    'services.local.cta': 'See The Directories',
     'services.strategy.name': 'Strategy & Structuring',
     'services.strategy.tag': 'Consulting',
-    'services.strategy.desc': 'Move from ideas and vision to clear business models, strategies, and operational structure that attract funding and enable growth.',
-    'services.strategy.cta': 'Explore Solutions',
-    'services.clients.title': 'Trusted by Founders Across Sectors',
-    'services.clients.subtitle': 'From wellness and healthcare to food, travel, and retail — delivering results where it matters.',
-    'services.clients.collab': 'In collaboration with Afrocentric Solutions',
+    'services.strategy.desc': 'We turn your idea into a clear business plan and a working company structure. This helps you get funding.',
+    'services.strategy.cta': 'Book A Consultation',
+    'services.clients.title': 'Our Clients',
+    'services.clients.subtitle': 'Healthcare, food, travel, retail, and more. These businesses work with us.',
+    'services.clients.collab': 'In partnership with Afrocentric Solutions',
 
     // About
     'about.quote':
       'Think of technology as a verb, not a noun. It provides the tools, creative people provide the imagination.',
-    'about.quoteAuthor': '— Red Burns',
+    'about.quoteAuthor': 'Red Burns',
     'about.description':
-      'Business Hustle is a South African hybrid digital infrastructure and strategic AI operations agency. We bridge street-level local commerce and frontier AI technology — building directories, automating workflows, and training the next generation of AI operators. Grounded in Batho Pele principles: practical, transparent, and results-driven.',
-    'about.founded': 'Founded by Tselakgosi Jacob Seatlholo. Product of Simple Eternity Holdings (Pty) Ltd.',
+      'Business Hustle is a South African technology company. We build websites, online directories, and AI automation for local businesses. We train young people to work with AI. We follow the Batho Pele principle. Batho Pele means People First. We are practical, open, and focused on results.',
+    'about.founded': 'Founded by Tselakgosi Jacob Seatlholo. Business Hustle is a product of Simple Eternity Holdings (Pty) Ltd.',
     'about.learnStory': 'Our Story',
     'about.builtIn': 'Built in',
     'about.forAfrica': 'for Africa',
@@ -174,33 +174,33 @@ export const translations: Translations = {
     'testimonials.role3': 'Healthcare Practitioner',
 
     // Resources
-    'resources.badge': 'Curated for Builders',
+    'resources.badge': 'Free Tool List',
     'resources.title1': 'Go From Idea to',
     'resources.title2': 'Live Product Fast',
     'resources.subtitle':
-      'Unlock the tools you need to take your business to the next level — all curated, tested, and free to start. Your hub of 120+ resources across 21 categories.',
-    'resources.searchPlaceholder': 'Search resources...',
-    'resources.noResults': 'No resources found matching',
-    'resources.clearFilters': 'Clear filters',
+      'A free list of 120+ tools for building a business. We picked and tested every tool. 21 categories. Most tools are free to start.',
+    'resources.searchPlaceholder': 'Search the tool list',
+    'resources.noResults': 'Nothing found for',
+    'resources.clearFilters': 'Show all tools',
 
     // Newsletter / Contact
-    'contact.title1': 'Ready to Put Tech to Work?',
-    'contact.title2': "Let's Talk.",
+    'contact.title1': 'Get Free Business Tips',
+    'contact.title2': 'In Your Inbox',
     'contact.subtitle':
-      'Join South African entrepreneurs and business leaders getting practical insights on digital infrastructure and AI operations.',
-    'contact.placeholder': 'Enter your email',
-    'contact.subscribe': 'Subscribe',
-    'contact.noSpam': 'No spam. Unsubscribe anytime.',
+      'Join South African business owners who read our free email updates. Websites, directories, and AI automation explained in plain language.',
+    'contact.placeholder': 'Your email address',
+    'contact.subscribe': 'Sign Me Up',
+    'contact.noSpam': 'No spam. Unsubscribe any time.',
 
     // Footer
     'footer.brandDesc':
-      'Street-level digital infrastructure and AI operations for South African entrepreneurs. Product of Simple Eternity Holdings (Pty) Ltd.',
+      'We build websites, online directories, and AI automation for South African businesses. A product of Simple Eternity Holdings (Pty) Ltd.',
     'footer.services': 'Services',
-    'footer.serviceLinks.geo': 'GEO Optimisation',
-    'footer.serviceLinks.s2s': 'S2S Automation',
-    'footer.serviceLinks.talent': 'Talent Pipelines',
+    'footer.serviceLinks.geo': 'AI Search Visibility',
+    'footer.serviceLinks.s2s': 'Task Automation',
+    'footer.serviceLinks.talent': 'AI Training',
     'footer.serviceLinks.local': 'Local Directories',
-    'footer.serviceLinks.automation': 'Workflow Automation',
+    'footer.serviceLinks.automation': 'Websites',
     'footer.company': 'Company',
     'footer.legal': 'Legal',
     'footer.about': 'About',
@@ -213,7 +213,7 @@ export const translations: Translations = {
     'footer.cookies': 'Cookie Policy',
     'footer.paia': 'PAIA Manual (POPIA)',
     'footer.copyright':
-      '© 2025 Business Hustle Ltd. All rights reserved. Product of Simple Eternity Holdings (Pty) Ltd.',
+      '© 2026 Business Hustle Ltd. All rights reserved. A product of Simple Eternity Holdings (Pty) Ltd.',
   },
 
   af: {
@@ -229,14 +229,14 @@ export const translations: Translations = {
 
     // Hero
     'hero.badge': 'Verken. Pas aan. Evolueer.',
-    'hero.title1': "Building Africa’s",
-    'hero.title2': 'Business Operating System',
+    'hero.title1': 'We Build The Tools',
+    'hero.title2': 'Your Business Needs',
     'hero.subtitle':
       'Ons verbind plaaslike besighede met voorste KI-tegnologie. Van buurtgids tot oopbron-werkvloei-outomatisering — gegrond op Batho Pele-beginsels.',
     'hero.typing':
       'Laai tans outomatiseringsgeleenthede…|Verbind plaaslike KI-operateurs…|Berei werkvloei-outomatisering voor…|Strukturering van data vir KI-sigbaarheid…',
     'hero.cta1': 'Beging Nou',
-    'hero.cta2': 'Try AI Idea Generator',
+    'hero.cta2': 'Try The Free AI Tool',
     'hero.stat1': 'Projects Delivered',
     'hero.stat2': 'Years Experience',
     'hero.stat3': 'Platforms Live',
@@ -347,7 +347,7 @@ export const translations: Translations = {
     // About
     'about.quote':
       'Dink aan tegnologie as \'n werkwoord, nie \'n selfstandige naamwoord nie. Dit verskaf die gereedskap, kreatiewe mense verskaf die verbeelding.',
-    'about.quoteAuthor': '— Red Burns',
+    'about.quoteAuthor': 'Red Burns',
     'about.description':
       'Business Hustle is \'n Suid-Afrikaanse hibriede digitale infrastruktuur en strategiese KI-bedrywighede agentskap. Ons verbind straatsvlak plaaslike handel en voorste KI-tegnologie — bou gidse, outomatiseer werkvloei en oplei die volgende geslag KI-operateurs. Gegrond op Batho Pele-beginsels: prakties, deursigtig en resultaatgedrewe.',
     'about.founded': 'Gestig deur Tselakgosi Jacob Seatlholo. Produk van Simple Eternity Holdings (Pty) Ltd.',
@@ -423,14 +423,14 @@ export const translations: Translations = {
 
     // Hero
     'hero.badge': 'Hlola. Vumelanisa. Qhubeka.',
-    'hero.title1': "Building Africa’s",
-    'hero.title2': 'Business Operating System',
+    'hero.title1': 'We Build The Tools',
+    'hero.title2': 'Your Business Needs',
     'hero.subtitle':
       'Siphunga amabhizinisi endaweni nomkhondo we-AI oqonde kakhulu. Kusukela kumadiresi asekuhlathini kuya kumasevisi okuzenzakalela okhululekile — okusekelwe kumigomo ka-Batho Pele.',
     'hero.typing':
       'Iyalayisha amathuba okuzenzakalela…|Iyaxhumanisa abasebenzisi be-AI basekhaya…|Iyalungiselela amasevisi okuzenzakalela…|Iyalungisa idatha ukuze ibonakale ku-AI…',
     'hero.cta1': 'Qala Ngoku',
-    'hero.cta2': 'Try AI Idea Generator',
+    'hero.cta2': 'Try The Free AI Tool',
     'hero.stat1': 'Projects Delivered',
     'hero.stat2': 'Years Experience',
     'hero.stat3': 'Platforms Live',
@@ -543,7 +543,7 @@ export const translations: Translations = {
     // About
     'about.quote':
       'Cabanga nge-technology njengesenzo, hhayi isabizwana. Iya ngezinsiza, abantu abaqondise baya ngesibonelo.',
-    'about.quoteAuthor': '— Red Burns',
+    'about.quoteAuthor': 'Red Burns',
     'about.description':
       'I-Business Hustle inkampani yaseNingizimu Afrika ephatha insiza yezobuchwepheshe nokuqonda i-AI. Siphunga amabhizinisi endaweni namandla e-AI oqonde kakhulu — sakha amadiresi, sithuthela umsebenzi, futhi sifundisa abantu abaqhubekayo abasebenzi be-AI. Esekelwe kumigomo ka-Batho Pele: okusebenzayo, okucacile, nokugcizelele amaphetho.',
     'about.founded': 'Yasungulwa ngu-Tselakgosi Jacob Seatlholo. Inkalo ye-Simple Eternity Holdings (Pty) Ltd.',
@@ -619,14 +619,14 @@ export const translations: Translations = {
 
     // Hero
     'hero.badge': 'Explorer. S\'adapter. Évoluer.',
-    'hero.title1': "Building Africa’s",
-    'hero.title2': 'Business Operating System',
+    'hero.title1': 'We Build The Tools',
+    'hero.title2': 'Your Business Needs',
     'hero.subtitle':
       'Nous relions les entreprises locales et les technologies IA de pointe. Des annuaires de quartier à l\'automatisation des flux de travail en open source — fondé sur les principes Batho Pele.',
     'hero.typing':
       'Chargement des opportunités d\'automatisation…|Connexion des opérateurs IA locaux…|Préparation de l\'automatisation des flux de travail…|Structuration des données pour la visibilité IA…',
     'hero.cta1': 'Commencer',
-    'hero.cta2': 'Try AI Idea Generator',
+    'hero.cta2': 'Try The Free AI Tool',
     'hero.stat1': 'Projects Delivered',
     'hero.stat2': 'Years Experience',
     'hero.stat3': 'Platforms Live',
@@ -737,7 +737,7 @@ export const translations: Translations = {
     // About
     'about.quote':
       'Pensez à la technologie comme un verbe, pas un nom. Elle fournit les outils, les gens créatifs fournissent l\'imagination.',
-    'about.quoteAuthor': '— Red Burns',
+    'about.quoteAuthor': 'Red Burns',
     'about.description':
       'Business Hustle est une agence sud-africaine hybride d\'infrastructure numérique et d\'opérations IA stratégiques. Nous relions le commerce local de proximité et la technologie IA de pointe — construisant des annuaires, automatisant les flux de travail et formant la prochaine génération d\'opérateurs IA. Fondé sur les principes Batho Pele : pratique, transparent et axé sur les résultats.',
     'about.founded': 'Fondé par Tselakgosi Jacob Seatlholo. Produit de Simple Eternity Holdings (Pty) Ltd.',
@@ -813,14 +813,14 @@ export const translations: Translations = {
 
     // Hero
     'hero.badge': 'Explorar. Adaptar. Evoluir.',
-    'hero.title1': "Building Africa’s",
-    'hero.title2': 'Business Operating System',
+    'hero.title1': 'We Build The Tools',
+    'hero.title2': 'Your Business Needs',
     'hero.subtitle':
       'Conectamos negócios locais e tecnologia IA de ponta. De diretórios de bairro à automação de fluxos de trabalho em código aberto — baseado nos princípios Batho Pele.',
     'hero.typing':
       'A carregar oportunidades de automação…|A ligar operadores de IA locais…|A preparar a automação de fluxos de trabalho…|A estruturar dados para visibilidade em IA…',
     'hero.cta1': 'Começar',
-    'hero.cta2': 'Try AI Idea Generator',
+    'hero.cta2': 'Try The Free AI Tool',
     'hero.stat1': 'Projects Delivered',
     'hero.stat2': 'Years Experience',
     'hero.stat3': 'Platforms Live',
@@ -931,7 +931,7 @@ export const translations: Translations = {
     // About
     'about.quote':
       'Pense na tecnologia como um verbo, não um substantivo. Ela fornece as ferramentas, pessoas criativas fornecem a imaginação.',
-    'about.quoteAuthor': '— Red Burns',
+    'about.quoteAuthor': 'Red Burns',
     'about.description':
       'A Business Hustle é uma agência sul-africana híbrida de infraestrutura digital e operações estratégicas de IA. Conectamos o comércio local de rua e a tecnologia IA de ponta — construindo diretórios, automatizando fluxos de trabalho e treinando a próxima geração de operadores de IA. Baseado nos princípios Batho Pele: prático, transparente e focado em resultados.',
     'about.founded': 'Fundada por Tselakgosi Jacob Seatlholo. Produto da Simple Eternity Holdings (Pty) Ltd.',
@@ -1007,14 +1007,14 @@ export const translations: Translations = {
 
     // Hero
     'hero.badge': 'Chunguza. Badilika. Endelea.',
-    'hero.title1': "Building Africa’s",
-    'hero.title2': 'Business Operating System',
+    'hero.title1': 'We Build The Tools',
+    'hero.title2': 'Your Business Needs',
     'hero.subtitle':
       'Tunapunganuza biashara za ndani na teknolojia za mwisho za AI. Kutoka kwa orodha za mitaa hadi otomatiki ya mtiririko wa kazi ya chanzo huria — inayotegemea misingi ya Batho Pele.',
     'hero.typing':
       'Inapakia fursa za uendeshaji otomatiki…|Inaunganisha waendeshaji wa AI wa mitaa…|Inaandaa otomatiki ya mtiririko wa kazi…|Inapanga data ili ionekane kwenye AI…',
     'hero.cta1': 'Anza Sasa',
-    'hero.cta2': 'Try AI Idea Generator',
+    'hero.cta2': 'Try The Free AI Tool',
     'hero.stat1': 'Projects Delivered',
     'hero.stat2': 'Years Experience',
     'hero.stat3': 'Platforms Live',
@@ -1125,7 +1125,7 @@ export const translations: Translations = {
     // About
     'about.quote':
       'Fikiria teknolojia kama kitenzi, si kiumbe. Inatoa zana, watu wenye ubunifu wanaleta taswira.',
-    'about.quoteAuthor': '— Red Burns',
+    'about.quoteAuthor': 'Red Burns',
     'about.description':
       'Business Hustle ni shirika la Afrika Kusini la hibridi la miundombinu ya kidijitali na uendeshaji wa kimkakati wa AI. Tunapunganuza biashara za ndani za mtaa na teknolojia ya mwisho ya AI — tukiijenga orodha, tukiotomatisha mtiririko wa kazi, na tukifundisha kizazi kijacho cha waendeshaji wa AI. Inayotegemea misingi ya Batho Pele: ya vitendo, wazi, na inayolenga matokeo.',
     'about.founded': 'Ilianzishwa na Tselakgosi Jacob Seatlholo. Bidhaa ya Simple Eternity Holdings (Pty) Ltd.',
@@ -1201,14 +1201,14 @@ export const translations: Translations = {
 
     // Hero
     'hero.badge': 'استكشف. تكيّف. تطوّر.',
-    'hero.title1': "Building Africa’s",
-    'hero.title2': 'Business Operating System',
+    'hero.title1': 'We Build The Tools',
+    'hero.title2': 'Your Business Needs',
     'hero.subtitle':
       'نربط الأعمال المحلية وتكنولوجيا الذكاء الاصطناعي المتقدمة. من أدلة الأحياء إلى أتمتة سير العمل بمصدر مفتوح — مبنية على مبادئ Batho Pele.',
     'hero.typing':
       'جارٍ تحميل فرص الأتمتة…|جارٍ ربط مشغلي الذكاء الاصطناعي المحليين…|جارٍ إعداد أتمتة سير العمل…|جارٍ تنظيم البيانات للظهور في الذكاء الاصطناعي…',
     'hero.cta1': 'ابدأ الآن',
-    'hero.cta2': 'Try AI Idea Generator',
+    'hero.cta2': 'Try The Free AI Tool',
     'hero.stat1': 'Projects Delivered',
     'hero.stat2': 'Years Experience',
     'hero.stat3': 'Platforms Live',
@@ -1319,7 +1319,7 @@ export const translations: Translations = {
     // About
     'about.quote':
       'فكر في التكنولوجيا كفعل، لا كاسم. هي توفر الأدوات، والأشخاص المبدعون يوفرون الخيال.',
-    'about.quoteAuthor': '— Red Burns',
+    'about.quoteAuthor': 'Red Burns',
     'about.description':
       'بيزنس هاسل هي وكالة جنوب أفريقية هجينة للبنية الرقمية التحتية وعمليات الذكاء الاصطناعي الاستراتيجية. نربط تجارة الشارع المحلية وتكنولوجيا الذكاء الاصطناعي المتقدمة — نبني الأدلة، نؤتمت سير العمل، وندرب الجيل القادم من مشغلي الذكاء الاصطناعي. مبنية على مبادئ Batho Pele: عملية وشفافة ونتائجية.',
     'about.founded': 'تأسست بواسطة Tselakgosi Jacob Seatlholo. منتج من Simple Eternity Holdings (Pty) Ltd.',
