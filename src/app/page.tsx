@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useRef, type FormEvent } from 'react'
+import { useState, useEffect, useMemo, useRef, type FormEvent } from 'react'
 import { motion, useInView } from 'framer-motion'
 import {
   Database,
@@ -58,6 +58,167 @@ declare global {
 
 const track = (event: string, props?: Record<string, string>) => {
   if (typeof window !== 'undefined' && window.plausible) window.plausible(event, props ? { props } : undefined)
+}
+
+/* ------------------------------------------------------------------ */
+/*  Typing effect (ported from HUSTLE//2157)                           */
+/* ------------------------------------------------------------------ */
+function TypeWriter({
+  sequence,
+  speed = 70,
+  deleteSpeed = 35,
+  pause = 2200,
+}: {
+  sequence: string
+  speed?: number
+  deleteSpeed?: number
+  pause?: number
+}) {
+  const strings = useMemo(
+    () => sequence.split('|').map((s) => s.trim()).filter(Boolean),
+    [sequence]
+  )
+  const [text, setText] = useState('')
+  const [stringIndex, setStringIndex] = useState(0)
+  const [charIndex, setCharIndex] = useState(0)
+  const [isDeleting, setIsDeleting] = useState(false)
+
+  useEffect(() => {
+    if (strings.length === 0) return
+    const current = strings[stringIndex % strings.length]
+    let timeout: ReturnType<typeof setTimeout>
+
+    if (!isDeleting && charIndex < current.length) {
+      timeout = setTimeout(() => {
+        setText(current.substring(0, charIndex + 1))
+        setCharIndex(charIndex + 1)
+      }, speed)
+    } else if (!isDeleting && charIndex === current.length) {
+      timeout = setTimeout(() => setIsDeleting(true), pause)
+    } else if (isDeleting && charIndex > 0) {
+      timeout = setTimeout(() => {
+        setText(current.substring(0, charIndex - 1))
+        setCharIndex(charIndex - 1)
+      }, deleteSpeed)
+    } else if (isDeleting && charIndex === 0) {
+      timeout = setTimeout(() => {
+        setIsDeleting(false)
+        setStringIndex((prev) => (prev + 1) % strings.length)
+      }, 50)
+    }
+
+    return () => clearTimeout(timeout)
+  }, [charIndex, isDeleting, stringIndex, strings, speed, deleteSpeed, pause])
+
+  return <span className="typing-cursor">{text}</span>
+}
+
+/* ------------------------------------------------------------------ */
+/*  Particle field background (ported from HUSTLE//2157)               */
+/* ------------------------------------------------------------------ */
+function ParticleField({ className = '' }: { className?: string }) {
+  const canvasRef = useRef<HTMLCanvasElement>(null)
+
+  useEffect(() => {
+    const canvas = canvasRef.current
+    if (!canvas) return
+    const ctx = canvas.getContext('2d')
+    if (!ctx) return
+
+    const reduceMotion =
+      typeof window !== 'undefined' &&
+      window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
+
+    let animationId = 0
+    let particles: Array<{
+      x: number
+      y: number
+      vx: number
+      vy: number
+      size: number
+      opacity: number
+    }> = []
+
+    const resize = () => {
+      canvas.width = canvas.offsetWidth
+      canvas.height = canvas.offsetHeight
+    }
+
+    const initParticles = () => {
+      particles = Array.from({ length: 70 }, () => ({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        vx: (Math.random() - 0.5) * 0.3,
+        vy: (Math.random() - 0.5) * 0.3,
+        size: Math.random() * 1.6 + 0.4,
+        opacity: Math.random() * 0.4 + 0.15,
+      }))
+    }
+
+    const draw = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height)
+
+      particles.forEach((p, i) => {
+        p.x += p.vx
+        p.y += p.vy
+        if (p.x < 0) p.x = canvas.width
+        if (p.x > canvas.width) p.x = 0
+        if (p.y < 0) p.y = canvas.height
+        if (p.y > canvas.height) p.y = 0
+
+        ctx.beginPath()
+        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2)
+        ctx.fillStyle = `rgba(190, 148, 50, ${p.opacity})`
+        ctx.fill()
+
+        // Connect nearby particles
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = p.x - particles[j].x
+          const dy = p.y - particles[j].y
+          const dist = Math.sqrt(dx * dx + dy * dy)
+          if (dist < 150) {
+            ctx.beginPath()
+            ctx.moveTo(p.x, p.y)
+            ctx.lineTo(particles[j].x, particles[j].y)
+            ctx.strokeStyle = `rgba(190, 148, 50, ${0.08 * (1 - dist / 150)})`
+            ctx.lineWidth = 0.5
+            ctx.stroke()
+          }
+        }
+      })
+
+      animationId = requestAnimationFrame(draw)
+    }
+
+    resize()
+    initParticles()
+    if (reduceMotion) {
+      // Draw a single static frame
+      draw()
+      cancelAnimationFrame(animationId)
+    } else {
+      draw()
+    }
+
+    const onResize = () => {
+      resize()
+      initParticles()
+    }
+    window.addEventListener('resize', onResize)
+
+    return () => {
+      cancelAnimationFrame(animationId)
+      window.removeEventListener('resize', onResize)
+    }
+  }, [])
+
+  return (
+    <canvas
+      ref={canvasRef}
+      className={`pointer-events-none ${className}`}
+      aria-hidden="true"
+    />
+  )
 }
 
 type Idea = { title: string; description: string; impact: string }
@@ -339,8 +500,14 @@ function ResourcesHub() {
   })
 
   return (
-    <section id="resources" className="py-20 sm:py-28 bg-muted/30">
-      <div ref={sectionRef} className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section
+      id="resources"
+      className="relative py-20 sm:py-28 bg-muted/30 overflow-hidden"
+    >
+      {/* Moving background — particle field + drifting grid (ported from HUSTLE//2157) */}
+      <div className="absolute inset-0 grid-bg" aria-hidden="true" />
+      <ParticleField className="absolute inset-0 h-full w-full" />
+      <div ref={sectionRef} className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -676,7 +843,7 @@ export default function Home() {
             >
               {t('hero.title1')}
               <br />
-              <span className="gradient-text">{t('hero.title2')}</span>
+              <span className="holo-shimmer-text">{t('hero.title2')}</span>
             </motion.h1>
 
             <motion.p
@@ -691,6 +858,17 @@ export default function Home() {
             <p className="mt-1 text-sm sm:text-base font-medium text-gold">
               Helping entrepreneurs launch, grow, and automate their businesses — all from one platform.
             </p>
+
+            {/* Terminal-style typing line (ported from HUSTLE//2157) */}
+            <motion.div
+              className="mt-3 min-h-[1.5rem] text-xs sm:text-sm font-mono text-muted-foreground"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.45 }}
+            >
+              <span className="text-emerald">&gt;</span>{' '}
+              <TypeWriter sequence={t('hero.typing')} />
+            </motion.div>
 
             <motion.div
               className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3"
@@ -1148,6 +1326,10 @@ export default function Home() {
                   { name: 'HS Physio', url: 'https://www.kloofstreet.online/hayley-schuter-physio' },
                   { name: 'Dr Wendy Dicks', url: 'https://www.kloofstreet.online/dr-wendy-dicks' },
                   { name: 'Honest Travel Experience', url: 'https://www.honesttravelexperience.com/' },
+                  { name: 'StarFM Radio', url: 'https://www.starfmradio.online/' },
+                  { name: 'Wilscha Skincare', url: 'https://wilschaskincare.com/' },
+                  { name: 'Arnolds Restaurant', url: 'https://www.arnolds.co.za/' },
+                  { name: 'Starve to Thrive', url: 'https://www.starvetothrive.online/' },
                 ] as { name: string; url: string }[]).map((client) =>
                   client.url ? (
                     <a
@@ -1302,6 +1484,12 @@ export default function Home() {
                   desc: 'Cape Town on the move — a hyperlocal platform connecting people to the city.',
                   tag: 'Hyperlocal',
                 },
+                {
+                  name: 'HustlePortal.online',
+                  url: 'https://www.hustleportal.online/',
+                  desc: 'The business OS for South African entrepreneurs — leads, clients, invoicing, calendar and reports in one place, with an AI helper. Free to start.',
+                  tag: 'Platform',
+                },
               ] as { name: string; url: string; desc: string; tag: string }[]).map((p) => (
                 <a
                   key={p.name}
@@ -1310,7 +1498,7 @@ export default function Home() {
                   rel="noopener noreferrer"
                   className="group"
                 >
-                  <Card className="h-full border-border/60 bg-card/80 backdrop-blur-sm group-hover:border-gold/40 transition-colors py-0 gap-0">
+                  <Card className="holo-card h-full border-border/60 bg-card/80 backdrop-blur-sm group-hover:border-gold/40 transition-colors py-0 gap-0">
                     <CardContent className="p-6 flex flex-col gap-3 h-full">
                       <div className="flex items-center justify-between">
                         <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-emerald/10 text-emerald">
@@ -1404,7 +1592,7 @@ export default function Home() {
               ] as { title: string; blurb: string; items: { name: string; slug?: string; url?: string }[] }[]).map((cat) => (
                 <Card
                   key={cat.title}
-                  className="border-border/60 bg-card/80 backdrop-blur-sm hover:border-gold/40 transition-colors py-0 gap-0"
+                  className="holo-card border-border/60 bg-card/80 backdrop-blur-sm hover:border-gold/40 transition-colors py-0 gap-0"
                 >
                   <CardContent className="p-6 flex flex-col gap-3 h-full">
                     <h3 className="font-semibold text-lg">{cat.title}</h3>

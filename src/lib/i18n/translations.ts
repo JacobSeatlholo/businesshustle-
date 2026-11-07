@@ -39,6 +39,8 @@ export const translations: Translations = {
     'hero.title2': 'Business Operating System',
     'hero.subtitle':
       'We bridge local business and frontier AI technology. From neighbourhood directories to open-source workflow automation — grounded in Batho Pele principles.',
+    'hero.typing':
+      'Loading automation opportunities…|Connecting local AI operators…|Preparing workflow automation…|Structuring data for AI visibility…',
     'hero.cta1': 'Get Started',
     'hero.cta2': 'Try AI Idea Generator',
     'hero.stat1': 'Projects Delivered',
@@ -231,6 +233,8 @@ export const translations: Translations = {
     'hero.title2': 'Business Operating System',
     'hero.subtitle':
       'Ons verbind plaaslike besighede met voorste KI-tegnologie. Van buurtgids tot oopbron-werkvloei-outomatisering — gegrond op Batho Pele-beginsels.',
+    'hero.typing':
+      'Laai tans outomatiseringsgeleenthede…|Verbind plaaslike KI-operateurs…|Berei werkvloei-outomatisering voor…|Strukturering van data vir KI-sigbaarheid…',
     'hero.cta1': 'Beging Nou',
     'hero.cta2': 'Try AI Idea Generator',
     'hero.stat1': 'Projects Delivered',
@@ -423,6 +427,8 @@ export const translations: Translations = {
     'hero.title2': 'Business Operating System',
     'hero.subtitle':
       'Siphunga amabhizinisi endaweni nomkhondo we-AI oqonde kakhulu. Kusukela kumadiresi asekuhlathini kuya kumasevisi okuzenzakalela okhululekile — okusekelwe kumigomo ka-Batho Pele.',
+    'hero.typing':
+      'Iyalayisha amathuba okuzenzakalela…|Iyaxhumanisa abasebenzisi be-AI basekhaya…|Iyalungiselela amasevisi okuzenzakalela…|Iyalungisa idatha ukuze ibonakale ku-AI…',
     'hero.cta1': 'Qala Ngoku',
     'hero.cta2': 'Try AI Idea Generator',
     'hero.stat1': 'Projects Delivered',
@@ -617,6 +623,8 @@ export const translations: Translations = {
     'hero.title2': 'Business Operating System',
     'hero.subtitle':
       'Nous relions les entreprises locales et les technologies IA de pointe. Des annuaires de quartier à l\'automatisation des flux de travail en open source — fondé sur les principes Batho Pele.',
+    'hero.typing':
+      'Chargement des opportunités d\'automatisation…|Connexion des opérateurs IA locaux…|Préparation de l\'automatisation des flux de travail…|Structuration des données pour la visibilité IA…',
     'hero.cta1': 'Commencer',
     'hero.cta2': 'Try AI Idea Generator',
     'hero.stat1': 'Projects Delivered',
@@ -809,6 +817,8 @@ export const translations: Translations = {
     'hero.title2': 'Business Operating System',
     'hero.subtitle':
       'Conectamos negócios locais e tecnologia IA de ponta. De diretórios de bairro à automação de fluxos de trabalho em código aberto — baseado nos princípios Batho Pele.',
+    'hero.typing':
+      'A carregar oportunidades de automação…|A ligar operadores de IA locais…|A preparar a automação de fluxos de trabalho…|A estruturar dados para visibilidade em IA…',
     'hero.cta1': 'Começar',
     'hero.cta2': 'Try AI Idea Generator',
     'hero.stat1': 'Projects Delivered',
@@ -1001,6 +1011,8 @@ export const translations: Translations = {
     'hero.title2': 'Business Operating System',
     'hero.subtitle':
       'Tunapunganuza biashara za ndani na teknolojia za mwisho za AI. Kutoka kwa orodha za mitaa hadi otomatiki ya mtiririko wa kazi ya chanzo huria — inayotegemea misingi ya Batho Pele.',
+    'hero.typing':
+      'Inapakia fursa za uendeshaji otomatiki…|Inaunganisha waendeshaji wa AI wa mitaa…|Inaandaa otomatiki ya mtiririko wa kazi…|Inapanga data ili ionekane kwenye AI…',
     'hero.cta1': 'Anza Sasa',
     'hero.cta2': 'Try AI Idea Generator',
     'hero.stat1': 'Projects Delivered',
@@ -1193,6 +1205,8 @@ export const translations: Translations = {
     'hero.title2': 'Business Operating System',
     'hero.subtitle':
       'نربط الأعمال المحلية وتكنولوجيا الذكاء الاصطناعي المتقدمة. من أدلة الأحياء إلى أتمتة سير العمل بمصدر مفتوح — مبنية على مبادئ Batho Pele.',
+    'hero.typing':
+      'جارٍ تحميل فرص الأتمتة…|جارٍ ربط مشغلي الذكاء الاصطناعي المحليين…|جارٍ إعداد أتمتة سير العمل…|جارٍ تنظيم البيانات للظهور في الذكاء الاصطناعي…',
     'hero.cta1': 'ابدأ الآن',
     'hero.cta2': 'Try AI Idea Generator',
     'hero.stat1': 'Projects Delivered',
