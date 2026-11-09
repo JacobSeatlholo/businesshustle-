@@ -19,7 +19,7 @@ Business Hustle uses AI to do repetitive office work. Examples: data entry, repo
 Business Hustle prepares and checks data used to train AI models. This work is called data curation and model evaluation.
 
 ### AI Training For Youth
-Business Hustle trains young South Africans to work with AI. Partners: Mafikeng Innovation Hub and the Western Cape Government.
+Business Hustle trains young South Africans to work with AI.
 
 ## How Business Hustle Works
 

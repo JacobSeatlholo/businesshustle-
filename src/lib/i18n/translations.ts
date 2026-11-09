@@ -73,7 +73,7 @@ export const translations: Translations = {
     'platform.card5.name': 'AI Training For Youth',
     'platform.card5.tag': 'People First',
     'platform.card5.desc':
-      'We train young South Africans to work with AI. Partners: Mafikeng Innovation Hub and the Western Cape Government.',
+      'We train young South Africans to work with AI.',
     'platform.learnMore': 'Ask us about this',
 
     // How it works
@@ -267,7 +267,7 @@ export const translations: Translations = {
     'platform.card5.name': 'Talentye Pyplyne',
     'platform.card5.tag': 'Mense Eerst',
     'platform.card5.desc':
-      'Ons oplei plaaslike jeug as KI-operateurs, datakurators en RLHF-spesialiste — in vennootskap met Mafikeng Innovation Hub en die Wes-Kaap-regering.',
+      'Ons oplei plaaslike jeug as KI-operateurs, datakurators en RLHF-spesialiste.',
     'platform.learnMore': 'Leer meer',
 
     // How it works
@@ -461,7 +461,7 @@ export const translations: Translations = {
     'platform.card5.name': 'Izinkalo Zobulili',
     'platform.card5.tag': 'Abantu Kuqala',
     'platform.card5.desc':
-      'Sifundisa abasha basekhaya njengo-abasebenzi be-AI, abakhiqizi bedatha kanye nabaspeshalisti be-RLHF — ngokubambisana noMafikeng Innovation Hub noMbuso weNtshonalanga Kapa.',
+      'Sifundisa abasha basekhaya njengo-abasebenzi be-AI, abakhiqizi bedatha kanye nabaspeshalisti be-RLHF.',
     'platform.learnMore': 'Funda kabanzi',
 
     // How it works
@@ -657,7 +657,7 @@ export const translations: Translations = {
     'platform.card5.name': 'Filières de Talents',
     'platform.card5.tag': 'Les Gens D\'abord',
     'platform.card5.desc':
-      'Nous formons les jeunes locaux en tant qu\'opérateurs IA, curateurs de données et spécialistes RLHF — en partenariat avec le Mafikeng Innovation Hub et le gouvernement du Cap-Occidental.',
+      'Nous formons les jeunes locaux en tant qu\'opérateurs IA, curateurs de données et spécialistes RLHF.',
     'platform.learnMore': 'En savoir plus',
 
     // How it works
@@ -851,7 +851,7 @@ export const translations: Translations = {
     'platform.card5.name': 'Pipelines de Talentos',
     'platform.card5.tag': 'Pessoas Primeiro',
     'platform.card5.desc':
-      'Treinamos jovens locais como operadores de IA, curadores de dados e especialistas em RLHF — em parceria com o Mafikeng Innovation Hub e o Governo do Cabo Ocidental.',
+      'Treinamos jovens locais como operadores de IA, curadores de dados e especialistas em RLHF.',
     'platform.learnMore': 'Saiba mais',
 
     // How it works
@@ -1045,7 +1045,7 @@ export const translations: Translations = {
     'platform.card5.name': 'Miradi ya Vipaji',
     'platform.card5.tag': 'Watu Kwanza',
     'platform.card5.desc':
-      'Tunafundisha vijana wa karibu kuwa waendeshaji wa AI, wakusanyaji wa data na wataalamu wa RLHF — kwa ushirikiano na Mafikeng Innovation Hub na Serikali ya Western Cape.',
+      'Tunafundisha vijana wa karibu kuwa waendeshaji wa AI, wakusanyaji wa data na wataalamu wa RLHF.',
     'platform.learnMore': 'Soma zaidi',
 
     // How it works
@@ -1239,7 +1239,7 @@ export const translations: Translations = {
     'platform.card5.name': 'خطوط المواهب',
     'platform.card5.tag': 'الناس أولاً',
     'platform.card5.desc':
-      'ندرب الشباب المحلي ليصبحوا مشغلي ذكاء اصطناعي ومكتبي بيانات ومتخصصين في RLHF — بالشراكة مع Mafikeng Innovation Hub وحكومة ويسترن كيب.',
+      'ندرب الشباب المحلي ليصبحوا مشغلي ذكاء اصطناعي ومكتبي بيانات ومتخصصين في RLHF.',
     'platform.learnMore': 'اعرف المزيد',
 
     // How it works

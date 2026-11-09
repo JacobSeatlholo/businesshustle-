@@ -34,7 +34,6 @@ export const metadata: Metadata = {
     "AI search visibility",
     "local business directories",
     "Batho Pele",
-    "Mafikeng Innovation Hub",
     "KloofStreet",
     "HustlePortal",
     "South Africa",
