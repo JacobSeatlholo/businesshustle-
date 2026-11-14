@@ -1836,13 +1836,20 @@ export default function Home() {
             <div>
               <h4 className="text-sm font-semibold mb-4">{t('footer.services')}</h4>
               <ul className="space-y-2.5">
-                {[t('footer.serviceLinks.geo'), t('footer.serviceLinks.s2s'), t('footer.serviceLinks.talent'), t('footer.serviceLinks.local'), t('footer.serviceLinks.automation')].map((link) => (
-                  <li key={link}>
+                {([
+                  { label: t('footer.serviceLinks.geo'), href: 'https://www.hustleportal.online/', external: true },
+                  { label: t('footer.serviceLinks.s2s'), href: 'https://www.hustleportal.online/', external: true },
+                  { label: t('footer.serviceLinks.talent'), href: '#solutions' },
+                  { label: t('footer.serviceLinks.local'), href: '#solutions' },
+                  { label: t('footer.serviceLinks.automation'), href: '#solutions' },
+                ] as { label: string; href: string; external?: boolean }[]).map((link) => (
+                  <li key={link.label}>
                     <a
-                      href="#solutions"
+                      href={link.href}
+                      {...(link.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                       className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                     >
-                      {link}
+                      {link.label}
                     </a>
                   </li>
                 ))}
@@ -1894,7 +1901,7 @@ export default function Home() {
                 ))}
                 <li>
                   <a
-                    href="https://app.businesshustle.co.za/wp-content/uploads/2025/12/BHW-PAIA-Manual-Integrated-with-POPIA.pdf"
+                    href="https://app.businesshustle.co.za/wp-content/uploads/2026/11/PAIA_Manual_v2.0_Business_Hustle.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-sm text-muted-foreground hover:text-foreground transition-colors"

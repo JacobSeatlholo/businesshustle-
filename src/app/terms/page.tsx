@@ -8,22 +8,28 @@ export const metadata: Metadata = {
 }
 
 const PAIA_PDF =
-  'https://app.businesshustle.co.za/wp-content/uploads/2025/12/BHW-PAIA-Manual-Integrated-with-POPIA.pdf'
+  'https://app.businesshustle.co.za/wp-content/uploads/2026/11/PAIA_Manual_v2.0_Business_Hustle.pdf'
 
 export default function TermsOfService() {
   return (
-    <LegalPage title="Terms of Service" effective="1 January 2026">
+    <LegalPage title="Terms of Service" effective="14 November 2026">
       <section>
         <h2>1. Agreement</h2>
         <p>
           These Terms of Service (&ldquo;Terms&rdquo;) govern your access to
           and use of the websites, platforms, and services of Simple Eternity
           Holdings (Pty) Ltd t/a Business Hustle (Registration No.
-          2017/652523/07), including businesshustle.co.za, Hustle Portal,
-          Business Hustle Local, KloofStreet Online, BreeStreet Online, and our
-          other platforms (collectively, the &ldquo;Services&rdquo;). By using
-          the Services you agree to these Terms. If you do not agree, do not
-          use the Services.
+          2017/652523/07), including businesshustle.co.za, Hustle Portal
+          (hustleportal.online), Business Hustle Local
+          (app.businesshustle.co.za), KloofStreet Online (kloofstreet.online),
+          BreeStreet Online (breestreet.online), Longstreet Online
+          (longstreet.online), Bo-Kaap Online (bo-kaap.online), Camps Bay
+          Online (campsbay.online), Century City Online (centurycity.online),
+          Longmarket Online (longmarket.online), Maboneng Online
+          (maboneng.online), and Sandton Online (sandton.online), together
+          with our other platforms (collectively, the &ldquo;Services&rdquo;).
+          By using the Services you agree to these Terms. If you do not agree,
+          do not use the Services.
         </p>
       </section>
 
@@ -120,8 +126,11 @@ export default function TermsOfService() {
           . Requests for access to records held by Simple Eternity Holdings are
           handled in terms of the Promotion of Access to Information Act 2 of
           2000, using the prescribed Form 2, and may be subject to prescribed
-          request fees and deposits. Access to requested records is granted
-          once applicable fees have been paid in full.
+          request fees and deposits. We respond within 30 days, which may be
+          extended by a further 30 days for large or complex requests. Access
+          to requested records is granted once applicable fees have been paid
+          in full. Requests for your own personal information under POPIA are
+          free of charge and do not require Form 2; see our Privacy Policy.
         </p>
       </section>
 
